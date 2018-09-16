@@ -1,0 +1,31 @@
+section#navigation{
+
+  span#hamburger-menu{
+    cursor: pointer;
+  }
+
+  ul{
+    overflow-y: hidden;
+    max-height: 0;
+    -webkit-transition: max-height 0.5s ease-in-out;
+    -moz-transition: max-height 0.5s ease-in-out;
+    -o-transition: max-height 0.5s ease-in-out;
+    transition: max-height 0.5s ease-in-out;
+
+    li{
+      list-style: none;
+      text-align: center;
+      padding: 10px 0;
+      a{
+        text-decoration: underline;
+      }
+    }
+    &.open{
+      display: flex;
+      max-height: 200px;
+      justify-content: center;
+      flex-direction: column;
+    }
+  }
+
+}

@@ -1,9 +1,11 @@
-<section>
-    <ul>
-        <li><a routerLink="/home">Home</a></li>
-        <li><a routerLink="/about">About Us</a></li>
-        <li><a routerLink="/events">Events</a></li>
-        <li><a routerLink="/contact">Contact Us</a></li>
+<section id="navigation">
+    <span id="hamburger-menu" class="icon ion-md-menu" (click)="toggle()"></span>
+    <ul [ngClass]="{'open': navOpen}">
+        <li><a routerLink="/home" (click)="toggle()">Home</a></li>
+
+        <li *ngFor="let link of links">
+            <a [routerLink]="link.path" (click)="toggle()">{{ link.text }}</a>
+        </li>
 
     </ul>
 </section>
