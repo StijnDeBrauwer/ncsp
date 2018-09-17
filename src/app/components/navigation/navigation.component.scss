@@ -1,31 +1,190 @@
-section#navigation{
+@import "../../../assets/variables";
 
-  span#hamburger-menu{
-    cursor: pointer;
+$hamburger-width: 30px;
+$hamburger-height: 30px;
+
+section#navigation {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+
+  &.open {
+    background-color: white !important;
+    height: auto !important;
   }
 
-  ul{
-    overflow-y: hidden;
-    max-height: 0;
-    -webkit-transition: max-height 0.5s ease-in-out;
-    -moz-transition: max-height 0.5s ease-in-out;
-    -o-transition: max-height 0.5s ease-in-out;
-    transition: max-height 0.5s ease-in-out;
+  span[class*="ion-ios-"]{
+    padding: 0 5px;
+  }
+  img#logo {
+    margin: 5%;
+    width: 75px;
+    height: 75px;
+    &.open{
+      padding: 0;
+      width: 75px !important;
+      height: 75px !important;
+    }
+  }
 
-    li{
-      list-style: none;
-      text-align: center;
-      padding: 10px 0;
-      a{
-        text-decoration: underline;
+  div#hamburger-menu {
+    margin: 0 10px;
+    position: relative;
+    width: $hamburger-height;
+    height: $hamburger-width;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+    cursor: pointer;
+
+    span {
+      display: block;
+      position: absolute;
+      height: 5px;
+      width: 100%;
+      background: $main-color;
+      border-radius: 9px;
+      opacity: 1;
+      left: 0;
+      -webkit-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+      -webkit-transition: .25s ease-in-out;
+      -moz-transition: .25s ease-in-out;
+      -o-transition: .25s ease-in-out;
+      transition: .25s ease-in-out;
+      -webkit-transform-origin: left center;
+      -moz-transform-origin: left center;
+      -o-transform-origin: left center;
+      transform-origin: left center;
+
+      &:nth-child(1) {
+        top: 0;
+      }
+
+      &:nth-child(2) {
+        top: 10px;
+      }
+
+      &:nth-child(3) {
+        top: 20px;
       }
     }
-    &.open{
-      display: flex;
-      max-height: 200px;
-      justify-content: center;
-      flex-direction: column;
+
+    &.open {
+      span {
+        &:nth-child(1) {
+          -webkit-transform: rotate(45deg);
+          -moz-transform: rotate(45deg);
+          -o-transform: rotate(45deg);
+          transform: rotate(45deg);
+        }
+        &:nth-child(2) {
+          width: 0%;
+          opacity: 0;
+        }
+        &:nth-child(3) {
+          -webkit-transform: rotate(-45deg);
+          -moz-transform: rotate(-45deg);
+          -o-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+        }
+      }
     }
   }
 
+  ul {
+    visibility: hidden;
+    background-color: white;
+    color: black;
+    padding: 0;
+    margin: 0;
+    top:0;
+    opacity: 0.2;
+    position: fixed;
+    max-height: 0;
+    bottom: 0;
+    width: 100%;
+    transition: all .5s ease-in-out;
+    &.open {
+      visibility: visible;
+      opacity: 0.9;
+      top: $nav-bar-height;
+      max-height: 100vh;
+    }
+    li {
+      text-align: center;
+      padding: 5% 10px;
+      list-style: none;
+      a {
+        font-weight: bolder;
+        color: black;
+        text-decoration: none;
+      }
+    }
+
+    div.sub-menu{
+      &.open {
+        max-height: 100px;
+      }
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height .5s ease-in-out;
+
+    }
+  }
 }
+
+@media (min-width: 768px) {
+
+  div#hamburger-menu {
+    display: none;
+  }
+
+  img#logo {
+    padding: 2%;
+    width: 75px;
+    height: 75px;
+  }
+
+  ul, ul.open  {
+    visibility: visible !important;
+    background-color: transparent!important;
+    top: auto !important;
+    width: auto !important;
+    max-height:none !important;
+    display: inline-flex;
+    justify-content: flex-end;
+    position: relative !important;
+    color: black;
+    opacity: 1 !important;
+
+    &.open{
+      visibility: visible !important;
+      display: inline-flex !important;
+    }
+
+  .sub-menu{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: $nav-bar-height !important;
+    width: 100vw;
+    background-color: white;
+
+  }
+
+  }
+}
+
+
+
