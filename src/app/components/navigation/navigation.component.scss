@@ -2,6 +2,7 @@
 
 $hamburger-width: 30px;
 $hamburger-height: 30px;
+$image-size: 100px;
 
 section#navigation {
   display: flex;
@@ -10,6 +11,7 @@ section#navigation {
   justify-content: space-between;
   position: fixed;
   width: 100%;
+  height: auto !important;
 
   &.open {
     background-color: white !important;
@@ -20,13 +22,13 @@ section#navigation {
     padding: 0 5px;
   }
   img#logo {
-    margin: 5%;
-    width: 75px;
-    height: 75px;
+    padding: 5%;
+    width: $image-size;
+    height: $image-size;
     &.open{
       padding: 0;
-      width: 75px !important;
-      height: 75px !important;
+      width: $image-size !important;
+      height: $image-size !important;
     }
   }
 
@@ -109,15 +111,14 @@ section#navigation {
     padding: 0;
     margin: 0;
     top:0;
-    opacity: 0.2;
     position: fixed;
     max-height: 0;
     bottom: 0;
     width: 100%;
+    overflow: hidden;
     transition: all .5s ease-in-out;
     &.open {
       visibility: visible;
-      opacity: 0.9;
       top: $nav-bar-height;
       max-height: 100vh;
     }
@@ -152,8 +153,8 @@ section#navigation {
 
   img#logo {
     padding: 2%;
-    width: 75px;
-    height: 75px;
+    width: 100px;
+    height: 100px;
   }
 
   ul, ul.open  {
@@ -185,6 +186,3 @@ section#navigation {
 
   }
 }
-
-
-

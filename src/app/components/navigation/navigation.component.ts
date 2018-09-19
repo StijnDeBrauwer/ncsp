@@ -18,8 +18,8 @@ import {OurCompanyComponent} from '../../pages/company/our-company/our-company.c
             transition('hide <=> show', animate('50ms')),
         ]),
         trigger('logoScroll', [
-            state('small', style({height: '75px', width: '75px'})),
-            state('big', style({height: '100px', width: '100px'})),
+            state('small', style({height: '100px', width: '100px'})),
+            state('big', style({height: '125px', width: '125px'})),
             transition('small <=> big', animate('50ms')),
         ])
     ]
