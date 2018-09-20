@@ -1,19 +1,19 @@
-<section [@scroll]="navbarState" [ngClass]="{'open': navOpen}" id="navigation">
-    <a routerLink="/home"><img [ngClass]="{'open': navOpen}" [@logoScroll]="logoState" id="logo"
+<section [ngClass]="{'open': navOpen}" id="navigation">
+    <a routerLink="/home"><img [ngClass]="{'open': navOpen}"  id="logo"
                                src="../../../assets/images/logo.png"></a>
     <div id="hamburger-menu" [ngClass]="{'open': navOpen}" (click)="toggle()">
         <span></span>
         <span></span>
         <span></span>
     </div>
-    
+
     <ul [ngClass]="{'open': navOpen}">
 
         <li><a routerLink="/home" (click)="navigate()">HOME</a></li>
 
         <li *ngFor="let link of links">
             <a [routerLink]="link.path" (click)="toggleSubMenu()">{{ link.text }}</a>
-            <div class="sub-menu" [ngClass]="{'open': subMenuOpen}">
+            <div *ngIf="isMobile()" class="sub-menu" [ngClass]="{'open': subMenuOpen}">
                 <p *ngFor="let child of link.children">
                     <a [routerLink]="child.path" (click)="navigate()">{{child.text}}</a>
                 </p>
@@ -23,7 +23,10 @@
         <li><a routerLink="/approach" (click)="navigate()">OUR APPROCHES</a></li>
         <li><a routerLink="/products" (click)="navigate()">OUR PRODUCTS</a></li>
         <li><a routerLink="/services" (click)="navigate()">OUR SERVICES</a></li>
-
-
     </ul>
+    <div *ngIf="chosenLink && chosenLinkExists() && !isMobile()" class="sub-menu" [ngClass]="{'open': subMenuOpen}">
+        <p *ngFor="let child of chosenLink.children">
+            <a [routerLink]="child.path" (click)="navigate()">{{child.text}}</a>
+        </p>
+    </div>
 </section>

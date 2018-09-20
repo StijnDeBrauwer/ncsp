@@ -6,6 +6,7 @@ $image-size: 100px;
 
 section#navigation {
   display: flex;
+  background-color: white;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
@@ -135,7 +136,7 @@ section#navigation {
 
     div.sub-menu{
       &.open {
-        max-height: 100px;
+        max-height: 500px !important;
       }
       overflow: hidden;
       max-height: 0;
@@ -174,15 +175,20 @@ section#navigation {
       display: inline-flex !important;
     }
 
-  .sub-menu{
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: $nav-bar-height !important;
-    width: 100vw;
-    background-color: white;
+    div.sub-menu{
+      visibility: hidden;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      overflow: hidden;
+      max-height: 0;
+      transition: all .5s ease-in-out;
+      &.open {
+        visibility: visible;
+        background-color:white;
+      }
 
-  }
-
+    }
   }
 }
