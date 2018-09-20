@@ -2,14 +2,17 @@
 
 $hamburger-width: 30px;
 $hamburger-height: 30px;
+$image-size: 100px;
 
 section#navigation {
   display: flex;
+  background-color: white;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   position: fixed;
   width: 100%;
+  height: auto !important;
 
   &.open {
     background-color: white !important;
@@ -20,13 +23,13 @@ section#navigation {
     padding: 0 5px;
   }
   img#logo {
-    margin: 5%;
-    width: 75px;
-    height: 75px;
+    padding: 5%;
+    width: $image-size;
+    height: $image-size;
     &.open{
       padding: 0;
-      width: 75px !important;
-      height: 75px !important;
+      width: $image-size !important;
+      height: $image-size !important;
     }
   }
 
@@ -109,15 +112,14 @@ section#navigation {
     padding: 0;
     margin: 0;
     top:0;
-    opacity: 0.2;
     position: fixed;
     max-height: 0;
     bottom: 0;
     width: 100%;
+    overflow: hidden;
     transition: all .5s ease-in-out;
     &.open {
       visibility: visible;
-      opacity: 0.9;
       top: $nav-bar-height;
       max-height: 100vh;
     }
@@ -134,7 +136,7 @@ section#navigation {
 
     div.sub-menu{
       &.open {
-        max-height: 100px;
+        max-height: 500px !important;
       }
       overflow: hidden;
       max-height: 0;
@@ -152,8 +154,8 @@ section#navigation {
 
   img#logo {
     padding: 2%;
-    width: 75px;
-    height: 75px;
+    width: 100px;
+    height: 100px;
   }
 
   ul, ul.open  {
@@ -173,18 +175,20 @@ section#navigation {
       display: inline-flex !important;
     }
 
-  .sub-menu{
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: $nav-bar-height !important;
-    width: 100vw;
-    background-color: white;
+    div.sub-menu{
+      visibility: hidden;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      overflow: hidden;
+      max-height: 0;
+      transition: all .5s ease-in-out;
+      &.open {
+        visibility: visible;
+        background-color:white;
+      }
 
-  }
-
+    }
   }
 }
-
-
-
