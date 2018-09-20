@@ -12,6 +12,7 @@ import {ContactPage} from './pages/company/contact/contact.page';
 import {PageNotFoundPage} from './pages/page-not-found/page-not-found.page';
 import {OurCompanyComponent} from './pages/company/our-company/our-company.component';
 import { FooterComponent } from './components/footer/footer.component';
+import {ResponsiveService} from './services/responsive/responsive.service';
 
 
 @NgModule({
@@ -38,7 +39,7 @@ import { FooterComponent } from './components/footer/footer.component';
         ContactPage
     ],
 
-    providers: [],
+    providers: [ResponsiveService],
     bootstrap: [AppComponent]
 })
 export class AppModule {

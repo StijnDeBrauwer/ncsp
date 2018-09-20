@@ -1,32 +1,38 @@
-<section [ngClass]="{'open': navOpen}" id="navigation">
-    <a routerLink="/home"><img [ngClass]="{'open': navOpen}"  id="logo"
-                               src="../../../assets/images/logo.png"></a>
-    <div id="hamburger-menu" [ngClass]="{'open': navOpen}" (click)="toggle()">
-        <span></span>
-        <span></span>
-        <span></span>
+<section id="navigation-container" [ngClass]="{'open': navOpen}" (window:resize)="onResize($event)">
+    <div id="navigation">
+        <a routerLink="/home"><img [ngClass]="{'open': navOpen}" id="logo"
+                                   src="../../../assets/images/logo.png"></a>
+        <div id="hamburger-menu" [ngClass]="{'open': navOpen}" (click)="toggle()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <ul [ngClass]="{'open': navOpen}">
+            <li><a routerLink="/home" (click)="navigate()">HOME</a></li>
+            <li *ngFor="let link of links">
+                <a [routerLink]="link.path" (click)="toggleSubMenu(link)">{{ link.text }}</a>
+                <div *ngIf="isMobile" class="sub-menu" [ngClass]="{'open': subMenuOpen}">
+                    <p *ngFor="let child of link.children">
+                        <a [routerLink]="child.path" (click)="navigate()">{{child.text}}</a>
+                    </p>
+                </div>
+            </li>
+
+            <li><a routerLink="/approach" (click)="navigate()">OUR APPROCHES</a></li>
+            <li><a routerLink="/products" (click)="navigate()">OUR PRODUCTS</a></li>
+            <li><a routerLink="/services" (click)="navigate()">OUR SERVICES</a></li>
+        </ul>
     </div>
+    <div *ngIf="chosenLink && !isMobile" class="sub-menu-desktop" [ngClass]="{'open': subMenuOpen}">
+        <div class="sub-menu-desktop-description">
+            <p>Our Company</p>
+        </div>
 
-    <ul [ngClass]="{'open': navOpen}">
-
-        <li><a routerLink="/home" (click)="navigate()">HOME</a></li>
-
-        <li *ngFor="let link of links">
-            <a [routerLink]="link.path" (click)="toggleSubMenu()">{{ link.text }}</a>
-            <div *ngIf="isMobile()" class="sub-menu" [ngClass]="{'open': subMenuOpen}">
-                <p *ngFor="let child of link.children">
-                    <a [routerLink]="child.path" (click)="navigate()">{{child.text}}</a>
-                </p>
-            </div>
-        </li>
-
-        <li><a routerLink="/approach" (click)="navigate()">OUR APPROCHES</a></li>
-        <li><a routerLink="/products" (click)="navigate()">OUR PRODUCTS</a></li>
-        <li><a routerLink="/services" (click)="navigate()">OUR SERVICES</a></li>
-    </ul>
-    <div *ngIf="chosenLink && chosenLinkExists() && !isMobile()" class="sub-menu" [ngClass]="{'open': subMenuOpen}">
-        <p *ngFor="let child of chosenLink.children">
-            <a [routerLink]="child.path" (click)="navigate()">{{child.text}}</a>
-        </p>
+        <div  class="sub-menu-desktop-content">
+            <p *ngFor="let child of chosenLink.children">
+                <a [routerLink]="child.path" (click)="navigate()">{{child.text}}</a>
+            </p>
+        </div>
     </div>
 </section>

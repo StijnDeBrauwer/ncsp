@@ -4,19 +4,25 @@ $hamburger-width: 30px;
 $hamburger-height: 30px;
 $image-size: 100px;
 
-section#navigation {
+section#navigation-container{
+ position: fixed;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+div#navigation {
   display: flex;
   background-color: white;
   flex-direction: row;
+  width: 100%;
   align-items: center;
   justify-content: space-between;
-  position: fixed;
-  width: 100%;
-  height: auto !important;
 
   &.open {
     background-color: white !important;
-    height: auto !important;
   }
 
   span[class*="ion-ios-"]{
@@ -117,7 +123,7 @@ section#navigation {
     bottom: 0;
     width: 100%;
     overflow: hidden;
-    transition: all .5s ease-in-out;
+    transition: all .2s ease-in-out;
     &.open {
       visibility: visible;
       top: $nav-bar-height;
@@ -135,12 +141,12 @@ section#navigation {
     }
 
     div.sub-menu{
-      &.open {
-        max-height: 500px !important;
-      }
       overflow: hidden;
       max-height: 0;
       transition: max-height .5s ease-in-out;
+      &.open {
+        max-height: 500px !important;
+      }
 
     }
   }
@@ -174,21 +180,43 @@ section#navigation {
       visibility: visible !important;
       display: inline-flex !important;
     }
-
-    div.sub-menu{
-      visibility: hidden;
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      overflow: hidden;
-      max-height: 0;
-      transition: all .5s ease-in-out;
-      &.open {
-        visibility: visible;
-        background-color:white;
-      }
-
-    }
   }
+}
+
+div.sub-menu-desktop{
+  display:flex;
+  flex-direction: row;
+  overflow: hidden;
+  width: 100%;
+  background-color: white !important;
+  max-height: 0;
+  transition: all .5s ease-in-out;
+  -webkit-animation: none 0s;
+  &.open {
+    border: none;
+    max-height: 500px;
+    background-color:white;
+  }
+
+  *{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .sub-menu-desktop-description{
+    background-color: $main-color;
+    color:white;
+  }
+
+  .sub-menu-desktop-content{
+    flex:1;
+  }
+  a{
+    color: black;
+    text-decoration: none;
+  }
+
 }
