@@ -2,41 +2,40 @@
 
 $hamburger-width: 30px;
 $hamburger-height: 30px;
-$image-size: 100px;
+$image-size: 125px;
 
-section#navigation-container{
- position: fixed;
+section#navigation-container {
+  z-index: 100;
+  top: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-
 }
 
 div#navigation {
+  height: $nav-bar-height;
   display: flex;
-  background-color: white;
   flex-direction: row;
   width: 100%;
   align-items: center;
   justify-content: space-between;
+  box-shadow: 7px 7px 21px -5px rgba(0, 0, 0, 0.75);
 
   &.open {
     background-color: white !important;
   }
 
-  span[class*="ion-ios-"]{
+  span[class*="ion-ios-"] {
     padding: 0 5px;
   }
   img#logo {
     padding: 5%;
     width: $image-size;
-    height: $image-size;
-    &.open{
-      padding: 0;
-      width: $image-size !important;
-      height: $image-size !important;
-    }
+    height: 100px;
   }
 
   div#hamburger-menu {
@@ -113,37 +112,45 @@ div#navigation {
 
   ul {
     visibility: hidden;
-    background-color: white;
-    color: black;
     padding: 0;
     margin: 0;
-    top:0;
-    position: fixed;
+    top: $nav-bar-height;
     max-height: 0;
+    position: fixed;
+    right: 0;
     bottom: 0;
     width: 100%;
     overflow: hidden;
-    transition: all .2s ease-in-out;
+    transition: max-height .5s ease-in-out;
     &.open {
+      background-color: white;
+      opacity: .95;
       visibility: visible;
-      top: $nav-bar-height;
       max-height: 100vh;
     }
     li {
+      padding: 2em;
       text-align: center;
-      padding: 5% 10px;
       list-style: none;
+      cursor: pointer;
       a {
-        font-weight: bolder;
+        font-size: 1.2em;
         color: black;
+        font-weight: bold;
         text-decoration: none;
+
+        &.selected {
+          color: $main-color;
+          font-weight: bolder;
+        }
       }
     }
 
-    div.sub-menu{
+    div.sub-menu {
       overflow: hidden;
       max-height: 0;
-      transition: max-height .5s ease-in-out;
+      transition: max-height .5s ease-out;
+      font-size: 0.8em;
       &.open {
         max-height: 500px !important;
       }
@@ -154,69 +161,87 @@ div#navigation {
 
 @media (min-width: 768px) {
 
+  section#navigation-container{
+
+  }
   div#hamburger-menu {
     display: none;
   }
 
+  .selected {
+    color: $main-color !important;
+    border-bottom: 2px solid $main-color;
+    font-weight: bolder;
+  }
+
   img#logo {
-    padding: 2%;
+    margin-left: 1em;
     width: 100px;
     height: 100px;
   }
 
-  ul, ul.open  {
+  ul {
     visibility: visible !important;
-    background-color: transparent!important;
     top: auto !important;
     width: auto !important;
-    max-height:none !important;
+    max-height: none !important;
     display: inline-flex;
     justify-content: flex-end;
     position: relative !important;
-    color: black;
-    opacity: 1 !important;
 
-    &.open{
+    &.open {
       visibility: visible !important;
       display: inline-flex !important;
     }
-  }
-}
 
-div.sub-menu-desktop{
-  display:flex;
-  flex-direction: row;
-  overflow: hidden;
-  width: 100%;
-  background-color: white !important;
-  max-height: 0;
-  transition: all .5s ease-in-out;
-  -webkit-animation: none 0s;
-  &.open {
-    border: none;
-    max-height: 500px;
-    background-color:white;
+    li {
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 .1em;
+      font-weight: bolder !important;
+    }
   }
 
-  *{
-    flex: 1;
+  div.sub-menu-desktop {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+    flex-direction: row;
+    overflow: hidden;
+    width: 100%;
+    max-height: 0;
+    transition: max-height .5s ease-in;
+    box-shadow: 7px 7px 21px -5px rgba(0, 0, 0, 0.75);
+    &.open {
+      border: none;
+      max-height: 500px;
+      background-color: white;
+    }
 
-  .sub-menu-desktop-description{
-    background-color: $main-color;
-    color:white;
-  }
+    * {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
 
-  .sub-menu-desktop-content{
-    flex:1;
-  }
-  a{
-    color: black;
-    text-decoration: none;
+    .sub-menu-desktop-description {
+      background-color: $main-color;
+      color: white;
+    }
+
+    .sub-menu-desktop-content {
+      flex: 1;
+      background-color: white;
+    }
+    a {
+      color: black;
+      text-decoration: none;
+
+    }
+
   }
 
 }
+

@@ -1,15 +1,67 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, HostListener, OnInit, OnDestroy} from '@angular/core';
+import {ScrollDataService} from '../../services/scroll/scroll-data.service';
+import {ScrollModel} from '../../models/scroll.model';
+import {ResponsiveService} from '../../services/responsive/responsive.service';
 
 @Component({
-  selector: 'app-landing',
-  templateUrl: './landing.page.html',
-  styleUrls: ['./landing.page.scss']
+    selector: 'app-landing',
+    templateUrl: './landing.page.html',
+    styleUrls: ['./landing.page.scss']
 })
-export class LandingPage implements OnInit {
+export class LandingPage implements OnInit, OnDestroy {
 
-  constructor() { }
+    private scrollData: ScrollModel;
+    scrollDataSubject: any;
 
-  ngOnInit() {
-  }
+    isMobile: boolean;
+    navBarState = 'hide';
+    logoPath: string;
+
+
+    @HostListener('window:scroll', ['$event'])
+    checkScroll() {
+        const scrollPosition = window.pageYOffset;
+        if (this.isMobile || this.scrollData.subMenuOpen) {
+            this.scrollDataService.navBarState = 'show';
+            this.scrollDataService.logoPath = this.scrollDataService.logoShowPath;
+            return;
+        }
+
+        if (!this.scrollData.navOpen) {
+            if (75 > scrollPosition) {
+                this.scrollDataService.navBarState = 'hide';
+                this.scrollDataService.logoPath = this.scrollDataService.logoHidePath;
+            } else {
+                this.scrollDataService.navBarState = 'show';
+                this.scrollDataService.logoPath = this.scrollDataService.logoShowPath;
+            }
+        }
+    }
+
+    constructor(private scrollDataService: ScrollDataService, private responsiveService: ResponsiveService) {
+    }
+
+    ngOnInit() {
+        this.responsiveService.getMobileStatus().subscribe(isMobile => {
+            this.isMobile = isMobile;
+        });
+
+        this.scrollDataSubject = this.scrollDataService.scrollDataSubject.subscribe(scrollData => {
+            if (scrollData) {
+                this.scrollData = scrollData;
+                this.onResize();
+            }
+        });
+        this.checkScroll();
+    }
+
+    ngOnDestroy() {
+    }
+
+
+    onResize() {
+        this.responsiveService.checkWidth();
+        this.checkScroll();
+    }
 
 }

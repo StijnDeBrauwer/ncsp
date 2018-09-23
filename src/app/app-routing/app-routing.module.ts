@@ -7,7 +7,10 @@ import {BrowserModule} from '@angular/platform-browser';
 import {AboutUsPage} from '../pages/company/about-us/about-us.page';
 import {ContactPage} from '../pages/company/contact/contact.page';
 import {PageNotFoundPage} from '../pages/page-not-found/page-not-found.page';
-import {OurCompanyComponent} from '../pages/company/our-company/our-company.component';
+import {OurCompanyComponent} from '../pages/company/our-company.component';
+import {ApproachPage} from '../pages/approach/approach.page';
+import {ProceedComponent} from '../pages/approach/proceed/proceed.component';
+import {MissionComponent} from '../pages/approach/mission/mission.component';
 
 const routes: Routes = [
     {
@@ -18,6 +21,24 @@ const routes: Routes = [
     {
         path: 'home',
         component: LandingPage
+    },
+    {
+        path: 'company',
+        component: OurCompanyComponent,
+        children: [
+            {path: '', redirectTo: 'about', pathMatch: 'full'},
+            {path: 'about', component: AboutUsPage},
+            {path: 'contact', component: ContactPage}
+        ],
+    },
+    {
+        path: 'approach',
+        component: ApproachPage,
+        children: [
+            {path: '', redirectTo: 'approach', pathMatch: 'full'},
+            {path: 'mission', component: MissionComponent},
+            {path: 'proceed', component: ProceedComponent}
+        ],
     },
     // {
     //     path: 'company',

@@ -1,0 +1,22 @@
+@import "../../../assets/variables";
+
+section#company{
+  margin-top: $nav-bar-height;
+
+  .banner{
+    color: white;
+    height: auto;
+    min-height: 50vh;
+    background-size: cover !important;
+    background: url("../../../assets/images/people.jpg") center top;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    .content{
+      padding-left: 10%;
+    }
+  }
+
+}

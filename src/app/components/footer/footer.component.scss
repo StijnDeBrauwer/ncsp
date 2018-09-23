@@ -1,0 +1,21 @@
+@import "../../../assets/variables";
+
+footer{
+  font-size: 12px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: $footer-color;
+  justify-content: space-between;
+
+  img{
+    padding: 2%;
+  }
+
+  .footer-info{
+    flex-direction: column;
+    display: inline-flex;
+    justify-content: center;
+    padding: 20px;
+  }
+}

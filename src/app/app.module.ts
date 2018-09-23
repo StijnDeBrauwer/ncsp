@@ -10,9 +10,13 @@ import {AboutUsPage} from './pages/company/about-us/about-us.page';
 import {EventsPage} from './pages/company/events/events.page';
 import {ContactPage} from './pages/company/contact/contact.page';
 import {PageNotFoundPage} from './pages/page-not-found/page-not-found.page';
-import {OurCompanyComponent} from './pages/company/our-company/our-company.component';
-import { FooterComponent } from './components/footer/footer.component';
+import {OurCompanyComponent} from './pages/company/our-company.component';
+import {FooterComponent} from './components/footer/footer.component';
 import {ResponsiveService} from './services/responsive/responsive.service';
+import {ApproachPage} from './pages/approach/approach.page';
+import {MissionComponent} from './pages/approach/mission/mission.component';
+import {ProceedComponent} from './pages/approach/proceed/proceed.component';
+import {ScrollDataService} from './services/scroll/scroll-data.service';
 
 
 @NgModule({
@@ -25,7 +29,10 @@ import {ResponsiveService} from './services/responsive/responsive.service';
         ContactPage,
         PageNotFoundPage,
         OurCompanyComponent,
-        FooterComponent
+        FooterComponent,
+        ApproachPage,
+        MissionComponent,
+        ProceedComponent
     ],
     imports: [
         BrowserModule,
@@ -39,7 +46,7 @@ import {ResponsiveService} from './services/responsive/responsive.service';
         ContactPage
     ],
 
-    providers: [ResponsiveService],
+    providers: [ResponsiveService, ScrollDataService],
     bootstrap: [AppComponent]
 })
 export class AppModule {
