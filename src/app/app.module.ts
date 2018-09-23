@@ -12,11 +12,9 @@ import {ContactPage} from './pages/company/contact/contact.page';
 import {PageNotFoundPage} from './pages/page-not-found/page-not-found.page';
 import {OurCompanyComponent} from './pages/company/our-company.component';
 import {FooterComponent} from './components/footer/footer.component';
-import {ResponsiveService} from './services/responsive/responsive.service';
 import {ApproachPage} from './pages/approach/approach.page';
 import {MissionComponent} from './pages/approach/mission/mission.component';
 import {ProceedComponent} from './pages/approach/proceed/proceed.component';
-import {ScrollDataService} from './services/scroll/scroll-data.service';
 
 
 @NgModule({
@@ -46,7 +44,7 @@ import {ScrollDataService} from './services/scroll/scroll-data.service';
         ContactPage
     ],
 
-    providers: [ResponsiveService, ScrollDataService],
+    providers: [],
     bootstrap: [AppComponent]
 })
 export class AppModule {

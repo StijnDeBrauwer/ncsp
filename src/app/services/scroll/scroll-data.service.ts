@@ -2,7 +2,9 @@ import {Injectable} from '@angular/core';
 import {BehaviorSubject, Subject} from 'rxjs';
 import {ScrollModel} from '../../models/scroll.model';
 
-@Injectable()
+@Injectable( {
+    providedIn: 'root'
+})
 export class ScrollDataService {
 
     private _scrollData: ScrollModel;
