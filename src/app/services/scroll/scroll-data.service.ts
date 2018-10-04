@@ -10,8 +10,8 @@ export class ScrollDataService {
     private _scrollData: ScrollModel;
     private _navBarState: string;
 
-    readonly  logoShowPath = '../../../assets/images/logo.png';
-    readonly  logoHidePath = '../../../assets/images/logo_white.png';
+    readonly  logoShowPath = '../../../../assets/images/logo.png';
+    readonly  logoHidePath = '../../../../assets/images/logo_white.png';
 
     private _logoPath: string;
     scrollDataSubject: any;
@@ -22,7 +22,7 @@ export class ScrollDataService {
     constructor() {
         this._logoPath = this.logoShowPath;
 
-        this.scrollDataSubject = new BehaviorSubject<ScrollModel>(new ScrollModel(false, false));
+        this.scrollDataSubject = new BehaviorSubject<ScrollModel>(new ScrollModel(false));
         this.navBarStateSubject = new BehaviorSubject<String>(String());
         this.logoPathSubject = new BehaviorSubject<String>(String());
     }

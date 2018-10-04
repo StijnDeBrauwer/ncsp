@@ -1,0 +1,26 @@
+<section id="navigation-container" [ngClass]="{'open': navOpen}">
+  <div [ngClass]="{'open': navOpen}" id="navigation">
+    <a routerLink="/home"><img id="logo" [src] ="logoPath"></a>
+
+    <div id="hamburger-menu" [ngClass]="{'open': navOpen}" (click)="toggle()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <ul [ngClass]="{'open': navOpen}">
+      <li><a routerLink="/home" (click)="navigate()">Home</a></li>
+      <li *ngFor="let link of links">
+        <a [ngClass]="{'selected': (link === chosenLink) && subMenuOpen}" (click)="toggleSubMenu(link)">{{ link.text }}</a>
+        <div *ngIf="link === chosenLink" class="sub-menu" [ngClass]="{'open': subMenuOpen}">
+          <p *ngFor="let child of link.children">
+            <a [routerLink]="child.path" fragment="child.path" (click)="navigate()">{{child.text}}</a>
+          </p>
+        </div>
+      </li>
+      <!--<li><a routerLink="/approach" (click)="navigate()">Our Approach</a></li>-->
+      <li><a  routerLink="/products" (click)="navigate()">Our Products</a></li>
+      <li><a  routerLink="/services" (click)="navigate()">Our Services</a></li>
+    </ul>
+  </div>
+</section>

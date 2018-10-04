@@ -1,51 +1,53 @@
-import {BrowserModule} from '@angular/platform-browser';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {NgModule} from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgModule } from '@angular/core';
 
-import {AppComponent} from './app.component';
-import {AppRoutingModule} from './app-routing/app-routing.module';
-import {LandingPage} from './pages/landing/landing.page';
-import {NavigationComponent} from './components/navigation/navigation.component';
-import {AboutUsPage} from './pages/company/about-us/about-us.page';
-import {EventsPage} from './pages/company/events/events.page';
-import {ContactPage} from './pages/company/contact/contact.page';
-import {PageNotFoundPage} from './pages/page-not-found/page-not-found.page';
-import {OurCompanyComponent} from './pages/company/our-company.component';
-import {FooterComponent} from './components/footer/footer.component';
-import {ApproachPage} from './pages/approach/approach.page';
-import {MissionComponent} from './pages/approach/mission/mission.component';
-import {ProceedComponent} from './pages/approach/proceed/proceed.component';
+import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing/app-routing.module';
+import { LandingPage } from './pages/landing/landing.page';
+import { MobileNavigationComponent } from './components/navigation/mobile-navigation/mobile-navigation.component';
+import { AboutUsPage } from './pages/company/about-us/about-us.page';
+import { EventsPage } from './pages/company/events/events.page';
+import { ContactPage } from './pages/company/contact/contact.page';
+import { PageNotFoundPage } from './pages/page-not-found/page-not-found.page';
+import { OurCompanyComponent } from './pages/company/our-company.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { ApproachPage } from './pages/approach/approach.page';
+import { MissionComponent } from './pages/approach/mission/mission.component';
+import { ProceedComponent } from './pages/approach/proceed/proceed.component';
+import { DesktopNavbarComponent } from './components/navigation/desktop-navbar/desktop-navbar.component';
 
 
 @NgModule({
-    declarations: [
-        AppComponent,
-        LandingPage,
-        NavigationComponent,
-        AboutUsPage,
-        EventsPage,
-        ContactPage,
-        PageNotFoundPage,
-        OurCompanyComponent,
-        FooterComponent,
-        ApproachPage,
-        MissionComponent,
-        ProceedComponent
-    ],
-    imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        AppRoutingModule
-    ],
-    entryComponents: [
-        LandingPage,
-        AboutUsPage,
-        EventsPage,
-        ContactPage
-    ],
+  declarations: [
+    AppComponent,
+    LandingPage,
+    MobileNavigationComponent,
+    AboutUsPage,
+    EventsPage,
+    ContactPage,
+    PageNotFoundPage,
+    OurCompanyComponent,
+    FooterComponent,
+    ApproachPage,
+    MissionComponent,
+    ProceedComponent,
+    DesktopNavbarComponent
+  ],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    AppRoutingModule
+  ],
+  entryComponents: [
+    LandingPage,
+    AboutUsPage,
+    EventsPage,
+    ContactPage
+  ],
 
-    providers: [],
-    bootstrap: [AppComponent]
+  providers: [],
+  bootstrap: [AppComponent]
 })
 export class AppModule {
 }
