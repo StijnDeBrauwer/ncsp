@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import {HttpClientModule, HttpClient} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
@@ -17,6 +20,12 @@ import { MissionComponent } from './pages/approach/mission/mission.component';
 import { ProceedComponent } from './pages/approach/proceed/proceed.component';
 import { DesktopNavbarComponent } from './components/navigation/desktop-navbar/desktop-navbar.component';
 
+
+
+// AoT requires an exported function for factories
+export function HttpLoaderFactory(http: HttpClient) {
+    return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   declarations: [
@@ -37,7 +46,15 @@ import { DesktopNavbarComponent } from './components/navigation/desktop-navbar/d
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+           loader: {
+               provide: TranslateLoader,
+               useFactory: HttpLoaderFactory,
+               deps: [HttpClient]
+           }
+       })
   ],
   entryComponents: [
     LandingPage,

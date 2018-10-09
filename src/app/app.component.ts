@@ -1,5 +1,6 @@
 import { Component, OnInit, HostListener, AfterViewInit, OnDestroy } from '@angular/core';
 import { ResponsiveService } from './services/responsive/responsive.service';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -17,12 +18,15 @@ export class AppComponent implements OnInit, OnDestroy {
   private _responsiveSubscription: any;
   isMobile: boolean;
 
-  constructor(private responsiveService: ResponsiveService) {
-
+  constructor(private responsiveService: ResponsiveService, translate: TranslateService) {
     this._responsiveSubscription = this.responsiveService.getMobileStatus().subscribe(isMobile => {
       this.isMobile = isMobile;
     });
     this.onResize();
+
+    translate.setDefaultLang('en');
+    translate.use('en');
+
   }
 
   ngOnInit() {
