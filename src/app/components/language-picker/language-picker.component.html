@@ -1,0 +1,8 @@
+
+<mat-form-field [ngClass]="{'transparent': isTransparent}">
+    <mat-icon> language</mat-icon> <mat-select [ngClass]="{'transparent': isTransparent}" [ngModel]="selectedLanguage" (ngModelChange)="changeLanguage($event)">
+        <mat-option class="option" *ngFor="let language of languages" [value]="language">
+            {{language}}
+        </mat-option>
+    </mat-select>
+</mat-form-field>

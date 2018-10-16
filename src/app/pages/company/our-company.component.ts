@@ -1,7 +1,7 @@
 import { Component, OnInit, OnChanges, SimpleChanges, ElementRef, ViewChild } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
-import { AboutUsPage } from './about-us/about-us.page';
-import { ContactPage } from './contact/contact.page';
+import { AboutUsPage } from './our-vision-section/about-us.page';
+import { ContactPage } from './our-contact-page/our-contact-page.page';
 
 import { ActivatedRoute } from '@angular/router';
 
@@ -46,7 +46,7 @@ export class OurCompanyComponent implements OnInit {
         } catch (err) { }
         break;
       }
-      case "/company/contact": {
+      case "/company/our-contact-page": {
         try {
           this.scrollToContact();
         } catch (err) { }

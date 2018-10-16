@@ -12,6 +12,7 @@
       </li>
       <li><a  routerLink="/products" (click)="navigate()">Our Products</a></li>
       <li><a  routerLink="/services" (click)="navigate()">Our Services</a></li>
+      <li> <app-language-picker [isTransparent]="navbarState === 'hide'"> </app-language-picker></li>
     </ul>
   </div>
 

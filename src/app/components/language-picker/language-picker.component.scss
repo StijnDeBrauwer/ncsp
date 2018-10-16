@@ -1,0 +1,63 @@
+@import "../../../assets/variables";
+
+::ng-deep .mat-form-field-underline {
+  display: none;
+}
+
+.option {
+  text-align-last: center;
+  height: 68px;
+  padding: 0;
+}
+
+::ng-deep .mat-select-value-text {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  font-size: $font-size-medium;
+  text-align: center;
+
+}
+
+::ng-deep .mat-select {
+  text-align: unset !important;
+  color: inherit !important;
+}
+
+::ng-deep .mat-select-value{
+  color: inherit;
+}
+
+::ng-deep .mat-form-field-infix {
+  padding: 0 !important;
+  border-top: unset !important;
+  display: flex !important;
+  flex-direction: row!important;
+}
+
+::ng-deep .mat-form-field{
+  color: unset !important;
+  flex-direction: row !important;
+  text-align: unset !important;
+  padding: 0 !important;
+  line-height: unset !important;
+  *{
+    padding: 0 !important;
+  }
+
+  ::ng-deep .mat-select-arrow-wrapper{
+    visibility: hidden;
+  }
+}
+
+mat-form-field{
+  color: black !important;
+  border-left: 3px solid black !important;
+  &.transparent {
+    border-left: 3px solid white !important;
+    color: white !important;
+  }
+
+  mat-icon{
+    padding: 0 10px !important;
+  }
+}

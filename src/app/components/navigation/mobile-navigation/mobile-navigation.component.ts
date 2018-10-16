@@ -34,11 +34,12 @@ export class MobileNavigationComponent implements OnInit, OnDestroy {
     this.links.push(
       new LinkModel('Our Company', undefined, [
         { text: 'About Us', path: 'company/about' },
-        { text: 'Contact Us', path: 'company/contact' },]
+        { text: 'Contact Us', path: 'company/our-contact-page' },], "business_center"
       ),
       new LinkModel('Our Approach', undefined, [
-        { text: 'Our Mission', path: 'approach/mission' },
-        { text: 'How do we proceed?', path: 'approach/proceeds' },]
+        { text: 'Our Mission', path: 'our-approach-section/mission' },
+        { text: 'How do we proceed?', path: 'our-approach-section/proceeds' },],
+          "visibility"
       )
     );
   }

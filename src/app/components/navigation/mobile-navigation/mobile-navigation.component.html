@@ -8,6 +8,37 @@
       <span></span>
     </div>
 
+    <table [ngClass]="{'open': navOpen}">
+      <tr>
+        <td>
+         <mat-icon>home</mat-icon>
+        </td>
+
+        <td>
+          <a routerLink="/home" (click)="navigate()">Home</a>
+        </td>
+
+      </tr>
+
+      <tr>
+
+      </tr>
+      <tr *ngFor="let link of links">
+        <td>
+          <mat-icon>{{link.materialLogoName}}</mat-icon>
+        </td>
+        <td>
+          <a [ngClass]="{'selected': (link === chosenLink) && subMenuOpen}" (click)="toggleSubMenu(link)">{{ link.text }}</a>
+          <div *ngIf="link === chosenLink" class="sub-menu" [ngClass]="{'open': subMenuOpen}">
+            <p *ngFor="let child of link.children">
+              <a [routerLink]="child.path" fragment="child.path" (click)="navigate()">{{child.text}}</a>
+            </p>
+          </div>
+        </td>
+      </tr>
+    </table>
+
+    <!--
     <ul [ngClass]="{'open': navOpen}">
       <li><a routerLink="/home" (click)="navigate()">Home</a></li>
       <li *ngFor="let link of links">
@@ -18,9 +49,9 @@
           </p>
         </div>
       </li>
-      <!--<li><a routerLink="/approach" (click)="navigate()">Our Approach</a></li>-->
-      <li><a  routerLink="/products" (click)="navigate()">Our Products</a></li>
+      <!--<li><a routerLink="/our-approach-section" (click)="navigate()">Our Approach</a></li>-->
+     <!-- <li><a  routerLink="/products" (click)="navigate()">Our Products</a></li>
       <li><a  routerLink="/services" (click)="navigate()">Our Services</a></li>
-    </ul>
+    </ul>-->
   </div>
 </section>

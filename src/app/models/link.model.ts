@@ -2,16 +2,31 @@ export class LinkModel {
 
     private _text: string;
     private _path: string;
+    private _materialLogoName: string;
     private _children;
 
-    constructor(text: string, path: string, children) {
+    constructor(text: string, path?: string, children?: Array<LinkModel>, materialLogoName?: string) {
         this._text = text;
-        this._path = path;
-        this._children = children;
+
+        if (materialLogoName) {
+            this._materialLogoName = materialLogoName;
+        }
+        if(path){
+            this._path = path;
+        }
+
+        if(children){
+            this._children = children;
+        }
+
     }
 
     get text() {
         return this._text;
+    }
+
+    get materialLogoName() {
+        return this._materialLogoName ? this._materialLogoName : '';
     }
 
     get path() {
@@ -24,6 +39,10 @@ export class LinkModel {
 
     set text(text) {
         this._text = text;
+    }
+
+    set materialLogoName(materialLogoName: string) {
+        this._materialLogoName = materialLogoName;
     }
 
     set path(path) {

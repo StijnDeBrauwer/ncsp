@@ -85,17 +85,30 @@ export class DesktopNavbarComponent implements OnInit {
   }
 
   initRoutes() {
-    this.links.push(
-
-      new LinkModel('Our Company', undefined, [
-        { text: 'About Us', path: 'company/about' },
-        { text: 'Contact Us', path: 'company/contact' },]
-      ),
-      new LinkModel('Our Approach', undefined, [
-        { text: 'Our Mission', path: 'approach/mission' },
-        { text: 'How do we proceed?', path: 'approach/proceeds' },]
-      )
-    );
+    this.links = [
+        new LinkModel("Home", 'home', null, "home"),
+        new LinkModel('Our Company', undefined,
+            [
+                new LinkModel("Our vision", 'company/vision', undefined, "visibility"),
+                new LinkModel("Who we are", 'company/who-we-are', undefined, "supervisor_account"),
+                new LinkModel("Our approach", "company/approach", undefined,"timeline")
+            ],
+            "business"),
+        new LinkModel("Our products","products", undefined, "build"),
+        new LinkModel("Our solutions", "solutions", undefined, "settings_input_component"),
+        new LinkModel("Contact", "contact", undefined, "alternate_email")
+    ]
+    // this.links.push(
+    //
+    //   new LinkModel('Our Company', undefined, [
+    //     { text: 'About Us', path: 'company/about' },
+    //     { text: 'Contact Us', path: 'company/our-contact-page' },]
+    //   ),
+    //   new LinkModel('Our Approach', undefined, [
+    //     { text: 'Our Mission', path: 'our-approach-section/mission' },
+    //     { text: 'How do we proceed?', path: 'our-approach-section/proceeds' },]
+    //   )
+    // );
   }
 
   changeSelectDataModel() {
