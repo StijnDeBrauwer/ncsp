@@ -21,13 +21,9 @@ export class LanguagePickerComponent implements OnInit {
     }
 
     changeLanguage(language: Language) {
-        console.log(`set language to ${language.key}`);
-        //this.translateService.setDefaultLang(language.key);
         this.translateService.use(language.key);
+        this.translateService.setDefaultLang(language.key);
         this.selectedLanguage = language;
-
-        console.log(this.translateService.getDefaultLang());
-
     }
 
 

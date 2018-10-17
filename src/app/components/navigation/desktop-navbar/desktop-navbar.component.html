@@ -1,27 +1,29 @@
 <section id="desktop-navigation">
-  <div [@scroll]="navbarState" id="navigation">
-    <a routerLink="/home"><img id="logo" [src]="logoPath"></a>
-    <ul>
-      <li><a routerLink="/home" (click)="navigate()">Home</a></li>
-      <li *ngFor="let link of links">
-        <a *ngIf="link.path" [routerLink]="link.path"> {{link.text}} </a>
-          <a *ngIf="link.children" [ngClass]="{'selected': (link === chosenLink) && subMenuOpen}" (click)="toggleSubMenu(link)"> {{link.text}} </a>
-      </li>
-      <li>
-        <app-language-picker [isTransparent]="navbarState === 'hide'"> </app-language-picker>
-      </li>
-    </ul>
-  </div>
-
-  <div *ngIf="chosenLink && !chosenLink.path && chosenLink.children" class="sub-menu-desktop" [ngClass]="{'open': subMenuOpen}">
-    <div class="sub-menu-desktop-description">
-      <p>{{chosenLink.text}}</p>
+    <div [@scroll]="navbarState" id="navigation">
+        <a routerLink="/home"><img id="logo" [src]="logoPath"></a>
+        <ul>
+            <li><a routerLink="/home" (click)="navigate()">Home</a></li>
+            <li *ngFor="let link of links">
+                <a *ngIf="link.path" [routerLink]="link.path"> {{link.text}} </a>
+                <a *ngIf="link.children" [ngClass]="{'selected': (link === chosenLink) && subMenuOpen}"
+                   (click)="toggleSubMenu(link)"> {{link.text}} </a>
+            </li>
+            <li>
+                <app-language-picker [isTransparent]="navbarState === 'hide'"></app-language-picker>
+            </li>
+        </ul>
     </div>
 
-    <div class="sub-menu-desktop-content">
-      <p *ngFor="let child of chosenLink.children">
-        <a [routerLink]="child.path" (click)="navigate()">{{child.text}}</a>
-      </p>
+    <div *ngIf="chosenLink && !chosenLink.path && chosenLink.children" class="sub-menu-desktop"
+         [ngClass]="{'open': subMenuOpen}">
+        <div class="sub-menu-desktop-description">
+            <p>{{chosenLink.text}}</p>
+        </div>
+
+        <div class="sub-menu-desktop-content">
+            <p *ngFor="let child of chosenLink.children">
+                <a [routerLink]="child.path" (click)="navigate()">{{child.text}}</a>
+            </p>
+        </div>
     </div>
-  </div>
 </section>

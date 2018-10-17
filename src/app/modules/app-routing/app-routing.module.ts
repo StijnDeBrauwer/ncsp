@@ -4,11 +4,11 @@ import {RouterModule, Routes} from '@angular/router';
 import {LandingPage} from '../../pages/landing/landing.page';
 import {BrowserModule} from '@angular/platform-browser';
 import {PageNotFoundPage} from '../../pages/page-not-found/page-not-found.page';
-import {OurCompanyComponent} from '../../pages/company/our-company.component';
+import {OurCompanyPage} from '../../pages/company/our-company.component';
 import {MaterialModule} from '../material-module/material-module.module';
-import {OurProductPageComponent} from '../../pages/our-product-page/our-product-page.component';
-import {OurSolutionsPageComponent} from '../../pages/our-solutions-page/our-solutions-page.component';
-import {OurNewsPageComponent} from '../../pages/our-news-page/our-news-page.component';
+import {OurProductPage} from '../../pages/our-product-page/our-product-page.component';
+import {OurSolutionsPage} from '../../pages/our-solutions-page/our-solutions-page.component';
+import {OurNewsPage} from '../../pages/our-news-page/our-news-page.component';
 import {ContactPage} from '../../pages/our-contact-page/contact.page';
 
 const routes: Routes = [
@@ -25,27 +25,27 @@ const routes: Routes = [
     },
     {
         path: 'company',
-        component: OurCompanyComponent,
+        component: OurCompanyPage,
         children: [
             {path: '', redirectTo: 'about', pathMatch: 'full'},
-            {path: 'about', component: OurCompanyComponent},
-            {path: 'who-we-are', component: OurCompanyComponent},
-            {path: 'approach', component: OurCompanyComponent},
+            {path: 'vision', component: OurCompanyPage},
+            {path: 'who-we-are', component: OurCompanyPage},
+            {path: 'approach', component: OurCompanyPage},
 
         ],
     },
     {
         path: 'products',
-        component: OurProductPageComponent,
+        component: OurProductPage,
     },
 
     {
         path: 'solutions',
-        component: OurSolutionsPageComponent
+        component: OurSolutionsPage
     },
     {
       path: 'news',
-      component: OurNewsPageComponent
+      component: OurNewsPage
     },
     {
         path: 'contact',
@@ -56,7 +56,7 @@ const routes: Routes = [
     //     component: OurCompanyComponent,
     //     children: [
     //         { path: '', redirectTo: 'company', pathMatch: 'full' },
-    //         { path: 'about', component: AboutUsPage },
+    //         { path: 'about', component: OurVisionPage },
     //         { path: 'our-contact-page', component: ContactPage }
     //     ]
     // },

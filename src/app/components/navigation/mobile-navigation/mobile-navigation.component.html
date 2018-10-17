@@ -1,57 +1,32 @@
 <section id="navigation-container" [ngClass]="{'open': navOpen}">
-  <div [ngClass]="{'open': navOpen}" id="navigation">
-    <a routerLink="/home"><img id="logo" [src] ="logoPath"></a>
+    <div [ngClass]="{'open': navOpen}" id="navigation">
+        <a routerLink="/home"><img id="logo" [src]="logoPath"></a>
 
-    <div id="hamburger-menu" [ngClass]="{'open': navOpen}" (click)="toggle()">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-
-    <table [ngClass]="{'open': navOpen}">
-      <tr>
-        <td>
-         <mat-icon>home</mat-icon>
-        </td>
-
-        <td>
-            <a routerLink="/home" (click)="navigate()">Home</a>
-        </td>
-
-      </tr>
-
-      <tr>
-
-      </tr>
-      <tr *ngFor="let link of links">
-        <td>
-          <mat-icon>{{link.materialLogoName}}</mat-icon>
-        </td>
-        <td>
-          <a [ngClass]="{'selected': (link === chosenLink) && subMenuOpen}" (click)="toggleSubMenu(link)">{{ link.text }}</a>
-          <div *ngIf="link === chosenLink" class="sub-menu" [ngClass]="{'open': subMenuOpen}">
-            <p *ngFor="let child of link.children">
-              <a [routerLink]="child.path" fragment="child.path" (click)="navigate()">{{child.text}}</a>
-            </p>
-          </div>
-        </td>
-      </tr>
-    </table>
-
-    <!--
-    <ul [ngClass]="{'open': navOpen}">
-      <li><a routerLink="/home" (click)="navigate()">Home</a></li>
-      <li *ngFor="let link of links">
-        <a [ngClass]="{'selected': (link === chosenLink) && subMenuOpen}" (click)="toggleSubMenu(link)">{{ link.text }}</a>
-        <div *ngIf="link === chosenLink" class="sub-menu" [ngClass]="{'open': subMenuOpen}">
-          <p *ngFor="let child of link.children">
-            <a [routerLink]="child.path" fragment="child.path" (click)="navigate()">{{child.text}}</a>
-          </p>
+        <div id="hamburger-menu" [ngClass]="{'open': navOpen}" (click)="toggle()">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
-      </li>
-      <!--<li><a routerLink="/our-approach-section" (click)="navigate()">Our Approach</a></li>-->
-     <!-- <li><a  routerLink="/products" (click)="navigate()">Our Products</a></li>
-      <li><a  routerLink="/services" (click)="navigate()">Our Services</a></li>
-    </ul>-->
-  </div>
+
+
+        <ul  [ngClass]="{'open': navOpen}">
+            <li>
+                <a routerLink="/home" (click)="navigate()">Home</a>
+            </li>
+
+            <li *ngFor="let link of links">
+                <a *ngIf="link.path" [routerLink]="link.path" (click)="navigate()"> {{link.text}} </a>
+                <a *ngIf="link.children" [ngClass]="{'selected': (link === chosenLink) && subMenuOpen}"
+                   (click)="toggleSubMenu(link)"> {{link.text}} </a>
+                <div *ngIf="link === chosenLink" class="sub-menu" [ngClass]="{'open': subMenuOpen}">
+                    <p *ngFor="let child of link.children">
+                        <a [routerLink]="child.path" fragment="child.path" (click)="navigate()">{{child.text}}</a>
+                    </p>
+                </div>
+            </li>
+
+            <li id="language"><a [ngClass]="{'selected': currentLanguage === 'en'}" (click)="changeTranslation('en')" >ENG</a> | <a [ngClass]="{'selected': currentLanguage === 'fr'}"  (click)="changeTranslation('fr')">FR</a></li>
+        </ul>
+
+    </div>
 </section>

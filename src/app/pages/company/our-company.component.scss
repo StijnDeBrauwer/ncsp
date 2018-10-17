@@ -6,12 +6,12 @@ section#company{
   .banner{
     color: white;
     height: auto;
-    min-height: 50vh;
+    min-height: 75vh;
     background-size: cover !important;
     background: url("../../../assets/images/people.jpg") center top;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: flex-start;
 
     .content{
