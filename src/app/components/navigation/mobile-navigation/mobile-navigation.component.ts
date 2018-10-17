@@ -1,10 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { animate, state, style, transition, trigger } from '@angular/animations';
 import { LinkModel } from '../../../models/link.model';
-import { ScrollDataService } from '../../../services/scroll/scroll-data.service';
-import { ScrollModel } from '../../../models/scroll.model';
-import { ResponsiveService } from '../../../services/responsive/responsive.service';
-import { Router, NavigationEnd } from '@angular/router';
+import { routes } from 'src/app/modules/router-paths';
 
 
 @Component({
@@ -31,17 +27,7 @@ export class MobileNavigationComponent implements OnInit, OnDestroy {
 
   }
   initRoutes() {
-    this.links.push(
-      new LinkModel('Our Company', undefined, [
-        { text: 'About Us', path: 'company/about' },
-        { text: 'Contact Us', path: 'company/our-contact-page' },], "business_center"
-      ),
-      new LinkModel('Our Approach', undefined, [
-        { text: 'Our Mission', path: 'our-approach-section/mission' },
-        { text: 'How do we proceed?', path: 'our-approach-section/proceeds' },],
-          "visibility"
-      )
-    );
+    this.links = routes;
   }
 
   navigate() {

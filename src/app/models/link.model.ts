@@ -11,11 +11,11 @@ export class LinkModel {
         if (materialLogoName) {
             this._materialLogoName = materialLogoName;
         }
-        if(path){
+        if (path) {
             this._path = path;
         }
 
-        if(children){
+        if (children) {
             this._children = children;
         }
 

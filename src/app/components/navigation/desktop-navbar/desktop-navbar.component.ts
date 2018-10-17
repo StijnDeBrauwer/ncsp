@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { LinkModel } from '../../../models/link.model';
 import { ScrollDataService } from '../../../services/scroll/scroll-data.service';
 import { ScrollModel } from '../../../models/scroll.model';
 import { ResponsiveService } from '../../../services/responsive/responsive.service';
 import { Router, NavigationEnd } from '@angular/router';
+import { routes } from 'src/app/modules/router-paths';
 
 @Component({
   selector: 'app-desktop-navbar',
@@ -20,7 +21,7 @@ import { Router, NavigationEnd } from '@angular/router';
   ]
 })
 
-export class DesktopNavbarComponent implements OnInit {
+export class DesktopNavbarComponent implements OnInit, OnDestroy {
   subMenuOpen = false;
   prevLink: LinkModel;
   chosenLink: LinkModel;
@@ -85,30 +86,7 @@ export class DesktopNavbarComponent implements OnInit {
   }
 
   initRoutes() {
-    this.links = [
-        new LinkModel("Home", 'home', null, "home"),
-        new LinkModel('Our Company', undefined,
-            [
-                new LinkModel("Our vision", 'company/vision', undefined, "visibility"),
-                new LinkModel("Who we are", 'company/who-we-are', undefined, "supervisor_account"),
-                new LinkModel("Our approach", "company/approach", undefined,"timeline")
-            ],
-            "business"),
-        new LinkModel("Our products","products", undefined, "build"),
-        new LinkModel("Our solutions", "solutions", undefined, "settings_input_component"),
-        new LinkModel("Contact", "contact", undefined, "alternate_email")
-    ]
-    // this.links.push(
-    //
-    //   new LinkModel('Our Company', undefined, [
-    //     { text: 'About Us', path: 'company/about' },
-    //     { text: 'Contact Us', path: 'company/our-contact-page' },]
-    //   ),
-    //   new LinkModel('Our Approach', undefined, [
-    //     { text: 'Our Mission', path: 'our-approach-section/mission' },
-    //     { text: 'How do we proceed?', path: 'our-approach-section/proceeds' },]
-    //   )
-    // );
+    this.links = routes;
   }
 
   changeSelectDataModel() {
@@ -121,7 +99,7 @@ export class DesktopNavbarComponent implements OnInit {
   }
 
   toggleSubMenu(link) {
-    if (!this.prevLink || this.prevLink === link) {
+    if (!this.prevLink || this.prevLink === link && !link.path && link.children) {
       this.subMenuOpen = !this.subMenuOpen;
     }
     this.navbarState = 'show';

@@ -1,9 +1,6 @@
-import { Component, OnInit, OnChanges, SimpleChanges, ElementRef, ViewChild } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
-import { AboutUsPage } from './our-vision-section/about-us.page';
-import { ContactPage } from './our-contact-page/our-contact-page.page';
+import { Component, OnInit, AfterViewInit, SimpleChanges, ElementRef, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 
-import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -11,7 +8,7 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './our-company.component.html',
   styleUrls: ['./our-company.component.scss']
 })
-export class OurCompanyComponent implements OnInit {
+export class OurCompanyComponent implements OnInit, AfterViewInit {
 
   @ViewChild('about', { read: ElementRef }) public about: ElementRef;
   @ViewChild('contact', { read: ElementRef }) public contact: ElementRef;
@@ -19,16 +16,11 @@ export class OurCompanyComponent implements OnInit {
   constructor(private route: Router) {
 
   }
-  ngOnInit() {
-
-
-  }
+  ngOnInit() {}
 
   ngAfterViewInit(): void {
     this.scrollToElement(this.route.url);
   }
-
-
 
   public scrollToAbout(): void {
     this.about.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'start' });
@@ -37,16 +29,15 @@ export class OurCompanyComponent implements OnInit {
       this.contact.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'start' });
   }
   scrollToElement(child) {
-    console.log(child);
     switch (child) {
-      case "/company/about": {
+      case '/company/about': {
         console.log(`scroll to about`);
         try {
           this.scrollToAbout()
-        } catch (err) { }
+        } catch (err) {}
         break;
       }
-      case "/company/our-contact-page": {
+      case '/company/our-contact-page': {
         try {
           this.scrollToContact();
         } catch (err) { }

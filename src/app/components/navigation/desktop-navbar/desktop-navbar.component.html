@@ -1,22 +1,19 @@
 <section id="desktop-navigation">
   <div [@scroll]="navbarState" id="navigation">
-    <a routerLink="/home"><img id="logo" [src] ="logoPath"></a>
-
+    <a routerLink="/home"><img id="logo" [src]="logoPath"></a>
     <ul>
-      <li><a  routerLink="/home" (click)="navigate()">Home</a></li>
+      <li><a routerLink="/home" (click)="navigate()">Home</a></li>
       <li *ngFor="let link of links">
-        <a
-        [ngClass]="{'selected': (link === chosenLink) && subMenuOpen}"
-        (click)="toggleSubMenu(link)">{{ link.text }}
-        </a>
+        <a *ngIf="link.path" [routerLink]="link.path"> {{link.text}} </a>
+          <a *ngIf="link.children" [ngClass]="{'selected': (link === chosenLink) && subMenuOpen}" (click)="toggleSubMenu(link)"> {{link.text}} </a>
       </li>
-      <li><a  routerLink="/products" (click)="navigate()">Our Products</a></li>
-      <li><a  routerLink="/services" (click)="navigate()">Our Services</a></li>
-      <li> <app-language-picker [isTransparent]="navbarState === 'hide'"> </app-language-picker></li>
+      <li>
+        <app-language-picker [isTransparent]="navbarState === 'hide'"> </app-language-picker>
+      </li>
     </ul>
   </div>
 
-  <div  *ngIf="chosenLink" class="sub-menu-desktop" [ngClass]="{'open': subMenuOpen}">
+  <div *ngIf="chosenLink && !chosenLink.path && chosenLink.children" class="sub-menu-desktop" [ngClass]="{'open': subMenuOpen}">
     <div class="sub-menu-desktop-description">
       <p>{{chosenLink.text}}</p>
     </div>
