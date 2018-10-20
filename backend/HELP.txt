@@ -1,0 +1,16 @@
+1. Install AutoMigration
+    - https://www.npmjs.com/package/sequelize-auto-migrations: 'npm install sequelize-auto-migrations --save'
+    - npm install if already in package.json
+2. Create model 
+    - By command: 'sequelize model:create --name MODELNAME --attributes ATTRIBUTE_NAME:string'
+    - Manually: create .js file
+3. AutoMigration
+    - 'node ./node_modules/sequelize-auto-migrations/bin/makemigration --name MIGRATION_NAME'
+
+
+Changes?
+    - Make changes to model.js
+    - Execute AutoMigration command
+
+Build database?
+    - Execute 'sequelize db:migrate' command
