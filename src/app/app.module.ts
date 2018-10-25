@@ -26,7 +26,7 @@ import { NewsitemComponent } from './components/newsitem/newsitem.component';
 import {ContactPage} from './pages/our-contact-page/contact.page';
 import {ApproachPage} from './pages/company/our-approach-section/approach.page';
 import {ScrollDataService} from './services/scroll/scroll-data.service';
-import {ResponsiveService} from './services/responsive/responsive.service';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 
 // AoT requires an exported function for factories
@@ -76,7 +76,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         WhoWeArePage,
         ContactPage
     ],
-
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
     providers: [ ScrollDataService],
     bootstrap: [AppComponent]
 })

@@ -44,8 +44,8 @@ const routes: Routes = [
         component: OurSolutionsPage
     },
     {
-      path: 'news',
-      component: OurNewsPage
+        path: 'news',
+        component: OurNewsPage
     },
     {
         path: 'contact',
