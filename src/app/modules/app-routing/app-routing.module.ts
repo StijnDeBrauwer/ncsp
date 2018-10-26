@@ -6,10 +6,10 @@ import {BrowserModule} from '@angular/platform-browser';
 import {PageNotFoundPage} from '../../pages/page-not-found/page-not-found.page';
 import {OurCompanyPage} from '../../pages/company/our-company.component';
 import {MaterialModule} from '../material-module/material-module.module';
-import {OurProductPage} from '../../pages/our-product-page/our-product-page.component';
-import {OurSolutionsPage} from '../../pages/our-solutions-page/our-solutions-page.component';
-import {OurNewsPage} from '../../pages/our-news-page/our-news-page.component';
-import {ContactPage} from '../../pages/our-contact-page/contact.page';
+import {OurProductPage} from '../../pages/products/our-product-page.component';
+import {OurSolutionsPage} from '../../pages/solutions/our-solutions-page.component';
+import {OurNewsPage} from '../../pages/news/our-news-page.component';
+import {ContactPage} from '../../pages/contact/contact.page';
 
 const routes: Routes = [
     {
@@ -57,7 +57,7 @@ const routes: Routes = [
     //     children: [
     //         { path: '', redirectTo: 'company', pathMatch: 'full' },
     //         { path: 'about', component: OurVisionPage },
-    //         { path: 'our-contact-page', component: ContactPage }
+    //         { path: 'contact', component: ContactPage }
     //     ]
     // },
     {

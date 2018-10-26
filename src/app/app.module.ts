@@ -1,10 +1,10 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {APP_INITIALIZER, NgModule} from '@angular/core';
+import {NgModule} from '@angular/core';
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HttpClientModule, HttpClient} from '@angular/common/http';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 
 import {AppComponent} from './app.component';
@@ -19,14 +19,14 @@ import {FooterComponent} from './components/footer/footer.component';
 import {DesktopNavbarComponent} from './components/navigation/desktop-navbar/desktop-navbar.component';
 import {LanguagePickerComponent} from './components/language-picker/language-picker.component';
 import {MaterialModule} from './modules/material-module/material-module.module';
-import { OurProductPage } from './pages/our-product-page/our-product-page.component';
-import { OurSolutionsPage } from './pages/our-solutions-page/our-solutions-page.component';
-import { OurNewsPage } from './pages/our-news-page/our-news-page.component';
-import { NewsitemComponent } from './components/newsitem/newsitem.component';
-import {ContactPage} from './pages/our-contact-page/contact.page';
+import {OurProductPage} from './pages/products/our-product-page.component';
+import {OurSolutionsPage} from './pages/solutions/our-solutions-page.component';
+import {OurNewsPage} from './pages/news/our-news-page.component';
+import {NewsitemComponent} from './components/newsitem/newsitem.component';
+import {ContactPage} from './pages/contact/contact.page';
 import {ApproachPage} from './pages/company/our-approach-section/approach.page';
 import {ScrollDataService} from './services/scroll/scroll-data.service';
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 
 
 // AoT requires an exported function for factories
@@ -62,6 +62,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         HttpClientModule,
         MaterialModule,
         FormsModule,
+        ReactiveFormsModule,
         TranslateModule.forRoot({
             loader: {
                 provide: TranslateLoader,
@@ -77,7 +78,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         ContactPage
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
-    providers: [ ScrollDataService],
+    providers: [ScrollDataService],
     bootstrap: [AppComponent]
 })
 export class AppModule {
