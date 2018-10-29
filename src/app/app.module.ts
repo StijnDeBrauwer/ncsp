@@ -27,6 +27,7 @@ import {ContactPage} from './pages/our-contact-page/contact.page';
 import {ApproachPage} from './pages/company/our-approach-section/approach.page';
 import {ScrollDataService} from './services/scroll/scroll-data.service';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 
 
 // AoT requires an exported function for factories
@@ -53,7 +54,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         OurSolutionsPage,
         OurNewsPage,
         NewsitemComponent,
-
+        ProductDetailComponent
     ],
     imports: [
         BrowserModule,

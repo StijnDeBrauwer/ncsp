@@ -14,10 +14,11 @@ export class ProductDetailComponent implements OnInit {
   selectedTab: string = "tab1";
 
   constructor(private responsiveService: ResponsiveService) { 
-    this.product = new ProductModel("Test Product A", "Test Product A", "Test Product A", "Test Product A", "Test Product A", "Test Product A", "Test Product A");
+    
   }
 
   ngOnInit() {
+    this.product = new ProductModel("Test Product A", "Test Product A", "Test Product A", "Test Product A", "Test Product A", "Test Product A", "Test Product A");
     this.responsiveService.getMobileStatus().subscribe(isMobile => {
       this.isMobile = isMobile;
     });
