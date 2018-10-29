@@ -1,5 +1,15 @@
 @import "../../../assets/variables";
 
+
+// ::ng-deep .mat-form-field *{
+//   padding: 5px !important;
+// }
+
+// ::ng-deep .mat-form-field-underline {
+//     display: inline-block;
+//     max-height: 1px;
+// }
+
 section#contact {
   background-color: $card-background-color;
   margin-top: $nav-bar-height;
@@ -34,18 +44,32 @@ section#contact {
       margin: 2%;
 
       mat-form-field {
-        min-width: 45%;
+        display: block;
         margin: 15px 0;
+        min-width: 45%;
         border-radius: 5px;
-        min-height: 50px;
-
+        transform: perspective(1px);
+        //min-height: 50px;
+    
         input {
-          min-height: 50px;
+         min-height: 35px;
+         -moz-appearance: textfield !important;
+         -webkit-appearance: textfield !important;
+          font-family: 'Open Sans', sans-serif;
+          border-bottom: 1px solid #F5F5F5;
+          &.capitalize{
+            text-transform: capitalize;
+          }
+        }
+
+        textarea{
+          white-space: pre-wrap;
         }
       }
 
+
       mat-select {
-        margin: 10px;
+        margin: 10px 0;
       }
 
       div.text-field {

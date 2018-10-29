@@ -13,33 +13,38 @@
                 </mat-card-header>
                 <mat-card-content class="px-lg-5 pt-0">
 
-                    <form class="text-center" style="color: #757575;" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+                    <form #form method="post" style="color: #757575;" [formGroup]="contactForm" enctype="text/plain" method="post">
+
                         <div>
-                            <mat-form-field appearance="legacy">
+                            <mat-form-field appearance="standard">
                                 <mat-label>NAME</mat-label>
-                                <input matInput>
+                                <input matInput class="capitalize" placeholder="NAME" formControlName="fromName">
+                                <mat-error>Name is required</mat-error>
                             </mat-form-field>
                         </div>
 
 
                         <div>
-                            <mat-form-field appearance="legacy">
+                            <mat-form-field appearance="standard">
                                 <mat-label>E-MAIL</mat-label>
-                                <input placeholder="E-MAIL" matInput>
+                                <input type="text" laceholder="E-MAIL" matInput formControlName="fromEmail">
+                                <mat-error>Please enter a valid e-mail address</mat-error>
                             </mat-form-field>
                         </div>
-                        <span>Subject</span>
-
                         <div>
-                            <mat-select placeholder="Choose your option">
-                                <mat-option *ngFor="let option of optionsSelect" [value]="option.value">
-                                    {{option.label}}
-                                </mat-option>
-                            </mat-select>
+                            <mat-form-field appearance="standard">
+                                <mat-label>Subject</mat-label>
+                                <input type="text" matInput placeholder="Subject"formControlName="subject">
+                                <mat-error>Subject is required</mat-error>
+                            </mat-form-field>
                         </div>
 
                         <div class="text-field">
-                            <textarea matInput placeholder="Enter your message"></textarea>
+                            <mat-form-field>
+                                <mat-label>Message</mat-label>
+                                <textarea matMultiline matAutosize type="text"  formControlName="message" matInput placeholder="Enter your message" aria-multiline="true"></textarea>
+                                <mat-error>Message is required</mat-error>
+                            </mat-form-field>
                         </div>
 
                     </form>
@@ -47,7 +52,7 @@
                 </mat-card-content>
 
                 <mat-card-actions>
-                    <div id="send-button" type="submit">Send</div>
+                    <button id="send-button" type="submit" (click)="onSubmit()">Send</button>
                 </mat-card-actions>
 
             </mat-card>
@@ -67,7 +72,7 @@
 
             <mat-card>
                 <mat-card-content class="px-lg-5 pt-0">
-                        test
+                    test
                 </mat-card-content>
 
 
