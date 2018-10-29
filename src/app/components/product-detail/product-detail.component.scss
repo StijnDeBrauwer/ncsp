@@ -39,9 +39,35 @@
             img {
                 width: 100%;
                 border-radius: 2.5px;
+                :before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    background-image: linear-gradient(to bottom right, #002f4b, #dc4225);
+                    opacity: .75;
+                    z-index: 0;
+                  }
             }
 
-            .arrow {
+            i {
+                color: $main-color;
+                text-shadow: 4px 4px 30px rgba(0, 0, 0, 1);
+                font-size: 100px;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                &:first-of-type {
+                    left: 0;
+                }
+                &:last-of-type {
+                    right: 0;
+                }
+            }
+
+            /*.arrow {
                 color: $main-color;
                 font-weight: bold;
                 position: absolute;
@@ -67,7 +93,7 @@
                 &:last-of-type {
                    right: 20px;
                 }
-            }
+            }*/
         }
 
         .product-info {
