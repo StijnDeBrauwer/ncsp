@@ -1,66 +1,74 @@
-<div class="product-modal">
-  <div class="modal-header">
-    <h1>{{product.name}}</h1>
-    <i class="material-icons icon-close">
-        clear
-        </i>
-  </div>
-  <div class="modal-content">
-    <div class="slideshow">
-      <img src="../../../assets/images/people.jpg" />
-      <!--<div class="arrow"><span>&#x3c;</span></div>-->
-      <!--<div class="arrow"><span>&#x3e;</span></div>-->
-      <i class="material-icons">keyboard_arrow_left</i>
-      <i class="material-icons">keyboard_arrow_right</i>
+<div class="modal">
+  <div class="product-modal">
+    <div class="modal-header">
+      <h1>{{product.name}}</h1>
+      <i class="material-icons icon-close" (click)="closeModal()">
+          clear
+          </i>
     </div>
-    <div class="product-info">
-      <div class="menu">
-          <mat-tab-group mat-align-tabs="center">
-              <mat-tab label="Purpose">
-                <div class="details">
-                  <h1>Purpose of {{product.name}}</h1>
-                  <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vehicula id metus ac tristique. Pellentesque molestie nulla quis nulla suscipit vestibulum. Cras ac hendrerit augue. Curabitur vulputate mattis erat, in dictum tortor. Ut laoreet ligula quis augue varius aliquet. Nunc ut lectus nisl. Etiam in arcu faucibus neque mollis rutrum. Integer mollis urna ut tortor bibendum commodo. Maecenas quam elit, luctus vel dui ut, facilisis iaculis ipsum. Praesent rutrum sem sed ante consectetur, eget semper augue consectetur. Sed eu venenatis sem.</p>
-                 </div>
-              </mat-tab>
-              <mat-tab label="Scope">
+    <div class="modal-content">
+      <div class="slideshow">
+        <img src="../../../assets/images/people.jpg" />
+        <!--<div class="arrow"><span>&#x3c;</span></div>-->
+        <!--<div class="arrow"><span>&#x3e;</span></div>-->
+        <i class="material-icons">keyboard_arrow_left</i>
+        <i class="material-icons">keyboard_arrow_right</i>
+      </div>
+      <div class="product-info">
+        <div class="menu">
+            <mat-tab-group mat-align-tabs="center">
+                <mat-tab label="Purpose">
                   <div class="details">
-                      <h1>Scope of {{product.name}}</h1>
-                      <p>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vehicula id metus ac tristique. Pellentesque molestie nulla quis nulla suscipit vestibulum. Cras ac hendrerit augue. Curabitur vulputate mattis erat, in dictum tortor. Ut laoreet ligula quis augue varius aliquet. Nunc ut lectus nisl. Etiam in arcu faucibus neque mollis rutrum. Integer mollis urna ut tortor bibendum commodo. Maecenas quam elit, luctus vel dui ut, facilisis iaculis ipsum. Praesent rutrum sem sed ante consectetur, eget semper augue consectetur. Sed eu venenatis sem.</p>
-                    </div>
-              </mat-tab>
-              <mat-tab label="Options">
-                  <div class="details">
-                      <h1>Options of {{product.name}}</h1>
-                      <p>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vehicula id metus ac tristique. Pellentesque molestie nulla quis nulla suscipit vestibulum. Cras ac hendrerit augue. Curabitur vulputate mattis erat, in dictum tortor. Ut laoreet ligula quis augue varius aliquet. Nunc ut lectus nisl. Etiam in arcu faucibus neque mollis rutrum. Integer mollis urna ut tortor bibendum commodo. Maecenas quam elit, luctus vel dui ut, facilisis iaculis ipsum. Praesent rutrum sem sed ante consectetur, eget semper augue consectetur. Sed eu venenatis sem.</p>
-                    </div>
-              </mat-tab>
-              
-                <mat-tab label="Specs">
+                    <h1>Purpose of {{product.name}}</h1>
+                    <p>
+                        {{product.purpose}}
+                    </p>
+                  </div>
+                </mat-tab>
+                <mat-tab label="Scope">
                     <div class="details">
-                        <h1>Specs of {{product.name}}</h1>
+                        <h1>Scope of {{product.name}}</h1>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vehicula id metus ac tristique. Pellentesque molestie nulla quis nulla suscipit vestibulum. Cras ac hendrerit augue. Curabitur vulputate mattis erat, in dictum tortor. Ut laoreet ligula quis augue varius aliquet. Nunc ut lectus nisl. Etiam in arcu faucibus neque mollis rutrum. Integer mollis urna ut tortor bibendum commodo. Maecenas quam elit, luctus vel dui ut, facilisis iaculis ipsum. Praesent rutrum sem sed ante consectetur, eget semper augue consectetur. Sed eu venenatis sem.</p>
+                            {{product.scope}}
+                        </p>
                       </div>
-              </mat-tab>
-              <mat-tab label="Principle">
-                  <div class="details">
-                      <h1>Principle of {{product.name}}</h1>
-                      <p>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vehicula id metus ac tristique. Pellentesque molestie nulla quis nulla suscipit vestibulum. Cras ac hendrerit augue. Curabitur vulputate mattis erat, in dictum tortor. Ut laoreet ligula quis augue varius aliquet. Nunc ut lectus nisl. Etiam in arcu faucibus neque mollis rutrum. Integer mollis urna ut tortor bibendum commodo. Maecenas quam elit, luctus vel dui ut, facilisis iaculis ipsum. Praesent rutrum sem sed ante consectetur, eget semper augue consectetur. Sed eu venenatis sem.</p>
-                    </div>
-              </mat-tab>
-              <mat-tab label="Set Up">
-                  <div class="details">
-                      <h1>Set Up of {{product.name}}</h1>
-                      <p>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vehicula id metus ac tristique. Pellentesque molestie nulla quis nulla suscipit vestibulum. Cras ac hendrerit augue. Curabitur vulputate mattis erat, in dictum tortor. Ut laoreet ligula quis augue varius aliquet. Nunc ut lectus nisl. Etiam in arcu faucibus neque mollis rutrum. Integer mollis urna ut tortor bibendum commodo. Maecenas quam elit, luctus vel dui ut, facilisis iaculis ipsum. Praesent rutrum sem sed ante consectetur, eget semper augue consectetur. Sed eu venenatis sem.</p>
-                    </div>
-              </mat-tab>
-              
-          </mat-tab-group>
+                </mat-tab>
+                <mat-tab label="Options">
+                    <div class="details">
+                        <h1>Options of {{product.name}}</h1>
+                        <p>
+                            {{product.options}}
+                        </p>
+                      </div>
+                </mat-tab>
+                
+                  <mat-tab label="Specs">
+                      <div class="details">
+                          <h1>Specs of {{product.name}}</h1>
+                          <p>
+                              {{product.specs}}
+                          </p>
+                        </div>
+                </mat-tab>
+                <mat-tab label="Principle">
+                    <div class="details">
+                        <h1>Principle of {{product.name}}</h1>
+                        <p>
+                            {{product.principle}}
+                        </p>
+                      </div>
+                </mat-tab>
+                <mat-tab label="Set Up">
+                    <div class="details">
+                        <h1>Set Up of {{product.name}}</h1>
+                        <p>
+                            {{product.setup}}
+                        </p>
+                      </div>
+                </mat-tab>
+                
+            </mat-tab-group>
+        </div>
       </div>
     </div>
   </div>
