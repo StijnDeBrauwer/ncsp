@@ -15,7 +15,7 @@
             </li>
 
             <li *ngFor="let link of links">
-                <a *ngIf="link.path" [routerLink]="link.path" (click)="navigate()"> {{link.text}} </a>
+                <a *ngIf="link.path && !link.children" [routerLink]="link.path"> {{link.text}} </a>
                 <a *ngIf="link.children" [ngClass]="{'selected': (link === chosenLink) && subMenuOpen}"
                    (click)="toggleSubMenu(link)"> {{link.text}} </a>
                 <div *ngIf="link === chosenLink" class="sub-menu" [ngClass]="{'open': subMenuOpen}">

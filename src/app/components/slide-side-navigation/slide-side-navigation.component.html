@@ -1,0 +1,35 @@
+<section id="slide-side-navigation">
+  <span class="slide-out-button" (click)="toggle()" [ngClass]="{'open':open}">
+
+    <mat-icon *ngIf="!open">
+      keyboard_arrow_left
+    </mat-icon>
+
+        <mat-icon *ngIf="open">
+      keyboard_arrow_right
+    </mat-icon>
+
+
+  </span>
+
+  <div [ngClass]="{'open': open}" class="content">
+
+    <h2>Crown-Baele</h2>
+      <ul>
+        <li><a>Parts</a></li>
+        <li><a>Upgrades</a></li>
+        <li><a>Add-ons</a></li>
+        <li><a>Services</a></li>
+      </ul>
+
+    <h2>Third party</h2>
+    <ul>
+      <li><a>Parts</a></li>
+      <li><a>Upgrades</a></li>
+      <li><a>Add-ons</a></li>
+      <li><a>Services</a></li>
+    </ul>
+
+  </div>
+
+</section>

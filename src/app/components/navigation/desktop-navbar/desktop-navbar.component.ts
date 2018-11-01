@@ -99,7 +99,7 @@ export class DesktopNavbarComponent implements OnInit, OnDestroy {
   }
 
   toggleSubMenu(link) {
-    if (!this.prevLink || this.prevLink === link && !link.path && link.children) {
+    if (!this.prevLink || this.prevLink === link && link.children) {
       this.subMenuOpen = !this.subMenuOpen;
     }
     this.navbarState = 'show';

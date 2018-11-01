@@ -10,8 +10,8 @@ import {OurProductPage} from '../../pages/products/our-product-page.component';
 import {OurSolutionsPage} from '../../pages/solutions/our-solutions-page.component';
 import {OurNewsPage} from '../../pages/news/our-news-page.component';
 import {ContactPage} from '../../pages/contact/contact.page';
-import { ProductListPageComponent } from 'src/app/pages/our-product-page/product-list-page/product-list-page.component';
-import {ProductType} from "../../models/product-type.model";
+import {ProductListPageComponent} from 'src/app/pages/products/product-list-page/product-list-page.component';
+import {ProductType} from '../../models/product-type.model';
 
 const routes: Routes = [
     {
@@ -29,24 +29,28 @@ const routes: Routes = [
         path: 'company',
         component: OurCompanyPage,
         children: [
-            {path: '', redirectTo: 'about', pathMatch: 'full'},
-            {path: 'vision', component: OurCompanyPage},
-            {path: 'who-we-are', component: OurCompanyPage},
-            {path: 'approach', component: OurCompanyPage},
-
+            {path: '', redirectTo: 'company', pathMatch: 'full'},
+            {path: 'vision', component: OurCompanyPage, data: {page: 'company'}},
+            {path: 'who-we-are', component: OurCompanyPage, data: {page: 'who-we-are'}},
+            {path: 'approach', component: OurCompanyPage, data: {page: 'approach'}},
         ],
     },
     {
         path: 'products',
-        component: OurProductPage
+        component: OurProductPage,
+        // children: [
+        //     {path: '', redirectTo: 'products', pathMatch: 'full'},
+        //     {path: 'crown-baele', component: ProductListPageComponent, data: {type: ProductType.CROWN_BAELE}},
+        //     {path: 'products/third-party', component: ProductListPageComponent, data: {type: ProductType.THIRD_PARTY}},
+        // ]
     },
-    { 
-        path: 'products/crown-baele', 
+    {
+        path: 'products/crown-baele',
         component: ProductListPageComponent,
         data: {type: ProductType.CROWN_BAELE}
     },
-    { 
-        path: 'products/third-party', 
+    {
+        path: 'products/third-party',
         component: ProductListPageComponent,
         data: {type: ProductType.THIRD_PARTY}
     },
@@ -62,15 +66,6 @@ const routes: Routes = [
         path: 'contact',
         component: ContactPage
     },
-    // {
-    //     path: 'company',
-    //     component: OurCompanyComponent,
-    //     children: [
-    //         { path: '', redirectTo: 'company', pathMatch: 'full' },
-    //         { path: 'about', component: OurVisionPage },
-    //         { path: 'contact', component: ContactPage }
-    //     ]
-    // },
     {
         path: '**',
         component: PageNotFoundPage

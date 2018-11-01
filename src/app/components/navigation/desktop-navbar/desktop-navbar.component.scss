@@ -90,7 +90,10 @@ div.sub-menu-desktop {
 
   .sub-menu-desktop-description {
     background-color: $main-color;
-    color: white;
+
+    a{
+      color: white !important;
+    }
   }
 
   .sub-menu-desktop-content {
