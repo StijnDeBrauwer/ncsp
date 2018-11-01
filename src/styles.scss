@@ -49,3 +49,18 @@ h2 {
   font-size: $font-size-large;
   color: white;
 }
+
+.banner{
+  color: white;
+  height: auto;
+  min-height: 75vh;
+  background-size: cover !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  .content{
+    padding-left: 10%;
+  }
+}
