@@ -64,3 +64,18 @@ h2 {
     padding-left: 10%;
   }
 }
+
+.orange-button {
+  background-color: $main-color;
+  border: none;
+  border-radius: 5px;
+  padding: 7.5px;
+  color: white;
+  font-size: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 7px 7px 21px -5px rgba(0, 0, 0, 0.75);
+  outline: none;
+}

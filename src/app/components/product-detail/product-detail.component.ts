@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ProductModel } from 'src/app/models/product.model';
 import { ResponsiveService } from 'src/app/services/responsive/responsive.service';
 
@@ -12,9 +12,10 @@ export class ProductDetailComponent implements OnInit {
   @Input() product: ProductModel;
   isMobile: false;
   selectedTab: string = "tab1";
+  @Output() close: EventEmitter<boolean> = new EventEmitter();
 
   constructor(private responsiveService: ResponsiveService) { 
-    this.product = new ProductModel("Test Product A", "Test Product A", "Test Product A", "Test Product A", "Test Product A", "Test Product A", "Test Product A");
+    
   }
 
   ngOnInit() {
@@ -23,4 +24,7 @@ export class ProductDetailComponent implements OnInit {
     });
   }
 
+  closeModal(): void {
+    this.close.emit(true);
+  }
 }

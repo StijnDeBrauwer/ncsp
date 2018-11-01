@@ -10,6 +10,8 @@ import {OurProductPage} from '../../pages/products/our-product-page.component';
 import {OurSolutionsPage} from '../../pages/solutions/our-solutions-page.component';
 import {OurNewsPage} from '../../pages/news/our-news-page.component';
 import {ContactPage} from '../../pages/contact/contact.page';
+import { ProductListPageComponent } from 'src/app/pages/our-product-page/product-list-page/product-list-page.component';
+import {ProductType} from "../../models/product-type.model";
 
 const routes: Routes = [
     {
@@ -36,9 +38,18 @@ const routes: Routes = [
     },
     {
         path: 'products',
-        component: OurProductPage,
+        component: OurProductPage
     },
-
+    { 
+        path: 'products/crown-baele', 
+        component: ProductListPageComponent,
+        data: {type: ProductType.CROWN_BAELE}
+    },
+    { 
+        path: 'products/third-party', 
+        component: ProductListPageComponent,
+        data: {type: ProductType.THIRD_PARTY}
+    },
     {
         path: 'solutions',
         component: OurSolutionsPage

@@ -26,7 +26,11 @@ import {NewsitemComponent} from './components/newsitem/newsitem.component';
 import {ContactPage} from './pages/contact/contact.page';
 import {ApproachPage} from './pages/company/our-approach-section/approach.page';
 import {ScrollDataService} from './services/scroll/scroll-data.service';
-import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { ProductListPageComponent } from './pages/our-product-page/product-list-page/product-list-page.component';
+import { ProductComponent } from './components/product/product.component';
+
 
 
 // AoT requires an exported function for factories
@@ -53,7 +57,10 @@ export function HttpLoaderFactory(http: HttpClient) {
         OurSolutionsPage,
         OurNewsPage,
         NewsitemComponent,
-
+        ProductDetailComponent,
+        ProductListPageComponent,
+        ProductComponent,
+        ProductComponent
     ],
     imports: [
         BrowserModule,
