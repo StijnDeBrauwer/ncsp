@@ -30,10 +30,25 @@ section#contact {
     display: flex;
     flex-direction: column;
 
+    mat-card {
+      margin-bottom: 1%;
+    }
+
+    .card-header{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
     h2 {
       text-transform: uppercase;
       font-size: 1.5em;
       color: $main-color;
+    }
+
+    h3{
+      text-transform: uppercase;
+      font-size: 1.2em;
     }
 
     .contact-form {
@@ -63,7 +78,7 @@ section#contact {
         }
 
         textarea{
-          white-space: pre-wrap;
+          //white-space: pre-wrap;
         }
       }
 
@@ -104,7 +119,29 @@ section#contact {
     margin: 2%;
 
     mat-card {
-      margin-bottom: 1%;
+      .contact-info-section{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        table{
+          text-align: left;
+          tr{
+            padding: 5% 0;
+          }
+          td{
+          min-width: 50px;
+          }
+          th{
+            font-size: 15px;
+            text-transform: uppercase;
+          }
+        }
+
+        mat-icon{
+          font-size: 30px;
+        }
+      }
     }
   }
 
