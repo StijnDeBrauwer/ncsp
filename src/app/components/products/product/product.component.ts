@@ -9,12 +9,23 @@ import { ProductModel } from 'src/app/models/product.model';
 export class ProductComponent implements OnInit {
 
   @Input() product: ProductModel;
+  isModalVisible: boolean = false;
   constructor() { }
 
   ngOnInit() {
   }
 
   getShortDescription(): string {
-    return this.product.purpose.substring(0, 150) + "...";
+    if(this.product) {
+      return this.product.purpose.substring(0, 150) + "...";
+    }
+  }
+
+  showModal(): void {
+    this.isModalVisible = true;
+  }
+
+  close(): void {
+    this.isModalVisible = false;
   }
 }
