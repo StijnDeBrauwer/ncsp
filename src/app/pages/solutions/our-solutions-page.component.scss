@@ -1,0 +1,130 @@
+@import "../../../assets/variables";
+#solutions { 
+    padding-top: $nav-bar-height;
+    .banner {
+        background: url("../../../assets/images/people.jpg") no-repeat no-repeat;
+    }
+
+    .solutions-content {
+        background-color: white;
+        h1 {
+            margin-top: 0;
+            padding-top: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        .solutions-types {
+            background-color: $light-grey;
+            .solutions {
+                padding-left: 20px;
+                padding-right: 20px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                @media screen and (max-width: 768px) {
+                    flex-direction: column;
+                    align-items: center;
+                }
+                .type {
+                    background-color: white;
+                    padding: 20px;
+                    margin: 10px;
+                    max-width: 300px;
+                    box-shadow: 7px 7px 21px -5px rgba(0, 0, 0, 0.75);
+
+                    @media screen and (max-width: 768px) {
+                        margin-bottom: 20px;
+                    }
+
+                    h2 {
+                        color: $main-color;
+                        margin: 0;
+                        text-align: center;
+                    }
+
+                    button {
+                        margin: auto;
+                    }
+
+                    @media screen and (min-width: 768px) {
+                        width: 400px;
+                    }
+                    a {
+                        text-decoration: none;
+                    }
+                }
+            }             
+        }
+        .triangle {
+            border-color: $light-grey transparent transparent transparent;
+            &.reversed {
+                border-width: 40px 0 0 100vw;
+                border-color: transparent transparent transparent $light-grey;
+            }
+        }
+        
+        .benefits {
+            .benefit {
+                &.reversed {
+                    background-color: $light-grey;
+                    .content {
+                        @media screen and (min-width: 768px) {
+                            flex-direction: row-reverse;
+                            img {
+                                margin-right: 0;
+                                margin-left: 40px;
+                            }
+                        }
+                        .info {
+                            text-align: left;
+                        }
+                    }
+                }
+
+                .content {
+                    padding: 20px;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    margin-left: 100px;
+                    margin-right: 100px;
+                    @media screen and (min-width: 768px) {
+                        justify-content: space-between;
+                    }
+                    @media screen and (max-width: 768px) {
+                        flex-direction: column;
+                        margin-left: 0;
+                        margin-right: 0;
+                    }
+
+                    h2 {
+                        color: $main-color;
+                        @media screen and (max-width: 768px) {
+                            text-align: center;
+                        }
+                    }
+
+                    img {
+                        height: 200px;
+                        border-radius: 5px;
+                        @media screen and (min-width: 768px) {
+                            margin-right: 40px;
+                        }
+                        @media screen and (max-width: 768px) {
+                            height: 150px;
+                            margin: auto;
+                        }
+                    }
+
+                    .info {
+                        display: flex;
+                        flex-direction: column;
+                        @media screen and (min-width: 768px) {
+                            text-align: right;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

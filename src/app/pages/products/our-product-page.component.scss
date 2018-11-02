@@ -18,10 +18,10 @@
       }
       &:nth-child(2n+1) {
         .content {
-          background-color: $footer-color;
+          background-color: $light-grey;
         }
         .triangle {
-          border-color: $footer-color transparent transparent transparent;
+          border-color: $light-grey transparent transparent transparent;
         }
       }
       &:nth-child(2n) {
@@ -40,13 +40,6 @@
         .triangle {
           border-color: white transparent transparent transparent;
         }
-      }
-
-      .triangle {
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-width: 40px 100vw 0 0;
       }
     }
   }
