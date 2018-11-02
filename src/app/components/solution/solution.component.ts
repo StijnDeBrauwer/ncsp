@@ -10,14 +10,8 @@ import { Router } from '@angular/router';
 export class SolutionComponent implements OnInit {
 
   @Input() solution: SolutionModel;
-  constructor(private router: Router) {
-
-  }
+  constructor() { }
 
   ngOnInit() {
-  }
-
-  navigate(): void {
-    
   }
 }

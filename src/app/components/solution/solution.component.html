@@ -1,6 +1,8 @@
 <div class="solution-container" (click)="navigate()">
-  <img src="../../../assets/images/beer_bottles_liten.jpg" />
-  <div class="content">
+  <a [routerLink]="['./', solution?.id]">
+    <img src="../../../assets/images/beer_bottles_liten.jpg" />
+    <div class="content">
       <h2>{{solution?.name}}</h2>
-  </div>
+    </div>
+  </a>
 </div>

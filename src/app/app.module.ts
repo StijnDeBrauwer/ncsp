@@ -33,6 +33,7 @@ import {ProductComponent} from './components/products/product/product.component'
 import {SlideSideNavigationComponent} from './components/slide-side-navigation/slide-side-navigation.component';
 import { SolutionsListPageComponent } from './pages/solutions/solutions-list-page/solutions-list-page.component';
 import { SolutionComponent } from './components/solution/solution.component';
+import { SolutionDetailsPageComponent } from './pages/solutions/solution-details-page/solution-details-page.component';
 
 
 // AoT requires an exported function for factories
@@ -65,7 +66,8 @@ export function HttpLoaderFactory(http: HttpClient) {
         ProductComponent,
         SlideSideNavigationComponent,
         SolutionsListPageComponent,
-        SolutionComponent
+        SolutionComponent,
+        SolutionDetailsPageComponent
     ],
     imports: [
         BrowserModule,

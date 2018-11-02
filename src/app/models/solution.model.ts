@@ -24,7 +24,6 @@ export class SolutionModel {
         return this._name;
     }
     
-    
     public get type() : SolutionType {
         return this._type;
     }

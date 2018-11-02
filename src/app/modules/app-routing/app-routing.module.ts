@@ -15,6 +15,7 @@ import {SupplierType} from '../../models/supplier-type.model';
 import {SolutionType} from '../../models/solution-type.model';
 import {ProductComponent} from '../../components/products/product/product.component';
 import { SolutionsListPageComponent } from 'src/app/pages/solutions/solutions-list-page/solutions-list-page.component';
+import { SolutionDetailsPageComponent } from 'src/app/pages/solutions/solution-details-page/solution-details-page.component';
 
 const routes: Routes = [
     {
@@ -64,6 +65,10 @@ const routes: Routes = [
         path: 'solutions/bottlewashers',
         component: SolutionsListPageComponent,
         data: {type: SolutionType.BOTTLE_WASHERS}
+    },
+    {
+        path: 'solutions/bottlewashers/:id',
+        component: SolutionDetailsPageComponent
     },
     {
         path: 'solutions/filters',
