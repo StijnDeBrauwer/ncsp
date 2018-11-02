@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ProductType } from 'src/app/models/product-type.model';
+import { SupplierType } from 'src/app/models/supplier-type.model';
 import { ProductModel } from 'src/app/models/product.model';
 
 @Component({
@@ -10,7 +10,7 @@ import { ProductModel } from 'src/app/models/product.model';
 })
 export class ProductListPageComponent implements OnInit {
 
-  type: ProductType;
+  type: SupplierType;
   products: ProductModel[];
   selectedProduct: ProductModel;
   constructor(private route: ActivatedRoute) { }
@@ -23,7 +23,7 @@ export class ProductListPageComponent implements OnInit {
   }
 
   isCrownBaelePage(): boolean {
-    return this.type === ProductType.CROWN_BAELE;
+    return this.type === SupplierType.CROWN_BAELE;
   }
 
   getProducts(): void {

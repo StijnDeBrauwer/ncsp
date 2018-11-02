@@ -26,15 +26,15 @@ export class OurCompanyPage implements OnInit, AfterViewInit {
     }
 
     public scrollToVision(): void {
-        this.vision.nativeElement.scrollIntoView({behavior: 'smooth', block: 'end', inline: 'start'});
+        this.vision.nativeElement.scrollIntoView({behavior: 'smooth', block: 'end', inline: 'center'});
     }
 
     public scrollToWhoWeAre(): void {
-        this.whoWeAre.nativeElement.scrollIntoView({behavior: 'smooth', block: 'end', inline: 'start'});
+        this.whoWeAre.nativeElement.scrollIntoView({behavior: 'smooth', block: 'end', inline: 'center'});
     }
 
     public scrollToApproach(): void {
-        this.approach.nativeElement.scrollIntoView({behavior: 'smooth', block: 'end', inline: 'start'});
+        this.approach.nativeElement.scrollIntoView({behavior: 'smooth', block: 'end', inline: 'center'});
     }
 
     scrollToElement(child) {

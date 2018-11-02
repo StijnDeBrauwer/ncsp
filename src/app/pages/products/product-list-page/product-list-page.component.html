@@ -6,21 +6,45 @@
         </div>
     </div>
 
-    <app-slide-side-navigation></app-slide-side-navigation>
-    <div class="products">
-      <div class="header">
-        <h2>Please select a part for more information</h2>
-        <div class="search">
-          <div class="input">
-            <i class="material-icons">search</i>
-          </div>
-          <input type="text" placeholder="search"/>
-          <!--<button class="orange-button">Search a part</button>-->
+    <app-slide-side-navigation>
+        <div class="slide-nav-content">
+            <h2>Crown-Baele</h2>
+            <ul>
+                <li><a>Parts</a></li>
+                <li><a>Upgrades</a></li>
+                <li><a>Add-ons</a></li>
+                <li><a>Services</a></li>
+            </ul>
+
+            <h2>Third party</h2>
+            <ul>
+                <li><a>Parts</a></li>
+                <li><a>Upgrades</a></li>
+                <li><a>Add-ons</a></li>
+                <li><a>Services</a></li>
+            </ul>
         </div>
-      </div>
-      <div class="content">
-          <app-product [product]="product" *ngFor="let product of products" (click)="selectProduct(product)"></app-product>
-      </div>
+    </app-slide-side-navigation>
+
+    <!--<router-outlet name="product-category"></router-outlet>-->
+
+    <div class="products">
+        <div class="header">
+            <h2>Please select a part for more information</h2>
+            <div class="search">
+                <div class="input">
+                    <i class="material-icons">search</i>
+                </div>
+                <input type="text" placeholder="search"/>
+                <!--<button class="orange-button">Search a part</button>-->
+            </div>
+        </div>
+        <div class="content">
+            <router-outlet name="product-categorie"></router-outlet>
+            <app-product [product]="product" *ngFor="let product of products"
+                         (click)="selectProduct(product)"></app-product>
+        </div>
     </div>
-    <app-product-detail [product]="selectedProduct" *ngIf="selectedProduct" (close)="removeSelectedProduct()"></app-product-detail>
+    <app-product-detail [product]="selectedProduct" *ngIf="selectedProduct"
+                        (close)="removeSelectedProduct()"></app-product-detail>
 </section>

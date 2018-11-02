@@ -17,8 +17,8 @@ section#slide-side-navigation{
     left: -25px;
     background-color: $main-color;
     border-radius: 50%;
-    height: 30px;
-    width: 30px;
+    height: 50px;
+    width: 50px;
     text-align: center;
     display: inline-flex;
     justify-content: flex-start;
@@ -28,8 +28,7 @@ section#slide-side-navigation{
     transition: all ease-in-out .1s ;
 
     &.open{
-      padding: 1%;
-      left: -15px;
+      left: -35px;
       justify-content: center;
     }
     mat-icon{
@@ -45,34 +44,15 @@ section#slide-side-navigation{
 
   .content{
     max-width: 0;
-    transition: all ease-in-out .1s ;
+    transition: all linear .2s ;
     z-index: 100;
     text-align:center;
-    h2{
-      font-size: 15px;
-      color: $main-color;
-      display: block;
-    }
+    padding:0;
 
     &.open{
-      margin:1%;
       max-width: 5000px;
-      min-width: 200px;
-      padding: 25px;
       box-shadow:0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-    }
-
-    a{
-      cursor: pointer;
-    }
-
-    ul{
-      padding: 0;
-      list-style: none;
-
-      li{
-        padding: 10px 0;
-      }
+      padding: 25px;
     }
   }
 }

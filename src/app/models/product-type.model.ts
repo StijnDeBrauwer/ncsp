@@ -1,4 +1,6 @@
-export enum ProductType {
-    CROWN_BAELE = "CROWN_BAELE",
-    THIRD_PARTY = "THIRD_PARTY"
+export enum ProductType{
+    PARTS,
+    UPGRADES,
+    ADD_ONS,
+    SERVICES
 }

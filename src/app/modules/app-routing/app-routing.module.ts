@@ -11,7 +11,8 @@ import {OurSolutionsPage} from '../../pages/solutions/our-solutions-page.compone
 import {OurNewsPage} from '../../pages/news/our-news-page.component';
 import {ContactPage} from '../../pages/contact/contact.page';
 import {ProductListPageComponent} from 'src/app/pages/products/product-list-page/product-list-page.component';
-import {ProductType} from '../../models/product-type.model';
+import {SupplierType} from '../../models/supplier-type.model';
+import {ProductComponent} from '../../components/products/product/product.component';
 
 const routes: Routes = [
     {
@@ -28,31 +29,30 @@ const routes: Routes = [
     {
         path: 'company',
         component: OurCompanyPage,
-        children: [
-            {path: '', redirectTo: 'company', pathMatch: 'full'},
-            {path: 'vision', component: OurCompanyPage, data: {page: 'company'}},
-            {path: 'who-we-are', component: OurCompanyPage, data: {page: 'who-we-are'}},
-            {path: 'approach', component: OurCompanyPage, data: {page: 'approach'}},
-        ],
+        // children: [
+        //     {path: '', redirectTo: 'company', pathMatch: 'full'},
+        //     {path: 'vision', component: OurCompanyPage, data: {page: 'company'}},
+        //     {path: 'who-we-are', component: OurCompanyPage, data: {page: 'who-we-are'}},
+        //     {path: 'approach', component: OurCompanyPage, data: {page: 'approach'}},
+        // ],
     },
     {
         path: 'products',
         component: OurProductPage,
         // children: [
-        //     {path: '', redirectTo: 'products', pathMatch: 'full'},
-        //     {path: 'crown-baele', component: ProductListPageComponent, data: {type: ProductType.CROWN_BAELE}},
-        //     {path: 'products/third-party', component: ProductListPageComponent, data: {type: ProductType.THIRD_PARTY}},
+        //     {path: 'crown-baele', component: ProductListPageComponent, data: {type: SupplierType.CROWN_BAELE}},
+        //     {path: 'third-party', component: ProductListPageComponent, data: {type: SupplierType.THIRD_PARTY}},
         // ]
     },
     {
         path: 'products/crown-baele',
         component: ProductListPageComponent,
-        data: {type: ProductType.CROWN_BAELE}
+        data: {type: SupplierType.CROWN_BAELE}
     },
     {
         path: 'products/third-party',
         component: ProductListPageComponent,
-        data: {type: ProductType.THIRD_PARTY}
+        data: {type: SupplierType.THIRD_PARTY}
     },
     {
         path: 'solutions',
