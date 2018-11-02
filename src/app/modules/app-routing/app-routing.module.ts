@@ -12,7 +12,9 @@ import {OurNewsPage} from '../../pages/news/our-news-page.component';
 import {ContactPage} from '../../pages/contact/contact.page';
 import {ProductListPageComponent} from 'src/app/pages/products/product-list-page/product-list-page.component';
 import {SupplierType} from '../../models/supplier-type.model';
+import {SolutionType} from '../../models/solution-type.model';
 import {ProductComponent} from '../../components/products/product/product.component';
+import { SolutionsListPageComponent } from 'src/app/pages/solutions/solutions-list-page/solutions-list-page.component';
 
 const routes: Routes = [
     {
@@ -57,6 +59,21 @@ const routes: Routes = [
     {
         path: 'solutions',
         component: OurSolutionsPage
+    },
+    {
+        path: 'solutions/bottlewashers',
+        component: SolutionsListPageComponent,
+        data: {type: SolutionType.BOTTLE_WASHERS}
+    },
+    {
+        path: 'solutions/filters',
+        component: SolutionsListPageComponent,
+        data: {type: SolutionType.FILTERS}
+    },
+    {
+        path: 'solutions/others',
+        component: SolutionsListPageComponent,
+        data: {type: SolutionType.OTHERS}
     },
     {
         path: 'news',
