@@ -1,7 +1,9 @@
-<div class="product-container">
+<div class="product-container" (click)="showModal()">
   <img src="../../../assets/images/beer_bottles_liten.jpg" />
   <div class="content">
     <h2>{{product?.name}}</h2>
     <p>{{getShortDescription()}}</p>
   </div>
 </div>
+<app-product-detail [product]="product" *ngIf="isModalVisible"
+                        (close)="close()"></app-product-detail>

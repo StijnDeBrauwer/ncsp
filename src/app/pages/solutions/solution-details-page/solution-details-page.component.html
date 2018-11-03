@@ -1,0 +1,21 @@
+<section id="solution-details">
+  <div class="banner">
+    <div class="content">
+      <h1>{{solution?.name}}</h1>
+    </div>
+  </div>
+  <div class="details">
+    <h2>Improve your performance</h2>
+    <div class="info">
+      <p>{{solution?.description}}</p>
+      <img src="../../../../assets/images/beer_bottles_liten.jpg" />
+    </div>
+  </div>
+  <div class="triangle"></div>
+  <div class="products">
+    <h2>Find the right product</h2>
+    <div class="list">
+      <app-product *ngFor="let product of solution?.products" [product]="product"></app-product>
+    </div>
+  </div>
+</section>

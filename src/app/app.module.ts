@@ -6,7 +6,6 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HttpClientModule, HttpClient} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
-
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from './modules/app-routing/app-routing.module';
 import {LandingPage} from './pages/landing/landing.page';
@@ -32,7 +31,12 @@ import {ProductDetailComponent} from './components/products/product-detail/produ
 import {ProductListPage} from './pages/products/product-types/product-list-page/product-list.page';
 import {ProductCardComponent} from './components/products/product-card/product-card.component';
 import {SlideSideNavigationComponent} from './components/slide-side-navigation/slide-side-navigation.component';
-import { ProductTypePage } from './pages/products/product-types/product-type.page';
+import {ProductTypePage} from './pages/products/product-types/product-type.page';
+import {SolutionsListPageComponent} from './pages/solutions/solutions-list-page/solutions-list-page.component';
+import {SolutionComponent} from './components/solution/solution.component';
+import {SolutionDetailsPageComponent} from './pages/solutions/solution-details-page/solution-details-page.component';
+import {ProductDetailDesktopComponent} from './components/products/product-detail/product-detail-desktop/product-detail-desktop.component';
+import {ProductDetailMobileComponent} from './components/products/product-detail/product-detail-mobile/product-detail-mobile.component';
 
 
 // AoT requires an exported function for factories
@@ -65,7 +69,13 @@ export function HttpLoaderFactory(http: HttpClient) {
         ProductCardComponent,
         SlideSideNavigationComponent,
         ProductGroupPage,
-        ProductTypePage
+        ProductTypePage,
+        SlideSideNavigationComponent,
+        SolutionsListPageComponent,
+        SolutionComponent,
+        SolutionDetailsPageComponent,
+        ProductDetailDesktopComponent,
+        ProductDetailMobileComponent
     ],
     imports: [
         BrowserModule,

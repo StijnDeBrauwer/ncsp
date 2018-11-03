@@ -78,4 +78,14 @@ h2 {
   align-items: center;
   box-shadow: 7px 7px 21px -5px rgba(0, 0, 0, 0.75);
   outline: none;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 40px 100vw 0 0;
 }

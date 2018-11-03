@@ -19,10 +19,7 @@
         </div>
         <div class="content">
             <router-outlet name="product-categorie"></router-outlet>
-            <app-product [product]="product" *ngFor="let product of products"
-                         (click)="selectProduct(product)"></app-product>
+            <app-product [product]="product" *ngFor="let product of products"></app-product>
         </div>
     </div>
-    <app-product-detail [product]="selectedProduct" *ngIf="selectedProduct"
-                        (close)="removeSelectedProduct()"></app-product-detail>
 </section>

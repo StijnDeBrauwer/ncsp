@@ -1,0 +1,77 @@
+@import "../../../../assets/variables";
+#solution-details {
+    h2 {
+        color: $main-color;
+    }
+    padding-top: $nav-bar-height;
+    .banner {
+        height: auto;
+        min-height: 25vh;
+        background: url("../../../../assets/images/people.jpg") no-repeat no-repeat;
+    }
+    .details {
+        padding: 20px;
+        background-color: $light-grey;
+
+        h2 {
+            margin-top: 0;
+        }
+
+        .info {
+            display: flex;
+            flex-direction: row;
+            margin-left: 100px;
+            margin-right: 100px;
+            align-items: center;
+
+            img {
+                height: 200px;
+                margin-left: 40px;
+                box-shadow: 7px 7px 21px -5px rgba(0, 0, 0, 0.75);
+                border-radius: 5px;
+            }
+
+            @media screen and (max-width: 768px) {
+                flex-direction: column;
+                justify-content: center;
+                margin-left: 0;
+                margin-right: 0;
+
+                img {
+                    margin-left: 0;
+                    max-height: 150px;
+                    margin: auto;
+                }
+            }
+        }
+    }
+
+    .products {
+        h2 {
+            padding: 20px;
+            margin: 0;
+            text-align: right;
+        }
+        .list {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            @media screen and (min-width: 768px) {
+                app-product {
+                    margin-left: 10px;
+                    margin-right: 10px;
+                }
+            }
+
+            @media screen and (max-width: 768px) {
+                flex-direction: column;
+                align-items: center;
+                margin: auto;
+            }
+        }
+    }
+
+    .triangle {
+        border-color: $light-grey transparent transparent transparent;
+    }
+}
