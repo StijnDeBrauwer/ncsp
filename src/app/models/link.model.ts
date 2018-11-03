@@ -5,12 +5,9 @@ export class LinkModel {
     private _materialLogoName: string;
     private _children;
 
-    constructor(text: string, path?: string, children?: Array<LinkModel>, materialLogoName?: string) {
+    constructor(text: string, path?: string, children?: Array<LinkModel>) {
         this._text = text;
-
-        if (materialLogoName) {
-            this._materialLogoName = materialLogoName;
-        }
+        
         if (path) {
             this._path = path;
         }
