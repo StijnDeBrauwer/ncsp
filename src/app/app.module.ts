@@ -34,6 +34,8 @@ import {SlideSideNavigationComponent} from './components/slide-side-navigation/s
 import { SolutionsListPageComponent } from './pages/solutions/solutions-list-page/solutions-list-page.component';
 import { SolutionComponent } from './components/solution/solution.component';
 import { SolutionDetailsPageComponent } from './pages/solutions/solution-details-page/solution-details-page.component';
+import { LoginComponent } from './pages/cms/login/login.component';
+import { AdminComponent } from './pages/cms/admin/admin.component';
 
 
 // AoT requires an exported function for factories
@@ -67,7 +69,9 @@ export function HttpLoaderFactory(http: HttpClient) {
         SlideSideNavigationComponent,
         SolutionsListPageComponent,
         SolutionComponent,
-        SolutionDetailsPageComponent
+        SolutionDetailsPageComponent,
+        LoginComponent,
+        AdminComponent
     ],
     imports: [
         BrowserModule,

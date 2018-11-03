@@ -1,8 +1,8 @@
 <section>
-    <app-mobile-navigation  *ngIf="isMobile"></app-mobile-navigation>
-    <app-desktop-navbar *ngIf="!isMobile"></app-desktop-navbar>
+    <app-mobile-navigation  *ngIf="isMobile && !isAdminMode"></app-mobile-navigation>
+    <app-desktop-navbar *ngIf="!isMobile && !isAdminMode"></app-desktop-navbar>
 
     <router-outlet></router-outlet>
 
-    <app-footer></app-footer>
+    <app-footer *ngIf="!isAdminMode"></app-footer>
 </section>
