@@ -18,6 +18,7 @@ import {ProductType} from '../../models/product-type.model';
 import {SolutionType} from '../../models/solution-type.model';
 import { SolutionsListPageComponent } from 'src/app/pages/solutions/solutions-list-page/solutions-list-page.component';
 import { SolutionDetailsPageComponent } from 'src/app/pages/solutions/solution-details-page/solution-details-page.component';
+import { SolutionTypePage } from '../../pages/solutions/solution-type/solution-type.page';
 
 const routes: Routes = [
     {
@@ -110,25 +111,35 @@ const routes: Routes = [
         path: 'solutions',
         component: OurSolutionsPage
     },
+
     {
-        path: 'solutions/bottlewashers',
-        component: SolutionsListPageComponent,
-        data: {type: SolutionType.BOTTLE_WASHERS}
+        path:'solutions/type',
+        component: SolutionTypePage,
+        children: [
+            {path: '', redirectTo: 'bottlewashers', pathMatch: 'full'},
+            {
+                path: 'bottlewashers',
+                component: SolutionsListPageComponent,
+                data: {type: SolutionType.BOTTLE_WASHERS}
+            },
+            {
+                path: 'fillers',
+                component: SolutionsListPageComponent,
+                data: {type: SolutionType.FILTERS}
+            },
+            {
+                path: 'other',
+                component: SolutionsListPageComponent,
+                data: {type: SolutionType.OTHERS}
+            },
+
+        ]
     },
     {
-        path: 'solutions/bottlewashers/:id',
+        path: 'solutions/type/bottlewashers/:id',
         component: SolutionDetailsPageComponent
     },
-    {
-        path: 'solutions/filters',
-        component: SolutionsListPageComponent,
-        data: {type: SolutionType.FILTERS}
-    },
-    {
-        path: 'solutions/others',
-        component: SolutionsListPageComponent,
-        data: {type: SolutionType.OTHERS}
-    },
+    
     {
         path: 'news',
         component: OurNewsPage

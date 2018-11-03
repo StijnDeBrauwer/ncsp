@@ -14,9 +14,9 @@ export const routes = [
             new LinkModel('Services', '/company/crown-baele/services')
         ]),
     new LinkModel('Our solutions', '/solutions', [
-        new LinkModel('For Bottle Washers', '/solutions/bottlewashers'),
-        new LinkModel('For Fillers', '/solutions/filters'),
-        new LinkModel('For Other Machines', '/solutions/others'),
+        new LinkModel('For Bottle Washers', '/solutions/type/bottlewashers'),
+        new LinkModel('For Fillers', '/solutions/type/filters'),
+        new LinkModel('For Other Machines', '/solutions/type/others'),
     ]),
     new LinkModel('Contact', '/contact')
 ];

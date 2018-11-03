@@ -3,6 +3,9 @@ import { ActivatedRoute } from '@angular/router';
 import { SolutionType } from 'src/app/models/solution-type.model';
 import { SolutionModel } from 'src/app/models/solution.model';
 import { ProductModel } from 'src/app/models/product.model';
+import { SolutionService } from '../../../services/solutions/solution.service';
+import { SolutionBefenitType } from '../../../models/solution-benfit-type';
+import { SolutionBenefitService } from '../../../services/solution-benefit.service';
 
 @Component({
   selector: 'app-solutions-list-page',
@@ -11,14 +14,23 @@ import { ProductModel } from 'src/app/models/product.model';
 })
 export class SolutionsListPageComponent implements OnInit {
   solutionType: SolutionType;
+  benefit: SolutionBefenitType;
   solutions: SolutionModel[];
-  constructor(private route: ActivatedRoute) { }
+  title: string;
+
+
+  constructor(private route: ActivatedRoute, private solutionService: SolutionService, private befenitService: SolutionBenefitService) {
+   }
 
   ngOnInit() {
     this.route.data.subscribe(data => {
       this.solutionType = data.type;
-      this.getSolutions();
     });
+
+    this.befenitService.benefitSubject.subscribe(b => {
+      this.benefit = b;
+      this.getSolutions();
+    })
   }
 
   isBottleWashersPage(): boolean {
@@ -30,15 +42,26 @@ export class SolutionsListPageComponent implements OnInit {
   }
 
   getSolutions(): void {
+    this.title = ` ${this.benifitString} for ${this.solutionTypeString}`
     //Get data from server
-    const product = new ProductModel("Test Product 3rd", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dignissim tincidunt turpis nec consequat. Vestibulum commodo scelerisque metus ut accumsan. Fusce eleifend erat at purus facilisis, congue semper nisl iaculis. Mauris vel congue quam. Curabitur lacus nisl, ullamcorper et dolor vel, hendrerit tincidunt nisi. Vestibulum tempor fringilla nisl nec lacinia. Nullam ut efficitur enim, quis ornare orci. Integer ornare odio vel metus lobortis varius. Etiam sit amet nisi tincidunt, viverra diam et, ultrices sapien. Donec laoreet felis a diam volutpat tempor. Integer ornare auctor ipsum, vitae finibus nibh", "Test Product 3rd", "Test Product 3rd", "Test Product 3rd", "Test Product 3rd", "Test Product 3rd");
-    const solution = new SolutionModel("Test solution", SolutionType.BOTTLE_WASHERS, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dignissim tincidunt turpis nec consequat. Vestibulum commodo scelerisque metus ut accumsan. Fusce eleifend erat at purus facilisis, congue semper nisl iaculis. Mauris vel congue quam. Curabitur lacus nisl, ullamcorper et dolor vel, hendrerit tincidunt nisi. Vestibulum tempor fringilla nisl nec lacinia. Nullam ut efficitur enim, quis ornare orci. Integer ornare odio vel metus lobortis varius. Etiam sit amet nisi tincidunt, viverra diam et, ultrices sapien. Donec laoreet felis a diam volutpat tempor. Integer ornare auctor ipsum, vitae finibus nibh", null, 123);
-    if(this.isBottleWashersPage()) {
-      this.solutions = [solution, solution, solution];
-    } else if (this.isFiltersPage()) {
-      this.solutions = [solution, solution];
-    } else {
-      this.solutions = [solution];
+    this.solutions = this.solutionService.loadSolutions(this.solutionType, this.benefit);
+  }
+
+  get benifitString(){
+      switch(this.benefit){
+        case SolutionBefenitType.PERFORMANCE: return 'Improve performace';
+        case SolutionBefenitType.HYGIENE: return 'Improve hygiene';
+        case SolutionBefenitType.COSTS: return 'Reduce costs';
+        case SolutionBefenitType.WATER_ENERGY: return 'Save water/energy';
+
+      }
+  }
+
+  get solutionTypeString(){
+    switch(this.solutionType){
+      case SolutionType.BOTTLE_WASHERS: return 'Bottle Washers';
+      case SolutionType.FILTERS: return 'Fillers';
+      case SolutionType.OTHERS: return 'Other machines';
     }
   }
 }
