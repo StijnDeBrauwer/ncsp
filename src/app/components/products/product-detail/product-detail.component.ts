@@ -10,8 +10,7 @@ import { ResponsiveService } from 'src/app/services/responsive/responsive.servic
 export class ProductDetailComponent implements OnInit {
 
   @Input() product: ProductModel;
-  isMobile: false;
-  selectedTab: string = "tab1";
+  isMobile: boolean;
   @Output() close: EventEmitter<boolean> = new EventEmitter();
 
   constructor(private responsiveService: ResponsiveService) { 
