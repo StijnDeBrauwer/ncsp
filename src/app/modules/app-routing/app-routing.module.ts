@@ -6,13 +6,15 @@ import {BrowserModule} from '@angular/platform-browser';
 import {PageNotFoundPage} from '../../pages/page-not-found/page-not-found.page';
 import {OurCompanyPage} from '../../pages/company/our-company.component';
 import {MaterialModule} from '../material-module/material-module.module';
-import {OurProductPage} from '../../pages/products/our-product-page.component';
+import {ProductGroupPage} from '../../pages/products/product-group-page/product-group.page';
+import {OurProductPage} from '../../pages/products/product.page';
 import {OurSolutionsPage} from '../../pages/solutions/our-solutions-page.component';
 import {OurNewsPage} from '../../pages/news/our-news-page.component';
 import {ContactPage} from '../../pages/contact/contact.page';
-import {ProductListPageComponent} from 'src/app/pages/products/product-list-page/product-list-page.component';
+import {ProductListPage} from '../../pages/products/product-types/product-list-page/product-list.page';
 import {SupplierType} from '../../models/supplier-type.model';
-import {ProductComponent} from '../../components/products/product/product.component';
+import {ProductTypePage} from '../../pages/products/product-types/product-type.page';
+import {ProductType} from '../../models/product-type.model';
 
 const routes: Routes = [
     {
@@ -29,30 +31,77 @@ const routes: Routes = [
     {
         path: 'company',
         component: OurCompanyPage,
-        // children: [
-        //     {path: '', redirectTo: 'company', pathMatch: 'full'},
-        //     {path: 'vision', component: OurCompanyPage, data: {page: 'company'}},
-        //     {path: 'who-we-are', component: OurCompanyPage, data: {page: 'who-we-are'}},
-        //     {path: 'approach', component: OurCompanyPage, data: {page: 'approach'}},
-        // ],
+        children: [
+            {path: '', redirectTo: 'company', pathMatch: 'full'},
+            {path: 'vision', component: OurCompanyPage, data: {page: 'company'}},
+            {path: 'who-we-are', component: OurCompanyPage, data: {page: 'who-we-are'}},
+            {path: 'approach', component: OurCompanyPage, data: {page: 'approach'}},
+        ],
     },
     {
         path: 'products',
         component: OurProductPage,
-        // children: [
-        //     {path: 'crown-baele', component: ProductListPageComponent, data: {type: SupplierType.CROWN_BAELE}},
-        //     {path: 'third-party', component: ProductListPageComponent, data: {type: SupplierType.THIRD_PARTY}},
-        // ]
-    },
-    {
-        path: 'products/crown-baele',
-        component: ProductListPageComponent,
-        data: {type: SupplierType.CROWN_BAELE}
-    },
-    {
-        path: 'products/third-party',
-        component: ProductListPageComponent,
-        data: {type: SupplierType.THIRD_PARTY}
+        children: [
+            {path: '', redirectTo: 'suppliers', pathMatch: 'full'},
+            {
+                path:'suppliers',
+                component: ProductGroupPage
+            },
+            {
+                path: 'crown-baele',
+                component: ProductTypePage,
+                children: [
+                    {path: '', redirectTo: 'parts', pathMatch: 'full'},
+                    {
+                        path: 'parts',
+                        component: ProductListPage,
+                        data: {type: SupplierType.CROWN_BAELE, product: ProductType.PARTS},
+                    },
+                    {
+                        path: 'upgrades',
+                        component: ProductListPage,
+                        data: {type: SupplierType.CROWN_BAELE, product: ProductType.UPGRADES},
+                    },
+                    {
+                        path: 'add-ons',
+                        component: ProductListPage,
+                        data: {type: SupplierType.CROWN_BAELE, product: ProductType.ADD_ONS},
+                    },
+                    {
+                        path: 'services',
+                        component: ProductListPage,
+                        data: {type: SupplierType.CROWN_BAELE, product: ProductType.SERVICES},
+                    }
+                ]
+            },
+            {
+                path: 'third-party',
+                component: ProductTypePage,
+                children: [
+                    {path: '', redirectTo: 'parts', pathMatch: 'full'},
+                    {
+                        path: 'parts',
+                        component: ProductListPage,
+                        data: {type: SupplierType.THIRD_PARTY,product: ProductType.PARTS},
+                    },
+                    {
+                        path: 'upgrades',
+                        component: ProductListPage,
+                        data: {type: SupplierType.THIRD_PARTY, product: ProductType.UPGRADES},
+                    },
+                    {
+                        path: 'add-ons',
+                        component: ProductListPage,
+                        data: {type: SupplierType.THIRD_PARTY, product: ProductType.ADD_ONS},
+                    },
+                    {
+                        path: 'services',
+                        component: ProductListPage,
+                        data: {type: SupplierType.THIRD_PARTY, product: ProductType.SERVICES},
+                    }
+                ]
+            },
+        ]
     },
     {
         path: 'solutions',

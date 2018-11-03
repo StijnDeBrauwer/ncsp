@@ -4,9 +4,8 @@
         <ul>
             <li><a routerLink="/home" (click)="navigate()">Home</a></li>
             <li *ngFor="let link of links">
-                <a *ngIf="link.path && !link.children" [routerLink]="link.path"> {{link.text}} </a>
-                <a *ngIf="link.children" [ngClass]="{'selected': (link === chosenLink) && subMenuOpen}"
-                   (click)="toggleSubMenu(link)"> {{link.text}} </a>
+                <a *ngIf="link.path && !link.children" [routerLink]="link.path" (click)="navigate()"> {{link.text}} </a>
+                <a *ngIf="link.children" (click)="toggleSubMenu(link)"> {{link.text}} </a>
             </li>
             <li>
                 <app-language-picker [isTransparent]="navbarState === 'hide'"></app-language-picker>
@@ -17,7 +16,7 @@
     <div *ngIf="chosenLink && chosenLink.children" class="sub-menu-desktop"
          [ngClass]="{'open': subMenuOpen}">
         <div class="sub-menu-desktop-description">
-            <a [routerLink]="chosenLink.path">{{chosenLink.text}}</a>
+            <a [routerLink]="chosenLink.path" (click)="navigate()">{{chosenLink.text}}</a>
         </div>
 
         <div class="sub-menu-desktop-content">

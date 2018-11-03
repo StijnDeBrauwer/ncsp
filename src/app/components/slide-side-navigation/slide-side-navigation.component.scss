@@ -25,7 +25,6 @@ section#slide-side-navigation{
     align-items: center;
     cursor: pointer;
     z-index: 1000;
-    transition: all ease-in-out .1s ;
 
     &.open{
       left: -35px;
@@ -44,14 +43,16 @@ section#slide-side-navigation{
 
   .content{
     max-width: 0;
-    transition: all linear .2s ;
+    transition: all ease-in-out .2s ;
     z-index: 100;
     text-align:center;
-    padding:0;
+    overflow: hidden;
+    width: unset;
+    min-width: unset;
+    box-shadow:0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
 
     &.open{
       max-width: 5000px;
-      box-shadow:0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
       padding: 25px;
     }
   }

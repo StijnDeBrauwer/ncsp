@@ -8,12 +8,15 @@ import {ScrollModel} from '../../models/scroll.model';
 export class ScrollDataService {
 
     private _scrollData: ScrollModel;
+
     private _navBarState: string;
 
     readonly  logoShowPath = '../../../../assets/images/logo.png';
     readonly  logoHidePath = '../../../../assets/images/logo_white.png';
 
     private _logoPath: string;
+
+
     scrollDataSubject: any;
     navBarStateSubject: any;
     logoPathSubject: any;

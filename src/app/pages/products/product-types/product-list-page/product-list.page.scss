@@ -1,27 +1,12 @@
-@import "../../../../assets/variables";
+@import "../../../../../assets/variables";
 
 #product-list {
   margin-top: $nav-bar-height;
   .banner {
-    background: url("../../../../assets/images/people.jpg") center top;
+    background: url("../../../../../assets/images/people.jpg") center top;
   }
 
-  ::ng-deep app-slide-side-navigation {
-    a {
-      cursor: pointer;
-    }
-    ul {
-      padding: 0;
-      list-style: none;
-      li {
-        padding: 10px 0;
-      }
-    }
-    h2 {
-      font-size: 15px;
-      color: $main-color;
-    }
-  }
+
 
   .products {
     padding: 0 20px 20px 20px;

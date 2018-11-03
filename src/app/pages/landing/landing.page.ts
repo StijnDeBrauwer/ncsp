@@ -27,7 +27,7 @@ export class LandingPage implements OnInit, AfterViewInit, OnDestroy {
       return;
     }
 
-    if (75 > scrollPosition) {
+    if (100 > scrollPosition) {
       this.scrollDataService.navBarState = 'hide';
       this.scrollDataService.logoPath = this.scrollDataService.logoHidePath;
     } else {
@@ -45,16 +45,15 @@ export class LandingPage implements OnInit, AfterViewInit, OnDestroy {
       this.isMobile = isMobile;
     });
 
-    this.scrollDataSubject = this.scrollDataService.scrollDataSubject.subscribe(scrollData => {
-      if (scrollData) {
-        this.scrollData = scrollData;
-      }
-    });
-    this.checkScroll();
   }
 
   ngAfterViewInit(){
-
+      this.scrollDataSubject = this.scrollDataService.scrollDataSubject.subscribe(scrollData => {
+          if (scrollData) {
+              this.scrollData = scrollData;
+          }
+      });
+      this.checkScroll();
   }
 
   
