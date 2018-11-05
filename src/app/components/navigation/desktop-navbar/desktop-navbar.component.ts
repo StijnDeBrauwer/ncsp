@@ -1,10 +1,9 @@
-import {Component, OnInit, OnDestroy} from '@angular/core';
+import {Component, OnInit, OnDestroy, AfterViewInit} from '@angular/core';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import {LinkModel} from '../../../models/link.model';
 import {ScrollDataService} from '../../../services/scroll/scroll-data.service';
 import {ScrollModel} from '../../../models/scroll.model';
-import {ResponsiveService} from '../../../services/responsive/responsive.service';
-import {Router, NavigationEnd} from '@angular/router';
+import {Router, NavigationEnd, ActivatedRoute, NavigationStart} from '@angular/router';
 import {routes} from 'src/app/modules/router-paths';
 
 @Component({
@@ -21,96 +20,98 @@ import {routes} from 'src/app/modules/router-paths';
     ]
 })
 
-export class DesktopNavbarComponent implements OnInit, OnDestroy {
+export class DesktopNavbarComponent implements OnInit, AfterViewInit, OnDestroy {
+    //whether the submenu has to be open or not
     subMenuOpen = false;
+    //is tracked because we have to know which link the user choose to close the submenu
     chosenLink: LinkModel;
+    //is an array of linkes defined in /src/app/modules/router-paths
     links: Array<LinkModel> = [];
-
+    //whether the nav should be transparent
+    isTransparent: boolean;
+    //the path to the logo (we have a white or a colored logo)
     logoPath: string;
+    //variable to keep track of the animations
     navbarState: string;
-    navBarStateSubject: any;
-    logoPathStateSubject: any;
-    navStateTemp: string;
 
-    constructor(private router: Router, private scrollService: ScrollDataService) {
+    activeLink: LinkModel;
+
+
+    readonly logoShowPath = '../../../../assets/images/logo.png';
+    readonly logoHidePath = '../../../../assets/images/logo_white.png';
+
+    isTransparentSubject: any;
+    isHomepageSubject: any;
+
+    constructor(private scrollService: ScrollDataService) {
         this.navbarState = 'show';
-        this.logoPath = this.scrollService.logoShowPath;
 
     }
 
     ngOnInit() {
         this.initRoutes();
-        this.checkRoute();
     }
 
+    ngAfterViewInit() {
+        //check if the landing page called on init
+        this.isHomepageSubject = this.scrollService.homePageSubject.subscribe(isHomepage => {
+            if (isHomepage) {
+                this.initSubscribers();
+            } else {
+               setTimeout(() => this.isTransparent = false, 0);
+            }
+        });
+
+    }
+
+    destroySubscribers() {
+        if (this.isTransparentSubject) this.isTransparentSubject.unsubscribe();
+        if (this.isHomepageSubject) this.isHomepageSubject.unsubscribe();
+    }
 
     ngOnDestroy() {
-        this.destorySubscribers();
+        this.destroySubscribers();
     }
 
-    checkRoute() {
-        this.router.events.subscribe(event => {
-            if (event instanceof NavigationEnd) {
-                if (event.url === '/home') {
-                    this.initSubscribers();
-                } else {
-                    this.destorySubscribers();
-                }
-            }
-        });
-    }
 
     initSubscribers() {
-        this.navBarStateSubject = this.scrollService.navBarStateSubject.subscribe(navState => {
-            if (navState) {
-                setTimeout(() => this.navbarState = navState, 0);
+        this.isTransparentSubject = this.scrollService.transparentSubject.subscribe(isTransparent => {
+            //set timeout because of ExpressionChangedAfterItHasBeenCheckedError, see https://github.com/angular/angular/issues/17572
+            setTimeout(() => this.isTransparent = isTransparent,0);
+
+            if (this.isTransparent) {
+                this.navbarState = 'hide';
+                this.logoPath = this.logoHidePath;
+            } else {
+                this.navbarState = 'show';
+                this.logoPath = this.logoShowPath;
             }
         });
-
-        this.logoPathStateSubject = this.scrollService.logoPathSubject.subscribe(logoPath => {
-            if (logoPath) {
-                setTimeout(() => this.logoPath = logoPath, 0);
-            }
-        });
-    }
-
-    destorySubscribers() {
-        if (this.navBarStateSubject) {
-            this.navBarStateSubject.unsubscribe();
-        }
-
-        if (this.logoPathStateSubject) {
-            this.logoPathStateSubject.unsubscribe();
-        }
     }
 
     initRoutes() {
         this.links = routes;
     }
 
-    changeSelectDataModel() {
-        this.scrollService.scrollData = new ScrollModel(this.subMenuOpen);
-        this.scrollService.navBarState = 'show';
-    }
-
     navigate() {
         this.subMenuOpen = false;
         this.chosenLink = null;
-        this.changeSelectDataModel();
     }
 
     toggleSubMenu(link: LinkModel) {
-        if(this.chosenLink === link){
+
+        this.scrollService.isTransparent = false;
+        //if the chosen link is the current link (this means the user has clicked twice on the link) we have to close the submenu
+        if (this.chosenLink === link) {
             this.subMenuOpen = false;
             this.chosenLink = null;
-        }else{
+        } else {
             this.subMenuOpen = !!link.children;
+            this.activeLink = link;
             this.chosenLink = link;
         }
 
-        this.navbarState = 'show';
-        this.logoPath = this.scrollService.logoShowPath;
-        this.changeSelectDataModel();
+
     }
 
 }

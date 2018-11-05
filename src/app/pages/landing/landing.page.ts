@@ -1,65 +1,46 @@
-import { Component, HostListener, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
-import { ScrollDataService } from '../../services/scroll/scroll-data.service';
-import { ScrollModel } from '../../models/scroll.model';
-import { ResponsiveService } from '../../services/responsive/responsive.service';
+import {Component, HostListener, OnInit, OnDestroy, AfterViewInit} from '@angular/core';
+import {ScrollDataService} from '../../services/scroll/scroll-data.service';
+import {ScrollModel} from '../../models/scroll.model';
+import {ResponsiveService} from '../../services/responsive/responsive.service';
 
 @Component({
-  selector: 'app-landing',
-  templateUrl: './landing.page.html',
-  styleUrls: ['./landing.page.scss']
+    selector: 'app-landing',
+    templateUrl: './landing.page.html',
+    styleUrls: ['./landing.page.scss']
 })
-export class LandingPage implements OnInit, AfterViewInit, OnDestroy {
-
-  private scrollData: ScrollModel;
-  scrollDataSubject: any;
-
-  isMobile: boolean;
-  navBarState = 'hide';
-  logoPath: string;
+export class LandingPage implements OnInit, AfterViewInit,OnDestroy {
+    isMobile: boolean;
 
 
-  @HostListener('window:scroll', ['$event'])
-  checkScroll() {
-    const scrollPosition = window.pageYOffset;
-    if (this.isMobile || this.scrollData.subMenuOpen) {
-      this.scrollDataService.navBarState = 'show';
-      this.scrollDataService.logoPath = this.scrollDataService.logoShowPath;
-      return;
+    @HostListener('window:scroll', ['$event'])
+    checkScroll() {
+        const scrollPosition = window.pageYOffset;
+        if (this.isMobile) {
+            return;
+        }
+
+        this.scrollDataService.isTransparent = 100 > scrollPosition;
+
     }
 
-    if (100 > scrollPosition) {
-      this.scrollDataService.navBarState = 'hide';
-      this.scrollDataService.logoPath = this.scrollDataService.logoHidePath;
-    } else {
-      this.scrollDataService.navBarState = 'show';
-      this.scrollDataService.logoPath = this.scrollDataService.logoShowPath;
+    constructor(private scrollDataService: ScrollDataService, private responsiveService: ResponsiveService) {
+        this.responsiveService.getMobileStatus().subscribe(isMobile => {
+            this.isMobile = isMobile;
+        });
     }
 
-  }
+    ngOnInit() {
+        this.scrollDataService.isHomepage = true;
 
-  constructor(private scrollDataService: ScrollDataService, private responsiveService: ResponsiveService) {
-  }
+    }
+    ngAfterViewInit(){
+        this.checkScroll();
+    }
 
-  ngOnInit() {
-    this.responsiveService.getMobileStatus().subscribe(isMobile => {
-      this.isMobile = isMobile;
-    });
 
-  }
-
-  ngAfterViewInit(){
-      this.scrollDataSubject = this.scrollDataService.scrollDataSubject.subscribe(scrollData => {
-          if (scrollData) {
-              this.scrollData = scrollData;
-          }
-      });
-      this.checkScroll();
-  }
-
-  
-
-  ngOnDestroy() {
-  }
+    ngOnDestroy() {
+        this.scrollDataService.isHomepage = false;
+    }
 
 
 }
