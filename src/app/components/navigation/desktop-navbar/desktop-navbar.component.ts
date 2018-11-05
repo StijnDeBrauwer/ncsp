@@ -21,17 +21,17 @@ import {routes} from 'src/app/modules/router-paths';
 })
 
 export class DesktopNavbarComponent implements OnInit, AfterViewInit, OnDestroy {
-    //whether the submenu has to be open or not
+    // whether the submenu has to be open or not
     subMenuOpen = false;
-    //is tracked because we have to know which link the user choose to close the submenu
+    // is tracked because we have to know which link the user choose to close the submenu
     chosenLink: LinkModel;
-    //is an array of linkes defined in /src/app/modules/router-paths
+    // is an array of linkes defined in /src/app/modules/router-paths
     links: Array<LinkModel> = [];
-    //whether the nav should be transparent
+    // whether the nav should be transparent
     isTransparent: boolean;
-    //the path to the logo (we have a white or a colored logo)
+    // the path to the logo (we have a white or a colored logo)
     logoPath: string;
-    //variable to keep track of the animations
+    // variable to keep track of the animations
     navbarState: string;
 
     activeLink: LinkModel;
@@ -53,7 +53,7 @@ export class DesktopNavbarComponent implements OnInit, AfterViewInit, OnDestroy 
     }
 
     ngAfterViewInit() {
-        //check if the landing page called on init
+        // check if the landing page called on init
         this.isHomepageSubject = this.scrollService.homePageSubject.subscribe(isHomepage => {
             if (isHomepage) {
                 this.initSubscribers();

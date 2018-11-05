@@ -1,7 +1,7 @@
 import {LinkModel} from '../models/link.model';
 
 export const routes = [
-    new LinkModel('Our Company', '/company/',
+    new LinkModel('Our company', '/company/',
         [
             new LinkModel('Our vision', '/company/vision'),
             new LinkModel('Who we are', '/company/who-we-are', undefined),
@@ -15,7 +15,7 @@ export const routes = [
         ]),
     new LinkModel('Our solutions', '/solutions', [
         new LinkModel('For Bottle Washers', '/solutions/type/bottlewashers'),
-        new LinkModel('For Fillers', '/solutions/type/filters'),
+        new LinkModel('For Fillers', '/solutions/type/fillers'),
         new LinkModel('For Other Machines', '/solutions/type/others'),
     ]),
     new LinkModel('Contact', '/contact')

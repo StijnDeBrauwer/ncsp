@@ -123,23 +123,30 @@ const routes: Routes = [
                 data: {type: SolutionType.BOTTLE_WASHERS}
             },
             {
+                path: 'bottlewashers/:id',
+                component: SolutionDetailsPageComponent
+            },
+            {
                 path: 'fillers',
                 component: SolutionsListPageComponent,
                 data: {type: SolutionType.FILTERS}
+            },
+
+            {
+                path: 'fillers/:id',
+                component: SolutionDetailsPageComponent
             },
             {
                 path: 'other',
                 component: SolutionsListPageComponent,
                 data: {type: SolutionType.OTHERS}
             },
-
+            {
+                path: 'other/:id',
+                component: SolutionDetailsPageComponent
+            }
         ]
     },
-    {
-        path: 'solutions/type/bottlewashers/:id',
-        component: SolutionDetailsPageComponent
-    },
-    
     {
         path: 'news',
         component: OurNewsPage
