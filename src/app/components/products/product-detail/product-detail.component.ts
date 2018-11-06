@@ -15,12 +15,15 @@ export class ProductDetailComponent implements OnInit {
 
   constructor(private responsiveService: ResponsiveService) { 
     
-  }
-
-  ngOnInit() {
     this.responsiveService.getMobileStatus().subscribe(isMobile => {
       this.isMobile = isMobile;
     });
+
+    this.responsiveService.checkWidth();
+  }
+
+  ngOnInit() {
+  
   }
 
   closeModal(): void {
