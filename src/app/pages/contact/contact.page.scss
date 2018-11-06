@@ -8,21 +8,18 @@
 //     display: inline-block;
 //     max-height: 1px;
 // }
+::ng-deep  .mat-form-field-appearance-standard .mat-form-field-underline{
+  display: none !important;
+}
 
 section#contact {
   background-color: $card-background-color;
   margin-top: $nav-bar-height;
 
-  div.contact-banner {
-    color: white;
-    height: auto;
-    min-height: 25vh;
+  div.banner {
+   
     background-size: cover !important;
     background: url("../../../assets/images/people.jpg") center top;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
   }
 
   .contact-content {
@@ -59,15 +56,10 @@ section#contact {
 
       mat-form-field {
         display: block;
-        margin: 40px 0;
+        margin: 20px 0;
         min-width: 45%;
         border-radius: 5px;
         transform: perspective(1px);
-        //min-height: 50px;
-
-        ::ng-deep .mat-input-underline {
-          display: none;
-        }
 
         mat-error{
           margin: 20px 0;
