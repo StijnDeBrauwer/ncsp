@@ -1,9 +1,9 @@
-@import "../../../assets/variables";
+@import "../../../../assets/variables";
 #products {
   margin-top: $nav-bar-height;
   background-color: white;
   .banner{
-    background: url("../../../assets/images/people.jpg") center top;
+    background: url("../../../../assets/images/people.jpg") center top;
   }
   .categories {
     .outer-div {

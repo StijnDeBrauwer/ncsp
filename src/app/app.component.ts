@@ -1,7 +1,9 @@
-import { Component, OnInit, HostListener, AfterViewInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, HostListener, Inject, OnDestroy } from '@angular/core';
 import { ResponsiveService } from './services/responsive/responsive.service';
-import {TranslateService} from '@ngx-translate/core';
 import { Router, RoutesRecognized } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
+import { PLATFORM_ID, APP_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -20,12 +22,17 @@ export class AppComponent implements OnInit, OnDestroy {
   isMobile: boolean;
   isAdminMode: boolean;
 
-  constructor(private responsiveService: ResponsiveService,
-    translate: TranslateService,
+  constructor(
+    private responsiveService: ResponsiveService,
+    @Inject(PLATFORM_ID) private platformId: Object,
+    @Inject(APP_ID) private appId: string,
+    private translate: TranslateService,
     private router: Router) {
+
     this._responsiveSubscription = this.responsiveService.getMobileStatus().subscribe(isMobile => {
       this.isMobile = isMobile;
     });
+
     this.onResize();
 
     translate.setDefaultLang('en');
@@ -41,9 +48,7 @@ export class AppComponent implements OnInit, OnDestroy {
     });
   }
 
-  ngOnInit() {
-
-  }
+  ngOnInit() {}
 
   ngOnDestroy() {
     if (this._responsiveSubscription) {
@@ -51,7 +56,18 @@ export class AppComponent implements OnInit, OnDestroy {
     }
   }
 
-
+  onActivate(event: any) {
+    if (isPlatformBrowser(this.platformId)) {
+      let scrollToTop = window.setInterval(() => {
+        let pos = window.pageYOffset;
+        if (pos > 0) {
+          window.scrollTo(0, pos - 50); // how far to scroll on each step
+        } else {
+          window.clearInterval(scrollToTop);
+        }
+      }, 16);
+    }
+  }
 
   onResize() {
     this.responsiveService.checkWidth();

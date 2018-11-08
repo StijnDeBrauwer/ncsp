@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ProductListPageComponent } from './product-list-page.component';
+import { SolutionTypePage } from './solution-type.page';
 
-describe('ProductListPageComponent', () => {
-  let component: ProductListPageComponent;
-  let fixture: ComponentFixture<ProductListPageComponent>;
+describe('SolutionTypeComponent', () => {
+  let component: SolutionTypePage;
+  let fixture: ComponentFixture<SolutionTypePage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ProductListPageComponent ]
+      declarations: [ SolutionTypePage ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ProductListPageComponent);
+    fixture = TestBed.createComponent(SolutionTypePage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -3,10 +3,10 @@ import { ProductModel } from 'src/app/models/product.model';
 
 @Component({
   selector: 'app-product',
-  templateUrl: './product.component.html',
-  styleUrls: ['./product.component.scss']
+  templateUrl: './product-card.component.html',
+  styleUrls: ['./product-card.component.scss']
 })
-export class ProductComponent implements OnInit {
+export class ProductCardComponent implements OnInit {
 
   @Input() product: ProductModel;
   isModalVisible: boolean = false;

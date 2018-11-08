@@ -40,6 +40,11 @@ article {
   padding: 2%;
 }
 
+.active-link{
+  color: $main-color !important;
+  font-weight: bolder;
+}
+
 h1 {
   font-size: $font-size-extra-large;
   color: $main-color;
@@ -53,12 +58,13 @@ h2 {
 .banner{
   color: white;
   height: auto;
-  min-height: 75vh;
+  min-height: 50vh;
   background-size: cover !important;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  filter:contrast(150%) brightness(100%) grayscale(1px);
 
   .content{
     padding-left: 10%;
@@ -89,3 +95,4 @@ h2 {
   border-style: solid;
   border-width: 40px 100vw 0 0;
 }
+

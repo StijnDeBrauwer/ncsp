@@ -1,0 +1,144 @@
+@import "../../../../../assets/variables";
+.modal {
+    z-index: 100;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    .product-modal {
+        padding: 10px;
+        background-color: white;
+        width: 90%;
+        height: auto;
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 2.5px;
+
+        .modal-header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            h1 {
+                margin: 10px;
+                font-weight: bold;
+            }
+
+            .icon-close {
+                font-size: 25px;
+                margin: 0 10px;
+                margin-top: -30px;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .modal-content {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            .slideshow {
+                position: relative;
+                width: 39%;
+                height: fit-content;
+                img {
+                    width: 100%;
+                    border-radius: 2.5px;
+                    box-shadow: 7px 7px 21px -5px rgba(0, 0, 0, 0.75);
+                    :before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        left: 0;
+                        background-image: linear-gradient(to bottom right, #002f4b, #dc4225);
+                        opacity: .75;
+                        z-index: 0;
+                    }
+                }
+
+                i {
+                    color: $main-color;
+                    text-shadow: 4px 4px 30px rgba(0, 0, 0, 1);
+                    font-size: 100px;
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    &:first-of-type {
+                        left: 0;
+                    }
+                    &:last-of-type {
+                        right: 0;
+                    }
+                }
+
+                /*.arrow {
+                    color: $main-color;
+                    font-weight: bold;
+                    position: absolute;
+                    background-color: white;
+                    top: 50%;
+                    padding: 5px;
+                    width: 25px;
+                    height: 25px;
+                    span {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 25px;
+                        height: 25px;
+                    }
+                    
+                    border-radius: 100%;
+                    font-size: 25px;
+                    transform: translateY(-50%);
+                    &:first-of-type {
+                        left: 20px;
+                    }
+                    &:last-of-type {
+                    right: 20px;
+                    }
+                }*/
+            }
+
+            .product-info {
+                max-width: 59%;
+                flex-shrink: 0;
+                flex-grow: 1;
+
+                .menu {
+                    .details {
+                        h1 {
+                            margin: 10px;
+                            text-align: center;
+                            font-weight: normal;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    ::ng-deep .mat-tab-label-active {
+        color: $main-color !important;
+        opacity: 1 !important;
+    }
+
+    ::ng-deep .mat-tab-label {
+        padding: 0 10px !important;
+        min-width: 100px !important;
+    }
+
+    ::ng-deep .mat-tab-labels{
+        justify-content: center; /* align items in Main Axis */
+    }
+}

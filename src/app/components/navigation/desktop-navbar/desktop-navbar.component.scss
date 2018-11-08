@@ -14,6 +14,14 @@ section#desktop-navigation {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: white !important;
+  color: black !important;
+
+  &.transparent{
+    background-color: transparent !important;
+    color: white !important;
+    box-shadow: none !important;
+  }
 
   div#navigation {
     height: $nav-bar-height;
@@ -23,6 +31,10 @@ section#desktop-navigation {
     align-items: center;
     justify-content: space-between;
     box-shadow: 7px 7px 21px -5px rgba(0, 0, 0, 0.75);
+
+    &.transparent{
+      box-shadow: 0 0 0 0;
+    }
 
     span[class*="ion-ios-"] {
       padding: 0 5px;
@@ -71,13 +83,15 @@ div.sub-menu-desktop {
   overflow: hidden;
   width: 100%;
   max-height: 0;
-  transition: max-height 0.5s ease-in;
+  height: auto;
+  -webkit-transition: max-height 200ms ease-out;
+  -moz-transition: max-height 200ms ease-out;
+  -o-transition: max-height 200ms ease-out;
+  transition: max-height 200ms ease-out;
   box-shadow: 7px 7px 21px -5px rgba(0, 0, 0, 0.75);
 
   &.open {
-    border: none;
     max-height: 500px;
-    background-color: white;
   }
 
   * {

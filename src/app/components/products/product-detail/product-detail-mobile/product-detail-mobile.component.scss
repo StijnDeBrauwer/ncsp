@@ -1,0 +1,92 @@
+@import "../../../../../assets/variables";
+@import "../product-detail-desktop/product-detail-desktop.component.scss";
+.modal {
+    .product-modal {
+        overflow-y: scroll;
+        max-height: 90vh;    
+        padding: 0px;
+        .modal-header {
+            position: absolute;
+            right: 0;
+            top: 40px;
+            z-index: 1000;
+            i {
+                color: white;
+                background-color: $main-color;
+                border-radius: 100%;
+                padding: 5px;
+            }
+        }
+        .modal-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            h2 {
+                position: relative;
+                top: -60px;
+                margin: 0;
+                text-align: center;
+                background-color: $main-color;
+                width: 100%;
+                //text-shadow: 1px 1px 10px $main-color;
+            }
+
+            .slideshow {
+                width: 100%;
+                position: relative;
+                .img-banner {
+                    position: absolute;
+                    bottom: 20px;
+                    background-color: $main-color;
+                    color: white;
+                    font-size: 20px;
+                    text-align: center;
+                    width: 100%;
+                }
+                img {
+                    width: 100%;
+                    border-radius: 0;
+                }
+
+                i {
+                    font-size: 60px;
+                }
+            }
+
+            .product-info {
+                max-width: 100%;
+                p {
+                    padding: 0 10px;
+                }
+
+                .menu {
+                    .details {
+                        h1 {
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    ::ng-deep .mat-tab-group {
+        flex-direction: column-reverse;
+    }
+    
+    ::ng-deep .mat-tab-label {
+        padding: 0 5px !important;
+        min-width: 50px !important;
+        font-size: 12px !important;
+        height: 30px !important;
+    }
+    
+    ::ng-deep .mat-tab-header-pagination {
+        min-width: 25px;
+    }
+    
+    ::ng-deep .mat-tab-labels{
+        justify-content: center; /* align items in Main Axis */
+    }
+}

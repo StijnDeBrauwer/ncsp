@@ -15,12 +15,12 @@
             </li>
 
             <li *ngFor="let link of links">
-                <a *ngIf="link.path && !link.children" [routerLink]="link.path"> {{link.text}} </a>
-                <a *ngIf="link.children" [ngClass]="{'selected': (link === chosenLink) && subMenuOpen}"
+                <a *ngIf="link.path && !link.children"  routerLinkActive="active-link"  (click)="navigate()" [routerLink]="link.path"> {{link.text}} </a>
+                <a *ngIf="link.children" [ngClass]="{'active-link': (link === chosenLink)}"
                    (click)="toggleSubMenu(link)"> {{link.text}} </a>
                 <div *ngIf="link === chosenLink" class="sub-menu" [ngClass]="{'open': subMenuOpen}">
                     <p *ngFor="let child of link.children">
-                        <a [routerLink]="child.path" fragment="child.path" (click)="navigate()">{{child.text}}</a>
+                        <a [routerLink]="child.path" routerLinkActive="active-link" (click)="navigate()">{{child.text}}</a>
                     </p>
                 </div>
             </li>

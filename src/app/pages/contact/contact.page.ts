@@ -29,7 +29,6 @@ export class ContactPage implements OnInit {
     onSubmit() {
         let hasErrors: boolean = false;
         Object.keys(this.contactForm.controls).forEach(key => {
-            console.log(this.contactForm.get(key).value);
             if(!this.contactForm.get(key).value || this.contactForm.get(key).value  === ''){
                 this.contactForm.get(key).markAsTouched();
                 hasErrors = true;
@@ -43,7 +42,6 @@ export class ContactPage implements OnInit {
         const regex = /\r?\n|\r/g;
         const currentText: string = String(this.contactForm.controls.message.value);
         const body = currentText.replace(regex, '%0D%0A');
-        console.log("mailto:db_stijn@hotmail.com?subject=" + this.contactForm.controls.subject.value + "&body=Test");
 
         this.formEl.nativeElement.action = "mailto:db_stijn@hotmail.com?subject=" + this.contactForm.controls.subject.value + "&body=" +body ;
         this.formEl.nativeElement.submit()

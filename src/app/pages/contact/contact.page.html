@@ -1,18 +1,18 @@
 <section id="contact">
-
-
-    <div class="contact-banner">
-        <h1>Contact Us</h1>
+    <div class="banner">
+        <div class="content">
+            <h1>Contact Us</h1>
+        </div>
     </div>
 
     <div class="contact-content">
         <div class="contact-form">
-
-
-            <mat-card>
+            <mat-card class="card-header">
                 <mat-card-header>
                     <h2>Contact us by mail</h2>
                 </mat-card-header>
+            </mat-card>
+            <mat-card>
                 <mat-card-content class="px-lg-5 pt-0">
 
                     <form #form method="post" style="color: #757575;" [formGroup]="contactForm">
@@ -44,8 +44,8 @@
                         <div class="text-field">
                             <mat-form-field>
                                 <mat-label>Message</mat-label>
-                                <textarea type="text" formControlName="message" matInput
-                                          placeholder="Enter your message" aria-multiline="true"></textarea>
+                                <textarea type="text" formControlName="message" matInput placeholder="Enter your message"
+                                    aria-multiline="true"></textarea>
                                 <mat-error>Message is required</mat-error>
                             </mat-form-field>
                         </div>
@@ -64,7 +64,7 @@
         <div class="info">
             <mat-card class="card-header">
                 <mat-card-header>
-                <h2>Contact on other channels</h2>
+                    <h2>Contact on other channels</h2>
                 </mat-card-header>
             </mat-card>
 
@@ -82,7 +82,7 @@
                                 </th>
                             </tr>
                             <tr>
-                                <td>  Tel +2 3 434 92 69</td>
+                                <td> Tel +2 3 434 92 69</td>
                             </tr>
                         </table>
                     </div>
@@ -94,11 +94,11 @@
                                     <mat-icon color="primary">access_time</mat-icon>
                                 </td>
                                 <th>
-                                   Our opening hours
+                                    Our opening hours
                                 </th>
                             </tr>
                             <tr>
-                                <td>  09:00 - 17:00</td>
+                                <td> 09:00 - 17:00</td>
                             </tr>
                         </table>
                     </div>
@@ -107,7 +107,9 @@
 
                         <table>
                             <tr>
-                                <td rowspan="4"> <mat-icon color="primary">business</mat-icon> </td>
+                                <td rowspan="4">
+                                    <mat-icon color="primary">business</mat-icon>
+                                </td>
                                 <th>New Crown Service Partners NV/SA</th>
 
                             </tr>
