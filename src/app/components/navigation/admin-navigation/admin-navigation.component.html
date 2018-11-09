@@ -1,0 +1,64 @@
+<section id="side-menu" [ngClass]="{'visible': navOpen}">
+  <ul>
+    <li>
+      <a>
+        <div class="menu-link" (click)="toggle()">
+          <span class="text">Dashboard</span>
+          <i class="material-icons">
+            menu
+          </i>
+        </div>
+      </a>
+    </li>
+    <li>
+      <a routerLink="home">
+        <div class="menu-link" (click)="clickURL()">
+          <span class="text">Home</span>
+          <i class="material-icons">
+            home
+          </i>
+        </div>
+      </a>
+    </li>
+    <li>
+      <a routerLink="products">
+        <div class="menu-link" (click)="clickURL()">
+          <span class="text">Products</span>
+          <i class="material-icons">
+            shop
+          </i>
+        </div>
+      </a>
+    </li>
+    <li>
+      <a routerLink="solutions">
+        <div class="menu-link" (click)="clickURL()">
+          <span class="text">Solutions</span>
+          <i class="material-icons">
+            build
+          </i>
+        </div>
+      </a>
+    </li>
+    <li>
+      <a routerLink="news">
+        <div class="menu-link" (click)="clickURL()">
+          <span class="text">News</span>
+          <i class="material-icons">
+            announcement
+          </i>
+        </div>
+      </a>
+    </li>
+  </ul>
+</section>
+<section id="admin-nav">
+  <div class="nav-header">
+    <span>Admin panel</span>
+    <div id="hamburger-menu" [ngClass]="{'open': navOpen}" (click)="toggle()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</section>

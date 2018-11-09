@@ -41,7 +41,7 @@ export class AppComponent implements OnInit, OnDestroy {
     // Check if user is in admin mode
     this.router.events.subscribe((event: any) => {
       if (event instanceof RoutesRecognized) {
-        if(event.url.toString().includes("/admin")) {
+        if(event.url.toString().includes("/admin") || event.url.toString().includes("/login")) {
           return this.isAdminMode = true;
         }
       }
@@ -72,6 +72,4 @@ export class AppComponent implements OnInit, OnDestroy {
   onResize() {
     this.responsiveService.checkWidth();
   }
-
-
 }

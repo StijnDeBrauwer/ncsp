@@ -40,7 +40,14 @@ import { ProductDetailMobileComponent } from './components/products/product-deta
 import { SolutionTypePage } from './pages/solutions/solution-type/solution-type.page';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { LoginComponent } from './pages/cms/login/login.component';
-import { AdminComponent } from './pages/cms/admin/admin.component';
+import { AdminComponent } from './pages/cms/dashboard/admin.component';
+import { AdminNavigationComponent } from './components/navigation/admin-navigation/admin-navigation.component';
+import { LogoutComponent } from './pages/cms/logout/logout.component';
+import { DashboardHomeComponent } from './pages/cms/dashboard/dashboard-home/dashboard-home.component';
+import { DashboardProductsComponent } from './pages/cms/dashboard/dashboard-products/dashboard-products.component';
+import { DashboardSolutionsComponent } from './pages/cms/dashboard/dashboard-solutions/dashboard-solutions.component';
+import { DashboardNewsComponent } from './pages/cms/dashboard/dashboard-news/dashboard-news.component';
+import { Dashboard404Component } from './pages/cms/dashboard/dashboard404/dashboard404.component';
 
 
 // AoT requires an exported function for factories
@@ -82,7 +89,14 @@ export function HttpLoaderFactory(http: HttpClient) {
         AdminComponent,
         ProductDetailDesktopComponent,
         ProductDetailMobileComponent,
-        SolutionTypePage
+        SolutionTypePage,
+        AdminNavigationComponent,
+        LogoutComponent,
+        DashboardHomeComponent,
+        DashboardProductsComponent,
+        DashboardSolutionsComponent,
+        DashboardNewsComponent,
+        Dashboard404Component
     ],
     imports: [
         BrowserModule,
