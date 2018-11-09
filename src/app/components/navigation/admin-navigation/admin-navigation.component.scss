@@ -121,8 +121,10 @@ $hamburger-height: 30px;
     }
 
     ul {
+        position: relative;
         margin: 0;
         padding: 0;
+        height: 100%;
         li {
             border-top: 1px solid black;
             &:nth-child(1) {
@@ -137,7 +139,7 @@ $hamburger-height: 30px;
                     }
                 }
             }
-            &:last-child {
+            &:last-child, &.news{
                 border-bottom: 1px solid black;
             }
 
@@ -181,6 +183,10 @@ $hamburger-height: 30px;
                     align-items: center;
                     padding: 5px 0px 5px 5px;
                 }
+            }
+            &.bottom-link {
+                position: absolute;
+                bottom: 30px;
             }
         }
     }
