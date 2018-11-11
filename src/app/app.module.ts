@@ -48,6 +48,9 @@ import { DashboardProductsComponent } from './pages/cms/dashboard/dashboard-prod
 import { DashboardSolutionsComponent } from './pages/cms/dashboard/dashboard-solutions/dashboard-solutions.component';
 import { DashboardNewsComponent } from './pages/cms/dashboard/dashboard-news/dashboard-news.component';
 import { Dashboard404Component } from './pages/cms/dashboard/dashboard404/dashboard404.component';
+import { DashboardProductEditComponent } from './pages/cms/dashboard/dashboard-products/dashboard-product-edit/dashboard-product-edit.component';
+import { DashboardSolutionEditComponent } from './pages/cms/dashboard/dashboard-solutions/dashboard-solution-edit/dashboard-solution-edit.component';
+import { DashboardModalComponent } from './components/dashboard-modal/dashboard-modal.component';
 
 
 // AoT requires an exported function for factories
@@ -96,7 +99,10 @@ export function HttpLoaderFactory(http: HttpClient) {
         DashboardProductsComponent,
         DashboardSolutionsComponent,
         DashboardNewsComponent,
-        Dashboard404Component
+        Dashboard404Component,
+        DashboardProductEditComponent,
+        DashboardSolutionEditComponent,
+        DashboardModalComponent
     ],
     imports: [
         BrowserModule,

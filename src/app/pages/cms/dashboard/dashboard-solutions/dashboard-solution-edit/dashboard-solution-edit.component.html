@@ -1,0 +1,48 @@
+<section id="admin-solution-edit">
+  <div *ngIf="!isEditMode">
+    <h1>Add new solution</h1>
+    <p>Fill in the form below to add a new solution to your system.</p>
+  </div>
+  <div *ngIf="isEditMode">
+    <h1>Edit solution</h1>
+    <p>Change the data in the form below to edit this solution.</p>
+  </div>
+  <form>
+    <div class="form-input">
+      <input placeholder="Name" />
+      <label for="#">Name</label>
+    </div>
+    <div class="form-input">
+      <textarea placeholder="Description"></textarea>
+      <label for="#">Description</label>
+    </div>
+    <div class="form-input">
+      <textarea placeholder="Description"></textarea>
+      <label for="#">Description</label>
+    </div>
+    <div class="form-input">
+      <textarea placeholder="Description"></textarea>
+      <label for="#">Description</label>
+    </div>
+    <div class="form-input">
+      <textarea placeholder="Description"></textarea>
+      <label for="#">Description</label>
+    </div>
+    <div class="form-input">
+      <textarea placeholder="Description"></textarea>
+      <label for="#">Description</label>
+    </div>
+    <div class="form-input">
+      <textarea placeholder="Description"></textarea>
+      <label for="#">Description</label>
+    </div>
+    <div class="form-input">
+      <textarea placeholder="Description"></textarea>
+      <label for="#">Description</label>
+    </div>
+    <div class="footer-buttons">
+      <a routerLink="/admin/solutions">Cancel</a>
+      <button type="submit">Create</button>
+    </div>
+  </form>
+</section>

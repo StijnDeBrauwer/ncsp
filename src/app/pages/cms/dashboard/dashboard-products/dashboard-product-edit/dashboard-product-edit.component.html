@@ -1,0 +1,48 @@
+<section id="admin-product-edit">
+  <div *ngIf="!isEditMode">
+    <h1>Add new product</h1>
+    <p>Fill in the form below to add a new product to your system.</p>
+  </div>
+  <div *ngIf="isEditMode">
+    <h1>Edit product</h1>
+    <p>Change the data in the form below to edit this product.</p>
+  </div>
+  <form>
+    <div class="form-input">
+      <input placeholder="Name" />
+      <label for="#">Name</label>
+    </div>
+    <div class="form-input">
+      <textarea placeholder="Description"></textarea>
+      <label for="#">Description</label>
+    </div>
+    <div class="form-input">
+      <textarea placeholder="Description"></textarea>
+      <label for="#">Description</label>
+    </div>
+    <div class="form-input">
+      <textarea placeholder="Description"></textarea>
+      <label for="#">Description</label>
+    </div>
+    <div class="form-input">
+      <textarea placeholder="Description"></textarea>
+      <label for="#">Description</label>
+    </div>
+    <div class="form-input">
+      <textarea placeholder="Description"></textarea>
+      <label for="#">Description</label>
+    </div>
+    <div class="form-input">
+      <textarea placeholder="Description"></textarea>
+      <label for="#">Description</label>
+    </div>
+    <div class="form-input">
+      <textarea placeholder="Description"></textarea>
+      <label for="#">Description</label>
+    </div>
+    <div class="footer-buttons">
+      <a routerLink="/admin/products">Cancel</a>
+      <button type="submit">Create</button>
+    </div>
+  </form>
+</section>

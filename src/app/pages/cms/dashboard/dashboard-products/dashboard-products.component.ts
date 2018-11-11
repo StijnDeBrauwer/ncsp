@@ -7,9 +7,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardProductsComponent implements OnInit {
 
+  isModalShown: boolean = false;
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  showModal(): void {
+    this.isModalShown = true;
+  }
+
+  private hideModal(): void {
+    this.isModalShown = false;
+  }
+
+  delete(): void {
+    this.hideModal();
+  }
+
+  cancel(): void {
+    this.hideModal();
+  }
 }

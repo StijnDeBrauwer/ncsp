@@ -1,6 +1,6 @@
 import { Component, OnInit, HostListener, Inject, OnDestroy } from '@angular/core';
 import { ResponsiveService } from './services/responsive/responsive.service';
-import { Router, RoutesRecognized } from '@angular/router';
+import { Router, RoutesRecognized, ActivatedRoute, NavigationStart, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { PLATFORM_ID, APP_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
@@ -40,15 +40,17 @@ export class AppComponent implements OnInit, OnDestroy {
 
     // Check if user is in admin mode
     this.router.events.subscribe((event: any) => {
-      if (event instanceof RoutesRecognized) {
-        if(event.url.toString().includes("/admin") || event.url.toString().includes("/login")) {
-          return this.isAdminMode = true;
+      if (event instanceof NavigationStart || event instanceof NavigationEnd) {
+        if (event.url.toString().includes("/admin") || event.url.toString().includes("/login")) {
+          this.isAdminMode = true;
+        } else {
+          this.isAdminMode = false;
         }
       }
     });
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   ngOnDestroy() {
     if (this._responsiveSubscription) {
