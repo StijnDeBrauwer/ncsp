@@ -51,6 +51,7 @@ import { Dashboard404Component } from './pages/cms/dashboard/dashboard404/dashbo
 import { DashboardProductEditComponent } from './pages/cms/dashboard/dashboard-products/dashboard-product-edit/dashboard-product-edit.component';
 import { DashboardSolutionEditComponent } from './pages/cms/dashboard/dashboard-solutions/dashboard-solution-edit/dashboard-solution-edit.component';
 import { DashboardModalComponent } from './components/dashboard-modal/dashboard-modal.component';
+import { HttpModule } from '@angular/http';
 
 
 // AoT requires an exported function for factories
@@ -112,6 +113,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         MaterialModule,
         FormsModule,
         ReactiveFormsModule,
+        HttpModule,
         TranslateModule.forRoot({
             loader: {
                 provide: TranslateLoader,

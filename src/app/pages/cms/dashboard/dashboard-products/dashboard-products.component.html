@@ -8,12 +8,826 @@
       <i class="material-icons">add</i>
     </button>
   </a>
-  <table>
+  <!--<button class="orange-button" (click)="captureScreen()">
+    <span>Capture</span>
+    <i class="material-icons">add</i>
+  </button>-->
+  <table id="content">
     <tr>
       <th>ID</th>
       <th>Name</th>
       <th>Solution</th>
       <th></th>
+    </tr>
+    <tr>
+      <td>123</td>
+      <td>Example</td>
+      <td>Example</td>
+      <td class="edit">
+        <a [routerLink]="['edit', 1]">
+          <i class="material-icons">
+            create
+          </i>
+        </a>
+        <i class="material-icons" (click)="showModal()">
+          delete_sweep
+        </i>
+      </td>
+    </tr>
+    <tr>
+      <td>123</td>
+      <td>Example</td>
+      <td>Example</td>
+      <td class="edit">
+        <a [routerLink]="['edit', 1]">
+          <i class="material-icons">
+            create
+          </i>
+        </a>
+        <i class="material-icons" (click)="showModal()">
+          delete_sweep
+        </i>
+      </td>
+    </tr>
+    <tr>
+      <td>123</td>
+      <td>Example</td>
+      <td>Example</td>
+      <td class="edit">
+        <a [routerLink]="['edit', 1]">
+          <i class="material-icons">
+            create
+          </i>
+        </a>
+        <i class="material-icons" (click)="showModal()">
+          delete_sweep
+        </i>
+      </td>
+    </tr>
+    <tr>
+      <td>123</td>
+      <td>Example</td>
+      <td>Example</td>
+      <td class="edit">
+        <a [routerLink]="['edit', 1]">
+          <i class="material-icons">
+            create
+          </i>
+        </a>
+        <i class="material-icons" (click)="showModal()">
+          delete_sweep
+        </i>
+      </td>
+    </tr>
+    <tr>
+      <td>123</td>
+      <td>Example</td>
+      <td>Example</td>
+      <td class="edit">
+        <a [routerLink]="['edit', 1]">
+          <i class="material-icons">
+            create
+          </i>
+        </a>
+        <i class="material-icons" (click)="showModal()">
+          delete_sweep
+        </i>
+      </td>
+    </tr>
+    <tr>
+      <td>123</td>
+      <td>Example</td>
+      <td>Example</td>
+      <td class="edit">
+        <a [routerLink]="['edit', 1]">
+          <i class="material-icons">
+            create
+          </i>
+        </a>
+        <i class="material-icons" (click)="showModal()">
+          delete_sweep
+        </i>
+      </td>
+    </tr>
+    <tr>
+      <td>123</td>
+      <td>Example</td>
+      <td>Example</td>
+      <td class="edit">
+        <a [routerLink]="['edit', 1]">
+          <i class="material-icons">
+            create
+          </i>
+        </a>
+        <i class="material-icons" (click)="showModal()">
+          delete_sweep
+        </i>
+      </td>
+    </tr>
+    <tr>
+      <td>123</td>
+      <td>Example</td>
+      <td>Example</td>
+      <td class="edit">
+        <a [routerLink]="['edit', 1]">
+          <i class="material-icons">
+            create
+          </i>
+        </a>
+        <i class="material-icons" (click)="showModal()">
+          delete_sweep
+        </i>
+      </td>
+    </tr>
+    <tr>
+      <td>123</td>
+      <td>Example</td>
+      <td>Example</td>
+      <td class="edit">
+        <a [routerLink]="['edit', 1]">
+          <i class="material-icons">
+            create
+          </i>
+        </a>
+        <i class="material-icons" (click)="showModal()">
+          delete_sweep
+        </i>
+      </td>
+    </tr>
+    <tr>
+      <td>123</td>
+      <td>Example</td>
+      <td>Example</td>
+      <td class="edit">
+        <a [routerLink]="['edit', 1]">
+          <i class="material-icons">
+            create
+          </i>
+        </a>
+        <i class="material-icons" (click)="showModal()">
+          delete_sweep
+        </i>
+      </td>
+    </tr>
+    <tr>
+      <td>123</td>
+      <td>Example</td>
+      <td>Example</td>
+      <td class="edit">
+        <a [routerLink]="['edit', 1]">
+          <i class="material-icons">
+            create
+          </i>
+        </a>
+        <i class="material-icons" (click)="showModal()">
+          delete_sweep
+        </i>
+      </td>
+    </tr>
+    <tr>
+      <td>123</td>
+      <td>Example</td>
+      <td>Example</td>
+      <td class="edit">
+        <a [routerLink]="['edit', 1]">
+          <i class="material-icons">
+            create
+          </i>
+        </a>
+        <i class="material-icons" (click)="showModal()">
+          delete_sweep
+        </i>
+      </td>
+    </tr>
+    <tr>
+      <td>123</td>
+      <td>Example</td>
+      <td>Example</td>
+      <td class="edit">
+        <a [routerLink]="['edit', 1]">
+          <i class="material-icons">
+            create
+          </i>
+        </a>
+        <i class="material-icons" (click)="showModal()">
+          delete_sweep
+        </i>
+      </td>
+    </tr>
+    <tr>
+      <td>123</td>
+      <td>Example</td>
+      <td>Example</td>
+      <td class="edit">
+        <a [routerLink]="['edit', 1]">
+          <i class="material-icons">
+            create
+          </i>
+        </a>
+        <i class="material-icons" (click)="showModal()">
+          delete_sweep
+        </i>
+      </td>
+    </tr>
+    <tr>
+      <td>123</td>
+      <td>Example</td>
+      <td>Example</td>
+      <td class="edit">
+        <a [routerLink]="['edit', 1]">
+          <i class="material-icons">
+            create
+          </i>
+        </a>
+        <i class="material-icons" (click)="showModal()">
+          delete_sweep
+        </i>
+      </td>
+    </tr>
+    <tr>
+      <td>123</td>
+      <td>Example</td>
+      <td>Example</td>
+      <td class="edit">
+        <a [routerLink]="['edit', 1]">
+          <i class="material-icons">
+            create
+          </i>
+        </a>
+        <i class="material-icons" (click)="showModal()">
+          delete_sweep
+        </i>
+      </td>
+    </tr>
+    <tr>
+      <td>123</td>
+      <td>Example</td>
+      <td>Example</td>
+      <td class="edit">
+        <a [routerLink]="['edit', 1]">
+          <i class="material-icons">
+            create
+          </i>
+        </a>
+        <i class="material-icons" (click)="showModal()">
+          delete_sweep
+        </i>
+      </td>
+    </tr>
+    <tr>
+      <td>123</td>
+      <td>Example</td>
+      <td>Example</td>
+      <td class="edit">
+        <a [routerLink]="['edit', 1]">
+          <i class="material-icons">
+            create
+          </i>
+        </a>
+        <i class="material-icons" (click)="showModal()">
+          delete_sweep
+        </i>
+      </td>
+    </tr>
+    <tr>
+      <td>123</td>
+      <td>Example</td>
+      <td>Example</td>
+      <td class="edit">
+        <a [routerLink]="['edit', 1]">
+          <i class="material-icons">
+            create
+          </i>
+        </a>
+        <i class="material-icons" (click)="showModal()">
+          delete_sweep
+        </i>
+      </td>
+    </tr>
+    <tr>
+      <td>123</td>
+      <td>Example</td>
+      <td>Example</td>
+      <td class="edit">
+        <a [routerLink]="['edit', 1]">
+          <i class="material-icons">
+            create
+          </i>
+        </a>
+        <i class="material-icons" (click)="showModal()">
+          delete_sweep
+        </i>
+      </td>
+    </tr>
+    <tr>
+      <td>123</td>
+      <td>Example</td>
+      <td>Example</td>
+      <td class="edit">
+        <a [routerLink]="['edit', 1]">
+          <i class="material-icons">
+            create
+          </i>
+        </a>
+        <i class="material-icons" (click)="showModal()">
+          delete_sweep
+        </i>
+      </td>
+    </tr>
+    <tr>
+      <td>123</td>
+      <td>Example</td>
+      <td>Example</td>
+      <td class="edit">
+        <a [routerLink]="['edit', 1]">
+          <i class="material-icons">
+            create
+          </i>
+        </a>
+        <i class="material-icons" (click)="showModal()">
+          delete_sweep
+        </i>
+      </td>
+    </tr>
+    <tr>
+      <td>123</td>
+      <td>Example</td>
+      <td>Example</td>
+      <td class="edit">
+        <a [routerLink]="['edit', 1]">
+          <i class="material-icons">
+            create
+          </i>
+        </a>
+        <i class="material-icons" (click)="showModal()">
+          delete_sweep
+        </i>
+      </td>
+    </tr>
+    <tr>
+      <td>123</td>
+      <td>Example</td>
+      <td>Example</td>
+      <td class="edit">
+        <a [routerLink]="['edit', 1]">
+          <i class="material-icons">
+            create
+          </i>
+        </a>
+        <i class="material-icons" (click)="showModal()">
+          delete_sweep
+        </i>
+      </td>
+    </tr>
+    <tr>
+      <td>123</td>
+      <td>Example</td>
+      <td>Example</td>
+      <td class="edit">
+        <a [routerLink]="['edit', 1]">
+          <i class="material-icons">
+            create
+          </i>
+        </a>
+        <i class="material-icons" (click)="showModal()">
+          delete_sweep
+        </i>
+      </td>
+    </tr>
+    <tr>
+      <td>123</td>
+      <td>Example</td>
+      <td>Example</td>
+      <td class="edit">
+        <a [routerLink]="['edit', 1]">
+          <i class="material-icons">
+            create
+          </i>
+        </a>
+        <i class="material-icons" (click)="showModal()">
+          delete_sweep
+        </i>
+      </td>
+    </tr>
+    <tr>
+      <td>123</td>
+      <td>Example</td>
+      <td>Example</td>
+      <td class="edit">
+        <a [routerLink]="['edit', 1]">
+          <i class="material-icons">
+            create
+          </i>
+        </a>
+        <i class="material-icons" (click)="showModal()">
+          delete_sweep
+        </i>
+      </td>
+    </tr>
+    <tr>
+      <td>123</td>
+      <td>Example</td>
+      <td>Example</td>
+      <td class="edit">
+        <a [routerLink]="['edit', 1]">
+          <i class="material-icons">
+            create
+          </i>
+        </a>
+        <i class="material-icons" (click)="showModal()">
+          delete_sweep
+        </i>
+      </td>
+    </tr>
+    <tr>
+      <td>123</td>
+      <td>Example</td>
+      <td>Example</td>
+      <td class="edit">
+        <a [routerLink]="['edit', 1]">
+          <i class="material-icons">
+            create
+          </i>
+        </a>
+        <i class="material-icons" (click)="showModal()">
+          delete_sweep
+        </i>
+      </td>
+    </tr>
+    <tr>
+      <td>123</td>
+      <td>Example</td>
+      <td>Example</td>
+      <td class="edit">
+        <a [routerLink]="['edit', 1]">
+          <i class="material-icons">
+            create
+          </i>
+        </a>
+        <i class="material-icons" (click)="showModal()">
+          delete_sweep
+        </i>
+      </td>
+    </tr>
+    <tr>
+      <td>123</td>
+      <td>Example</td>
+      <td>Example</td>
+      <td class="edit">
+        <a [routerLink]="['edit', 1]">
+          <i class="material-icons">
+            create
+          </i>
+        </a>
+        <i class="material-icons" (click)="showModal()">
+          delete_sweep
+        </i>
+      </td>
+    </tr>
+    <tr>
+      <td>123</td>
+      <td>Example</td>
+      <td>Example</td>
+      <td class="edit">
+        <a [routerLink]="['edit', 1]">
+          <i class="material-icons">
+            create
+          </i>
+        </a>
+        <i class="material-icons" (click)="showModal()">
+          delete_sweep
+        </i>
+      </td>
+    </tr>
+    <tr>
+      <td>123</td>
+      <td>Example</td>
+      <td>Example</td>
+      <td class="edit">
+        <a [routerLink]="['edit', 1]">
+          <i class="material-icons">
+            create
+          </i>
+        </a>
+        <i class="material-icons" (click)="showModal()">
+          delete_sweep
+        </i>
+      </td>
+    </tr>
+    <tr>
+      <td>123</td>
+      <td>Example</td>
+      <td>Example</td>
+      <td class="edit">
+        <a [routerLink]="['edit', 1]">
+          <i class="material-icons">
+            create
+          </i>
+        </a>
+        <i class="material-icons" (click)="showModal()">
+          delete_sweep
+        </i>
+      </td>
+    </tr>
+    <tr>
+      <td>123</td>
+      <td>Example</td>
+      <td>Example</td>
+      <td class="edit">
+        <a [routerLink]="['edit', 1]">
+          <i class="material-icons">
+            create
+          </i>
+        </a>
+        <i class="material-icons" (click)="showModal()">
+          delete_sweep
+        </i>
+      </td>
+    </tr>
+    <tr>
+      <td>123</td>
+      <td>Example</td>
+      <td>Example</td>
+      <td class="edit">
+        <a [routerLink]="['edit', 1]">
+          <i class="material-icons">
+            create
+          </i>
+        </a>
+        <i class="material-icons" (click)="showModal()">
+          delete_sweep
+        </i>
+      </td>
+    </tr>
+    <tr>
+      <td>123</td>
+      <td>Example</td>
+      <td>Example</td>
+      <td class="edit">
+        <a [routerLink]="['edit', 1]">
+          <i class="material-icons">
+            create
+          </i>
+        </a>
+        <i class="material-icons" (click)="showModal()">
+          delete_sweep
+        </i>
+      </td>
+    </tr>
+    <tr>
+      <td>123</td>
+      <td>Example</td>
+      <td>Example</td>
+      <td class="edit">
+        <a [routerLink]="['edit', 1]">
+          <i class="material-icons">
+            create
+          </i>
+        </a>
+        <i class="material-icons" (click)="showModal()">
+          delete_sweep
+        </i>
+      </td>
+    </tr>
+    <tr>
+      <td>123</td>
+      <td>Example</td>
+      <td>Example</td>
+      <td class="edit">
+        <a [routerLink]="['edit', 1]">
+          <i class="material-icons">
+            create
+          </i>
+        </a>
+        <i class="material-icons" (click)="showModal()">
+          delete_sweep
+        </i>
+      </td>
+    </tr>
+    <tr>
+      <td>123</td>
+      <td>Example</td>
+      <td>Example</td>
+      <td class="edit">
+        <a [routerLink]="['edit', 1]">
+          <i class="material-icons">
+            create
+          </i>
+        </a>
+        <i class="material-icons" (click)="showModal()">
+          delete_sweep
+        </i>
+      </td>
+    </tr>
+    <tr>
+      <td>123</td>
+      <td>Example</td>
+      <td>Example</td>
+      <td class="edit">
+        <a [routerLink]="['edit', 1]">
+          <i class="material-icons">
+            create
+          </i>
+        </a>
+        <i class="material-icons" (click)="showModal()">
+          delete_sweep
+        </i>
+      </td>
+    </tr>
+    <tr>
+      <td>123</td>
+      <td>Example</td>
+      <td>Example</td>
+      <td class="edit">
+        <a [routerLink]="['edit', 1]">
+          <i class="material-icons">
+            create
+          </i>
+        </a>
+        <i class="material-icons" (click)="showModal()">
+          delete_sweep
+        </i>
+      </td>
+    </tr>
+    <tr>
+      <td>123</td>
+      <td>Example</td>
+      <td>Example</td>
+      <td class="edit">
+        <a [routerLink]="['edit', 1]">
+          <i class="material-icons">
+            create
+          </i>
+        </a>
+        <i class="material-icons" (click)="showModal()">
+          delete_sweep
+        </i>
+      </td>
+    </tr>
+    <tr>
+      <td>123</td>
+      <td>Example</td>
+      <td>Example</td>
+      <td class="edit">
+        <a [routerLink]="['edit', 1]">
+          <i class="material-icons">
+            create
+          </i>
+        </a>
+        <i class="material-icons" (click)="showModal()">
+          delete_sweep
+        </i>
+      </td>
+    </tr>
+    <tr>
+      <td>123</td>
+      <td>Example</td>
+      <td>Example</td>
+      <td class="edit">
+        <a [routerLink]="['edit', 1]">
+          <i class="material-icons">
+            create
+          </i>
+        </a>
+        <i class="material-icons" (click)="showModal()">
+          delete_sweep
+        </i>
+      </td>
+    </tr>
+    <tr>
+      <td>123</td>
+      <td>Example</td>
+      <td>Example</td>
+      <td class="edit">
+        <a [routerLink]="['edit', 1]">
+          <i class="material-icons">
+            create
+          </i>
+        </a>
+        <i class="material-icons" (click)="showModal()">
+          delete_sweep
+        </i>
+      </td>
+    </tr>
+    <tr>
+      <td>123</td>
+      <td>Example</td>
+      <td>Example</td>
+      <td class="edit">
+        <a [routerLink]="['edit', 1]">
+          <i class="material-icons">
+            create
+          </i>
+        </a>
+        <i class="material-icons" (click)="showModal()">
+          delete_sweep
+        </i>
+      </td>
+    </tr>
+    <tr>
+      <td>123</td>
+      <td>Example</td>
+      <td>Example</td>
+      <td class="edit">
+        <a [routerLink]="['edit', 1]">
+          <i class="material-icons">
+            create
+          </i>
+        </a>
+        <i class="material-icons" (click)="showModal()">
+          delete_sweep
+        </i>
+      </td>
+    </tr>
+    <tr>
+      <td>123</td>
+      <td>Example</td>
+      <td>Example</td>
+      <td class="edit">
+        <a [routerLink]="['edit', 1]">
+          <i class="material-icons">
+            create
+          </i>
+        </a>
+        <i class="material-icons" (click)="showModal()">
+          delete_sweep
+        </i>
+      </td>
+    </tr>
+    <tr>
+      <td>123</td>
+      <td>Example</td>
+      <td>Example</td>
+      <td class="edit">
+        <a [routerLink]="['edit', 1]">
+          <i class="material-icons">
+            create
+          </i>
+        </a>
+        <i class="material-icons" (click)="showModal()">
+          delete_sweep
+        </i>
+      </td>
+    </tr>
+    <tr>
+      <td>123</td>
+      <td>Example</td>
+      <td>Example</td>
+      <td class="edit">
+        <a [routerLink]="['edit', 1]">
+          <i class="material-icons">
+            create
+          </i>
+        </a>
+        <i class="material-icons" (click)="showModal()">
+          delete_sweep
+        </i>
+      </td>
+    </tr>
+    <tr>
+      <td>123</td>
+      <td>Example</td>
+      <td>Example</td>
+      <td class="edit">
+        <a [routerLink]="['edit', 1]">
+          <i class="material-icons">
+            create
+          </i>
+        </a>
+        <i class="material-icons" (click)="showModal()">
+          delete_sweep
+        </i>
+      </td>
+    </tr>
+    <tr>
+      <td>123</td>
+      <td>Example</td>
+      <td>Example</td>
+      <td class="edit">
+        <a [routerLink]="['edit', 1]">
+          <i class="material-icons">
+            create
+          </i>
+        </a>
+        <i class="material-icons" (click)="showModal()">
+          delete_sweep
+        </i>
+      </td>
+    </tr>
+    <tr>
+      <td>123</td>
+      <td>Example</td>
+      <td>Example</td>
+      <td class="edit">
+        <a [routerLink]="['edit', 1]">
+          <i class="material-icons">
+            create
+          </i>
+        </a>
+        <i class="material-icons" (click)="showModal()">
+          delete_sweep
+        </i>
+      </td>
     </tr>
     <tr>
       <td>123</td>

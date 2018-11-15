@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PdfService } from 'src/app/services/pdf/pdf.service';
+import { ProductsService } from 'src/app/services/products/products.service';
 
 @Component({
   selector: 'app-dashboard-products',
@@ -9,9 +11,11 @@ export class DashboardProductsComponent implements OnInit {
 
   isModalShown: boolean = false;
 
-  constructor() { }
+  constructor(private pdfService: PdfService,
+    private productService: ProductsService) { }
 
   ngOnInit() {
+
   }
 
   showModal(): void {
@@ -28,5 +32,10 @@ export class DashboardProductsComponent implements OnInit {
 
   cancel(): void {
     this.hideModal();
+  }
+
+  captureScreen(): void {
+    var data = document.getElementById('content');
+    this.pdfService.captureScreen(data, 'products');
   }
 }
