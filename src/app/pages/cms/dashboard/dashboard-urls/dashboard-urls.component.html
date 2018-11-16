@@ -1,0 +1,33 @@
+<section id="admin-urls">
+  <h1>Generated URLs</h1>
+  <p>Overview of the secret URLs of products that are generated and saved in the system.</p>
+  <table id="content" *ngIf="urls">
+    <tr>
+      <th>ProductID</th>
+      <th>Product name</th>
+      <th></th>
+    </tr>
+    <tr *ngFor="let url of urls">
+      <td>{{url?.id}}</td>
+      <td>{{url?.name}}</td>
+      <td class="edit">
+        <i class="material-icons" (click)="copyURL(url?.url)">
+          link
+        </i>
+        <i class="material-icons" (click)="showModal(url)">
+          delete_sweep
+        </i>
+      </td>
+    </tr>
+  </table>
+  <h2 *ngIf="!urls">Loading...</h2>
+  <h2 *ngIf="urls?.length == 0">No generated URLs</h2>
+</section>
+<app-dashboard-modal *ngIf="isModalShown">
+  <h1>Are you sure?</h1>
+  <p>Do you really want to delete the secret url of {{urlToDelete?.name}}? The URL will permanently be deleted from your system.</p>
+  <div class="buttons">
+    <button class="orange-button" (click)="cancel()">No</button>
+    <button class="orange-button" (click)="delete()">Yes</button>
+  </div>
+</app-dashboard-modal>

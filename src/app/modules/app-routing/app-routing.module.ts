@@ -29,6 +29,7 @@ import { DashboardNewsComponent } from 'src/app/pages/cms/dashboard/dashboard-ne
 import { Dashboard404Component } from 'src/app/pages/cms/dashboard/dashboard404/dashboard404.component';
 import { DashboardProductEditComponent } from 'src/app/pages/cms/dashboard/dashboard-products/dashboard-product-edit/dashboard-product-edit.component';
 import { DashboardSolutionEditComponent } from 'src/app/pages/cms/dashboard/dashboard-solutions/dashboard-solution-edit/dashboard-solution-edit.component';
+import { DashboardUrlsComponent } from 'src/app/pages/cms/dashboard/dashboard-urls/dashboard-urls.component';
 
 const routes: Routes = [
     {
@@ -183,9 +184,10 @@ const routes: Routes = [
             { path: 'solutions', component: DashboardSolutionsComponent },
             { path: 'news', component: DashboardNewsComponent },
             { path: 'products/add', component: DashboardProductEditComponent },
-            { path: 'products/edit/:id',component: DashboardProductEditComponent },
+            { path: 'products/edit/:id', component: DashboardProductEditComponent },
             { path: 'solutions/add', component: DashboardSolutionEditComponent },
             { path: 'solutions/edit/:id', component: DashboardSolutionEditComponent },
+            { path: 'urls', component: DashboardUrlsComponent },
             { path: '**', component: Dashboard404Component }
         ]
     },

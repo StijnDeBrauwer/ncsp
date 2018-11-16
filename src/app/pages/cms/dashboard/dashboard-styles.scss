@@ -39,9 +39,7 @@ table {
                 }
                 i {
                     font-size: 28px;
-                    &:last-of-type {
-                        margin-left: 10px;
-                    }
+                    margin-left: 10px;
                     &:hover {
                         cursor: pointer;
                         color: $main-color;

@@ -1,0 +1,20 @@
+@import "../dashboard-styles.scss";
+@import "../../../../../assets/variables";
+#admin-urls {
+    h2 {
+        color: $main-color;
+    }
+    #content {
+        tr {
+            td {
+                &.edit {
+                    i {
+                        &:first-of-type {
+                            margin-left: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -5,7 +5,7 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { ClipboardModule } from 'ngx-clipboard';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './modules/app-routing/app-routing.module';
 import { LandingPage } from './pages/landing/landing.page';
@@ -52,6 +52,7 @@ import { DashboardProductEditComponent } from './pages/cms/dashboard/dashboard-p
 import { DashboardSolutionEditComponent } from './pages/cms/dashboard/dashboard-solutions/dashboard-solution-edit/dashboard-solution-edit.component';
 import { DashboardModalComponent } from './components/dashboard-modal/dashboard-modal.component';
 import { HttpModule } from '@angular/http';
+import { DashboardUrlsComponent } from './pages/cms/dashboard/dashboard-urls/dashboard-urls.component';
 
 
 // AoT requires an exported function for factories
@@ -103,7 +104,8 @@ export function HttpLoaderFactory(http: HttpClient) {
         Dashboard404Component,
         DashboardProductEditComponent,
         DashboardSolutionEditComponent,
-        DashboardModalComponent
+        DashboardModalComponent,
+        DashboardUrlsComponent
     ],
     imports: [
         BrowserModule,
@@ -114,6 +116,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         FormsModule,
         ReactiveFormsModule,
         HttpModule,
+        ClipboardModule,
         TranslateModule.forRoot({
             loader: {
                 provide: TranslateLoader,
