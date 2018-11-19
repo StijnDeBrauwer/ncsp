@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { PdfService } from 'src/app/services/pdf/pdf.service';
-import { ProductsService } from 'src/app/services/products/products.service';
-import { ClipboardService } from 'ngx-clipboard';
 import { MatSnackBar } from '@angular/material';
 import { UrlService } from 'src/app/services/url/url.service';
 
@@ -16,8 +14,6 @@ export class DashboardProductsComponent implements OnInit {
   _url: string;
 
   constructor(private pdfService: PdfService,
-    private productService: ProductsService,
-    private _clipboardService: ClipboardService,
     private snackBar: MatSnackBar,
     private urlService: UrlService) { }
 
@@ -47,19 +43,20 @@ export class DashboardProductsComponent implements OnInit {
   }
 
   generateURL() {
-    this.urlService.addUrl({id: 2, name: "BLABLA"}).subscribe(data => {
+    this.urlService.addUrl({ id: 6, name: "BLABLA" }).subscribe(data => {
       console.log(data);
       const json = data.json();
       const output = json[0];
       const url = json[1];
+      console.log(url);
       if (output === "SOMETHING_WRONG") {
         this.openSnackBar('Something went wrong, URL not created.', null);
       } else {
         this.copyToClipboard(url);
         if (output === "ALREADY_EXISTS") {
-          this.openSnackBar('URL already created, copied to clipboard.', url);
+          this.openSnackBar('URL already exists. Click copy to copy the URL to clipboard.', url);
         } else {
-          this.openSnackBar('URL copied to clipboard.', url);
+          this.openSnackBar('URL created. Click copy to copy the URL to clipboard.', url);
         }
       }
     });
@@ -82,5 +79,5 @@ export class DashboardProductsComponent implements OnInit {
       document.removeEventListener('copy', null);
     });
     document.execCommand('copy');
-  } 
+  }
 }

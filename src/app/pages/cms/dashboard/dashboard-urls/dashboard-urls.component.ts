@@ -10,7 +10,7 @@ import { UrlService } from 'src/app/services/url/url.service';
 export class DashboardUrlsComponent implements OnInit {
 
   isModalShown: boolean = false;
-  urls: [];
+  urls: any;
   urlToDelete: any;
 
   constructor(private snackBar: MatSnackBar,
@@ -36,7 +36,7 @@ export class DashboardUrlsComponent implements OnInit {
   }
 
   delete(): void {
-    this.urlToDelete = null;
+    this.deleteURL();
     this.hideModal();
   }
 
@@ -52,8 +52,17 @@ export class DashboardUrlsComponent implements OnInit {
   }
 
   private openSnackBar(message) {
-    const snackBarRef = this.snackBar.open(message, 'OK', {
+    this.snackBar.open(message, 'OK', {
       duration: 2500
+    });
+  }
+
+  private deleteURL() {
+    const id = this.urlToDelete.productid;
+    this.urlService.deleteUrl(id).subscribe(data => {
+      this.urls = this.urls.filter(url => url.productid != id);
+      this.urlToDelete = null;
+      this.openSnackBar('Successfully deleted the URL.');
     });
   }
 

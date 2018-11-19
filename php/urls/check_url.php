@@ -4,23 +4,19 @@
     $link = $request->link;
     $id = json_decode($link)->id;
     $url = json_decode($link)->url;
+    
     if($id != null && $url != null) {
         $inp = file_get_contents('urls.json');
         $tempArray = json_decode($inp);
+
         for ($i = 0; $i < count($tempArray); $i++) {
-            if($tempArray[$i]->id == $id) {
-                echo json_encode(["ALREADY_EXISTS", $tempArray[$i]->url]);
+            if($tempArray[$i]->id == $id && $tempArray[$i]->url == $url) {
+                echo "true";
                 return;
             }
         }
-            array_push($tempArray, json_decode($link));
-            $jsonData = json_encode($tempArray);
-            file_put_contents('urls.json', $jsonData);
-            echo json_encode(["CREATED", $url]);
-            return;
     }
-    echo json_encode(["SOMETHING_WRONG", $url]);
-    return;*/
+    echo "false";*/
     include("../database/connection.php");
     include("url.php");
     $postdata = file_get_contents("php://input");
@@ -30,6 +26,6 @@
     $url = json_decode($link)->url;
     $conn = connect();
     $urlObj = new Url($conn);
-    $result = $urlObj->create($id, "TEST", $url, false);
+    $result = $urlObj->isExistingUrl($id, $url, true);
     echo $result;
 ?>

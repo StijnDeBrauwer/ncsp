@@ -53,6 +53,7 @@ import { DashboardSolutionEditComponent } from './pages/cms/dashboard/dashboard-
 import { DashboardModalComponent } from './components/dashboard-modal/dashboard-modal.component';
 import { HttpModule } from '@angular/http';
 import { DashboardUrlsComponent } from './pages/cms/dashboard/dashboard-urls/dashboard-urls.component';
+import { GenericUrlComponent } from './pages/generic-url/generic-url.component';
 
 
 // AoT requires an exported function for factories
@@ -105,7 +106,8 @@ export function HttpLoaderFactory(http: HttpClient) {
         DashboardProductEditComponent,
         DashboardSolutionEditComponent,
         DashboardModalComponent,
-        DashboardUrlsComponent
+        DashboardUrlsComponent,
+        GenericUrlComponent
     ],
     imports: [
         BrowserModule,

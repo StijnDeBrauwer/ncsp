@@ -30,6 +30,7 @@ import { Dashboard404Component } from 'src/app/pages/cms/dashboard/dashboard404/
 import { DashboardProductEditComponent } from 'src/app/pages/cms/dashboard/dashboard-products/dashboard-product-edit/dashboard-product-edit.component';
 import { DashboardSolutionEditComponent } from 'src/app/pages/cms/dashboard/dashboard-solutions/dashboard-solution-edit/dashboard-solution-edit.component';
 import { DashboardUrlsComponent } from 'src/app/pages/cms/dashboard/dashboard-urls/dashboard-urls.component';
+import { GenericUrlComponent } from 'src/app/pages/generic-url/generic-url.component';
 
 const routes: Routes = [
     {
@@ -53,6 +54,7 @@ const routes: Routes = [
             { path: 'approach', component: OurCompanyPage, data: { page: 'approach' } },
         ],
     },
+    { path: 'product/:url/:id', component: GenericUrlComponent },
     {
         path: 'products',
         component: OurProductPage,
@@ -191,10 +193,8 @@ const routes: Routes = [
             { path: '**', component: Dashboard404Component }
         ]
     },
-    {
-        path: '**',
-        component: PageNotFoundPage
-    },
+    { path: '404', component: PageNotFoundPage },
+    { path: '**', redirectTo: '/404', pathMatch: 'full' },
 ];
 
 @NgModule({
