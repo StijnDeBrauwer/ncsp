@@ -37,8 +37,8 @@ import {SolutionComponent} from './components/solution/solution.component';
 import {SolutionDetailsPageComponent} from './pages/solutions/solution-details-page/solution-details-page.component';
 import {ProductDetailDesktopComponent} from './components/products/product-detail/product-detail-desktop/product-detail-desktop.component';
 import {ProductDetailMobileComponent} from './components/products/product-detail/product-detail-mobile/product-detail-mobile.component';
-import { SolutionTypePage } from './pages/solutions/solution-type/solution-type.page';
-
+import {SolutionTypePage} from './pages/solutions/solution-type/solution-type.page';
+import {ScrollButtonComponent} from './components/scroll-button/scroll-button.component';
 
 
 // AoT requires an exported function for factories
@@ -78,7 +78,8 @@ export function HttpLoaderFactory(http: HttpClient) {
         SolutionDetailsPageComponent,
         ProductDetailDesktopComponent,
         ProductDetailMobileComponent,
-        SolutionTypePage
+        SolutionTypePage,
+        ScrollButtonComponent
     ],
     imports: [
         BrowserModule,

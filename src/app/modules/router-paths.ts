@@ -1,12 +1,6 @@
 import {LinkModel} from '../models/link.model';
 
 export const routes = [
-    new LinkModel('Our Company', '/company/',
-        [
-            new LinkModel('Our vision', '/company/vision'),
-            new LinkModel('Who we are', '/company/who-we-are', undefined),
-            new LinkModel('Our approach', '/company/approach', undefined)
-        ]),
     new LinkModel('Our products', '/products', [
             new LinkModel('Parts', '/products/crown-baele/parts'),
             new LinkModel('Upgrades', '/company/crown-baele/upgrades'),

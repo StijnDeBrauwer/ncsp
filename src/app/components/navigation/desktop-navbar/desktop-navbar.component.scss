@@ -1,8 +1,8 @@
 @import "../../../../assets/variables";
 $hamburger-width: 30px;
 $hamburger-height: 30px;
-$image-height: 100px;
-$image-width: 125px;
+$image-height: 85px;
+$image-width: 115px;
 
 section#desktop-navigation {
   z-index: 100;
@@ -41,7 +41,7 @@ section#desktop-navigation {
     }
 
     img#logo {
-      padding: 5%;
+      margin-left: 25px;
       width: $image-width;
       height: $image-height;
     }

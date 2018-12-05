@@ -1,4 +1,4 @@
-import {Component, HostListener, OnInit, OnDestroy, AfterViewInit} from '@angular/core';
+import {Component, HostListener, OnInit, OnDestroy, AfterViewInit, ViewChild, ElementRef} from '@angular/core';
 import {ScrollDataService} from '../../services/scroll/scroll-data.service';
 import {ScrollModel} from '../../models/scroll.model';
 import {ResponsiveService} from '../../services/responsive/responsive.service';
@@ -10,7 +10,12 @@ import {ResponsiveService} from '../../services/responsive/responsive.service';
 })
 export class LandingPage implements OnInit, AfterViewInit,OnDestroy {
     isMobile: boolean;
+    scrollDown: boolean = true;
 
+    @ViewChild('ourVision', {read: ElementRef}) public vision: ElementRef;
+    @ViewChild('whoWeAre', {read: ElementRef}) public whoWeAre: ElementRef;
+    @ViewChild('ourApproach', {read: ElementRef}) public approach: ElementRef
+    @ViewChild('banner', {read: ElementRef}) public banner: ElementRef;
 
     @HostListener('window:scroll', ['$event'])
     checkScroll() {
@@ -20,6 +25,7 @@ export class LandingPage implements OnInit, AfterViewInit,OnDestroy {
         }
 
         this.scrollDataService.isTransparent = 100 > scrollPosition;
+        this.scrollDown = 100 > scrollPosition;
 
     }
 
@@ -40,6 +46,27 @@ export class LandingPage implements OnInit, AfterViewInit,OnDestroy {
 
     ngOnDestroy() {
         this.scrollDataService.isHomepage = false;
+    }
+
+    scroll(){
+       this.scrollDown ? this.scrollToVision() : this.scrollToTop();
+    }
+
+    scrollToTop(){
+        this.banner.nativeElement.scrollIntoView({behavior: 'smooth', block: 'end', inline: 'center'});
+    }
+
+
+    public scrollToVision(): void {
+        this.vision.nativeElement.scrollIntoView({behavior: 'smooth', block: 'end', inline: 'center'});
+    }
+
+    public scrollToWhoWeAre(): void {
+        this.whoWeAre.nativeElement.scrollIntoView({behavior: 'smooth', block: 'end', inline: 'center'});
+    }
+
+    public scrollToApproach(): void {
+        this.approach.nativeElement.scrollIntoView({behavior: 'smooth', block: 'end', inline: 'center'});
     }
 
 

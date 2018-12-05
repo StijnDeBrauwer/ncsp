@@ -10,9 +10,9 @@ section#landing-page {
     background-size: cover;
     background: url("../../../assets/images/beer_bottles_liten.jpg") no-repeat center center;
     -webkit-background-size: cover; /* For WebKit*/
-    -moz-background-size: cover;    /* Mozilla*/
-    -o-background-size: cover;      /* Opera*/
-    background-size: cover;         /* Generic*/
+    -moz-background-size: cover; /* Mozilla*/
+    -o-background-size: cover; /* Opera*/
+    background-size: cover; /* Generic*/
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -36,6 +36,7 @@ section#landing-page {
       color: $main-color;
       font-size: 50px;
       font-weight: bolder;
+      text-align: center;
 
       p.sub-title {
         color: white;
@@ -79,10 +80,20 @@ section#landing-page {
   }
 
   @media (min-width: 768px) {
-    .index-banner{
+    .index-banner {
       align-items: flex-start;
-      padding-left: 10%;
+
+      .welcome-text {
+        margin-left: 25px;
+
+        p.sub-title {
+          margin-left: 25px;
+        }
       }
+      .welcome-button {
+        margin-left: 50px;
+      }
+    }
 
   }
 

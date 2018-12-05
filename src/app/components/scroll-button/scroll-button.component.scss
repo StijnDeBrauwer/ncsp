@@ -1,0 +1,21 @@
+@import "../../../assets/variables";
+.scroll-button {
+  background-color: $main-color;
+  opacity: 0.9;
+  display: flex;
+  position: fixed;
+  bottom: 30px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  cursor: pointer;
+
+
+  .icon{
+    color: #FFFFFF;
+    font-size: 40px;
+  }
+
+
+}
