@@ -3,12 +3,25 @@
 section#landing-page {
   padding: 0;
   margin: 0;
+
+  h2 {
+    color: $main-color;
+    font-size: $font-size-large;
+  }
+
+  .animated {
+    visibility: visible !important;
+  }
+  .hide-on-init {
+    visibility: hidden;
+  }
+
   .index-banner {
     color: white;
     height: auto;
     min-height: 100vh;
     background-size: cover;
-    background: url("../../../assets/images/beer_bottles_liten.jpg") no-repeat center center;
+    background: url("../../../assets/images/Washing_Technology.jpg") no-repeat center center;
     -webkit-background-size: cover; /* For WebKit*/
     -moz-background-size: cover; /* Mozilla*/
     -o-background-size: cover; /* Opera*/
@@ -32,17 +45,13 @@ section#landing-page {
     }
 
     .welcome-text {
+      margin: 25px;
       z-index: 10;
       color: $main-color;
       font-size: 50px;
       font-weight: bolder;
       text-align: center;
 
-      p.sub-title {
-        color: white;
-        font-weight: bold;
-        font-size: 30px;
-      }
     }
     .welcome-button {
       z-index: 1;
@@ -73,25 +82,131 @@ section#landing-page {
     flex-direction: column;
     min-height: 25vh;
     background-color: white;
-    &:nth-child(odd) {
+    text-align: center;
+
+
+    &.image-banner{
+      img {
+        margin: 10px 0;
+        min-width: 100%;
+        display: block;
+        max-height: 25vh;
+      }
+    }
+
+    &.image-text{
+      img{
+        display: block;
+        width: 100%;
+        max-height: 25vh;
+      }
+    }
+
+    &:nth-child(even) {
       background-color: $card-background-color;
     }
 
+    .logo-history {
+      display: flex;
+      justify-content: space-evenly;
+      flex-direction: column;
+      align-items: center;
+      .origin-photo {
+        padding: 5px;
+        img {
+          width: 125px;
+        }
+      }
+    }
+
+  }
+
+  .quote {
+    min-height: 30vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    -webkit-background-size: cover; /* For WebKit*/
+    -moz-background-size: cover; /* Mozilla*/
+    -o-background-size: cover; /* Opera*/
+    background-size: cover; /* Generic*/
+
+    h1 {
+      text-align: center;
+      font-size: 1.5em;
+    }
+
+    .goal-container {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      flex-direction: column;
+      width: 100%;
+      .goal-item {
+        height: 250px;
+        width: 250px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        mat-icon {
+          margin: 0;
+          background-color: $light-grey;
+          border-radius: 50%;
+          height: 100px;
+          width: 100px;
+          font-size: 75px !important;
+          padding: 20px;
+          text-align: center;
+          line-height: 100px;
+        }
+        h2 {
+          text-align: center;
+        }
+      }
+    }
   }
 
   @media (min-width: 768px) {
     .index-banner {
       align-items: flex-start;
 
-      .welcome-text {
-        margin-left: 25px;
-
-        p.sub-title {
-          margin-left: 25px;
-        }
-      }
       .welcome-button {
         margin-left: 50px;
+      }
+    }
+
+    .article {
+
+      &.image-text{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+          img{
+            display: inline-block;
+            float: right;
+            padding: 10%;
+            width: 50%;
+            max-height: 25vh;
+          }
+      }
+      &:nth-child(even) {
+        img{
+          display: inline-block;
+        }
+      }
+      .logo-history {
+        flex-direction: row;
+      }
+    }
+
+    .quote {
+      .goal-container {
+        flex-direction: row;
       }
     }
 
