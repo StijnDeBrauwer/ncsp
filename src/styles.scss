@@ -36,6 +36,16 @@ span[class*="ion-md-"] {
   font-size: 25px;
 }
 
+.page{
+  padding: 0 10%;
+}
+
+h1, h2, h3{
+  &.centered{
+    text-align: center;
+  }
+}
+
 article {
   margin: 10px 25px;
 }

@@ -10,12 +10,13 @@ section#desktop-navigation {
   left: 0;
   right: 0;
   position: fixed;
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: white !important;
   color: black !important;
+  width: 100%;
+  box-shadow: 7px 7px 21px -5px rgba(0, 0, 0, 0.75);
 
   &.transparent{
     background-color: transparent !important;
@@ -27,10 +28,9 @@ section#desktop-navigation {
     height: $nav-bar-height;
     display: flex;
     flex-direction: row;
-    width: 100%;
+    width: 80%;
     align-items: center;
     justify-content: space-between;
-    box-shadow: 7px 7px 21px -5px rgba(0, 0, 0, 0.75);
 
     &.transparent{
       box-shadow: 0 0 0 0;

@@ -1,5 +1,5 @@
-<section id="desktop-navigation"  [ngClass]="{'transparent': isTransparent}">
-    <div id="navigation" [ngClass]="{'transparent': isTransparent}">
+<section id="desktop-navigation" [ngClass]="{'transparent': isTransparent}">
+    <div class="page"  id="navigation" [ngClass]="{'transparent': isTransparent}">
         <a routerLink="/home"><img id="logo" [src]="isTransparent ? logoHidePath : logoShowPath"></a>
         <ul>
             <li><a routerLink="/home" (click)="navigate()">Home</a></li>
@@ -13,7 +13,7 @@
         </ul>
     </div>
 
-    <div *ngIf="chosenLink && chosenLink.children" class="sub-menu-desktop" [ngClass]="{'open': subMenuOpen}">
+    <div *ngIf="chosenLink && chosenLink.children" class="sub-menu-desktop page" [ngClass]="{'open': subMenuOpen}">
         <div class="sub-menu-desktop-description">
             <a [routerLink]="chosenLink.path" (click)="navigate()">{{chosenLink.text}}</a>
         </div>

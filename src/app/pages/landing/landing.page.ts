@@ -53,7 +53,8 @@ export class LandingPage implements OnInit, AfterViewInit,OnDestroy {
     }
 
     scrollToTop(){
-        this.banner.nativeElement.scrollIntoView({behavior: 'smooth', block: 'end', inline: 'center'});
+       // this.banner.nativeElement.scrollIntoView({behavior: 'smooth', block: 'end', inline: 'center'});
+        window.scroll({top: 0, left: 0 , behavior: 'smooth'}); // does not scroll to top
     }
 
 
@@ -61,13 +62,6 @@ export class LandingPage implements OnInit, AfterViewInit,OnDestroy {
         this.vision.nativeElement.scrollIntoView({behavior: 'smooth', block: 'end', inline: 'center'});
     }
 
-    public scrollToWhoWeAre(): void {
-        this.whoWeAre.nativeElement.scrollIntoView({behavior: 'smooth', block: 'end', inline: 'center'});
-    }
-
-    public scrollToApproach(): void {
-        this.approach.nativeElement.scrollIntoView({behavior: 'smooth', block: 'end', inline: 'center'});
-    }
 
 
 }
