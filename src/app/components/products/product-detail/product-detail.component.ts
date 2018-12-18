@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { ProductModel } from 'src/app/models/product.model';
+import { Product } from 'src/app/models/product.model';
 import { ResponsiveService } from 'src/app/services/responsive/responsive.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { ResponsiveService } from 'src/app/services/responsive/responsive.servic
 })
 export class ProductDetailComponent implements OnInit {
 
-  @Input() product: ProductModel;
+  @Input() product: Product;
   isMobile: boolean;
   @Output() close: EventEmitter<boolean> = new EventEmitter();
 

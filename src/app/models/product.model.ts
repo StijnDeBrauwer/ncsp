@@ -1,7 +1,7 @@
 import {Solution} from './solution.model';
 import {Spec} from './spec.modal';
 
-export class ProductModel {
+export class Product {
     private _name: string;
     private _solution: Solution;
     private _description: string;

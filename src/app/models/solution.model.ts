@@ -1,4 +1,4 @@
-import {ProductModel} from './product.model';
+import {Product} from './product.model';
 import {SolutionType} from './suitable-type.model';
 import {SolutionBefenitType} from './solution-benfit-type';
 

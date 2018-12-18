@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ProductModel } from 'src/app/models/product.model';
+import { Product} from 'src/app/models/product.model';
 
 @Component({
   selector: 'app-product',
@@ -8,7 +8,7 @@ import { ProductModel } from 'src/app/models/product.model';
 })
 export class ProductCardComponent implements OnInit {
 
-  @Input() product: ProductModel;
+  @Input() product: Product;
   isModalVisible: boolean = false;
   constructor() { }
 
@@ -16,9 +16,11 @@ export class ProductCardComponent implements OnInit {
   }
 
   getShortDescription(): string {
-    if(this.product) {
-      return this.product.purpose.substring(0, 150) + "...";
-    }
+
+    return "test";
+    // if(this.product) {
+    //   return this.product.purpose.substring(0, 150) + "...";
+    // }
   }
 
   showModal(): void {

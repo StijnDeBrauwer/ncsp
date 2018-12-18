@@ -27,7 +27,6 @@ import {ProductListPage} from './pages/products/product-types/product-list-page/
 import {ProductCardComponent} from './components/products/product-card/product-card.component';
 import {SlideSideNavigationComponent} from './components/slide-side-navigation/slide-side-navigation.component';
 import {ProductTypePage} from './pages/products/product-types/product-type.page';
-import {SolutionComponent} from './components/solution/solution.component';
 import {ProductDetailDesktopComponent} from './components/products/product-detail/product-detail-desktop/product-detail-desktop.component';
 import {ProductDetailMobileComponent} from './components/products/product-detail/product-detail-mobile/product-detail-mobile.component';
 import {ScrollButtonComponent} from './components/scroll-button/scroll-button.component';
@@ -60,7 +59,6 @@ export function HttpLoaderFactory(http: HttpClient) {
         ProductGroupPage,
         ProductTypePage,
         SlideSideNavigationComponent,
-        SolutionComponent,
         ProductDetailDesktopComponent,
         ProductDetailMobileComponent,
         ScrollButtonComponent

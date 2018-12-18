@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { ProductModel } from 'src/app/models/product.model';
+import { Product } from 'src/app/models/product.model';
 
 @Component({
   selector: 'app-product-detail-desktop',
@@ -8,7 +8,7 @@ import { ProductModel } from 'src/app/models/product.model';
 })
 export class ProductDetailDesktopComponent implements OnInit {
 
-  @Input() product: ProductModel;
+  @Input() product: Product;
   @Output() close: EventEmitter<boolean> = new EventEmitter();
   constructor() { }
 
