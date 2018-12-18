@@ -1,77 +1,59 @@
+import {Solution} from './solution.model';
+import {Spec} from './spec.modal';
+
 export class ProductModel {
     private _name: string;
-    private _purpose: string;
-    private _scope: string;
-    private _options: string;
-    private _specs: string;
-    private _principle: string;
-    private _setup: string;
+    private _solution: Solution;
+    private _description: string;
+    private _spec: Spec;
+    private _media: Array<any>;
 
-    constructor(name: string, purpose: string, scope: string,
-        options: string, specs: string, principle: string, setup: string) {
-            this._name = name;
-            this._purpose = purpose;
-            this._scope = scope;
-            this._options = options;
-            this._specs = specs;
-            this._principle = principle;
-            this._setup = setup;
-        }
 
-    
-    public set name(name : string) {
+    constructor(name: string, solution: Solution, description: string, spec: Spec, media?: any) {
         this._name = name;
-    }
-    
-    public set purpose(purpose : string) {
-        this._purpose = purpose;
-    }
-
-    public set scope(scope : string) {
-        this._scope = scope;
+        this._solution = solution;
+        this._description = description;
+        this._spec = spec;
+        this._media = media;
     }
 
-    public set options(options : string) {
-        this._options = options;
-    }
-
-    public set specs(specs : string) {
-        this._specs = specs;
-    }
-
-    public set principle(principle : string) {
-        this._principle = principle;
-    }
-
-    public set setup(setup : string) {
-        this._setup = setup;
-    }
-    
-    public get name() : string {
+    get name() {
         return this._name;
     }
 
-    public get purpose() : string {
-        return this._purpose;
-    }
-    
-    public get scope(): string {
-        return this._scope;
+    get solution() {
+        return this._solution;
     }
 
-    public get options(): string {
-        return this._options;
+    get description() {
+        return this._description;
     }
 
-    public get specs(): string {
-        return this._specs;
+    get spec() {
+        return this._spec;
     }
 
-    public get principle(): string {
-        return this._principle;
+    get media() {
+        return this._media;
     }
 
-    public get setup(): string {
-        return this._setup;
+    set name(name: string ) {
+         this._name = name ;
+    }
+
+    set solution(solution: Solution) {
+         this._solution = solution;
+    }
+
+    set description(description: string) {
+        this._description = description;
+    }
+
+    set spec(spec: Spec) {
+         this._spec = spec;
+    }
+
+    set media(media: any ) {
+        this._media = media;
     }
 }

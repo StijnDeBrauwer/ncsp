@@ -1,58 +1,65 @@
-import { SolutionType } from "./solution-type.model";
-import { ProductModel } from "./product.model";
+import {ProductModel} from './product.model';
+import {SolutionType} from './suitable-type.model';
+import {SolutionBefenitType} from './solution-benfit-type';
 
-export class SolutionModel {
-    private _name: string;
-    private _type: SolutionType;
-    private _description: string;
-    private _products: ProductModel[];
+export class Solution {
     private _id: Number;
+    private _name: string;
+    private _solutionDescription: string;
+    private _type: SolutionType;
+    private _benefits: Array<SolutionBefenitType>;
+    private _benefitsDescription: string;
 
-    constructor(name: string, type: SolutionType, description: string, products: ProductModel[], id?: Number) {
+    constructor(name: string, type: SolutionType, solutionDescription: string,
+                benefits: Array<SolutionBefenitType>, benefitDescription: string, id?: Number) {
         this._name = name;
         this._type = type;
-        this._description = description;
-        this._products = products;
+        this._solutionDescription = solutionDescription;
+        this._benefits = benefits;
+        this._benefitsDescription = benefitDescription;
         this._id = id;
     }
 
-    public get id(): Number {
-        return this._id;
-    }
-
-    public get name() : string {
+    get name() {
         return this._name;
     }
-    
-    public get type() : SolutionType {
+
+    get solutionDescription() {
+        return this._solutionDescription;
+    }
+
+    get type() {
         return this._type;
     }
-     
-    public get description() : string {
-        return this._description;
+
+    get benefits() {
+        return this._benefits;
     }
-    
-    public get products() : ProductModel[] {
-        return this._products;
+
+    get _benefitDescription() {
+        return this._benefitsDescription;
     }
-    
-    public set name(name : string) {
+
+    set name(name: string) {
         this._name = name;
     }
-    
-    public set type(type : SolutionType) {
+
+    set solutionDescription(description: string) {
+        this._solutionDescription = description;
+    }
+
+    set type(type: SolutionType) {
         this._type = type;
     }
 
-    public set description(description : string) {
-        this._description = description;
+    set benefits(benefits: Array<SolutionBefenitType>) {
+       this._benefits = benefits;
     }
 
-    public set products(products : ProductModel[]) {
-        this._products = products;
+    set _benefitDescription(description: string) {
+         this._benefitsDescription = description;
     }
 
-    public set id(id: Number) {
-        this._id = id;
-    }
+
+
 }
