@@ -23,13 +23,14 @@ import {ContactPage} from './pages/contact/contact.page';
 import {ScrollDataService} from './services/scroll/scroll-data.service';
 import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import {ProductDetailComponent} from './components/products/product-detail/product-detail.component';
-import {ProductListPage} from './pages/products/product-types/product-list-page/product-list.page';
 import {ProductCardComponent} from './components/products/product-card/product-card.component';
 import {SlideSideNavigationComponent} from './components/slide-side-navigation/slide-side-navigation.component';
 import {ProductTypePage} from './pages/products/product-types/product-type.page';
 import {ProductDetailDesktopComponent} from './components/products/product-detail/product-detail-desktop/product-detail-desktop.component';
 import {ProductDetailMobileComponent} from './components/products/product-detail/product-detail-mobile/product-detail-mobile.component';
 import {ScrollButtonComponent} from './components/scroll-button/scroll-button.component';
+import {PartsPage} from './pages/products/parts/parts.component';
+import {ProductListComponent} from './components/products/product-list/product-list.page';
 
 
 // AoT requires an exported function for factories
@@ -52,7 +53,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         OurNewsPage,
         NewsitemComponent,
         ProductDetailComponent,
-        ProductListPage,
+        ProductListComponent,
         ProductCardComponent,
         ProductCardComponent,
         SlideSideNavigationComponent,
@@ -61,7 +62,8 @@ export function HttpLoaderFactory(http: HttpClient) {
         SlideSideNavigationComponent,
         ProductDetailDesktopComponent,
         ProductDetailMobileComponent,
-        ScrollButtonComponent
+        ScrollButtonComponent,
+        PartsPage
     ],
     imports: [
         BrowserModule,

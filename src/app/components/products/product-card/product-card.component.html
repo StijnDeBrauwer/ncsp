@@ -1,14 +1,16 @@
 <div class="product-container" (click)="showModal()">
+    <div class="product-header">
     <img src="../../../assets/images/beer_bottles_liten.jpg"/>
-    <div class="label">Parts</div>
-
-    <div class="content">
-        <h2>{{product?.name}}</h2>
-        <p>{{getShortDescription()}}</p>
+    <span class="label">Parts</span>
     </div>
 
-    <div class="benefit-container">
+    <div class="product-content">
+        <h2>{{product?.name}}</h2>
+        <p>Short into</p>
+    </div>
 
+    <div *ngIf="benifts" class="product-footer">
+        {{benifts}}
     </div>
 </div>
 <app-product-detail [product]="product" *ngIf="isModalVisible" (close)="close()"></app-product-detail>

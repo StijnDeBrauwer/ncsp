@@ -1,15 +1,14 @@
 import {Solution} from './solution.model';
-import {Spec} from './spec.modal';
 
 export class Product {
     private _name: string;
     private _solution: Solution;
     private _description: string;
-    private _spec: Spec;
+    private _spec: any;
     private _media: Array<any>;
 
 
-    constructor(name: string, solution: Solution, description: string, spec: Spec, media?: any) {
+    constructor(name: string, solution: Solution, description: string, spec: any, media?: any) {
         this._name = name;
         this._solution = solution;
         this._description = description;
@@ -49,7 +48,7 @@ export class Product {
         this._description = description;
     }
 
-    set spec(spec: Spec) {
+    set spec(spec: any) {
          this._spec = spec;
     }
 

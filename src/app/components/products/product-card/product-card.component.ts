@@ -1,33 +1,39 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Product} from 'src/app/models/product.model';
+import {Component, OnInit, Input} from '@angular/core';
+import {Product} from 'src/app/models/product.model';
+import {SolutionBefenitType} from '../../../models/solution-benfit-type';
 
 @Component({
-  selector: 'app-product',
-  templateUrl: './product-card.component.html',
-  styleUrls: ['./product-card.component.scss']
+    selector: 'app-product',
+    templateUrl: './product-card.component.html',
+    styleUrls: ['./product-card.component.scss']
 })
 export class ProductCardComponent implements OnInit {
 
-  @Input() product: Product;
-  isModalVisible: boolean = false;
-  constructor() { }
+    @Input() product: Product;
+    isModalVisible: boolean = false;
 
-  ngOnInit() {
-  }
+    constructor() {
+    }
 
-  getShortDescription(): string {
+    ngOnInit() {
+    }
 
-    return "test";
-    // if(this.product) {
-    //   return this.product.purpose.substring(0, 150) + "...";
-    // }
-  }
 
-  showModal(): void {
-    this.isModalVisible = true;
-  }
+    showModal(): void {
+        this.isModalVisible = true;
+    }
 
-  close(): void {
-    this.isModalVisible = false;
-  }
+    get benifts() {
+        let benefitString = '';
+
+        this.product.solution.benefits.forEach(benefit => {
+            benefitString += '' + benefit + ' - ';
+        });
+
+        return benefitString;
+    }
+
+    close(): void {
+        this.isModalVisible = false;
+    }
 }

@@ -6,14 +6,14 @@ export class Solution {
     private _id: Number;
     private _name: string;
     private _solutionDescription: string;
-    private _type: SolutionType;
+    private _types: Array<SolutionType>;
     private _benefits: Array<SolutionBefenitType>;
     private _benefitsDescription: string;
 
-    constructor(name: string, type: SolutionType, solutionDescription: string,
+    constructor(name: string, types: Array<SolutionType>, solutionDescription: string,
                 benefits: Array<SolutionBefenitType>, benefitDescription: string, id?: Number) {
         this._name = name;
-        this._type = type;
+        this._types = types;
         this._solutionDescription = solutionDescription;
         this._benefits = benefits;
         this._benefitsDescription = benefitDescription;
@@ -28,8 +28,8 @@ export class Solution {
         return this._solutionDescription;
     }
 
-    get type() {
-        return this._type;
+    get types() {
+        return this._types;
     }
 
     get benefits() {
@@ -48,8 +48,8 @@ export class Solution {
         this._solutionDescription = description;
     }
 
-    set type(type: SolutionType) {
-        this._type = type;
+    set types(types: Array<SolutionType>) {
+        this._types = types;
     }
 
     set benefits(benefits: Array<SolutionBefenitType>) {
