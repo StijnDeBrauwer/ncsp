@@ -18,36 +18,26 @@
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: row;
         border-radius: 2.5px;
 
-        .modal-header {
+        .title-container{
             display: flex;
-            flex-direction: row;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
-            h1 {
-                margin: 10px;
-                font-weight: bold;
-            }
+            flex: 1;
 
-            .icon-close {
-                font-size: 25px;
-                margin: 0 10px;
-                margin-top: -30px;
-                &:hover {
-                    cursor: pointer;
-                }
-            }
-        }
+            h1{
+                padding: 0;
+                margin: 5px 0;
+                text-transform: uppercase;
+                font-size: 2em;
 
-        .modal-content {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
+            }
 
             .slideshow {
                 position: relative;
-                width: 39%;
                 height: fit-content;
                 img {
                     width: 100%;
@@ -80,49 +70,22 @@
                         right: 0;
                     }
                 }
-
-                /*.arrow {
-                    color: $main-color;
-                    font-weight: bold;
-                    position: absolute;
-                    background-color: white;
-                    top: 50%;
-                    padding: 5px;
-                    width: 25px;
-                    height: 25px;
-                    span {
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        width: 25px;
-                        height: 25px;
-                    }
-                    
-                    border-radius: 100%;
-                    font-size: 25px;
-                    transform: translateY(-50%);
-                    &:first-of-type {
-                        left: 20px;
-                    }
-                    &:last-of-type {
-                    right: 20px;
-                    }
-                }*/
             }
+        }
 
-            .product-info {
-                max-width: 59%;
-                flex-shrink: 0;
-                flex-grow: 1;
+        .content-container{
+            padding:0 2% 0 5%;
+            flex: 2;
+            .content-title{
+                display: flex;
+                justify-content: space-between;
 
-                .menu {
-                    .details {
-                        h1 {
-                            margin: 10px;
-                            text-align: center;
-                            font-weight: normal;
-                        }
-                    }
+                h1{
+                    padding: 0;
+                    text-transform: uppercase;
+                    font-size: 1.5em;
+                    margin: 5px 0;
+
                 }
             }
         }

@@ -14,6 +14,8 @@ export class OurProductPage implements OnInit {
     suitableFor: Array<string>;
     benefits: Array<string>;
 
+    filterName: string;
+
     constructor(private productsService: ProductsService) {
     }
 
@@ -21,6 +23,10 @@ export class OurProductPage implements OnInit {
         this.products = this.productsService.getProducts();
         this.suitableFor = Object.keys(SolutionType).map((key) => SolutionType[key]);
         this.benefits =  Object.keys(SolutionBefenitType).map((key) => SolutionBefenitType[key]);
+    }
+
+    filterByName(name: string){
+        this.productsService.filterProductByName(this.filterName);
     }
 
 }

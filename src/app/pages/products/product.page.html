@@ -3,26 +3,38 @@
         <h1>Our products</h1>
     </div>
 
-   <app-product-list [products]="products"></app-product-list>
+    <app-product-list [products]="products"></app-product-list>
 
 
     <app-slide-side-navigation>
         <div class="slide-nav-content">
-
             <h1>Product type</h1>
             <ul>
-                <li><a routerLink="/products/parts" routerLinkActive="active-link">Parts</a></li>
-                <li><a routerLink="/products/upgrades" routerLinkActive="active-link">Upgrades, add-ons and conversions</a></li>
-                <li><a routerLink="/products/services" routerLinkActive="active-link">Services</a></li>
+                <li>
+                    <mat-checkbox>Parts</mat-checkbox>
+                </li>
+                <li>
+                    <mat-checkbox>
+                        Upgrades, add-ons and
+                        conversions
+                    </mat-checkbox>
+                </li>
+                <li>
+                    <mat-checkbox>Services</mat-checkbox>
+                </li>
             </ul>
             <h1>Suitable for</h1>
             <ul>
-                <li *ngFor="let solution of suitableFor"> <a>{{solution}}</a></li>
+                <li *ngFor="let solution of suitableFor">
+                    <mat-checkbox >{{solution}}</mat-checkbox>
+                </li>
             </ul>
 
             <h1>Benefit</h1>
             <ul>
-                <li *ngFor="let benefit of benefits"> <a>{{benefit}}</a></li>
+                <li *ngFor="let benefit of benefits">
+                    <mat-checkbox>{{benefit}}</mat-checkbox>
+                </li>
             </ul>
         </div>
     </app-slide-side-navigation>

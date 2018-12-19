@@ -7,7 +7,8 @@ import {
     MatSelectModule,
     MatButtonModule,
     MatCardModule,
-    MatTabsModule
+    MatTabsModule,
+    MatCheckboxModule
 
 } from '@angular/material';
 
@@ -20,6 +21,7 @@ import {
         MatButtonModule,
         MatCardModule,
         MatTabsModule,
+        MatCheckboxModule
     ],
     exports: [
         MatFormFieldModule,
@@ -28,7 +30,8 @@ import {
         MatSelectModule,
         MatButtonModule,
         MatCardModule,
-        MatTabsModule
+        MatTabsModule,
+        MatCheckboxModule
     ],
     providers: []
 })

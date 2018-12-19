@@ -6,12 +6,12 @@
                 <div class="input">
                     <i class="material-icons">search</i>
                 </div>
-                <input type="text" placeholder="search"/>
+                <input type="text" placeholder="search" (keyup)="filterByName($event)" />
                 <!--<button class="orange-button">Search a part</button>-->
             </div>
         </div>
         <div class="content">
-            <app-product *ngFor="let product of products" [product]="product"></app-product>
+            <app-product *ngFor="let product of productList" [product]="product"></app-product>
         </div>
     </div>
 </section>
