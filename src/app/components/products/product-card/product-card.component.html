@@ -1,7 +1,10 @@
 <div class="product-container" (click)="showModal()">
     <div class="product-header">
-    <img src="../../../assets/images/beer_bottles_liten.jpg"/>
-    <span class="label">Parts</span>
+        <img src="../../../assets/images/beer_bottles_liten.jpg"/>
+
+        <div class="label-container">
+            <span class="{{'label ' + type.key}}" *ngFor="let type of types"> {{type.value}}</span>
+        </div>
     </div>
 
     <div class="product-content">

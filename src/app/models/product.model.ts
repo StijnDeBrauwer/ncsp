@@ -8,7 +8,7 @@ export class Product {
     private _media: Array<any>;
 
 
-    constructor(name: string, solution: Solution, description: string, spec: any, media?: any) {
+    constructor(name: string, solution?: Solution, description?: string, spec?: any, media?: any) {
         this._name = name;
         this._solution = solution;
         this._description = description;
@@ -16,7 +16,7 @@ export class Product {
         this._media = media;
     }
 
-    get name() {
+    get name(): string {
         return this._name;
     }
 

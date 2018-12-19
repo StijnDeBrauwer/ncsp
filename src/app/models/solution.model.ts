@@ -10,8 +10,8 @@ export class Solution {
     private _benefits: Array<SolutionBefenitType>;
     private _benefitsDescription: string;
 
-    constructor(name: string, types: Array<SolutionType>, solutionDescription: string,
-                benefits: Array<SolutionBefenitType>, benefitDescription: string, id?: Number) {
+    constructor(name: string, types: Array<SolutionType>, solutionDescription?: string,
+                benefits?: Array<SolutionBefenitType>, benefitDescription?: string, id?: Number) {
         this._name = name;
         this._types = types;
         this._solutionDescription = solutionDescription;

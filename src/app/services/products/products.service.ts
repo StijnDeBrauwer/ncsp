@@ -48,14 +48,62 @@ export class ProductsService {
                     'For older systems with 2 zones: highly improved rinsing and cooling of bottles. Water and energy saving with rotating injectors and fresh water pressure control.  Improved hygiene with slanted rounded tanks. '),
                 'The current final rinsing zone is completely removed and replaced by new tanks, filtration system, injection and spray system. The system consists of a fresh water saving injection system followed by 3 cascading tanks with rotating injectors and fixed shower beams. Rounded slanted tanks for easy cleaning. Closed  cylindrical filtration system with easy and safe access for claning. Completely stainless steel structure and tanks. Seamless integration in your machine.',
                 '2 or 3 fresh water spraybars. 3 cascading tanks with each 3 or 4 rotating spraybars and 1 or 2 fixed showerbeams. Closed filtration system with stainless steel basket sieves. Manual or automatic valve system for cleaning. Complete stainless steel construction. Optional with fresh water pressure control for reduced pressure in slow speed run. '
-            )
+            ),
+            new Product('Pre rinsing section', new Solution(null, [SolutionType.BOTTLE_WASHERS])),
+            new Product('Post caustic lock', new Solution(null, [SolutionType.BOTTLE_WASHERS])),
+            new Product('Tubular heat exchangers', new Solution(null, [SolutionType.BOTTLE_WASHERS])),
+            new Product('Plate Heat Exchangers', new Solution(null, [SolutionType.BOTTLE_WASHERS])),
+            new Product('Rotating injection system', new Solution(null, [SolutionType.BOTTLE_WASHERS])),
+            new Product('Label extraction booster', new Solution(null, [SolutionType.BOTTLE_WASHERS])),
+            new Product('Wall insulation', new Solution(null, [SolutionType.BOTTLE_WASHERS])),
+            new Product('Caustic filtration ', new Solution(null, [SolutionType.BOTTLE_WASHERS])),
+            new Product('Digitizing of instrumentation ', new Solution(null, [SolutionType.BOTTLE_WASHERS])),
+            new Product('PLC Parameter control ', new Solution(null, [SolutionType.BOTTLE_WASHERS])),
+            new Product('Automatic chemical dosing control ', new Solution(null, [SolutionType.BOTTLE_WASHERS])),
+            new Product('Synchronized drive system ', new Solution(null, [SolutionType.BOTTLE_WASHERS])),
+            new Product('Main translation chain ', new Solution(null, [SolutionType.BOTTLE_WASHERS])),
+            new Product('Parabolic sieve ', new Solution(null, [SolutionType.BOTTLE_WASHERS])),
+            new Product('Eco bottle carriers ', new Solution(null, [SolutionType.BOTTLE_WASHERS])),
+            new Product('Universal plastic inserts ', new Solution(null, [SolutionType.BOTTLE_WASHERS])),
+            new Product('Steam control system ', new Solution(null, [SolutionType.BOTTLE_WASHERS])),
+            new Product('Complete label extraction system ', new Solution(null, [SolutionType.BOTTLE_WASHERS])),
+
+            new Product('Bottle burst safety system', new Solution(null, [SolutionType.FILLERS])),
+            new Product('Bottle format front table equipment', new Solution(null, [SolutionType.FILLERS])),
+            new Product('Product level control', new Solution(null, [SolutionType.FILLERS])),
+            new Product('Automatic CIP regulation  ', new Solution(null, [SolutionType.FILLERS])),
+            new Product('PLC Software upgrade', new Solution(null, [SolutionType.BOTTLE_WASHERS, SolutionType.FILLERS])),
+            new Product('Crowner/capper ', new Solution(null, [SolutionType.FILLERS])),
+            new Product('Complete process automation ', new Solution(null, [SolutionType.BOTTLE_WASHERS, SolutionType.FILLERS])),
+            new Product('Universal foam control system ', new Solution(null, [SolutionType.FILLERS])),
+            new Product('Lift cylinder stabilization ', new Solution(null, [SolutionType.FILLERS])),
 
         ];
     }
 
 
-    public getProducts(): Array<Product>{
+    public getProducts(): Array<Product> {
         return this.products;
+    }
+
+    public filterProductByName(name: string) {
+        //return this.products.filter((product: Product)=> product.name.toLowerCase().contains(name)) 
+    }
+
+    public getParts() {
+
+    }
+
+    public getUpgrades() {
+
+    }
+
+    public getServices() {
+
+    }
+
+    public filterProductsByProp(props: Array<any>, propValues: Array<string>): Array<Product> {
+        return [];
     }
 
 

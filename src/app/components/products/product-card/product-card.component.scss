@@ -9,6 +9,7 @@
   margin-bottom: 30px;
   transition: all .2s ease-in-out;
   position: relative;
+  height: 500px;
 
   &:hover {
     transform: scale(1.025);
@@ -17,35 +18,42 @@
 
   .product-header {
     position: relative;
+
     img {
       height: auto;
       width: 100%;
     }
 
-    .label {
-      box-shadow: 0 0 3px #ccc;
-      text-align: center;
+    .label-container {
+      display: flex;
+      flex-direction: row;
       position: absolute;
       bottom: 0;
       left: 0;
-      margin: 10px;
-      border-radius: 4px;
-      width: 25%;
-      color: white;
-      text-transform: uppercase;
-      font-weight: bold;
-      background-color: $main-color;
+      margin: 20px;
 
-      &.bottle-washers {
+      .label {
+        box-shadow: 0 0 3px #ccc;
+        text-align: center;
+        border-radius: 4px;
+        color: white;
+        text-transform: uppercase;
+        font-weight: bold;
+        padding: 5px;
         background-color: $main-color;
-      }
 
-      &.fillers {
-        background-color: $main-color;
-      }
+        &.BOTTLE_WASHERS {
+          background-color:$main-color;
+        }
 
-      &.others {
-        background-color: $main-color;
+        &.FILLERS {
+          background-color: $filler-color;
+        }
+
+        &.OTHERS {
+          background-color: $others-color;
+        }
+
       }
     }
 
@@ -58,6 +66,7 @@
     text-align: center;
     overflow: hidden;
     text-overflow: ellipsis;
+
     h2 {
       margin-top: 0;
       color: $main-color;

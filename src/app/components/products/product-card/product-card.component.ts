@@ -1,6 +1,7 @@
 import {Component, OnInit, Input} from '@angular/core';
 import {Product} from 'src/app/models/product.model';
 import {SolutionBefenitType} from '../../../models/solution-benfit-type';
+import {SolutionType} from '../../../models/suitable-type.model';
 
 @Component({
     selector: 'app-product',
@@ -11,11 +12,22 @@ export class ProductCardComponent implements OnInit {
 
     @Input() product: Product;
     isModalVisible: boolean = false;
+    types: Array<{ key: string, value: string }>;
 
     constructor() {
     }
 
     ngOnInit() {
+
+        this.types = this.product.solution && this.product.solution.types ? this._convertToDictionary() : [];
+
+    }
+
+    private _convertToDictionary() {
+        return this.product.solution.types.map((type: SolutionType) => {
+            const keyEnum = Object.keys(SolutionType).find(key => SolutionType[key] === type);
+            return {key: keyEnum, value: type};
+        });
     }
 
 
@@ -26,10 +38,11 @@ export class ProductCardComponent implements OnInit {
     get benifts() {
         let benefitString = '';
 
-        this.product.solution.benefits.forEach(benefit => {
-            benefitString += '' + benefit + ' - ';
-        });
-
+        if (this.product.solution && this.product.solution.benefits) {
+            this.product.solution.benefits.forEach(benefit => {
+                benefitString += '' + benefit + ' - ';
+            });
+        }
         return benefitString;
     }
 
