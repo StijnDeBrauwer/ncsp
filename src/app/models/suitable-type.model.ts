@@ -1,5 +1,5 @@
 export enum SolutionType {
-    BOTTLE_WASHERS = 'BOTTLE_WASHERS',
-    FILTERS = 'FILTERS',
-    OTHERS = 'OTHER_MACHINES'
+    BOTTLE_WASHERS = 'Bottle washers',
+    FILTERS = 'Fillers',
+    OTHERS = 'Other machines'
 }

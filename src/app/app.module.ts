@@ -31,6 +31,8 @@ import {ProductDetailMobileComponent} from './components/products/product-detail
 import {ScrollButtonComponent} from './components/scroll-button/scroll-button.component';
 import {PartsPage} from './pages/products/parts/parts.component';
 import {ProductListComponent} from './components/products/product-list/product-list.page';
+import {ServicesPage} from './pages/products/services/services.component';
+import {UpgradesPage} from './pages/products/upgrades/upgrades.component';
 
 
 // AoT requires an exported function for factories
@@ -63,7 +65,9 @@ export function HttpLoaderFactory(http: HttpClient) {
         ProductDetailDesktopComponent,
         ProductDetailMobileComponent,
         ScrollButtonComponent,
-        PartsPage
+        PartsPage,
+        ServicesPage,
+        UpgradesPage
     ],
     imports: [
         BrowserModule,

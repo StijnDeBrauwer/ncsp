@@ -6,4 +6,24 @@
    <app-product-list [products]="products"></app-product-list>
 
 
+    <app-slide-side-navigation>
+        <div class="slide-nav-content">
+
+            <h1>Product type</h1>
+            <ul>
+                <li><a routerLink="/products/parts" routerLinkActive="active-link">Parts</a></li>
+                <li><a routerLink="/products/upgrades" routerLinkActive="active-link">Upgrades, add-ons and conversions</a></li>
+                <li><a routerLink="/products/services" routerLinkActive="active-link">Services</a></li>
+            </ul>
+            <h1>Suitable for</h1>
+            <ul>
+                <li *ngFor="let solution of suitableFor"> <a>{{solution}}</a></li>
+            </ul>
+
+            <h1>Benefit</h1>
+            <ul>
+                <li *ngFor="let benefit of benefits"> <a>{{benefit}}</a></li>
+            </ul>
+        </div>
+    </app-slide-side-navigation>
 </section>
