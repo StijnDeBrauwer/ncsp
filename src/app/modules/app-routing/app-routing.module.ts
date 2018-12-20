@@ -60,7 +60,7 @@ const routes: Routes = [
         BrowserModule,
         CommonModule,
         MaterialModule,
-        RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled'})
+        RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled', useHash: true})
     ],
     declarations: [],
     exports: [RouterModule]

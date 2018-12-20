@@ -117,8 +117,10 @@ h2 {
   align-items: center;
   padding: 10% 0;
   filter:contrast(150%) brightness(100%) grayscale(1px);
+  text-align: center;
 
   @media (min-width: 768px) {
+    text-align: left;
     align-items: flex-start;
   }
 
