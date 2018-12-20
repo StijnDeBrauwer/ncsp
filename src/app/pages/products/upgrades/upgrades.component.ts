@@ -15,7 +15,7 @@ export class UpgradesPage implements OnInit {
     }
 
   ngOnInit() {
-      this.upgrades = this.productsService.getProducts();
+      this.upgrades = this.productsService.getUpgrades();
   }
 
 }

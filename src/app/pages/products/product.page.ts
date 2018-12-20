@@ -4,6 +4,7 @@ import {ProductsService} from '../../services/products/products.service';
 import {SolutionType} from '../../models/suitable-type.model';
 import {SolutionBefenitType} from '../../models/solution-benfit-type';
 import {FormBuilder} from '@angular/forms';
+import {ResponsiveService} from '../../services/responsive/responsive.service';
 
 @Component({
     selector: 'app-our-product-page',
@@ -15,6 +16,7 @@ export class OurProductPage implements OnInit {
     suitableFor: Array<string>;
     benefits: Array<string>;
     @ViewChild('productsView', {read: ElementRef}) public productsView: ElementRef;
+    filtersOpen: boolean = false;
 
     filterName: string;
 
@@ -27,11 +29,13 @@ export class OurProductPage implements OnInit {
     //     ];
     checkboxGroup: any;
 
-    constructor(private productsService: ProductsService, private _fb: FormBuilder) {
+    constructor(private responseService: ResponsiveService, private productsService: ProductsService, private _fb: FormBuilder) {
         this.checkboxGroup = _fb.group({
 
             myValues: _fb.array([false])
         });
+
+        this.responseService.checkWidth();
     }
 
     ngOnInit() {
@@ -43,6 +47,10 @@ export class OurProductPage implements OnInit {
 
     public scrollToProducts(): void {
         this.productsView.nativeElement.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'center'});
+    }
+
+    onProductClick() {
+        this.filtersOpen = false;
     }
 
     filterByName(name: string) {

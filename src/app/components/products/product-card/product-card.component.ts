@@ -39,8 +39,13 @@ export class ProductCardComponent implements OnInit {
         let benefitString = '';
 
         if (this.product.solution && this.product.solution.benefits) {
-            this.product.solution.benefits.forEach(benefit => {
-                benefitString += '' + benefit + ' - ';
+            this.product.solution.benefits.forEach((benefit, i) => {
+                if( i< this.product.solution.benefits.length -1) {
+                    benefitString += '' + benefit + ' - ';
+                    return
+                }
+
+                benefitString += '' + benefit;
             });
         }
         return benefitString;

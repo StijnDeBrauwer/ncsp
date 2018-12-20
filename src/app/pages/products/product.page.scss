@@ -1,26 +1,87 @@
 @import "../../../assets/variables";
-.product-page{
+
+.product-page {
   .banner {
     background: url('../../../assets/images/default-placeholder.jpg') center center;
+  }
 
-    .banner-button {
-      z-index: 1;
-      cursor: pointer;
-      border-radius: 100px;
-      font-size: 1.2em;
-      background-color: $main-color;
-      color: white;
-      padding: 1em 1.5em 1em 1em;
+  .product-group{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+
+      .product-group-container {
+        height: 300px;
+      }
+    }
+
+
+    .product-group-container {
+      width: 100%;
+      max-width: 300px;
+      box-shadow: 7px 7px 21px -5px rgba(0, 0, 0, 0.75);
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 30px;
+      transition: all .2s ease-in-out;
       position: relative;
-      .ion-ios-arrow-forward {
-        display: inline-block;
-        transition: left .5s ease-in-out;
-        padding-left: 2px;
+      height: 500px;
+
+      .learn-more-button{
+        display: inline;
+        cursor: pointer;
+        border-radius: 100px;
+        background-color: $main-color;
+        color: white;
+        width: 35%;
+        margin: 15px;
+        padding: 10px;
+        position: relative;
+        .ion-ios-arrow-forward {
+          display: inline-block;
+          transition: left .5s ease-in-out;
+          padding-left: 2px;
+        }
+      }
+
+      .product-group-header {
+        position: relative;
+
+        img {
+          height: auto;
+          width: 100%;
+        }
+
+      }
+
+      .product-group-content {
+        padding: 5px;
+        min-height: 200px;
+        max-height: 200px;
+        text-align: center;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        h2 {
+          margin-top: 0;
+          color: $main-color;
+        }
+
+        p {
+          text-overflow: ellipsis;
+          overflow: hidden;
+        }
       }
     }
   }
 
-  .productsContainer{
+  .productsContainer {
     padding: 2% 0;
   }
 

@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 
 @Component({
     selector: 'app-slide-side-navigation',
@@ -7,7 +7,8 @@ import {Component, OnInit} from '@angular/core';
 })
 export class SlideSideNavigationComponent implements OnInit {
 
-    open: boolean = false;
+    @Input('isOpen') open: boolean;
+    @Output() onOpenStateChange: EventEmitter<boolean> = new EventEmitter<boolean>()
     constructor() {
     }
 
@@ -16,6 +17,7 @@ export class SlideSideNavigationComponent implements OnInit {
 
     toggle() {
         this.open = !this.open;
+        this.onOpenStateChange.emit(this.open);
     }
 
 

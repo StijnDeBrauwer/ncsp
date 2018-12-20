@@ -16,7 +16,7 @@ export class ServicesPage implements OnInit {
     }
 
     ngOnInit() {
-        this.services = this.productsService.getProducts();
+        this.services = this.productsService.getServices();
     }
 
 }

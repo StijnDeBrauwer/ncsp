@@ -5,7 +5,7 @@
             <li><a routerLink="/home" (click)="navigate()">Home</a></li>
             <li *ngFor="let link of links">
                 <a *ngIf="link.path && !link.children"   routerLinkActive="active-link" [routerLink]="link.path" (click)="navigate()"> {{link.text}} </a>
-                <a *ngIf="link.children" (click)="toggleSubMenu(link)" [ngClass]="{'active-link': link === activeLink}"> {{link.text}} </a>
+                <a *ngIf="link.children" (click)="toggleSubMenu(link)"> {{link.text}} </a>
             </li>
             <li>
                 <app-language-picker [isTransparent]="isTransparent"></app-language-picker>

@@ -4,11 +4,12 @@
     .product-modal {
         overflow-y: scroll;
         max-height: 90vh;    
-        padding: 0px;
+        padding: 0;
         .modal-header {
             position: absolute;
             right: 0;
-            top: 40px;
+            top: 0;
+            margin-top: 5px;
             z-index: 1000;
             i {
                 color: white;
@@ -16,11 +17,23 @@
                 border-radius: 100%;
                 padding: 5px;
             }
+
         }
         .modal-content {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+
+            .benefit-container{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                h1{
+                    font-size: 1.5em;
+                    margin: 2%;
+                }
+            }
 
             h2 {
                 position: relative;
@@ -36,7 +49,8 @@
                 width: 100%;
                 position: relative;
                 .img-banner {
-                    position: absolute;
+                    position: relative;
+                    //position: absolute;
                     bottom: 20px;
                     background-color: $main-color;
                     color: white;
@@ -51,6 +65,23 @@
 
                 i {
                     font-size: 60px;
+                }
+
+                .material-icons{
+                    position: absolute;
+                    color: $main-color;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+
+                    &.left{
+                        left: 0;
+                        margin-left: 10px;
+                    }
+
+                    &.right{
+                        right: 0;
+                        margin-right: 10px;
+                    }
                 }
             }
 

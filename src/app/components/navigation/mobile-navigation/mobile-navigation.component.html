@@ -16,8 +16,7 @@
 
             <li *ngFor="let link of links">
                 <a *ngIf="link.path && !link.children"  routerLinkActive="active-link"  [routerLink]="link.path"> {{link.text}} </a>
-                <a *ngIf="link.children" [ngClass]="{'active-link': (link === chosenLink)}"
-                   (click)="toggleSubMenu(link)"> {{link.text}} </a>
+                <a *ngIf="link.children" (click)="toggleSubMenu(link)"> {{link.text}} </a>
                 <div *ngIf="link === chosenLink" class="sub-menu" [ngClass]="{'open': subMenuOpen}">
                     <p *ngFor="let child of link.children">
                         <a [routerLink]="child.path" routerLinkActive="active-link" (click)="navigate()">{{child.text}}</a>

@@ -10,25 +10,34 @@
         <img src="../../../assets/images/people.jpg" />
         <!--<div class="arrow"><span>&#x3c;</span></div>-->
         <!--<div class="arrow"><span>&#x3e;</span></div>-->
-        <i class="material-icons">keyboard_arrow_left</i>
-        <i class="material-icons">keyboard_arrow_right</i>
+        <i class="material-icons left">keyboard_arrow_left</i>
+        <i class="material-icons right">keyboard_arrow_right</i>
         <div class="img-banner">{{product?.name}}</div>
       </div>
       <div class="product-info">
+        <div class="content-title">
+          <div class="benefit-container">
+            <h1>Suitable for</h1>
+            <span *ngFor="let type of types">{{type.value}}</span>
+          </div>
+        </div>
         <div class="menu">
           <mat-tab-group mat-align-tabs="center">
             <mat-tab label="Description">
               <div class="details">
+                <h1>Description</h1>
                   {{product?.description}}
               </div>
             </mat-tab>
             <mat-tab label="Tech specs">
               <div class="details">
+                <h1>Tech specs</h1>
                   {{product?.spec}}
               </div>
             </mat-tab>
             <mat-tab label="Benefits">
               <div class="details">
+                <h1>Benefits</h1>
                   {{product?.solution?.benefitDescription}}
               </div>
             </mat-tab>

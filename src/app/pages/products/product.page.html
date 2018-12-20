@@ -9,27 +9,73 @@
         </div>
     </div>
 
-    <div class="article">
-        <h1>Discover our selection </h1>
+    <div class="article product-group">
 
-        <mat-card>
-            Parts
-        </mat-card>
+        <div class="product-group-container">
+            <div class="product-group-header">
+                <img src="../../../assets/images/default-placeholder.jpg"/>
+            </div>
 
-        <mat-card>
-            Upgrades
-        </mat-card>
+            <div class="product-group-content">
+                <h2>Parts</h2>
+                <p>LLorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eu volutpat urna, at ultrices
+                    magna.
+                    Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vestibulum
+                    quis
+                    lectus tellus. Quisque vel hendrerit nisl.</p>
+            </div>
 
-        <mat-card>
-        </mat-card>
+            <div class="learn-more-button" routerLink="/products/parts">
+                Learn more   <span class="icon ion-ios-arrow-forward"></span>
+            </div>
+        </div>
+
+        <div class="product-group-container">
+            <div class="product-group-header">
+                <img src="../../../assets/images/default-placeholder.jpg"/>
+            </div>
+
+            <div class="product-group-content">
+                <h2>Upgrades, add-ons and
+                    conversions</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eu volutpat urna, at ultrices
+                    magna.
+                    Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vestibulum
+                    quis
+                    lectus tellus. Quisque vel hendrerit nisl.</p>
+            </div>
+
+            <div class="learn-more-button" routerLink="/products/upgrades">
+                Learn more   <span class="icon ion-ios-arrow-forward"></span>
+            </div>
+
+        </div>
+
+        <div class="product-group-container">
+            <div class="product-group-header">
+                <img src="../../../assets/images/default-placeholder.jpg"/>
+            </div>
+
+            <div class="product-group-content">
+                <h2>Services</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eu volutpat urna, at ultrices
+                    magna.
+                    Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vestibulum
+                    quis
+                    lectus tellus. Quisque vel hendrerit nisl.</p>
+            </div>
+            <div class="learn-more-button" routerLink="/products/services">
+                Learn more  <span class="icon ion-ios-arrow-forward"></span>
+            </div>
+        </div>
     </div>
 
     <div #productsView class="productsContainer">
-        <app-product-list [products]="products"></app-product-list>
+        <app-product-list (onProductSelected)="onProductClick()" [products]="products"></app-product-list>
     </div>
 
 
-    <app-slide-side-navigation>
+    <app-slide-side-navigation [isOpen]="filtersOpen" (onOpenStateChange)="filtersOpen = $event">
         <div class="slide-nav-content">
             <h1>Product type</h1>
             <ul>

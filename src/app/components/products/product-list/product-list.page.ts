@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {Product} from 'src/app/models/product.model';
 
@@ -10,6 +10,7 @@ import {Product} from 'src/app/models/product.model';
 export class ProductListComponent implements OnInit {
     @Input() products: Array<Product>;
 
+    @Output() onProductSelected = new EventEmitter();
 
     productList: Array<Product>;
     filterName: string;
@@ -24,12 +25,15 @@ export class ProductListComponent implements OnInit {
     }
 
     filterByName(event: any) {
-        const name = event.target.value;
-        console.log(this.products);
+        const name = event.target.value.toLowerCase();
         this.productList = this.products;
         this.productList = this.productList.filter((product: Product) => {
             return product.name.toLowerCase().startsWith(name);
         });
+    }
+
+    clickOnProduct(){
+        this.onProductSelected.emit();
     }
 
 

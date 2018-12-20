@@ -34,7 +34,6 @@ export class DesktopNavbarComponent implements OnInit, AfterViewInit, OnDestroy 
     //variable to keep track of the animations
     navbarState: string;
 
-    activeLink: LinkModel;
 
 
     readonly logoShowPath = '../../../../assets/images/logo.png';
@@ -107,7 +106,6 @@ export class DesktopNavbarComponent implements OnInit, AfterViewInit, OnDestroy 
             this.chosenLink = null;
         } else {
             this.subMenuOpen = !!link.children;
-            this.activeLink = link;
             this.chosenLink = link;
         }
 

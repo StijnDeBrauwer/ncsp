@@ -13,14 +13,14 @@ export class ProductDetailComponent implements OnInit {
   isMobile: boolean;
   @Output() close: EventEmitter<boolean> = new EventEmitter();
 
-  constructor(private responsiveService: ResponsiveService) { 
-    
+  constructor(private responsiveService: ResponsiveService) {
+    this.responsiveService.checkWidth();
+      this.responsiveService.getMobileStatus().subscribe(isMobile => {
+          this.isMobile = isMobile;
+      });
   }
 
   ngOnInit() {
-    this.responsiveService.getMobileStatus().subscribe(isMobile => {
-      this.isMobile = isMobile;
-    });
   }
 
   closeModal(): void {

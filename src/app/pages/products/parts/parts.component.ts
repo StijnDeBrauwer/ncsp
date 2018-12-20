@@ -16,8 +16,7 @@ export class PartsPage implements OnInit {
   }
 
   ngOnInit() {
-
-    this.parts = this.productsService.getProducts();
+    this.parts = this.productsService.getParts();
   }
 
 }
