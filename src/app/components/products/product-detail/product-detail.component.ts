@@ -1,29 +1,31 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Product } from 'src/app/models/product.model';
-import { ResponsiveService } from 'src/app/services/responsive/responsive.service';
+import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+import {Product} from 'src/app/models/product.model';
+import {ResponsiveService} from 'src/app/services/responsive/responsive.service';
 
 @Component({
-  selector: 'app-product-detail',
-  templateUrl: './product-detail.component.html',
-  styleUrls: ['./product-detail.component.scss']
+    selector: 'app-product-detail',
+    templateUrl: './product-detail.component.html',
+    styleUrls: ['./product-detail.component.scss']
 })
 export class ProductDetailComponent implements OnInit {
 
-  @Input() product: Product;
-  isMobile: boolean;
-  @Output() close: EventEmitter<boolean> = new EventEmitter();
+    @Input() product: Product;
+    isMobile: boolean = true;
+    @Output() close: EventEmitter<boolean> = new EventEmitter();
 
-  constructor(private responsiveService: ResponsiveService) {
-    this.responsiveService.checkWidth();
-      this.responsiveService.getMobileStatus().subscribe(isMobile => {
-          this.isMobile = isMobile;
-      });
-  }
+    constructor(private responsiveService: ResponsiveService) {
+        this.responsiveService.checkWidth();
+        this.responsiveService.getMobileStatus().subscribe(isMobile => {
+            console.log('got response', isMobile);
+            this.isMobile = isMobile;
+        });
+    }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+        this.responsiveService.checkWidth();
+    }
 
-  closeModal(): void {
-    this.close.emit(true);
-  }
+    closeModal(): void {
+        this.close.emit(true);
+    }
 }

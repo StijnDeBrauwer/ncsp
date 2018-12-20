@@ -13,35 +13,40 @@ import {ResponsiveService} from '../../services/responsive/responsive.service';
 })
 export class OurProductPage implements OnInit {
     products: Array<Product>;
-    suitableFor: Array<string>;
-    benefits: Array<string>;
+    suitableFor: Array<{ name: string, checked: boolean }>;
+    benefits: Array<{ name: string, checked: boolean }>;
     @ViewChild('productsView', {read: ElementRef}) public productsView: ElementRef;
     filtersOpen: boolean = false;
 
     filterName: string;
 
-    // private filters: [
-    //     { parts: true,
-    //         upgrades: true,
-    //         services: true;
-    //         benefitCheckBoxes
-    //     }
-    //     ];
-    checkboxGroup: any;
+    private filters = [];
 
-    constructor(private responseService: ResponsiveService, private productsService: ProductsService, private _fb: FormBuilder) {
-        this.checkboxGroup = _fb.group({
-
-            myValues: _fb.array([false])
-        });
+    constructor(private responseService: ResponsiveService, private productsService: ProductsService) {
 
         this.responseService.checkWidth();
+
     }
+
+    updateFilters() {
+        const activeFiltersSuitable = this.suitableFor.filter(o => o.checked).map(o => SolutionType[o.name]);
+        const activeFiltersBenefits = this.benefits.filter(o => o.checked).map(o => SolutionType[o.name]);
+
+        this.products = this.productsService.multiFilter([...activeFiltersBenefits, ...activeFiltersSuitable]);
+
+    }
+
 
     ngOnInit() {
         this.products = this.productsService.getProducts();
-        this.suitableFor = Object.keys(SolutionType).map((key) => SolutionType[key]);
-        this.benefits = Object.keys(SolutionBefenitType).map((key) => SolutionBefenitType[key]);
+
+
+        this.suitableFor = Object.keys(SolutionType).map((key) => {
+            return {name: SolutionType[key], checked: false};
+        });
+        this.benefits = Object.keys(SolutionBefenitType).map((key) => {
+            return {name: SolutionBefenitType[key], checked: false};
+        });
     }
 
 

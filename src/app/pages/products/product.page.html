@@ -77,32 +77,32 @@
 
     <app-slide-side-navigation [isOpen]="filtersOpen" (onOpenStateChange)="filtersOpen = $event">
         <div class="slide-nav-content">
-            <h1>Product type</h1>
-            <ul>
-                <li>
-                    <mat-checkbox>Parts</mat-checkbox>
-                </li>
-                <li>
-                    <mat-checkbox>
-                        Upgrades, add-ons and
-                        conversions
-                    </mat-checkbox>
-                </li>
-                <li>
-                    <mat-checkbox>Services</mat-checkbox>
-                </li>
-            </ul>
+            <!--<h1>Product type</h1>-->
+            <!--<ul>-->
+                <!--<li>-->
+                    <!--<mat-checkbox>Parts</mat-checkbox>-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<mat-checkbox>-->
+                        <!--Upgrades, add-ons and-->
+                        <!--conversions-->
+                    <!--</mat-checkbox>-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<mat-checkbox>Services</mat-checkbox>-->
+                <!--</li>-->
+            <!--</ul>-->
             <h1>Suitable for</h1>
             <ul>
                 <li *ngFor="let solution of suitableFor">
-                    <mat-checkbox>{{solution}}</mat-checkbox>
+                    <mat-checkbox [checked]="solution.checked" (click)="updateFilters()" (change)="solution.checked=$event.checked">{{solution.name}}</mat-checkbox>
                 </li>
             </ul>
 
             <h1>Benefit</h1>
             <ul>
                 <li *ngFor="let benefit of benefits">
-                    <mat-checkbox>{{benefit}}</mat-checkbox>
+                    <mat-checkbox  [checked]="benefit.checked"  (click)="updateFilters()"  (change)="benefit.checked=$event.checked" >{{benefit.name}}</mat-checkbox>
                 </li>
             </ul>
         </div>
