@@ -2,6 +2,26 @@
 .product-page{
   .banner {
     background: url('../../../assets/images/default-placeholder.jpg') center center;
+
+    .banner-button {
+      z-index: 1;
+      cursor: pointer;
+      border-radius: 100px;
+      font-size: 1.2em;
+      background-color: $main-color;
+      color: white;
+      padding: 1em 1.5em 1em 1em;
+      position: relative;
+      .ion-ios-arrow-forward {
+        display: inline-block;
+        transition: left .5s ease-in-out;
+        padding-left: 2px;
+      }
+    }
+  }
+
+  .productsContainer{
+    padding: 2% 0;
   }
 
   ::ng-deep app-slide-side-navigation {

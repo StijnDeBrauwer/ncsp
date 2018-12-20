@@ -117,8 +117,14 @@ h2 {
   align-items: flex-start;
   filter:contrast(150%) brightness(100%) grayscale(1px);
 
+  .content{
+    margin-left: 10%;
+    h1{
+      margin: 10% 0;
+    }
+  }
   h1{
-    padding-left: 10%;
+    margin-left: 10%;
   }
 }
 

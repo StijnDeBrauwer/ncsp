@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {Product} from '../../models/product.model';
 import {ProductsService} from '../../services/products/products.service';
 import {SolutionType} from '../../models/suitable-type.model';
@@ -14,7 +14,7 @@ export class OurProductPage implements OnInit {
     products: Array<Product>;
     suitableFor: Array<string>;
     benefits: Array<string>;
-    benefitsCheckBoxes;
+    @ViewChild('productsView', {read: ElementRef}) public productsView: ElementRef;
 
     filterName: string;
 
@@ -40,8 +40,13 @@ export class OurProductPage implements OnInit {
         this.benefits = Object.keys(SolutionBefenitType).map((key) => SolutionBefenitType[key]);
     }
 
+
+    public scrollToProducts(): void {
+        this.productsView.nativeElement.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'center'});
+    }
+
     filterByName(name: string) {
-        this.productsService.filterProductByName(this.filterName);
+        // this.productsService.filterProductByName(this.filterName);
     }
 
 }
