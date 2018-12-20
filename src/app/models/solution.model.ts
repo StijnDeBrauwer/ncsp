@@ -4,15 +4,13 @@ import {SolutionBefenitType} from './solution-benfit-type';
 
 export class Solution {
     private _id: Number;
-    private _name: string;
     private _solutionDescription: string;
     private _types: Array<SolutionType>;
     private _benefits: Array<SolutionBefenitType>;
     private _benefitsDescription: string;
 
-    constructor(name: string, types: Array<SolutionType>, solutionDescription?: string,
+    constructor(types: Array<SolutionType>, solutionDescription?: string,
                 benefits?: Array<SolutionBefenitType>, benefitDescription?: string, id?: Number) {
-        this._name = name;
         this._types = types;
         this._solutionDescription = solutionDescription;
         this._benefits = benefits;
@@ -20,9 +18,6 @@ export class Solution {
         this._id = id;
     }
 
-    get name() {
-        return this._name;
-    }
 
     get solutionDescription() {
         return this._solutionDescription;
@@ -36,13 +31,10 @@ export class Solution {
         return this._benefits;
     }
 
-    get _benefitDescription() {
+    get benefitDescription() {
         return this._benefitsDescription;
     }
 
-    set name(name: string) {
-        this._name = name;
-    }
 
     set solutionDescription(description: string) {
         this._solutionDescription = description;
@@ -56,7 +48,7 @@ export class Solution {
        this._benefits = benefits;
     }
 
-    set _benefitDescription(description: string) {
+    set benefitDescription(description: string) {
          this._benefitsDescription = description;
     }
 
