@@ -88,8 +88,22 @@ export class ProductsService {
         return this.products;
     }
 
-    public filterProductByName(name: string) {
-        //return this.products.filter((product: Product)=> product.name.toLowerCase().contains(name)) 
+
+    /**
+     * EXAMPLE:
+     * let filters = {
+     * color: ["Blue", "Black"],
+     * size: [70, 50]
+     * };
+     *
+     * @param filters
+     */
+    public multiFilter(filters) {
+        const filterKeys = Object.keys(filters);
+        return this.products.filter((item) => {
+            //In JavaScript, the tilde ~ Bitwise NOT operator is commonly used right before an indexOf() to do a boolean check (truthy/falsy) on a string.
+            return filterKeys.every(key => !!~filters[key].indexOf(item[key]));
+        });
     }
 
     public getParts() {
