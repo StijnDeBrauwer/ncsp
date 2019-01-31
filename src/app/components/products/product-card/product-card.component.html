@@ -1,6 +1,6 @@
 <div class="product-container" (click)="showModal()">
     <div class="product-header">
-        <img src="../../../assets/images/beer_bottles_liten.jpg"/>
+        <img src="../../../assets/images/product_1.jpg"/>
 
         <div class="label-container">
             <span class="{{'label ' + type.key}}" *ngFor="let type of types"> {{type.value}}</span>
@@ -9,9 +9,6 @@
 
     <div class="product-content">
         <h2>{{product?.name}}</h2>
-        <p>LLorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eu volutpat urna, at ultrices magna.
-            Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vestibulum quis
-            lectus tellus. Quisque vel hendrerit nisl.</p>
     </div>
 
     <div *ngIf="benifts" class="product-footer">

@@ -67,7 +67,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         ScrollButtonComponent,
         PartsPage,
         ServicesPage,
-        UpgradesPage
+        UpgradesPage,
     ],
     imports: [
         BrowserModule,

@@ -106,7 +106,7 @@ h2 {
   color: white;
 }
 
-.banner{
+.banner {
   color: white;
   height: auto;
   min-height: 50vh;
@@ -116,7 +116,7 @@ h2 {
   justify-content: center;
   align-items: center;
   padding: 10% 0;
-  filter:contrast(150%) brightness(100%) grayscale(1px);
+  filter: contrast(150%) brightness(100%) grayscale(1px);
   text-align: center;
 
   @media (min-width: 768px) {

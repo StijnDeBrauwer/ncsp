@@ -1,8 +1,24 @@
 
 <mat-form-field [ngClass]="{'transparent': isTransparent}">
-    <mat-icon> language</mat-icon> <mat-select [ngClass]="{'transparent': isTransparent}" [ngModel]="selectedLanguage" (ngModelChange)="changeLanguage($event)">
+    <mat-icon> language</mat-icon>
+    <mat-select [ngClass]="{'transparent': isTransparent}" [ngModel]="selectedLanguage" (ngModelChange)="changeLanguage($event)">
         <mat-option class="option" *ngFor="let language of languages" [value]="language">
             {{language}}
         </mat-option>
     </mat-select>
 </mat-form-field>
+
+<section id="language-picker">
+
+    <div *ngIf="chosenLink && chosenLink.children" class="sub-menu-desktop page" [ngClass]="{'open': subMenuOpen}">
+        <div class="sub-menu-desktop-description">
+            <a [routerLink]="chosenLink.path" (click)="navigate()">{{chosenLink.text}}</a>
+        </div>
+
+        <div class="sub-menu-desktop-content">
+            <p *ngFor="let child of chosenLink.children">
+                <a [routerLink]="child.path"  routerLinkActive="active-link" (click)="navigate()">{{child.text}}</a>
+            </p>
+        </div>
+    </div>
+</section>

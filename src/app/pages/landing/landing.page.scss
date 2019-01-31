@@ -21,7 +21,7 @@ section#landing-page {
     height: auto;
     min-height: 100vh;
     background-size: cover;
-    background: url("../../../assets/images/Washing_Technology.jpg") no-repeat center center;
+    background: url("../../../assets/images/background.jpg") no-repeat center center;
     -webkit-background-size: cover; /* For WebKit*/
     -moz-background-size: cover; /* Mozilla*/
     -o-background-size: cover; /* Opera*/
@@ -45,7 +45,9 @@ section#landing-page {
     }
 
     .welcome-text {
-      margin: 25px;
+      padding:0;
+      margin:0;
+      //margin: 25px;
       z-index: 10;
       color: $main-color;
       font-size: 50px;
@@ -60,7 +62,8 @@ section#landing-page {
       font-size: 1.2em;
       background-color: $main-color;
       color: white;
-      padding: 1em 1.5em 1em 1em;
+      margin-top: 25px;
+      padding: 0.8em 1em 0.8em 0.8em;
       position: relative;
       .ion-ios-arrow-forward {
         display: inline-block;
@@ -131,7 +134,7 @@ section#landing-page {
       align-items: flex-start;
 
       .welcome-button {
-        margin-left: 50px;
+        //margin-left: 50px;
       }
     }
 
