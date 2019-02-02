@@ -24,10 +24,6 @@
                     quis
                     lectus tellus. Quisque vel hendrerit nisl.</p>
             </div>
-
-            <div class="learn-more-button" routerLink="/products/parts">
-                Learn more   <span class="icon ion-ios-arrow-forward"></span>
-            </div>
         </div>
 
         <div class="product-group-container">
@@ -45,10 +41,6 @@
                     lectus tellus. Quisque vel hendrerit nisl.</p>
             </div>
 
-            <div class="learn-more-button" routerLink="/products/upgrades">
-                Learn more   <span class="icon ion-ios-arrow-forward"></span>
-            </div>
-
         </div>
 
         <div class="product-group-container">
@@ -64,9 +56,6 @@
                     quis
                     lectus tellus. Quisque vel hendrerit nisl.</p>
             </div>
-            <div class="learn-more-button" routerLink="/products/services">
-                Learn more  <span class="icon ion-ios-arrow-forward"></span>
-            </div>
         </div>
     </div>
 
@@ -77,21 +66,15 @@
 
     <app-slide-side-navigation [isOpen]="filtersOpen" (onOpenStateChange)="filtersOpen = $event">
         <div class="slide-nav-content">
-            <!--<h1>Product type</h1>-->
-            <!--<ul>-->
-                <!--<li>-->
-                    <!--<mat-checkbox>Parts</mat-checkbox>-->
-                <!--</li>-->
-                <!--<li>-->
-                    <!--<mat-checkbox>-->
-                        <!--Upgrades, add-ons and-->
-                        <!--conversions-->
-                    <!--</mat-checkbox>-->
-                <!--</li>-->
-                <!--<li>-->
-                    <!--<mat-checkbox>Services</mat-checkbox>-->
-                <!--</li>-->
-            <!--</ul>-->
+            <h1>Product type</h1>
+            <ul>
+                <li>
+                    <mat-checkbox [checked]="false" >Parts</mat-checkbox>
+                </li>
+                <li>
+                    <mat-checkbox [checked]="false" >Upgrades</mat-checkbox>
+                </li>
+            </ul>
             <h1>Suitable for</h1>
             <ul>
                 <li *ngFor="let solution of suitableFor">

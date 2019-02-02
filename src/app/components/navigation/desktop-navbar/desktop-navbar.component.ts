@@ -5,6 +5,8 @@ import {ScrollDataService} from '../../../services/scroll/scroll-data.service';
 import {ScrollModel} from '../../../models/scroll.model';
 import {Router, NavigationEnd, ActivatedRoute, NavigationStart} from '@angular/router';
 import {routes} from 'src/app/modules/router-paths';
+import {Language} from '../../../models/language.model';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
     selector: 'app-desktop-navbar',
@@ -35,6 +37,15 @@ export class DesktopNavbarComponent implements OnInit, AfterViewInit, OnDestroy 
     navbarState: string;
 
 
+    //language picker sub menu
+    languagePickerOpen: boolean = false;
+
+    languages: Array<Language>;
+
+    //current Language
+    selectedLanguage: Language;
+
+
 
     readonly logoShowPath = '../../../../assets/images/logo.png';
     readonly logoHidePath = '../../../../assets/images/logo_white.png';
@@ -42,8 +53,11 @@ export class DesktopNavbarComponent implements OnInit, AfterViewInit, OnDestroy 
     isTransparentSubject: any;
     isHomepageSubject: any;
 
-    constructor(private scrollService: ScrollDataService) {
+    constructor(private scrollService: ScrollDataService, private translateService: TranslateService) {
         this.navbarState = 'show';
+
+        this.languages = [ new Language("en", "English"), new Language("fr", "Français")];
+        this.selectedLanguage = this.languages[0];
 
     }
 
@@ -63,6 +77,15 @@ export class DesktopNavbarComponent implements OnInit, AfterViewInit, OnDestroy 
 
     }
 
+    openLanguagePicker(){
+        if(this.subMenuOpen){
+            this.subMenuOpen = false;
+        }
+        this.scrollService.isTransparent = false;
+
+        this.languagePickerOpen = !this.languagePickerOpen;
+    }
+
     destroySubscribers() {
         if (this.isTransparentSubject) this.isTransparentSubject.unsubscribe();
         if (this.isHomepageSubject) this.isHomepageSubject.unsubscribe();
@@ -70,6 +93,12 @@ export class DesktopNavbarComponent implements OnInit, AfterViewInit, OnDestroy 
 
     ngOnDestroy() {
         this.destroySubscribers();
+    }
+
+    changeLanguage(language: Language) {
+        this.translateService.use(language.key);
+        this.translateService.setDefaultLang(language.key);
+        this.selectedLanguage = language;
     }
 
 

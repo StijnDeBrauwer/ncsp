@@ -1,5 +1,5 @@
 <section id="desktop-navigation" [ngClass]="{'transparent': isTransparent}">
-    <div class="page"  id="navigation" [ngClass]="{'transparent': isTransparent}">
+    <div class="page"  id="navigation">
         <a routerLink="/home"><img id="logo" [src]="isTransparent ? logoHidePath : logoShowPath"></a>
         <ul>
             <li><a routerLink="/home" (click)="navigate()">Home</a></li>
@@ -7,10 +7,26 @@
                 <a *ngIf="link.path && !link.children"   routerLinkActive="active-link" [routerLink]="link.path" (click)="navigate()"> {{link.text}} </a>
                 <a *ngIf="link.children" (click)="toggleSubMenu(link)"> {{link.text}} </a>
             </li>
-            <li>
-                <app-language-picker [isTransparent]="isTransparent"></app-language-picker>
+            <li  (click)="openLanguagePicker()">
+                <div class="language-picker">
+                    <mat-icon> language</mat-icon>
+                    {{selectedLanguage.language}}
+                </div>
             </li>
         </ul>
+    </div>
+
+
+    <div class="sub-menu-desktop page" [ngClass]="{'open': languagePickerOpen}">
+        <div class="sub-menu-desktop-description">
+            Choose your language
+        </div>
+
+        <div class="sub-menu-desktop-content">
+            <p *ngFor="let language of languages">
+                <a  [ngClass]="{'active-language': language === selectedLanguage}" (click)="changeLanguage(language)">{{language.language}}</a>
+            </p>
+        </div>
     </div>
 
     <div *ngIf="chosenLink && chosenLink.children" class="sub-menu-desktop page" [ngClass]="{'open': subMenuOpen}">

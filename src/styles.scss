@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import "./assets/variables";
 @import '~@angular/material/theming';
+
 @include mat-core();
 
 $candy-app-primary: mat-palette($mat-deep-orange);
@@ -36,12 +37,12 @@ span[class*="ion-md-"] {
   font-size: 25px;
 }
 
-.page{
+.page {
   padding: 0 10%;
 }
 
-h1, h2, h3{
-  &.centered{
+h1, h2, h3 {
+  &.centered {
     text-align: center;
   }
 }
@@ -54,8 +55,7 @@ h1, h2, h3{
   background-color: white;
   text-align: center;
 
-
-  &.image-banner{
+  &.image-banner {
     min-height: 25vh;
     max-height: 25vh;
     img {
@@ -66,8 +66,8 @@ h1, h2, h3{
     }
   }
 
-  &.image-text{
-    img{
+  &.image-text {
+    img {
       display: block;
       width: 100%;
     }
@@ -91,7 +91,8 @@ h1, h2, h3{
   }
 
 }
-.active-link{
+
+.active-link {
   color: $main-color !important;
   font-weight: bolder;
 }
@@ -107,9 +108,9 @@ h2 {
 }
 
 .banner {
+  position: relative;
   color: white;
-  height: auto;
-  min-height: 50vh;
+  height: 15vh;
   background-size: cover !important;
   display: flex;
   flex-direction: column;
@@ -118,15 +119,30 @@ h2 {
   padding: 10% 0;
   filter: contrast(150%) brightness(100%) grayscale(1px);
   text-align: center;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(to bottom right, #002f4b, #dc4225);
+    opacity: .75;
+    z-index: 0;
+  }
+
+  *{
+    z-index: 1000;
+  }
 
   @media (min-width: 768px) {
     text-align: left;
     align-items: flex-start;
   }
 
-  .content{
+  .content {
     margin-left: 10%;
-    h1{
+    h1 {
       margin: 10% 0;
     }
 
@@ -140,7 +156,7 @@ h2 {
       padding: 1em 1.5em 1em 1em;
       position: relative;
 
-      &.outlined{
+      &.outlined {
         background-color: transparent;
         border: 5px solid $main-color;
         color: $main-color;
@@ -153,7 +169,7 @@ h2 {
       }
     }
   }
-  h1{
+  h1 {
     margin-left: 10%;
   }
 }
@@ -186,23 +202,23 @@ h2 {
 @media (min-width: 768px) {
   .article {
     text-align: left;
-    &.image-text{
+    &.image-text {
       display: flex;
       flex-direction: row;
       align-items: center;
       text-align: left;
-      img{
+      img {
         display: inline-block;
         float: right;
-        padding:  0  0 0 10%;
+        padding: 0 0 0 10%;
         width: 50%;
         max-height: 25vh;
       }
     }
     &:nth-child(even) {
-      img{
+      img {
         display: inline-block;
-        padding:  0 10% 0 0;
+        padding: 0 10% 0 0;
       }
     }
     .logo-history {

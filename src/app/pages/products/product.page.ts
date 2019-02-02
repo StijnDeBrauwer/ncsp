@@ -5,6 +5,7 @@ import {SolutionType} from '../../models/suitable-type.model';
 import {SolutionBefenitType} from '../../models/solution-benfit-type';
 import {FormBuilder} from '@angular/forms';
 import {ResponsiveService} from '../../services/responsive/responsive.service';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
     selector: 'app-our-product-page',
@@ -22,9 +23,25 @@ export class OurProductPage implements OnInit {
 
     private filters = [];
 
-    constructor(private responseService: ResponsiveService, private productsService: ProductsService) {
+    constructor(private responseService: ResponsiveService, private productsService: ProductsService, private route: ActivatedRoute) {
 
         this.responseService.checkWidth();
+
+        this.route.data.subscribe((data: any)=> {
+            if(!data){
+                this.products = this.productsService.getProducts();
+                return;
+            }
+
+            if(data.parts){
+                this.products = this.productsService.getParts();
+                return;
+            }
+
+            if(data.upgrades){
+                this.products = this.productsService.getUpgrades();
+            }
+        })
 
     }
 
@@ -33,7 +50,6 @@ export class OurProductPage implements OnInit {
         const activeFiltersBenefits = this.benefits.filter(o => o.checked).map(o => SolutionType[o.name]);
 
         this.products = this.productsService.multiFilter([...activeFiltersBenefits, ...activeFiltersSuitable]);
-
     }
 
 

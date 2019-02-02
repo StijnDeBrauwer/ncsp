@@ -8,9 +8,7 @@ import {MaterialModule} from '../material-module/material-module.module';
 import {OurProductPage} from '../../pages/products/product.page';
 import {OurNewsPage} from '../../pages/news/our-news-page.component';
 import {ContactPage} from '../../pages/contact/contact.page';
-import {PartsPage} from '../../pages/products/parts/parts.component';
-import {ServicesPage} from '../../pages/products/services/services.component';
-import {UpgradesPage} from '../../pages/products/upgrades/upgrades.component';
+import {ServicesPage} from '../../pages/services/services.component';
 
 const routes: Routes = [
     {
@@ -29,16 +27,23 @@ const routes: Routes = [
     },
     {
         path: 'products/parts',
-        component: PartsPage,
+        component: OurProductPage,
+        data: {
+            parts: true
+        }
     },
 
     {
         path: 'products/upgrades',
-        component: UpgradesPage,
+        component: OurProductPage,
+        data:{
+            upgrades: true
+        }
     },
     {
         path: 'products/services',
         component: ServicesPage,
+
     },
     {
         path: 'news',
