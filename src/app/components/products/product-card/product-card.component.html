@@ -11,8 +11,8 @@
         <h2>{{product?.name}}</h2>
     </div>
 
-    <div *ngIf="benifts" class="product-footer">
-        {{benifts}}
+    <div *ngIf="solutionBenefits" class="product-footer">
+        <app-legend [productBenefits]="solutionBenefits"></app-legend>
     </div>
 </div>
 <app-product-detail [product]="product" *ngIf="isModalVisible" (close)="close()"></app-product-detail>

@@ -1,0 +1,6 @@
+<div class="legend" [ngStyle]="{'margin-bottom': productBenefits ? '0':'40px'}">
+  <h3 *ngIf="!productBenefits">Legend</h3>
+  <div class="legend-items" [ngStyle]="productBenefits && { 'justify-content': 'space-around' }">
+    <app-legend-item  [benefits]="productBenefits" *ngFor="let item of benefits" [solutionBenefit]="item"></app-legend-item>
+  </div>
+</div>

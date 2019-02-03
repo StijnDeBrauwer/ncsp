@@ -10,6 +10,7 @@
                 <!--<button class="orange-button">Search a part</button>-->
             </div>
         </div>
+       <app-legend></app-legend>
         <div class="content">
             <app-product (click)="clickOnProduct()" *ngFor="let product of productList" [product]="product"></app-product>
         </div>

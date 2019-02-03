@@ -1,0 +1,10 @@
+@import '../../../assets/variables';
+.legend {
+  h3 {
+    color: $main-color;
+  }
+  .legend-items {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

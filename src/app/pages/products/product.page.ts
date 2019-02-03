@@ -2,7 +2,7 @@ import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {Product} from '../../models/product.model';
 import {ProductsService} from '../../services/products/products.service';
 import {SolutionType} from '../../models/suitable-type.model';
-import {SolutionBefenitType} from '../../models/solution-benfit-type';
+import {SolutionBenefitType} from '../../models/solution-benefit-type';
 import {FormBuilder} from '@angular/forms';
 import {ResponsiveService} from '../../services/responsive/responsive.service';
 import {ActivatedRoute} from '@angular/router';
@@ -17,7 +17,7 @@ export class OurProductPage implements OnInit {
     suitableFor: Array<{ name: string, checked: boolean }>;
     benefits: Array<{ name: string, checked: boolean }>;
     @ViewChild('productsView', {read: ElementRef}) public productsView: ElementRef;
-    filtersOpen: boolean = false;
+    filtersOpen = false;
 
     filterName: string;
 
@@ -27,21 +27,21 @@ export class OurProductPage implements OnInit {
 
         this.responseService.checkWidth();
 
-        this.route.data.subscribe((data: any)=> {
-            if(!data){
+        this.route.data.subscribe((data: any) => {
+            if (!data) {
                 this.products = this.productsService.getProducts();
                 return;
             }
 
-            if(data.parts){
+            if (data.parts) {
                 this.products = this.productsService.getParts();
                 return;
             }
 
-            if(data.upgrades){
+            if (data.upgrades) {
                 this.products = this.productsService.getUpgrades();
             }
-        })
+        });
 
     }
 
@@ -60,8 +60,8 @@ export class OurProductPage implements OnInit {
         this.suitableFor = Object.keys(SolutionType).map((key) => {
             return {name: SolutionType[key], checked: false};
         });
-        this.benefits = Object.keys(SolutionBefenitType).map((key) => {
-            return {name: SolutionBefenitType[key], checked: false};
+        this.benefits = Object.keys(SolutionBenefitType).map((key) => {
+            return {name: SolutionBenefitType[key], checked: false};
         });
     }
 

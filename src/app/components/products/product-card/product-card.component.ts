@@ -1,6 +1,6 @@
 import {Component, OnInit, Input} from '@angular/core';
 import {Product} from 'src/app/models/product.model';
-import {SolutionBefenitType} from '../../../models/solution-benfit-type';
+import {SolutionBenefitType} from '../../../models/solution-benefit-type';
 import {SolutionType} from '../../../models/suitable-type.model';
 
 @Component({
@@ -11,16 +11,14 @@ import {SolutionType} from '../../../models/suitable-type.model';
 export class ProductCardComponent implements OnInit {
 
     @Input() product: Product;
-    isModalVisible: boolean = false;
+    isModalVisible = false;
     types: Array<{ key: string, value: string }>;
 
     constructor() {
     }
 
     ngOnInit() {
-
-        this.types = this.product.solution && this.product.solution.types ? this._convertToDictionary() : [];
-
+      this.types = this.product.solution && this.product.solution.types ? this._convertToDictionary() : [];
     }
 
     private _convertToDictionary() {
@@ -35,14 +33,20 @@ export class ProductCardComponent implements OnInit {
         this.isModalVisible = true;
     }
 
-    get benifts() {
+    get solutionBenefits() {
+      const { solution: { benefits } } = this.product;
+      console.log(benefits);
+      return benefits;
+    }
+
+    get benefits() {
         let benefitString = '';
 
         if (this.product.solution && this.product.solution.benefits) {
             this.product.solution.benefits.forEach((benefit, i) => {
-                if( i< this.product.solution.benefits.length -1) {
+                if ( i < this.product.solution.benefits.length - 1) {
                     benefitString += '' + benefit + ' - ';
-                    return
+                    return;
                 }
 
                 benefitString += '' + benefit;

@@ -1,16 +1,16 @@
 import {Product} from './product.model';
 import {SolutionType} from './suitable-type.model';
-import {SolutionBefenitType} from './solution-benfit-type';
+import {SolutionBenefitType} from './solution-benefit-type';
 
 export class Solution {
     private _id: Number;
     private _solutionDescription: string;
     private _types: Array<SolutionType>;
-    private _benefits: Array<SolutionBefenitType>;
+    private _benefits: Array<SolutionBenefitType>;
     private _benefitsDescription: string;
 
     constructor(types: Array<SolutionType>, solutionDescription?: string,
-                benefits?: Array<SolutionBefenitType>, benefitDescription?: string, id?: Number) {
+                benefits?: Array<SolutionBenefitType>, benefitDescription?: string, id?: Number) {
         this._types = types;
         this._solutionDescription = solutionDescription;
         this._benefits = benefits;
@@ -44,7 +44,7 @@ export class Solution {
         this._types = types;
     }
 
-    set benefits(benefits: Array<SolutionBefenitType>) {
+    set benefits(benefits: Array<SolutionBenefitType>) {
        this._benefits = benefits;
     }
 
