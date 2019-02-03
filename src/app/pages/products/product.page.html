@@ -65,27 +65,25 @@
 
 
     <app-slide-side-navigation [isOpen]="filtersOpen" (onOpenStateChange)="filtersOpen = $event">
-        <div class="slide-nav-content">
+        <div  class="slide-nav-content">
             <h1>Product type</h1>
             <ul>
-                <li>
-                    <mat-checkbox [checked]="false" >Parts</mat-checkbox>
-                </li>
-                <li>
-                    <mat-checkbox [checked]="false" >Upgrades</mat-checkbox>
+                <li *ngFor="let productType of productTypes; let i=  index">
+                    <mat-checkbox [checked]="productType.checked"  (click)="updateProductTypes(i)">{{productTypes[i].id}} </mat-checkbox>
                 </li>
             </ul>
             <h1>Suitable for</h1>
             <ul>
-                <li *ngFor="let solution of suitableFor">
-                    <mat-checkbox [checked]="solution.checked" (click)="updateFilters()" (change)="solution.checked=$event.checked">{{solution.name}}</mat-checkbox>
+                <li  *ngFor="let solutionType of solutionTypes; let i=  index">
+                    {{solutionType.checked}}
+                    <mat-checkbox [checked]="solutionType.checked" (click)="updateSolutionTypes(i)">{{solutionTypes[i].value}} </mat-checkbox>
                 </li>
             </ul>
 
             <h1>Benefit</h1>
             <ul>
-                <li *ngFor="let benefit of benefits">
-                    <mat-checkbox  [checked]="benefit.checked"  (click)="updateFilters()"  (change)="benefit.checked=$event.checked" >{{benefit.name}}</mat-checkbox>
+                <li *ngFor="let benefitType of benefitTypes; let i=  index">
+                    <mat-checkbox [checked]="benefitType.checked" (click)="updateBenefitTypes(i)">{{benefitTypes[i].value}} </mat-checkbox>
                 </li>
             </ul>
         </div>

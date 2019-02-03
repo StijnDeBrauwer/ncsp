@@ -6,11 +6,11 @@ export class Product {
     private _productType: ProductType;
     private _solution: Solution;
     private _description: string;
-    private _spec: any;
+    private _spec: Array<string>;
     private _media: Array<any>;
 
 
-    constructor(name: string, productType?: ProductType, solution?: Solution, description?: string, spec?: any, media?: any) {
+    constructor(name: string, productType?: ProductType, solution?: Solution, description?: string, spec?: Array<string>, media?: any) {
         this._name = name;
         this._productType = productType;
         this._solution = solution;
@@ -35,8 +35,19 @@ export class Product {
         return this._description;
     }
 
-    get spec() {
+    get spec(): Array<string> {
         return this._spec;
+    }
+
+    get specString(): string {
+        let nameList = '<ul>';
+        for (let i = 0; i < this.spec.length; i++) {
+            nameList += '<li>' + this.spec[i] + '</li>';
+        }
+
+        nameList+= '</ul>'
+
+        return nameList;
     }
 
     get media() {
@@ -59,7 +70,7 @@ export class Product {
         this._description = description;
     }
 
-    set spec(spec: any) {
+    set spec(spec: Array<string>) {
         this._spec = spec;
     }
 

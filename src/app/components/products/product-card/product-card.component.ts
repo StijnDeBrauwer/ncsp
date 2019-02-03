@@ -35,7 +35,6 @@ export class ProductCardComponent implements OnInit {
 
     get solutionBenefits() {
       const { solution: { benefits } } = this.product;
-      console.log(benefits);
       return benefits;
     }
 

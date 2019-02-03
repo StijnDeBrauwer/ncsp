@@ -26,7 +26,6 @@ export class LegendItemComponent implements OnInit {
         this.color = this.getColorByBenefit();
       }
     }
-    console.log(this.benefits);
   }
 
   getDefaultColor() {

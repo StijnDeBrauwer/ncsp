@@ -9,6 +9,7 @@ import {OurProductPage} from '../../pages/products/product.page';
 import {OurNewsPage} from '../../pages/news/our-news-page.component';
 import {ContactPage} from '../../pages/contact/contact.page';
 import {ServicesPage} from '../../pages/services/services.component';
+import {ProductType} from '../../models/product-type.model';
 
 const routes: Routes = [
     {
@@ -29,7 +30,7 @@ const routes: Routes = [
         path: 'products/parts',
         component: OurProductPage,
         data: {
-            parts: true
+            type: ProductType.PARTS
         }
     },
 
@@ -37,7 +38,7 @@ const routes: Routes = [
         path: 'products/upgrades',
         component: OurProductPage,
         data:{
-            upgrades: true
+            type: ProductType.UPGRADES
         }
     },
     {
