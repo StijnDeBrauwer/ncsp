@@ -69,21 +69,21 @@
             <h1>Product type</h1>
             <ul>
                 <li *ngFor="let productType of productTypes; let i=  index">
-                    <mat-checkbox [checked]="productType.checked"  (click)="updateProductTypes(i)">{{productTypes[i].id}} </mat-checkbox>
+                  {{productType.checked}}
+                    <mat-checkbox [checked]="productType.checked"  (change)="updateProductTypes(i)">{{productTypes[i].id}} </mat-checkbox>
                 </li>
             </ul>
             <h1>Suitable for</h1>
             <ul>
                 <li  *ngFor="let solutionType of solutionTypes; let i=  index">
-                    {{solutionType.checked}}
-                    <mat-checkbox [checked]="solutionType.checked" (click)="updateSolutionTypes(i)">{{solutionTypes[i].value}} </mat-checkbox>
+                    <mat-checkbox [checked]="solutionType.checked" (change)="updateSolutionTypes(i)">{{solutionTypes[i].value}} </mat-checkbox>
                 </li>
             </ul>
 
             <h1>Benefit</h1>
             <ul>
                 <li *ngFor="let benefitType of benefitTypes; let i=  index">
-                    <mat-checkbox [checked]="benefitType.checked" (click)="updateBenefitTypes(i)">{{benefitTypes[i].value}} </mat-checkbox>
+                    <mat-checkbox [checked]="benefitType.checked" (change)="updateBenefitTypes(i)">{{benefitTypes[i].value}} </mat-checkbox>
                 </li>
             </ul>
         </div>

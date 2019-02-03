@@ -20,7 +20,7 @@ export class OurProductPage implements OnInit {
     suitableFor: Array<{ name: string, checked: boolean }>;
     benefits: Array<{ name: string, checked: boolean }>;
     @ViewChild('productsView', {read: ElementRef}) public productsView: ElementRef;
-    filtersOpen: boolean = false;
+    filtersOpen = false;
 
     form: FormGroup;
 
@@ -39,7 +39,6 @@ export class OurProductPage implements OnInit {
         this.responseService.checkWidth();
         this._initFilters();
         this._checkRouteParameters();
-
     }
 
     private _initFilters() {
@@ -60,22 +59,6 @@ export class OurProductPage implements OnInit {
             .map(k => {
                 return {id: k, value: SolutionBenefitType[k as any], checked: false};
             });
-
-
-        const productTypesControls = this.productTypes.map(c => new FormControl(false));
-        const solutionTypesControls = this.solutionTypes.map(c => new FormControl(false));
-        const benefitTypesControls = this.benefitTypes.map(c => new FormControl(false));
-
-
-        // productTypesControls[0].setValue(true);
-
-
-        this.form = this.formBuilder.group({
-            productTypeFilters: new FormArray(productTypesControls),
-            solutionTypeFilters: new FormArray(solutionTypesControls),
-            benefitTypeFilters: new FormArray(benefitTypesControls)
-        });
-
     }
 
     private _checkRouteParameters() {
@@ -98,32 +81,15 @@ export class OurProductPage implements OnInit {
     }
 
     updateProductTypes(index: number) {
-        console.log(index)
-        this.productTypes.forEach((productType, i) => {
-            if(index === i){
-                productType[i].checked = true;
-
-            }else{
-                productType.checked = false;
-            }
-
-        });
-
-
-        const filter  =this.productTypes.filter((filter: any) => {
-           return filter.checked;
-        })[0];
-
-        this.currentProducts = this.products.filter(product => {
-            return product.productType === filter;
-        })
-
+        const { checked } = this.productTypes[index];
+        this.productTypes[index].checked = !checked;
+        const filteredProductTypes = this.productTypes.filter(item => item.checked);
+        this.currentProducts = this.products.filter(product => filteredProductTypes.includes(product.productType));
     }
 
     updateSolutionTypes(index: number) {
         this.solutionTypes[index].checked = !this.solutionTypes[index].checked;
         console.log(this.solutionTypes[index]);
-
     }
 
     updateBenefitTypes(index: number) {
