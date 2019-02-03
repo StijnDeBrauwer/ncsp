@@ -12,7 +12,8 @@
         </div>
        <app-legend></app-legend>
         <div class="content">
-            <app-product (click)="clickOnProduct()" *ngFor="let product of productList" [product]="product"></app-product>
+            <app-product (click)="clickOnProduct()" *ngFor="let product of filteredProductList || products" [product]="product"></app-product>
         </div>
+        <p *ngIf="(filteredProductList || products).length === 0">No products for your search criteria.</p>
     </div>
 </section>

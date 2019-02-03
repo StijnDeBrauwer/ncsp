@@ -9,30 +9,28 @@ import {Product} from 'src/app/models/product.model';
 })
 export class ProductListComponent implements OnInit {
     @Input() products: Array<Product>;
-
     @Output() onProductSelected = new EventEmitter();
-
-    productList: Array<Product>;
+    filteredProductList: Array<Product>;
     filterName: string;
     selectedProduct: Product;
 
-    constructor(private route: ActivatedRoute) {
-
-    }
-
-    ngOnInit() {
-        this.productList = this.products;
-    }
+    constructor(private route: ActivatedRoute) { }
 
     filterByName(event: any) {
-        const name = event.target.value.toLowerCase();
-        this.productList = this.products;
-        this.productList = this.productList.filter((product: Product) => {
-            return product.name.toLowerCase().startsWith(name);
+        const { value } = event.target;
+        const name = value.toLowerCase();
+        if (name) {
+          this.filteredProductList = this.products;
+          this.filteredProductList = this.products.filter((product: Product) => {
+          const { name: productName } = product;
+          return productName.toLowerCase().includes(name);
         });
+        } else {
+          this.filteredProductList = null;
+        }
     }
 
-    clickOnProduct(){
+    clickOnProduct() {
         this.onProductSelected.emit();
     }
 
@@ -44,6 +42,4 @@ export class ProductListComponent implements OnInit {
     removeSelectedProduct(): void {
         this.selectedProduct = null;
     }
-
-
 }

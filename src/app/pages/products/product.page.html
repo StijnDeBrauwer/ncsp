@@ -60,7 +60,7 @@
     </div>
 
     <div #productsView class="productsContainer">
-        <app-product-list (onProductSelected)="onProductClick()" [products]="products"></app-product-list>
+        <app-product-list (onProductSelected)="onProductClick()" [products]="currentProducts"></app-product-list>
     </div>
 
 
@@ -69,7 +69,6 @@
             <h1>Product type</h1>
             <ul>
                 <li *ngFor="let productType of productTypes; let i=  index">
-                  {{productType.checked}}
                     <mat-checkbox [checked]="productType.checked"  (change)="updateProductTypes(i)">{{productTypes[i].id}} </mat-checkbox>
                 </li>
             </ul>

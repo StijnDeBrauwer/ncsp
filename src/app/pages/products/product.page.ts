@@ -21,24 +21,26 @@ export class OurProductPage implements OnInit {
     benefits: Array<{ name: string, checked: boolean }>;
     @ViewChild('productsView', {read: ElementRef}) public productsView: ElementRef;
     filtersOpen = false;
-
-    form: FormGroup;
-
-
     productTypes: Array<any>;
-
     solutionTypes: Array<any>;
-
     benefitTypes: Array<any>;
-
 
     constructor(private responseService: ResponsiveService,
                 private productsService: ProductsService,
-                private formBuilder: FormBuilder,
                 private route: ActivatedRoute) {
         this.responseService.checkWidth();
-        this._initFilters();
-        this._checkRouteParameters();
+    }
+
+    ngOnInit() {
+      this.products = this.productsService.getProducts();
+      this.suitableFor = Object.keys(SolutionType).map((key) => {
+          return {name: SolutionType[key], checked: false};
+      });
+      this.benefits = Object.keys(SolutionBenefitType).map((key) => {
+          return {name: SolutionBenefitType[key], checked: false};
+      });
+      this._initFilters();
+      this._checkRouteParameters();
     }
 
     private _initFilters() {
@@ -63,51 +65,71 @@ export class OurProductPage implements OnInit {
 
     private _checkRouteParameters() {
         this.route.data.subscribe((data: any) => {
-
             if (data.type === ProductType.PARTS.valueOf()) {
                 this.currentProducts = this.productsService.getParts();
                 this.productTypes[0].checked = true;
                 return;
             }
-
             if (data.type === ProductType.UPGRADES.valueOf()) {
                 this.currentProducts = this.productsService.getUpgrades();
                 this.productTypes[1].checked = true;
                 return;
             }
-
-            this.products = this.productsService.getProducts();
+            this.currentProducts = this.productsService.getProducts();
         });
     }
 
     updateProductTypes(index: number) {
         const { checked } = this.productTypes[index];
         this.productTypes[index].checked = !checked;
-        const filteredProductTypes = this.productTypes.filter(item => item.checked);
-        this.currentProducts = this.products.filter(product => filteredProductTypes.includes(product.productType));
+        this.filter();
     }
 
     updateSolutionTypes(index: number) {
         this.solutionTypes[index].checked = !this.solutionTypes[index].checked;
-        console.log(this.solutionTypes[index]);
+        this.filter();
     }
 
     updateBenefitTypes(index: number) {
         this.benefitTypes[index].checked = !this.benefitTypes[index].checked;
+        this.filter();
     }
 
+    filter() {
+      // FILTER OF PRODUCT TYPES
+      const filteredProductTypes = this.productTypes.filter(item => item.checked);
+      if (!filteredProductTypes.length) {
+        this.currentProducts = this.products;
+      } else {
+        const filteredProductTypeIds = filteredProductTypes.map(item => item.id);
+        this.currentProducts = this.products.filter(product => filteredProductTypeIds.includes(ProductType[product.productType]));
+      }
 
-    ngOnInit() {
-        this.products = this.productsService.getProducts();
+      // FILTER OF SOLUTION TYPES
+      const filteredSolutionTypes = this.solutionTypes.filter(item => item.checked);
+      const filteredSolutionTypeValues = filteredSolutionTypes.map(item => item.value);
+      if (filteredSolutionTypes.length) {
+        this.currentProducts = this.currentProducts.filter(product => {
+          const { solution: { types } } = product;
+          return types.some(item => {
+            return filteredSolutionTypeValues.includes(item);
+          });
+        });
+      }
 
-        this.suitableFor = Object.keys(SolutionType).map((key) => {
-            return {name: SolutionType[key], checked: false};
+      // FILTER OF BENEFIT TYPES
+      const filteredBenefitTypes = this.benefitTypes.filter(item => item.checked);
+      const filteredBenefitTypeValues = filteredBenefitTypes.map(item => item.value);
+      if (filteredBenefitTypes.length) {
+        this.currentProducts = this.currentProducts.filter(product => {
+          const { solution: { benefits } } = product;
+          if (benefits) {
+            return filteredBenefitTypeValues.every(val => benefits.includes(val));
+          }
+          return false;
         });
-        this.benefits = Object.keys(SolutionBenefitType).map((key) => {
-            return {name: SolutionBenefitType[key], checked: false};
-        });
+      }
     }
-
 
     public scrollToProducts(): void {
         this.productsView.nativeElement.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'center'});
