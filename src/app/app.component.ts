@@ -19,16 +19,14 @@ export class AppComponent implements OnInit, OnDestroy {
   private _responsiveSubscription: any;
   isMobile: boolean;
 
-  constructor(private responsiveService: ResponsiveService, private router:Router, private route: ActivatedRoute , private  translate: TranslateService) {
+  constructor(private responsiveService: ResponsiveService,
+    private router: Router, private route: ActivatedRoute , private  translate: TranslateService) {
     this._responsiveSubscription = this.responsiveService.getMobileStatus().subscribe(isMobile => {
       this.isMobile = isMobile;
     });
-
     this.onResize();
-
     translate.setDefaultLang('en');
     translate.use('en');
-
   }
 
   ngOnInit() {
@@ -41,11 +39,7 @@ export class AppComponent implements OnInit, OnDestroy {
     }
   }
 
-
-
   onResize() {
     this.responsiveService.checkWidth();
   }
-
-
 }

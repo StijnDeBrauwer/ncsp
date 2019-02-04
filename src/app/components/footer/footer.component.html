@@ -1,7 +1,10 @@
 <footer class="page">
   <img src="../../../assets/images/sticker_round.png" width="150px" height="150px">
   <div class="footer-info">
-    <table>
+    <div *ngIf="isMobile">
+      <div class="mobile-footer-text">&copy; New Crown Service Partners NV/SA</div>
+    </div>
+    <table *ngIf="!isMobile">
       <tr>
         <td colspan="2">
           New Crown Service Partners NV/SA
