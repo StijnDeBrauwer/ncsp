@@ -1,49 +1,49 @@
 <div class="modal">
-    <div class="product-modal">
-        <div class="title-container">
-            <h1 class="product-title">{{product.name}}</h1>
-            <div class="slideshow">
-                <img src="../../../assets/images/people.jpg"/>
-                <i class="material-icons">keyboard_arrow_left</i>
-                <i class="material-icons">keyboard_arrow_right</i>
-            </div>
-
-        </div>
-
-        <div class="content-container">
-            <div class="content-title">
-                <div class="benefit-container">
-                    <h1>Suitable for</h1>
-                    <span *ngFor="let type of types">{{type.value}}</span>
-                </div>
-
-                <i class="material-icons icon-close" (click)="closeModal()">
-                    clear
-                </i>
-            </div>
-            <div class="menu">
-                <mat-tab-group mat-align-tabs="center">
-                    <mat-tab label="Description">
-                        <div class="details">
-                            <h1>Description</h1>
-                                {{product?.description}}
-                        </div>
-                    </mat-tab>
-                    <mat-tab label="Tech specs">
-                        <div class="details">
-                            <h1>Tech specs</h1>
-                            <div [innerHtml]="product.specString"></div>
-                        </div>
-                    </mat-tab>
-                    <mat-tab label="Benefits">
-                        <div class="details">
-                            <h1>Benefits</h1>
-                            {{product?.solution.benefitDescription}}
-                        </div>
-                    </mat-tab>
-                </mat-tab-group>
-            </div>
-
-        </div>
+  <div class="product-modal">
+    <div class="title-container">
+      <h1 class="product-title">{{ product.name }}</h1>
+      <div class="slideshow">
+        <img src="../../../assets/images/people.jpg" />
+        <i class="material-icons">keyboard_arrow_left</i>
+        <i class="material-icons">keyboard_arrow_right</i>
+      </div>
     </div>
+
+    <div class="content-container">
+      <div class="content-title">
+        <div class="benefit-container">
+          <h1>Suitable for</h1>
+          <span class="benefit" *ngFor="let type of types">
+            {{ type.value }}
+          </span>
+        </div>
+
+        <i class="material-icons icon-close" (click)="closeModal()">
+          clear
+        </i>
+      </div>
+      <div class="menu">
+        <mat-tab-group mat-align-tabs="center">
+          <mat-tab label="Description">
+            <div class="details">
+              <h1>Description</h1>
+              {{ product?.description }}
+            </div>
+          </mat-tab>
+          <mat-tab label="Tech specs">
+            <div class="details">
+              <h1>Tech specs</h1>
+              <div [innerHtml]="product.specString"></div>
+            </div>
+          </mat-tab>
+          <mat-tab label="Benefits">
+            <div class="details">
+              <h1>Benefits</h1>
+              {{ product?.solution.benefitDescription }}
+            </div>
+          </mat-tab>
+        </mat-tab-group>
+      </div>
+    </div>
+  </div>
 </div>
