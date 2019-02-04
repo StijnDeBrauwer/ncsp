@@ -129,7 +129,9 @@ export class DesktopNavbarComponent implements OnInit, AfterViewInit, OnDestroy 
 
         if (this.languagePickerOpen) {
             this.languagePickerOpen = false;
-            this.subMenuOpen = true;
+            this.chosenLink = link;
+            this.subMenuOpen = !!link.children;
+            return;
         }
 
         this.scrollService.isTransparent = false;
