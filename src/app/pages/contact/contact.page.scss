@@ -1,14 +1,5 @@
 @import "../../../assets/variables";
 
-// ::ng-deep .mat-form-field *{
-//   padding: 5px !important;
-// }
-
-// ::ng-deep .mat-form-field-underline {
-//     display: inline-block;
-//     max-height: 1px;
-// }
-
 section#contact {
   background-color: $card-background-color;
   margin-top: $nav-bar-height;
@@ -52,33 +43,33 @@ section#contact {
 
       mat-form-field {
         display: block;
-        margin: 40px 0;
+        margin: 20px 0;
         min-width: 45%;
         border-radius: 5px;
         transform: perspective(1px);
-        //min-height: 50px;
 
         ::ng-deep .mat-input-underline {
           display: none;
         }
 
-        mat-error{
-          margin: 20px 0;
+        mat-label {
+          margin-top: 100px;
         }
+
+        mat-error {
+          margin: 5px 0 10px 0;
+        }
+
         input {
           min-height: 35px;
-          width: 300px;
+          width: 100%;
           -moz-appearance: textfield !important;
           -webkit-appearance: textfield !important;
           font-family: 'Open Sans', sans-serif;
           font-size: 15px;
-          border: none;
-          border-bottom: 1px solid $footer-color;
           &.capitalize {
             text-transform: capitalize;
           }
-
-
 
           @media screen and (max-width: 768px) {
             flex-grow: 1;
@@ -87,7 +78,6 @@ section#contact {
 
           &:focus {
             outline: none;
-            border-bottom: 2px solid $main-color;
           }
         }
       }
@@ -102,17 +92,14 @@ section#contact {
           min-width: 45%;
           min-height: 100px;
           border-radius: 5px;
-          border: 1px solid #F5F5F5;
         }
       }
       #send-button {
         background-color: $main-color;
-        margin: 50px 0;
         color: white;
-        padding: 5px;
-        width: 50%;
+        padding: 10px 5px;
+        width: 35%;
         align-self: center;
-        max-width: 35%;
         text-align: center;
         font-size: 1.2em;
         font-weight: bolder;
@@ -161,11 +148,7 @@ section#contact {
       flex-direction: row !important;
       #send-button {
         &:hover {
-          -webkit-transform: translateY(-3px);
-          -moz-transform: translateY(-3px);
-          -ms-transform: translateY(-3px);
-          -o-transform: translateY(-3px);
-          transform: translateY(-3px);
+          background-color: darkorange !important;
         }
       }
     }

@@ -2,34 +2,27 @@
     <div class="banner">
         <h1>Contact Us</h1>
     </div>
-
     <div class="contact-content">
         <div class="contact-form">
-
             <mat-card class="card-header">
                 <mat-card-header>
                     <h2>Contact us by mail</h2>
                 </mat-card-header>
             </mat-card>
-
             <mat-card>
                 <mat-card-content class="px-lg-5 pt-0">
-
                     <form #form method="post" style="color: #757575;" [formGroup]="contactForm">
-
                         <div>
                             <mat-form-field appearance="standard">
-                                <mat-label>NAME</mat-label>
-                                <input matInput class="capitalize" placeholder="NAME" formControlName="fromName">
+                                <mat-label>Name</mat-label>
+                                <input matInput class="capitalize" placeholder="Name" formControlName="fromName">
                                 <mat-error>Name is required</mat-error>
                             </mat-form-field>
                         </div>
-
-
                         <div>
                             <mat-form-field appearance="standard">
-                                <mat-label>E-MAIL</mat-label>
-                                <input type="text" placeholder="E-MAIL" matInput formControlName="fromEmail">
+                                <mat-label>Email</mat-label>
+                                <input type="text" placeholder="Email" matInput formControlName="fromEmail">
                                 <mat-error>Please enter a valid e-mail address</mat-error>
                             </mat-form-field>
                         </div>
@@ -40,7 +33,6 @@
                                 <mat-error>Subject is required</mat-error>
                             </mat-form-field>
                         </div>
-
                         <div class="text-field">
                             <mat-form-field>
                                 <mat-label>Message</mat-label>
@@ -49,15 +41,9 @@
                                 <mat-error>Message is required</mat-error>
                             </mat-form-field>
                         </div>
-
+                        <button id="send-button" type="submit" (click)="onSubmit()">Send</button>
                     </form>
-
                 </mat-card-content>
-
-                <mat-card-actions>
-                    <button id="send-button" type="submit" (click)="onSubmit()">Send</button>
-                </mat-card-actions>
-
             </mat-card>
         </div>
 
@@ -77,12 +63,10 @@
                                 <td rowspan="2">
                                     <mat-icon color="primary">call</mat-icon>
                                 </td>
-                                <th>
-                                    Call us
-                                </th>
+                                <th>Call us</th>
                             </tr>
                             <tr>
-                                <td>  Tel +32 3 434 92 69</td>
+                                <td> Tel +32 3 434 92 69</td>
                             </tr>
                         </table>
                     </div>
@@ -93,12 +77,10 @@
                                 <td rowspan="2">
                                     <mat-icon color="primary">access_time</mat-icon>
                                 </td>
-                                <th>
-                                   Our opening hours
-                                </th>
+                                <th>Our opening hours</th>
                             </tr>
                             <tr>
-                                <td>  09:00 - 17:00</td>
+                                <td>09:00 - 17:00</td>
                             </tr>
                         </table>
                     </div>
@@ -109,12 +91,9 @@
                             <tr>
                                 <td rowspan="4"> <mat-icon color="primary">business</mat-icon> </td>
                                 <th>New Crown Service Partners NV/SA</th>
-
                             </tr>
                             <tr>
-                                <td>
-                                    Gansbroekstraat 27
-                                </td>
+                                <td>Gansbroekstraat 27</td>
                             </tr>
                             <tr>
                                 <td>B-2870 Puurs</td>
