@@ -3,7 +3,7 @@
 .modal {
     .product-modal {
         overflow-y: scroll;
-        max-height: 90vh;    
+        max-height: 90vh;
         padding: 0;
         height: unset;
         .modal-header {
@@ -82,11 +82,11 @@
                     font-size: 60px;
                 }
 
-                .material-icons{
+                .material-icons {
                     position: absolute;
                     color: $main-color;
                     top: 50%;
-                    transform: translate(-50%, -50%);
+                    transform: translate(0%, -50%);
 
                     &.left{
                         left: 0;
@@ -121,18 +121,18 @@
     ::ng-deep .mat-tab-group {
         flex-direction: column-reverse;
     }
-    
+
     ::ng-deep .mat-tab-label {
         padding: 0 5px !important;
         min-width: 50px !important;
         font-size: 12px !important;
         height: 30px !important;
     }
-    
+
     ::ng-deep .mat-tab-header-pagination {
         min-width: 25px;
     }
-    
+
     ::ng-deep .mat-tab-labels{
         justify-content: center; /* align items in Main Axis */
     }
