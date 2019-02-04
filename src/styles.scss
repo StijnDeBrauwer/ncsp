@@ -117,6 +117,7 @@ h2 {
   justify-content: center;
   align-items: center;
   padding: 10% 0;
+  margin-top: $nav-bar-height;
   filter: contrast(150%) brightness(100%) grayscale(1px);
   text-align: center;
   &:before {
@@ -128,11 +129,10 @@ h2 {
     left: 0;
     background-image: linear-gradient(to bottom right, #002f4b, #dc4225);
     opacity: .75;
-    z-index: 0;
   }
 
   *{
-    z-index: 1000;
+    z-index: 10;
   }
 
   @media (min-width: 768px) {
@@ -141,9 +141,16 @@ h2 {
   }
 
   .content {
-    margin-left: 10%;
-    h1 {
-      margin: 10% 0;
+    h1{
+      margin: 0;
+      padding: 0;
+    }
+
+    @media (min-width: 768px) {
+      margin-left: 10%;
+      h1 {
+        margin: 10% 0;
+      }
     }
 
     .banner-button {
