@@ -1,20 +1,18 @@
 @import "../../../../assets/variables";
 
-//border: 1px solid #EEEE;
-//    background: #F7F8F9;
-
-
 .product-container {
-  width: 100%;
+  //width: 100%;
   border-radius: 15px 15px 15px 15px;
   max-width: 300px;
   box-shadow: 7px 7px 21px -5px rgba(0, 0, 0, 0.75);
   display: flex;
   flex-direction: column;
-  margin-bottom: 30px;
+  //margin-bottom: 30px;
   transition: all .2s ease-in-out;
   position: relative;
   overflow: hidden;
+  flex: 1 1 33.33%;
+  margin: 0 5px 30px 5px;
 
   &:hover {
     transform: scale(1.025);
@@ -25,6 +23,7 @@
     position: relative;
     border-radius: 15px 15px 15px 15px;
     overflow: hidden;
+
     img {
       height: auto;
       width: 100%;
