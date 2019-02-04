@@ -36,7 +36,6 @@ export class DesktopNavbarComponent implements OnInit, AfterViewInit, OnDestroy 
     //variable to keep track of the animations
     navbarState: string;
 
-
     //language picker sub menu
     languagePickerOpen: boolean = false;
 
@@ -44,7 +43,6 @@ export class DesktopNavbarComponent implements OnInit, AfterViewInit, OnDestroy 
 
     //current Language
     selectedLanguage: Language;
-
 
 
     readonly logoShowPath = '../../../../assets/images/logo.png';
@@ -56,7 +54,7 @@ export class DesktopNavbarComponent implements OnInit, AfterViewInit, OnDestroy 
     constructor(private scrollService: ScrollDataService, private translateService: TranslateService) {
         this.navbarState = 'show';
 
-        this.languages = [ new Language("en", "English"), new Language("fr", "Français")];
+        this.languages = [new Language('en', 'English'), new Language('fr', 'Français')];
         this.selectedLanguage = this.languages[0];
 
     }
@@ -71,14 +69,14 @@ export class DesktopNavbarComponent implements OnInit, AfterViewInit, OnDestroy 
             if (isHomepage) {
                 this.initSubscribers();
             } else {
-               setTimeout(() => this.isTransparent = false, 0);
+                setTimeout(() => this.isTransparent = false, 0);
             }
         });
 
     }
 
-    openLanguagePicker(){
-        if(this.subMenuOpen){
+    openLanguagePicker() {
+        if (this.subMenuOpen) {
             console.log('close submenu');
             this.subMenuOpen = false;
         }
@@ -106,7 +104,7 @@ export class DesktopNavbarComponent implements OnInit, AfterViewInit, OnDestroy 
     initSubscribers() {
         this.isTransparentSubject = this.scrollService.transparentSubject.subscribe(isTransparent => {
             //set timeout because of ExpressionChangedAfterItHasBeenCheckedError, see https://github.com/angular/angular/issues/17572
-            setTimeout(() => this.isTransparent = isTransparent,0);
+            setTimeout(() => this.isTransparent = isTransparent, 0);
 
             if (this.isTransparent) {
                 this.navbarState = 'hide';
@@ -129,9 +127,9 @@ export class DesktopNavbarComponent implements OnInit, AfterViewInit, OnDestroy 
 
     toggleSubMenu(link: LinkModel) {
 
-        if(this.languagePickerOpen){
+        if (this.languagePickerOpen) {
             this.languagePickerOpen = false;
-            this.subMenuOpen=true;
+            this.subMenuOpen = true;
         }
 
         this.scrollService.isTransparent = false;
