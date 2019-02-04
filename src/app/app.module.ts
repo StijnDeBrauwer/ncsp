@@ -13,7 +13,6 @@ import {MobileNavigationComponent} from './components/navigation/mobile-navigati
 import {PageNotFoundPage} from './pages/page-not-found/page-not-found.page';
 import {FooterComponent} from './components/footer/footer.component';
 import {DesktopNavbarComponent} from './components/navigation/desktop-navbar/desktop-navbar.component';
-import {LanguagePickerComponent} from './components/language-picker/language-picker.component';
 import {MaterialModule} from './modules/material-module/material-module.module';
 import {OurProductPage} from './pages/products/product.page';
 import {OurNewsPage} from './pages/news/our-news-page.component';
@@ -49,7 +48,6 @@ export function HttpLoaderFactory(http: HttpClient) {
         PageNotFoundPage,
         FooterComponent,
         DesktopNavbarComponent,
-        LanguagePickerComponent,
         OurProductPage,
         OurNewsPage,
         NewsitemComponent,

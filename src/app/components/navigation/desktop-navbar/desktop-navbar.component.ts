@@ -79,6 +79,7 @@ export class DesktopNavbarComponent implements OnInit, AfterViewInit, OnDestroy 
 
     openLanguagePicker(){
         if(this.subMenuOpen){
+            console.log('close submenu');
             this.subMenuOpen = false;
         }
         this.scrollService.isTransparent = false;
@@ -127,6 +128,11 @@ export class DesktopNavbarComponent implements OnInit, AfterViewInit, OnDestroy 
     }
 
     toggleSubMenu(link: LinkModel) {
+
+        if(this.languagePickerOpen){
+            this.languagePickerOpen = false;
+            this.subMenuOpen=true;
+        }
 
         this.scrollService.isTransparent = false;
         //if the chosen link is the current link (this means the user has clicked twice on the link) we have to close the submenu
