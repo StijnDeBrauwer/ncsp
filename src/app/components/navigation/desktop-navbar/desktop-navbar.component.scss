@@ -65,7 +65,6 @@ section#desktop-navigation {
       overflow: hidden;
 
       li {
-        padding: 1em;
         text-align: center;
         list-style: none;
         cursor: pointer;
@@ -84,6 +83,7 @@ section#desktop-navigation {
         }
 
         a {
+          padding: 10px;
           font-size: 1.2em;
           font-weight: bold;
           text-decoration: none;
