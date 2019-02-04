@@ -5,6 +5,7 @@
         overflow-y: scroll;
         max-height: 90vh;    
         padding: 0;
+        height: unset;
         .modal-header {
             position: absolute;
             right: 0;
@@ -16,6 +17,7 @@
                 background-color: $main-color;
                 border-radius: 100%;
                 padding: 5px;
+                margin: 20px;
             }
 
         }
@@ -25,10 +27,23 @@
             justify-content: space-between;
 
             .benefit-container{
-                display: flex;
+                display: inline-flex;
+                position: absolute;
+                top:0;
+                left:0;
                 justify-content: center;
                 align-items: center;
                 flex-direction: column;
+                margin: 20px;
+                text-align: left;
+
+                span{
+                    color: white;
+                    font-size: 1.1em;
+                    text-transform: uppercase;
+                    background-color: $main-color;
+                    padding: 2px;
+                }
                 h1{
                     font-size: 1.5em;
                     margin: 2%;
@@ -49,7 +64,7 @@
                 width: 100%;
                 position: relative;
                 .img-banner {
-                    position: relative;
+                    //position: relative;
                     //position: absolute;
                     bottom: 20px;
                     background-color: $main-color;
@@ -92,6 +107,7 @@
                 }
 
                 .menu {
+                    padding: 10px;
                     .details {
                         h1 {
                             font-size: 16px;
