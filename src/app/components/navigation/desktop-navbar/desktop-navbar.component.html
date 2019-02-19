@@ -7,12 +7,12 @@
                 <a *ngIf="link.path && !link.children"   routerLinkActive="active-link" [routerLink]="link.path" (click)="navigate()"> {{link.text}} </a>
                 <a *ngIf="link.children" (click)="toggleSubMenu(link)"> {{link.text}} </a>
             </li>
-            <li  (click)="openLanguagePicker()">
+            <!-- <li  (click)="openLanguagePicker()">
                 <div class="language-picker">
                     <mat-icon> language</mat-icon>
                     {{selectedLanguage.language}}
                 </div>
-            </li>
+            </li> -->
         </ul>
     </div>
 

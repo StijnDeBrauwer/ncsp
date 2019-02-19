@@ -59,12 +59,6 @@
 
     <app-slide-side-navigation [isOpen]="filtersOpen" (onOpenStateChange)="filtersOpen = $event">
         <div  class="slide-nav-content">
-            <h1>Product type</h1>
-            <ul>
-                <li *ngFor="let productType of productTypes; let i=  index">
-                    <mat-checkbox [checked]="productType.checked"  (change)="updateProductTypes(i)">{{productTypes[i].id}} </mat-checkbox>
-                </li>
-            </ul>
             <h1>Suitable for</h1>
             <ul>
                 <li  *ngFor="let solutionType of solutionTypes; let i=  index">

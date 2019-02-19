@@ -9,7 +9,7 @@ import {OurProductPage} from '../../pages/products/product.page';
 import {OurNewsPage} from '../../pages/news/our-news-page.component';
 import {ContactPage} from '../../pages/contact/contact.page';
 import {ServicesPage} from '../../pages/services/services.component';
-import {ProductType} from '../../models/product-type.model';
+
 
 const routes: Routes = [
     {
@@ -27,22 +27,7 @@ const routes: Routes = [
         component: OurProductPage,
     },
     {
-        path: 'products/parts',
-        component: OurProductPage,
-        data: {
-            type: ProductType.PARTS
-        }
-    },
-
-    {
-        path: 'products/upgrades',
-        component: OurProductPage,
-        data:{
-            type: ProductType.UPGRADES
-        }
-    },
-    {
-        path: 'products/services',
+        path: 'services',
         component: ServicesPage,
 
     },

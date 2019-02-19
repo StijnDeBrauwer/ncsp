@@ -6,7 +6,7 @@ import {SolutionBenefitType} from '../../models/solution-benefit-type';
 import {FormArray, FormBuilder, FormControl, FormGroup} from '@angular/forms';
 import {ResponsiveService} from '../../services/responsive/responsive.service';
 import {ActivatedRoute} from '@angular/router';
-import {ProductType} from '../../models/product-type.model';
+
 import {log} from 'util';
 
 @Component({
@@ -21,7 +21,6 @@ export class OurProductPage implements OnInit {
     benefits: Array<{ name: string, checked: boolean }>;
     @ViewChild('productsView', {read: ElementRef}) public productsView: ElementRef;
     filtersOpen = false;
-    productTypes: Array<any>;
     solutionTypes: Array<any>;
     benefitTypes: Array<any>;
 
@@ -32,7 +31,8 @@ export class OurProductPage implements OnInit {
     }
 
     ngOnInit() {
-      this.products = this.productsService.getProducts();
+        this.products = this.productsService.getProducts();
+        this.currentProducts = this.products;
       this.suitableFor = Object.keys(SolutionType).map((key) => {
           return {name: SolutionType[key], checked: false};
       });
@@ -40,15 +40,9 @@ export class OurProductPage implements OnInit {
           return {name: SolutionBenefitType[key], checked: false};
       });
       this._initFilters();
-      this._checkRouteParameters();
     }
 
     private _initFilters() {
-        this.productTypes = Object.keys(ProductType)
-            .filter(k => typeof ProductType[k as any] === 'number')
-            .map(k => {
-                return {id: k, value: ProductType[k as any], checked: false};
-            });
 
         this.solutionTypes = Object.keys(SolutionType)
             .filter(k => typeof SolutionType[k as any] === 'string')
@@ -63,28 +57,6 @@ export class OurProductPage implements OnInit {
             });
     }
 
-    private _checkRouteParameters() {
-        this.route.data.subscribe((data: any) => {
-            if (data.type === ProductType.PARTS.valueOf()) {
-                this.currentProducts = this.productsService.getParts();
-                this.productTypes[0].checked = true;
-                return;
-            }
-            if (data.type === ProductType.UPGRADES.valueOf()) {
-                this.currentProducts = this.productsService.getUpgrades();
-                this.productTypes[1].checked = true;
-                return;
-            }
-            this.currentProducts = this.productsService.getProducts();
-        });
-    }
-
-    updateProductTypes(index: number) {
-        const { checked } = this.productTypes[index];
-        this.productTypes[index].checked = !checked;
-        this.filter();
-    }
-
     updateSolutionTypes(index: number) {
         this.solutionTypes[index].checked = !this.solutionTypes[index].checked;
         this.filter();
@@ -96,15 +68,6 @@ export class OurProductPage implements OnInit {
     }
 
     filter() {
-      // FILTER OF PRODUCT TYPES
-      const filteredProductTypes = this.productTypes.filter(item => item.checked);
-      if (!filteredProductTypes.length) {
-        this.currentProducts = this.products;
-      } else {
-        const filteredProductTypeIds = filteredProductTypes.map(item => item.id);
-        this.currentProducts = this.products.filter(product => filteredProductTypeIds.includes(ProductType[product.productType]));
-      }
-
       // FILTER OF SOLUTION TYPES
       const filteredSolutionTypes = this.solutionTypes.filter(item => item.checked);
       const filteredSolutionTypeValues = filteredSolutionTypes.map(item => item.value);
