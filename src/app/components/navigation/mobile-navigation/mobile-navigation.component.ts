@@ -55,5 +55,4 @@ export class MobileNavigationComponent implements OnInit, OnDestroy {
         this.chosenLink = link;
         this.subMenuOpen = !this.subMenuOpen;
     }
-
 }
