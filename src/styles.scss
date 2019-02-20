@@ -73,6 +73,7 @@ h1, h2, h3 {
       }
       img {
         order: 2;
+        margin-bottom: 20px;
       }
     }
     img {
@@ -94,6 +95,10 @@ h1, h2, h3 {
       padding: 5px;
       img {
         width: 125px;
+        margin-bottom: 5px;
+        &:last-of-type {
+          margin-bottom: 20px;
+        }
       }
     }
   }
@@ -242,6 +247,14 @@ h2 {
     }
     .logo-history {
       flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      img {
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 0px !important;
+      }
     }
   }
 }

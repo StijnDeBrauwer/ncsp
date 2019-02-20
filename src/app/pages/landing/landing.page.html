@@ -1,133 +1,133 @@
 <section id="landing-page">
 
-    <div class="index-banner page" #banner>
-        <div class="welcome-text">
-            Global Experts in RGB
+  <div class="index-banner page" #banner>
+    <div class="welcome-text">
+      Global Experts in RGB
+    </div>
+    <div class="welcome-button" (click)="scrollToVision()">
+      More about us
+      <span class="icon ion-ios-arrow-forward"></span>
+    </div>
+  </div>
+
+  <scroll-button [scrollDown]="scrollDown" (onScroll)="scroll()"></scroll-button>
+
+  <!--<div class="article">-->
+  <!--<p>-->
+  <!--text is:  {{'welcome_text' | translate}}-->
+  <!--</p>-->
+  <!--</div>-->
+
+  <!--<div class="quote article">-->
+  <!--<h1>"YOU DON'T NEED A NEW MACHINE, YOU NEED YOUR MACHINE TO WORK PROPERLY"</h1>-->
+
+  <!--<div class="goal-container">-->
+
+  <!--<div class="goal-item">-->
+  <!--<mat-icon>settings</mat-icon>-->
+  <!--<h2>Quality engineering</h2>-->
+  <!--</div>-->
+
+  <!--<div class="goal-item">-->
+  <!--<mat-icon>cached</mat-icon>-->
+  <!--<h2>Reuse</h2>-->
+  <!--</div>-->
+
+  <!--<div class="goal-item">-->
+  <!--<mat-icon>group</mat-icon>-->
+  <!--<h2>Expertise</h2>-->
+  <!--</div>-->
+
+  <!--</div>-->
+  <!--</div>-->
+  <div #ourVision class="article image-text">
+    <img src="../../../assets/images/default-placeholder.jpg">
+    <div class="content">
+      <h2>Restore beyond design performance</h2>
+      <p>NEW CROWN offers solutions to modernize and upgrade existing Returnable Glass Bottling equipment, not
+        only to
+        restore its nominal capacity, but also to meet all current standards in terms of sustainability, quality
+        and
+        safety.</p>
+    </div>
+    <!--<app-our-vision></app-our-vision>-->
+  </div>
+
+  <div #whoWeAre class="article image-text">
+    <div class="content">
+      <h2 class="centered">THE ORIGINS OF THE CROWN</h2>
+      <p>NEW CROWN Service Partners NV was founded in October 2017 by two former employees and acquired the
+        intellectual property and trade fund of CROWN-BAELE, who was declared bankrupt a month before.
+        This makes NEW CROWN the sole official OEM of CROWN-BAELE parts and assemblies.
+      </p>
+      <p>They took the name NEW CROWN to mark the inseparable connection with the history of its illustrious
+        predecessor yet indicating a new business model and ambition in becoming the reference for upgrading older
+        equipment in the global RGB industry.</p>
+
+      <!--logo's hier nog te komen-->
+      <!--<app-who-we-are></app-who-we-are>-->
+
+      <div class="logo-history">
+        <div class="origin-photo">
+          <img src="../../../assets/images/logo-historiek/historiek_logo_1.png">
         </div>
-        <div class="welcome-button" (click)="scrollToVision()">
-            More about us
-            <span class="icon ion-ios-arrow-forward"></span>
+        <div class="origin-photo">
+          <img src="../../../assets/images/logo-historiek/historiek_logo_2.png">
         </div>
+        <div class="origin-photo">
+          <img src="../../../assets/images/logo-historiek/historiek_logo_3.png">
+        </div>
+        <div class="origin-photo">
+          <img src="../../../assets/images/logo-historiek/historiek_logo_4.png">
+        </div>
+        <div class="origin-photo">
+          <img src="../../../assets/images/logo-historiek/historiek_logo_5.png">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div #ourApproach class="article image-banner">
+    <!--<app-approach></app-approach>-->
+    <!--FOTO-->
+
+    <img src="../../../assets/images/default-placeholder.jpg">
+
+  </div>
+
+  <div class="article image-text">
+    <img src="../../../assets/images/default-placeholder.jpg" *ngIf="isMobile">
+    <div class="content">
+      <h2>STRONG TEAM</h2>
+      <p>
+        The NCSP team is a great mix of seasoned experience and young enthusiasm, of proven solutions and new
+        technologies. We offer global services, in Belgium, in Europe and outside, with a special knack for
+        Africa,
+        where we have a longtime experience, and where we know we can make a difference.
+      </p>
+    </div>
+    <img src="../../../assets/images/default-placeholder.jpg" *ngIf="!isMobile">
+  </div>
+
+  <div class="article image-text">
+    <img src="../../../assets/images/default-placeholder.jpg">
+    <div>
+      <h2>
+        STRONG PARTNERSHIP
+      </h2>
+      <p>
+        The ownership of NEW CROWN Service Partners NV is held by business partners Thomas Bernolet and Verney
+        Poynton, and by strategic partner LAMBRECHTS GROUP. Lambrechts Group has a long and successful track
+        record
+        as an equipment manufacturer of kegging lines and industrial washing installations in the brewery
+        industry.
+        The many synergies between New Crown Service Partners and Lambrechts Group strengthens their positions
+        on
+        the market.
+      </p>
     </div>
 
-    <scroll-button [scrollDown]="scrollDown" (onScroll)="scroll()"></scroll-button>
-
-    <!--<div class="article">-->
-    <!--<p>-->
-    <!--text is:  {{'welcome_text' | translate}}-->
-    <!--</p>-->
-    <!--</div>-->
-
-    <!--<div class="quote article">-->
-        <!--<h1>"YOU DON'T NEED A NEW MACHINE, YOU NEED YOUR MACHINE TO WORK PROPERLY"</h1>-->
-
-        <!--<div class="goal-container">-->
-
-            <!--<div class="goal-item">-->
-                <!--<mat-icon>settings</mat-icon>-->
-                <!--<h2>Quality engineering</h2>-->
-            <!--</div>-->
-
-            <!--<div class="goal-item">-->
-                <!--<mat-icon>cached</mat-icon>-->
-                <!--<h2>Reuse</h2>-->
-            <!--</div>-->
-
-            <!--<div class="goal-item">-->
-                <!--<mat-icon>group</mat-icon>-->
-                <!--<h2>Expertise</h2>-->
-            <!--</div>-->
-
-        <!--</div>-->
-    <!--</div>-->
-    <div #ourVision class="article image-text">
-        <img src="../../../assets/images/default-placeholder.jpg">
-        <div class="content">
-            <h2>Restore beyond design performance</h2>
-            <p>NEW CROWN offers solutions to modernize and upgrade existing Returnable Glass Bottling equipment, not
-                only to
-                restore its nominal capacity, but also to meet all current standards in terms of sustainability, quality
-                and
-                safety.</p>
-        </div>
-        <!--<app-our-vision></app-our-vision>-->
-    </div>
-
-    <div #whoWeAre class="article">
-        <h2 class="centered">THE ORIGINS OF THE CROWN</h2>
-
-        <p>NEW CROWN Service Partners NV was founded in October 2017 by two former employees and acquired the
-            intellectual property and trade fund of CROWN-BAELE, who was declared bankrupt a month before.
-            This makes NEW CROWN the sole official OEM of CROWN-BAELE parts and assemblies.
-        </p>
-
-        <p>They took the name NEW CROWN to mark the inseparable connection with the history of its illustrious
-            predecessor yet indicating a new business model and ambition in becoming the reference for upgrading older
-            equipment in the global RGB industry.</p>
-
-        <!--logo's hier nog te komen-->
-        <!--<app-who-we-are></app-who-we-are>-->
-
-        <div class="logo-history">
-            <div class="origin-photo">
-                <img src="../../../assets/images/logo-historiek/historiek_logo_1.png">
-            </div>
-            <div class="origin-photo">
-                <img src="../../../assets/images/logo-historiek/historiek_logo_2.png">
-            </div>
-            <div class="origin-photo">
-                <img src="../../../assets/images/logo-historiek/historiek_logo_3.png">
-            </div>
-            <div class="origin-photo">
-                <img src="../../../assets/images/logo-historiek/historiek_logo_4.png">
-            </div>
-            <div class="origin-photo">
-                <img src="../../../assets/images/logo-historiek/historiek_logo_5.png">
-            </div>
-        </div>
-    </div>
-
-    <div #ourApproach class="article image-banner">
-        <!--<app-approach></app-approach>-->
-        <!--FOTO-->
-
-        <img src="../../../assets/images/default-placeholder.jpg">
-
-    </div>
-
-    <div class="article image-text">
-        <img src="../../../assets/images/default-placeholder.jpg" *ngIf="isMobile">
-        <div class="content">
-            <h2>STRONG TEAM</h2>
-            <p>
-                The NCSP team is a great mix of seasoned experience and young enthusiasm, of proven solutions and new
-                technologies. We offer global services, in Belgium, in Europe and outside, with a special knack for
-                Africa,
-                where we have a longtime experience, and where we know we can make a difference.
-            </p>
-        </div>
-        <img src="../../../assets/images/default-placeholder.jpg" *ngIf="!isMobile">
-    </div>
-
-    <div class="article image-text">
-        <img src="../../../assets/images/default-placeholder.jpg">
-        <div>
-            <h2>
-                STRONG PARTNERSHIP
-            </h2>
-            <p>
-                The ownership of NEW CROWN Service Partners NV is held by business partners Thomas Bernolet and Verney
-                Poynton, and by strategic partner LAMBRECHTS GROUP. Lambrechts Group has a long and successful track
-                record
-                as an equipment manufacturer of kegging lines and industrial washing installations in the brewery
-                industry.
-                The many synergies between New Crown Service Partners and Lambrechts Group strengthens their positions
-                on
-                the market.
-            </p>
-        </div>
-
-    </div>
+  </div>
 
 
 </section>
