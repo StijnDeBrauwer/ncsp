@@ -1,6 +1,6 @@
 @import "../../../../assets/variables";
 $hamburger-width: 30px;
-$hamburger-height: 30px;
+$hamburger-height: 25px;
 $image-height: 50px;
 $image-width: 75px;
 section#navigation-container {
@@ -36,8 +36,8 @@ section#navigation-container {
         div#hamburger-menu {
             margin: 0 10px;
             position: relative;
-            width: $hamburger-height;
-            height: $hamburger-width;
+            width: $hamburger-width;
+            height: $hamburger-height;
             -webkit-transform: rotate(0deg);
             -moz-transform: rotate(0deg);
             -o-transform: rotate(0deg);
@@ -64,43 +64,39 @@ section#navigation-container {
                 -moz-transition: 0.25s ease-in-out;
                 -o-transition: 0.25s ease-in-out;
                 transition: 0.25s ease-in-out;
-                -webkit-transform-origin: left center;
-                -moz-transform-origin: left center;
-                -o-transform-origin: left center;
-                transform-origin: left center;
                 &:nth-child(1) {
                     top: 0;
                 }
                 &:nth-child(2) {
-                    top: 10px;
+                    top: calc(50% - 2.5px);
                 }
                 &:nth-child(3) {
-                    top: 20px;
+                    bottom: 0;
                 }
             }
             &.open {
                 span {
                     &:nth-child(1) {
-                        -webkit-transform: rotate(45deg);
-                        -moz-transform: rotate(45deg);
-                        -o-transform: rotate(45deg);
-                        transform: rotate(45deg);
+                      top: calc(50% - 2.5px);
+                      -webkit-transform: rotate(45deg);
+                      -moz-transform: rotate(45deg);
+                      -o-transform: rotate(45deg);
+                      transform: rotate(45deg);
                     }
                     &:nth-child(2) {
-                        width: 0;
-                        opacity: 0;
+                      opacity: 0;
                     }
                     &:nth-child(3) {
-                        -webkit-transform: rotate(-45deg);
-                        -moz-transform: rotate(-45deg);
-                        -o-transform: rotate(-45deg);
-                        transform: rotate(-45deg);
+                      bottom: calc(50% - 2.5px);
+                      -webkit-transform: rotate(-45deg);
+                      -moz-transform: rotate(-45deg);
+                      -o-transform: rotate(-45deg);
+                      transform: rotate(-45deg);
                     }
                 }
             }
         }
         ul {
-            visibility: hidden;
             overflow: scroll;
             align-items: center;
             padding: 0;
@@ -114,10 +110,9 @@ section#navigation-container {
             display: flex;
             flex-direction: column;
             transition: max-height 0.5s ease-in-out;
+            background-color: white;
+            opacity: 0.95;
             &.open {
-                background-color: white;
-                opacity: 0.95;
-                visibility: visible;
                 height: 100%;
                 max-height: 100vh;
             }

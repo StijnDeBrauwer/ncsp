@@ -67,6 +67,14 @@ h1, h2, h3 {
   }
 
   &.image-text {
+    @media screen and (max-width: 768px) {
+      .content {
+        order: 1;
+      }
+      img {
+        order: 2;
+      }
+    }
     img {
       display: block;
       width: 100%;
