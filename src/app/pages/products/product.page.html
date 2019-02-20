@@ -44,7 +44,7 @@
     <div class="slide-nav-content">
       <h1>Suitable for</h1>
       <ul>
-        <li *ngFor="let solutionType of solutionTypes; let i=  index">
+        <li *ngFor="let solutionType of solutionTypes; let i = index">
           <mat-checkbox [checked]="solutionType.checked" (change)="updateSolutionTypes(i)">{{solutionTypes[i].value}}
           </mat-checkbox>
         </li>
@@ -52,8 +52,9 @@
 
       <h1>Benefit</h1>
       <ul>
-        <li *ngFor="let benefitType of benefitTypes; let i=  index">
-          <mat-checkbox [checked]="benefitType.checked" (change)="updateBenefitTypes(i)">{{benefitTypes[i].value}}
+        <li *ngFor="let benefitType of benefitTypes; let i = index">
+          <mat-checkbox [checked]="benefitType.checked" (change)="updateBenefitTypes(i)">
+            <app-legend-item [solutionBenefit]="benefitType.value"></app-legend-item>
           </mat-checkbox>
         </li>
       </ul>
