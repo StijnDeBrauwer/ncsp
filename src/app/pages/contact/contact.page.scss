@@ -3,6 +3,9 @@
 section#contact {
   background-color: $card-background-color;
   margin-top: $nav-bar-height;
+  @media screen and (max-width: 768px) {
+    margin-top: $nav-bar-height-mobile;
+  }
 
   div.banner {
     background-size: cover !important;

@@ -7,13 +7,11 @@
                     <i class="material-icons">search</i>
                 </div>
                 <input type="text" placeholder="search" (keyup)="filterByName($event)" />
-                <!--<button class="orange-button">Search a part</button>-->
             </div>
         </div>
-       <app-legend></app-legend>
         <div class="content">
             <app-product (click)="clickOnProduct()" *ngFor="let product of filteredProductList || products" [product]="product"></app-product>
         </div>
-        <p *ngIf="(filteredProductList || products).length === 0">No products for your search criteria.</p>
+        <p class="emptyResult" *ngIf="(filteredProductList || products).length === 0">No products for your search criteria.</p>
     </div>
 </section>

@@ -7,7 +7,6 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
     styleUrls: ['./contact.page.scss']
 })
 export class ContactPage implements OnInit {
-
     contactForm: FormGroup;
     disabledSubmitButton = true;
     optionsSelect: Array<any>;
@@ -43,7 +42,8 @@ export class ContactPage implements OnInit {
         const currentText: string = String(this.contactForm.controls.message.value);
         const body = currentText.replace(regex, '%0D%0A');
 
-        this.formEl.nativeElement.action = 'mailto:db_stijn@hotmail.com?subject=' + this.contactForm.controls.subject.value + '&body=' + body ;
+        this.formEl.nativeElement.action = 'mailto:db_stijn@hotmail.com?subject=' +
+                this.contactForm.controls.subject.value + '&body=' + body ;
         this.formEl.nativeElement.submit();
     }
 

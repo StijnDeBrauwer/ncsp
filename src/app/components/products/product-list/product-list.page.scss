@@ -1,13 +1,15 @@
 @import "../../../../assets/variables";
 
 #product-list {
-  margin-top: $nav-bar-height;
+  .emptyResult {
+    margin-bottom: 30px;
+  }
+
   .banner {
     background: url("../../../../assets/images/people.jpg") center top;
   }
 
   .products {
-    padding: 0 20px 20px 20px;
     h2 {
       color: $main-color;
     }
@@ -16,6 +18,7 @@
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
+      margin: 5px 0 15px 0;
       @media screen and (max-width: 768px) {
         flex-direction: column;
         justify-content: flex-start;
@@ -42,7 +45,7 @@
           width: 300px;
           @media screen and (max-width: 768px) {
             flex-grow: 1;
-            flex-shrink: 0;
+            flex-shrink: 1;
           }
           font-size: 15px;
           border: none;
@@ -53,10 +56,6 @@
             border-bottom: 2px solid $main-color;
           }
         }
-        /*button {
-            margin-left: 20px;
-            flex-shrink: 0;
-        }*/
       }
     }
 

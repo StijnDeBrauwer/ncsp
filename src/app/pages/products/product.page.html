@@ -1,77 +1,62 @@
 <section class="product-page">
-    <div class="banner">
-        <div class="content">
-            <h1>Our products</h1>
-            <!--<div class="banner-button" (click)="scrollToProducts()">-->
-                <!--Discover our products-->
-                <!--<span class="icon ion-ios-arrow-forward"></span>-->
-            <!--</div>-->
-        </div>
+  <div class="banner">
+    <div class="content">
+      <h1>Our products</h1>
+      <!--<div class="banner-button" (click)="scrollToProducts()">-->
+      <!--Discover our products-->
+      <!--<span class="icon ion-ios-arrow-forward"></span>-->
+      <!--</div>-->
     </div>
+  </div>
 
-    <div class="article product-group">
-        <div class="product-group-container">
-            <div class="product-group-header">
-                <img src="../../../assets/images/default-placeholder.jpg"/>
-            </div>
-            <div class="product-group-content">
-                <h2>Parts</h2>
-                <p>LLorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eu volutpat urna, at ultrices
-                    magna.
-                    Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vestibulum
-                    quis
-                    lectus tellus. Quisque vel hendrerit nisl.</p>
-            </div>
-        </div>
-        <div class="product-group-container">
-            <div class="product-group-header">
-                <img src="../../../assets/images/default-placeholder.jpg"/>
-            </div>
-            <div class="product-group-content">
-                <h2>Upgrades, add-ons and
-                    conversions</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eu volutpat urna, at ultrices
-                    magna.
-                    Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vestibulum
-                    quis
-                    lectus tellus. Quisque vel hendrerit nisl.</p>
-            </div>
-        </div>
-        <div class="product-group-container">
-            <div class="product-group-header">
-                <img src="../../../assets/images/default-placeholder.jpg"/>
-            </div>
-            <div class="product-group-content">
-                <h2>Services</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eu volutpat urna, at ultrices
-                    magna.
-                    Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vestibulum
-                    quis
-                    lectus tellus. Quisque vel hendrerit nisl.</p>
-            </div>
-        </div>
+  <div class="product-types">
+      <div class="article image-text">
+          <img src="../../../assets/images/default-placeholder.jpg" />
+          <div class="content">
+              <h2>Parts</h2>
+              <p>
+                  The NCSP team is a great mix of seasoned experience and young enthusiasm, of proven solutions and new
+                  technologies. We offer global services, in Belgium, in Europe and outside, with a special knack for
+                  Africa, where we have a longtime experience, and where we know we can make a difference.
+              </p>
+          </div>
+      </div>
+      <div class="article image-text">
+          <div class="content">
+              <h2>Upgrades, add-ons and conversions</h2>
+              <p>
+                  The NCSP team is a great mix of seasoned experience and young enthusiasm, of proven solutions and new
+                  technologies. We offer global services, in Belgium, in Europe and outside, with a special knack for
+                  Africa,
+                  where we have a longtime experience, and where we know we can make a difference.
+              </p>
+          </div>
+          <img src="../../../assets/images/default-placeholder.jpg" />
+      </div>
+  </div>
+
+  <div #productsView class="productsContainer">
+    <app-product-list (onProductSelected)="onProductClick()" [products]="currentProducts"></app-product-list>
+  </div>
+
+
+  <app-slide-side-navigation [isOpen]="filtersOpen" (onOpenStateChange)="filtersOpen = $event">
+    <div class="slide-nav-content">
+      <h1>Suitable for</h1>
+      <ul>
+        <li *ngFor="let solutionType of solutionTypes; let i=  index">
+          <mat-checkbox [checked]="solutionType.checked" (change)="updateSolutionTypes(i)">{{solutionTypes[i].value}}
+          </mat-checkbox>
+        </li>
+      </ul>
+
+      <h1>Benefit</h1>
+      <ul>
+        <li *ngFor="let benefitType of benefitTypes; let i=  index">
+          <mat-checkbox [checked]="benefitType.checked" (change)="updateBenefitTypes(i)">{{benefitTypes[i].value}}
+          </mat-checkbox>
+        </li>
+      </ul>
     </div>
-
-    <div #productsView class="productsContainer">
-        <app-product-list (onProductSelected)="onProductClick()" [products]="currentProducts"></app-product-list>
-    </div>
-
-
-    <app-slide-side-navigation [isOpen]="filtersOpen" (onOpenStateChange)="filtersOpen = $event">
-        <div  class="slide-nav-content">
-            <h1>Suitable for</h1>
-            <ul>
-                <li  *ngFor="let solutionType of solutionTypes; let i=  index">
-                    <mat-checkbox [checked]="solutionType.checked" (change)="updateSolutionTypes(i)">{{solutionTypes[i].value}} </mat-checkbox>
-                </li>
-            </ul>
-
-            <h1>Benefit</h1>
-            <ul>
-                <li *ngFor="let benefitType of benefitTypes; let i=  index">
-                    <mat-checkbox [checked]="benefitType.checked" (change)="updateBenefitTypes(i)">{{benefitTypes[i].value}} </mat-checkbox>
-                </li>
-            </ul>
-        </div>
-    </app-slide-side-navigation>
+  </app-slide-side-navigation>
 </section>
