@@ -5,13 +5,19 @@
     </div>
     <div *ngIf="isMobile" class="mobile-footer-text">&copy; New Crown Service Partners NV/SA</div>
     <div *ngIf="!isMobile">
+      <h2>Follow us</h2>
+      <div class="icons">
+        <fa-icon [icon]="faLinkedin"></fa-icon>
+      </div>
+    </div>
+    <div *ngIf="!isMobile">
       <h2>Pages</h2>
       <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Service</a></li>
-          <li><a href="#">Products</a></li>
-          <li><a href="#">Stories</a></li>
-          <li><a href="#">Contact</a></li>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Service</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Stories</a></li>
+        <li><a href="#">Contact</a></li>
       </ul>
     </div>
     <div *ngIf="!isMobile">

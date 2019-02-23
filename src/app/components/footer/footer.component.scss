@@ -13,6 +13,18 @@ footer {
     justify-content: space-between;
     flex: 1;
 
+    .icons {
+      flex: unset;
+      display: flex;
+      flex-direction: row;
+      fa-icon {
+        font-size: 40px;
+        &:hover {
+          color: $main-color;
+        }
+      }
+    }
+
     @media screen and (min-width: 768px) {
       padding: 20px;
       h2 {
