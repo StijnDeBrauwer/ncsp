@@ -1,4 +1,4 @@
-import {Component, OnInit, Input} from '@angular/core';
+import {Component, OnInit, Input, ViewEncapsulation} from '@angular/core';
 import {Product} from 'src/app/models/product.model';
 import {SolutionBenefitType} from '../../../models/solution-benefit-type';
 import {SolutionType} from '../../../models/suitable-type.model';
@@ -6,7 +6,8 @@ import {SolutionType} from '../../../models/suitable-type.model';
 @Component({
     selector: 'app-product',
     templateUrl: './product-card.component.html',
-    styleUrls: ['./product-card.component.scss']
+    styleUrls: ['./product-card.component.scss'],
+    encapsulation: ViewEncapsulation.None,
 })
 export class ProductCardComponent implements OnInit {
 
@@ -56,5 +57,15 @@ export class ProductCardComponent implements OnInit {
 
     close(): void {
         this.isModalVisible = false;
+    }
+
+    spans() {
+      const { name } = this.product;
+      const splittedNames = name.split(' ');
+      let concatString = '';
+      splittedNames.forEach(item => {
+        concatString += `<span>${item}</span>`;
+      });
+      return concatString;
     }
 }

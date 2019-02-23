@@ -3,12 +3,16 @@
         <img src="../../../assets/images/product_1.jpg"/>
 
         <div class="label-container">
-            <span class="{{'label ' + type.key}}" *ngFor="let type of types"> {{type.value}}</span>
+            <span class="outer-span" [innerHTML]="spans()"></span>
         </div>
     </div>
 
     <div class="product-content">
-        <h2>{{product?.name}}</h2>
+        <span class="suitable-for">Suitable for</span>
+        <ul>
+          <li>Fillers</li>
+          <li>Any brand/any type</li>
+        </ul>
     </div>
 
     <div *ngIf="solutionBenefits" class="product-footer">
