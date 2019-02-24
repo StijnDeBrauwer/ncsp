@@ -63,7 +63,7 @@ h1, h2, h3 {
   }
 
   .content{
-      margin: 10px;
+      padding: 10px;
       text-align: center;
       display: flex;
       flex-direction: column;
@@ -114,7 +114,6 @@ h1, h2, h3 {
           }   
       }
       .content{
-          margin: unset;
           padding: 2% 10%;
           display: flex;
           flex-direction: row;
@@ -142,7 +141,9 @@ h1, h2, h3 {
     
         img {
           display: block;
-          margin: 0 auto;
+          margin: 0;
+          min-width: 100px;
+          height: auto;
           margin-bottom: 0px !important;
         }
       }
@@ -154,7 +155,7 @@ h1, h2, h3 {
     display: flex;
     justify-content: center;
     .content{
-      max-width: 800px;
+      max-width: 1024px;
     }
 
     &.image-banner{
