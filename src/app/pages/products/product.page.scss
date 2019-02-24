@@ -26,7 +26,16 @@
     h2 {
       color: $main-color;
     }
+
+    div.article{
+      background:$card-background-color !important;
+      &:nth-child(odd) {
+        background: white !important;
+      }
+    }
   }
+
+
 
   ::ng-deep app-slide-side-navigation {
     display: flex;
