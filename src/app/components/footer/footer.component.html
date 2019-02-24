@@ -1,42 +1,44 @@
 <footer class="page">
-  <img src="../../../assets/images/sticker_round.png" width="150px" height="150px">
-  <div class="footer-info">
-    <div *ngIf="isMobile">
-      <div class="mobile-footer-text">&copy; New Crown Service Partners NV/SA</div>
+  <div class="footer-container">
+    <div class="logo">
+      <img src="../../../assets/images/sticker_round.png" width="150px" height="150px">
     </div>
-    <table *ngIf="!isMobile">
-      <tr>
-        <td colspan="2">
-          New Crown Service Partners NV/SA
-        </td>
-      </tr>
-      <tr>
-        <td>
-          Gansbroekstraat 27
-        </td>
-        <td>
-          Tel +32 3 434 92 69
-        </td>
-      </tr>
-
-      <tr>
-        <td>
-          B-2870 Puurs 
-        </td>
-        <td>
-          info@newcrownservice.com
-        </td>
-      </tr>
-
-      <tr>
-        <td>
-          Belgium
-        </td>
-        <td>
-          VAT BE 0682 902 665
-        </td>
-      </tr>
-    </table>
+    <div *ngIf="isMobile" class="mobile-footer-text">&copy; New Crown Service Partners NV/SA</div>
+    <div *ngIf="!isMobile">
+      <h2>Follow us</h2>
+      <div class="icons">
+        <fa-icon [icon]="faLinkedin"></fa-icon>
+      </div>
+    </div>
+    <div *ngIf="!isMobile">
+      <h2>Pages</h2>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Service</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Stories</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    <div *ngIf="!isMobile">
+      <h2>Contact</h2>
+      <table>
+        <tr>
+          <td>New Crown Service Partners NV/SA</td>
+        </tr>
+        <tr>
+          <td>Gansbroekstraat 27, B-2870 Puurs</td>
+        </tr>
+        <tr>
+          <td>+32 3 434 92 69</td>
+        </tr>
+        <tr>
+          <td>info@newcrownservice.com</td>
+        </tr>
+        <tr>
+          <td>VAT BE 0682 902 665</td>
+        </tr>
+      </table>
+    </div>
   </div>
-
 </footer>

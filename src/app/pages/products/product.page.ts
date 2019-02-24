@@ -43,7 +43,6 @@ export class OurProductPage implements OnInit {
     }
 
     private _initFilters() {
-
         this.solutionTypes = Object.keys(SolutionType)
             .filter(k => typeof SolutionType[k as any] === 'string')
             .map(k => {
@@ -72,12 +71,14 @@ export class OurProductPage implements OnInit {
       const filteredSolutionTypes = this.solutionTypes.filter(item => item.checked);
       const filteredSolutionTypeValues = filteredSolutionTypes.map(item => item.value);
       if (filteredSolutionTypes.length) {
-        this.currentProducts = this.currentProducts.filter(product => {
+        this.currentProducts = this.products.filter(product => {
           const { solution: { types } } = product;
-          return types.some(item => {
-            return filteredSolutionTypeValues.includes(item);
+          return filteredSolutionTypeValues.every(item => {
+            return types.includes(item);
           });
         });
+      } else {
+        this.currentProducts = this.products;
       }
 
       // FILTER OF BENEFIT TYPES
@@ -101,9 +102,4 @@ export class OurProductPage implements OnInit {
     onProductClick() {
         this.filtersOpen = false;
     }
-
-    filterByName(name: string) {
-        // this.productsService.filterProductByName(this.filterName);
-    }
-
 }

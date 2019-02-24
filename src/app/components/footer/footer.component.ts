@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ResponsiveService } from 'src/app/services/responsive/responsive.service';
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'app-footer',
@@ -8,6 +9,7 @@ import { ResponsiveService } from 'src/app/services/responsive/responsive.servic
 })
 export class FooterComponent implements OnInit {
   isMobile: boolean;
+  faLinkedin = faLinkedin;
   constructor(private responsiveService: ResponsiveService) {
     this.responsiveService.checkWidth();
     this.responsiveService.getMobileStatus().subscribe(isMobile => {

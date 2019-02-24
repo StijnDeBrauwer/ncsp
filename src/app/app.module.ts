@@ -31,6 +31,7 @@ import {ServicesPage} from './pages/services/services.component';
 import { LegendComponent } from './components/legend/legend.component';
 import { LegendItemComponent } from './components/legend/legend-item/legend-item.component';
 import { StoriesPage } from './pages/stories/stories.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 // AoT requires an exported function for factories
@@ -79,7 +80,8 @@ export function HttpLoaderFactory(http: HttpClient) {
                 useFactory: HttpLoaderFactory,
                 deps: [HttpClient]
             }
-        })
+        }),
+        FontAwesomeModule,
     ],
     entryComponents: [
         LandingPage,

@@ -7,8 +7,80 @@ footer {
   flex-direction: column;
   align-items: center;
 
+  .footer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex: 1;
+
+    .icons {
+      flex: unset;
+      display: flex;
+      flex-direction: row;
+      fa-icon {
+        font-size: 40px;
+        &:hover {
+          color: $main-color;
+        }
+      }
+    }
+
+    @media screen and (min-width: 768px) {
+      padding: 20px;
+      h2 {
+        margin-top: 0;
+        margin-bottom: 10px;
+        color: $main-color;
+      }
+
+      ul {
+        list-style-type: none;
+        padding-inline-start: 0;
+        margin-block-start: 0;
+        margin-block-end: 0;
+        li {
+          margin-bottom: 3px;
+          a {
+            text-decoration: none;
+            color: black;
+            font-size: 16px;
+            &:hover {
+              color: $main-color;
+              text-decoration: underline;
+              text-decoration-color: $main-color;
+            }
+          }
+        }
+      }
+
+      div {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+    }
+
+    .mobile-footer-text {
+      margin-bottom: 5px;
+      font-size: 12px;
+    }
+  }
+
+
   table {
-    border-spacing: 15px 5px;
+    border-spacing: 0;
+    tr {
+      td {
+        padding: 2.5px;
+        font-size: 16px;
+      }
+    }
   }
 
   @media screen and (min-width: 768px) {
@@ -18,7 +90,7 @@ footer {
   }
 
   img{
-    margin: 10px;
+    margin: auto;
     height: 50px;
     width: 50px;
 
@@ -34,11 +106,6 @@ footer {
     display: inline-flex;
     justify-content: center;
     font-size: 0.7em;
-
-    .mobile-footer-text {
-      margin-bottom: 5px;
-      font-size: 12px;
-    }
   }
 
   @media (min-width: 768px) {
