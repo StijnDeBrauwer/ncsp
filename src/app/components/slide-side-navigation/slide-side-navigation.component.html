@@ -1,11 +1,11 @@
 <section label="Filter" id="slide-side-navigation">
   <span class="slide-out-button" (click)="toggle()" [ngClass]="{'open':open}">
 
-    <mat-icon *ngIf="!open">
+    <mat-icon *ngIf="open">
       keyboard_arrow_left
     </mat-icon>
 
-        <mat-icon *ngIf="open">
+        <mat-icon *ngIf="!open">
       keyboard_arrow_right
     </mat-icon>
 

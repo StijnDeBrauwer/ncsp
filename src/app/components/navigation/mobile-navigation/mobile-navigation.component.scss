@@ -1,8 +1,8 @@
 @import "../../../../assets/variables";
 $hamburger-width: 30px;
 $hamburger-height: 25px;
-$image-height: 50px;
-$image-width: 75px;
+$image-height: 60px;
+$image-width: 85px;
 section#navigation-container {
     top: 0;
     left: 0;
@@ -29,7 +29,7 @@ section#navigation-container {
             padding: 0 5px;
         }
         img#logo {
-            margin-left: 10px;
+            margin: 10px;
             height: $image-height;
             width: $image-width;
         }

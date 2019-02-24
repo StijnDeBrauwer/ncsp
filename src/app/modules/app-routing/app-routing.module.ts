@@ -9,6 +9,7 @@ import {OurProductPage} from '../../pages/products/product.page';
 import {OurNewsPage} from '../../pages/news/our-news-page.component';
 import {ContactPage} from '../../pages/contact/contact.page';
 import {ServicesPage} from '../../pages/services/services.component';
+import { StoriesPage} from 'src/app/pages/stories/stories.component';
 
 
 const routes: Routes = [
@@ -29,7 +30,10 @@ const routes: Routes = [
     {
         path: 'services',
         component: ServicesPage,
-
+    },
+    {
+        path: 'stories',
+        component: StoriesPage,
     },
     {
         path: 'news',

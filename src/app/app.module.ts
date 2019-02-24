@@ -30,6 +30,7 @@ import {ProductListComponent} from './components/products/product-list/product-l
 import {ServicesPage} from './pages/services/services.component';
 import { LegendComponent } from './components/legend/legend.component';
 import { LegendItemComponent } from './components/legend/legend-item/legend-item.component';
+import { StoriesPage } from './pages/stories/stories.component';
 
 
 // AoT requires an exported function for factories
@@ -62,6 +63,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         ServicesPage,
         LegendComponent,
         LegendItemComponent,
+        StoriesPage,
     ],
     imports: [
         BrowserModule,
