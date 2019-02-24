@@ -1,10 +1,10 @@
 @import "../../../assets/variables";
 
-footer {
+.footer {
   font-size: 12px;
   display: flex;
   background-color: $footer-color;
-  flex-direction: column;
+  flex-direction: column !important;
   align-items: center;
 
   @media screen and (max-width: 768px) {
@@ -14,11 +14,20 @@ footer {
     }
   }
 
+  .copyright {
+    background-color: #c7c8cb;
+    width: 100vw;
+    text-align: center;
+    font-size: 16px;
+    padding: 10px;
+  }
+
   .footer-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     flex: 1;
+    width: 100%;
 
     .icons {
       flex: unset;
@@ -75,6 +84,7 @@ footer {
     .mobile-footer-text {
       margin-bottom: 5px;
       font-size: 12px;
+      text-align: center;
     }
   }
 

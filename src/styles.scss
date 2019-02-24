@@ -64,6 +64,7 @@ h1, h2, h3 {
 
   .content{
       padding: 10px;
+      padding-top: 0;
       text-align: center;
       display: flex;
       flex-direction: column;
@@ -72,9 +73,12 @@ h1, h2, h3 {
       position: relative;
 
       img{
+          @media screen and (max-width: 768px) {
+              order: 2;
+          }
           display: block;
           margin: 2% 0;
-          max-height: 25vh; 
+          max-height: 25vh;
       }
   }
 
@@ -111,7 +115,7 @@ h1, h2, h3 {
               img{
                   margin: 0 0 0 2%;
               }
-          }   
+          }
       }
       .content{
           padding: 2% 10%;
@@ -127,9 +131,9 @@ h1, h2, h3 {
           }
           img {
               display: block;
-              max-height: 25vh; 
+              max-height: 25vh;
               max-width: 25%;
-              width: 100%; 
+              width: 100%;
               object-fit: contain;
               margin: 0 2% 0 0;
           }
@@ -138,7 +142,7 @@ h1, h2, h3 {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-    
+
         img {
           display: block;
           margin: 0;
