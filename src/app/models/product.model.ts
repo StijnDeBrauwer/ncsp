@@ -36,6 +36,10 @@ export class Product {
     }
 
     get specString(): string {
+        if (!this.spec || this.spec.length < 1) {
+            return '';
+        }
+        
         let nameList = '<ul>';
         for (let i = 0; i < this.spec.length; i++) {
             nameList += '<li>' + this.spec[i] + '</li>';
