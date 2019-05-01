@@ -1,76 +1,79 @@
-import {Solution} from './solution.model';
-
+import { Solution } from "./solution.model";
 
 export class Product {
-    private _name: string;
+  private _name: string;
 
-    private _solution: Solution;
-    private _description: string;
-    private _spec: Array<string>;
-    private _media: Array<any>;
+  private _solution: Solution;
+  private _description: string;
+  private _spec: Array<string>;
+  private _media: Array<string>;
 
+  constructor(
+    name: string,
+    solution?: Solution,
+    description?: string,
+    spec?: Array<string>,
+    media?: Array<string>
+  ) {
+    this._name = name;
+    this._solution = solution;
+    this._description = description;
+    this._spec = spec;
+    this._media = media;
+  }
 
-    constructor(name: string, solution?: Solution, description?: string, spec?: Array<string>, media?: any) {
-        this._name = name;
-        this._solution = solution;
-        this._description = description;
-        this._spec = spec;
-        this._media = media;
+  get name(): string {
+    return this._name;
+  }
+
+  get solution() {
+    return this._solution;
+  }
+
+  get description() {
+    return this._description;
+  }
+
+  get spec(): Array<string> {
+    return this._spec;
+  }
+
+  get specString(): string {
+    if (!this.spec || this.spec.length < 1) {
+      return "";
     }
 
-    get name(): string {
-        return this._name;
+    let nameList = "<ul>";
+    for (let i = 0; i < this.spec.length; i++) {
+      nameList += "<li>" + this.spec[i] + "</li>";
     }
 
+    nameList += "</ul>";
 
-    get solution() {
-        return this._solution;
-    }
+    return nameList;
+  }
 
-    get description() {
-        return this._description;
-    }
+  get media() {
+    return this._media;
+  }
 
-    get spec(): Array<string> {
-        return this._spec;
-    }
+  set name(name: string) {
+    this._name = name;
+  }
 
-    get specString(): string {
-        if (!this.spec || this.spec.length < 1) {
-            return '';
-        }
-        
-        let nameList = '<ul>';
-        for (let i = 0; i < this.spec.length; i++) {
-            nameList += '<li>' + this.spec[i] + '</li>';
-        }
+  set solution(solution: Solution) {
+    this._solution = solution;
+  }
 
-        nameList+= '</ul>'
+  set description(description: string) {
+    this._description = description;
+  }
 
-        return nameList;
-    }
+  set spec(spec: Array<string>) {
+    this._spec = spec;
+  }
 
-    get media() {
-        return this._media;
-    }
-
-    set name(name: string) {
-        this._name = name;
-    }
-    
-    set solution(solution: Solution) {
-        this._solution = solution;
-    }
-
-    set description(description: string) {
-        this._description = description;
-    }
-
-    set spec(spec: Array<string>) {
-        this._spec = spec;
-    }
-
-    set media(media: any) {
-        this._media = media;
-    }
+  set media(media: any) {
+    this._media = media;
+  }
 }

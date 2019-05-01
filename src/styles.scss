@@ -16,7 +16,7 @@ $candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-
 
 @font-face {
     font-family: 'Marco-Müller';
-    src: url('./assets/Fonts/Marco-Müller-Melbourne.ttf');
+    src: url('./assets/Fonts/Marco-Müller-Melbourne.otf') format('opentype');
 }
 
 
