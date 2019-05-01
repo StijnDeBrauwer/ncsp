@@ -16,13 +16,12 @@ export class ProductsService {
         "Complete Infeed table",
         new Solution(
           [SolutionType.BOTTLE_WASHERS],
-          "of all brands - single end and double end - cardan shaft driven or multi drive system",
+          ["all brands", "single end and double end"],
           [
             SolutionBenefitType.EFFICIENCY,
             SolutionBenefitType.SAFETY,
             SolutionBenefitType.COST_SAVING
-          ],
-          "Infeed brought to current standards in terms of safety and efficiency. Short installation time. Better ecomical solution when current table shows structural defects. Guaranteed availability of spare parts. Comes with renewed product warranty."
+          ]
         ),
         "Complete infeed table in replacement of existing infeed table. Stainless steel structure. Belt driven rotation of infeed beam for reduced noise and low maintenance.  Double infeed in one single rotation for gentle bottle handling and reduced wear.  Operator safety with pneumatic torque limitation safety system, with emergency machine stop and automatic retraction. Easy and quick maintenance.",
         [
@@ -35,13 +34,12 @@ export class ProductsService {
         "Complete discharge table",
         new Solution(
           [SolutionType.BOTTLE_WASHERS],
-          "of all brands - single end and double end - cardan shaft driven or multi drive system",
+          ["all brands", "single end and double end"],
           [
             SolutionBenefitType.EFFICIENCY,
             SolutionBenefitType.SAFETY,
             SolutionBenefitType.COST_SAVING
-          ],
-          "Discharge brought to current standards in terms of safety and efficiency. Short installation time. Better ecomical solution when current table shows structural defects. Guaranteed availability of spare parts. Comes with renewed product warranty."
+          ]
         ),
         "Complete discharge system  in replacement of existing discharge. Stainless steel structure. Fluid movement for gentle bottle handling. Parts that touch bottle in plastic to avoid bottle damage. Easy to replace discharge fingers. Easy to adjust.  Operator safety with pneumatic torque limitation safety system, with emergency machine stop and automatic retraction. Easy and quick maintenance.",
         [
@@ -54,13 +52,12 @@ export class ProductsService {
         "Automatic movable screen above discharge",
         new Solution(
           [SolutionType.BOTTLE_WASHERS],
-          " of all brands - single end and double end - cardan shaft driven or multi drive system",
+          ["all brands", "double end"],
           [
             SolutionBenefitType.QUALITY_HYGIENE,
             SolutionBenefitType.SAFETY,
             SolutionBenefitType.COST_SAVING
-          ],
-          "Easy access to zone above discharge for efficient cleaning. Short installation time. Glass panel allows continuous visual check of the zone."
+          ]
         ),
         "Automatic movable screen which allows easy access to zone above discharge system for thorough cleaning. The bottles coming from the final rinse are clean and disinfected in this zone. Hence the cleanliness of this zone is of the utmost importance. Many older type bottle washers don't allow easy access to this zone, allowing dirt to pile up and bacteria to grow.",
         [
@@ -74,14 +71,13 @@ export class ProductsService {
         "Final rinsing section",
         new Solution(
           [SolutionType.BOTTLE_WASHERS],
-          "of all brands - single end and double end ",
+          ["all brands", "double end"],
           [
             SolutionBenefitType.WATER_SAVING,
             SolutionBenefitType.QUALITY_HYGIENE,
             SolutionBenefitType.SAFETY,
             SolutionBenefitType.COST_SAVING
-          ],
-          "For older systems with 2 zones: highly improved rinsing and cooling of bottles. Water and energy saving with rotating injectors and fresh water pressure control.  Improved hygiene with slanted rounded tanks. "
+          ]
         ),
         "The current final rinsing zone is completely removed and replaced by new tanks, filtration system, injection and spray system. The system consists of a fresh water saving injection system followed by 3 cascading tanks with rotating injectors and fixed shower beams. Rounded slanted tanks for easy cleaning. Closed  cylindrical filtration system with easy and safe access for claning. Completely stainless steel structure and tanks. Seamless integration in your machine.",
         [
@@ -93,110 +89,85 @@ export class ProductsService {
         ]
       ),
       new Product(
-        "Pre rinsing section",
-        new Solution([SolutionType.BOTTLE_WASHERS])
-      ),
-      new Product(
-        "Post caustic lock",
-        new Solution([SolutionType.BOTTLE_WASHERS])
-      ),
-      new Product(
-        "Tubular heat exchangers",
-        new Solution([SolutionType.BOTTLE_WASHERS])
-      ),
-      new Product(
-        "Plate Heat Exchangers",
-        new Solution([SolutionType.BOTTLE_WASHERS])
-      ),
-      new Product(
-        "Rotating injection system",
-        new Solution([SolutionType.BOTTLE_WASHERS])
+        "POST CAUSTIC LOCK",
+        new Solution(
+          [SolutionType.BOTTLE_WASHERS],
+          ["all brands", "double end"],
+          [SolutionBenefitType.QUALITY_HYGIENE, SolutionBenefitType.COST_SAVING]
+        ),
+        "This upgrade consists in adding injection and shower beams just after the last caustic soaking tank, which will spray off the bottles with water from the final rinsing zone. A clever cascade system will also prevent the water from the last soaking tank before the final rinsing zone to heat up due to heat carry over with the bottle carriers.",
+        [
+          "Additional stainless steel sump",
+          "2 additional injection beams and 1 additional showerbeam",
+          "1 additional pump and filtration system",
+          " Modified cascade system "
+        ]
       ),
       new Product(
         "Label extraction booster",
-        new Solution([SolutionType.BOTTLE_WASHERS])
+        new Solution(
+          [SolutionType.BOTTLE_WASHERS],
+          ["all brands", "double end"],
+          [SolutionBenefitType.QUALITY_HYGIENE, SolutionBenefitType.COST_SAVING]
+        ),
+        "This modification of the inner tanks of your soaking baths will strongly help the system to remove the labels from the bottles towards the label extraction system.",
+        [
+          "1 or 2 grid plates to be welded each tank equipped with label extraction system"
+        ]
       ),
       new Product(
-        "Wall insulation",
-        new Solution([SolutionType.BOTTLE_WASHERS])
+        "ROTATING INJECTION SYSTEM",
+        new Solution(
+          [SolutionType.BOTTLE_WASHERS],
+          ["all brands", "double end"],
+          [
+            SolutionBenefitType.WATER_SAVING,
+            SolutionBenefitType.ENERGY_SAVING,
+            SolutionBenefitType.QUALITY_HYGIENE,
+            SolutionBenefitType.COST_SAVING
+          ]
+        ),
+        "",
+        [""]
       ),
       new Product(
-        "Caustic filtration ",
-        new Solution([SolutionType.BOTTLE_WASHERS])
+        "WALL INSULATION",
+        new Solution(
+          [SolutionType.BOTTLE_WASHERS],
+          ["all brands", "single end and double end"],
+          [SolutionBenefitType.ENERGY_SAVING]
+        ),
+        "",
+        [""]
       ),
       new Product(
-        "Digitizing of instrumentation ",
-        new Solution([SolutionType.BOTTLE_WASHERS])
+        "CAUSTIC FILTRATION IN PRODUCTION",
+        new Solution(
+          [SolutionType.BOTTLE_WASHERS],
+          ["all brands", "single end and double end"],
+          [
+            SolutionBenefitType.WATER_SAVING,
+            SolutionBenefitType.ENERGY_SAVING,
+            SolutionBenefitType.QUALITY_HYGIENE,
+            SolutionBenefitType.COST_SAVING
+          ]
+        ),
+        "",
+        [""]
       ),
       new Product(
-        "PLC Parameter control ",
-        new Solution([SolutionType.BOTTLE_WASHERS])
-      ),
-      new Product(
-        "Automatic chemical dosing control ",
-        new Solution([SolutionType.BOTTLE_WASHERS])
-      ),
-      new Product(
-        "Synchronized drive system ",
-        new Solution([SolutionType.BOTTLE_WASHERS])
-      ),
-      new Product(
-        "Main translation chain ",
-        new Solution([SolutionType.BOTTLE_WASHERS])
-      ),
-      new Product(
-        "Parabolic sieve ",
-        new Solution([SolutionType.BOTTLE_WASHERS])
-      ),
-      new Product(
-        "Eco bottle carriers ",
-        new Solution([SolutionType.BOTTLE_WASHERS])
-      ),
-      new Product(
-        "Universal plastic inserts ",
-        new Solution([SolutionType.BOTTLE_WASHERS])
-      ),
-      new Product(
-        "Steam control system ",
-        new Solution([SolutionType.BOTTLE_WASHERS])
-      ),
-      new Product(
-        "Complete label extraction system ",
-        new Solution([SolutionType.BOTTLE_WASHERS])
-      ),
-
-      new Product(
-        "Bottle burst safety system",
-        new Solution([SolutionType.FILLERS])
-      ),
-      new Product(
-        "Bottle format front table equipment",
-        new Solution([SolutionType.FILLERS])
-      ),
-      new Product(
-        "Product level control",
-        new Solution([SolutionType.FILLERS])
-      ),
-      new Product(
-        "Automatic CIP regulation  ",
-        new Solution([SolutionType.FILLERS])
-      ),
-      new Product(
-        "PLC Software upgrade",
-        new Solution([SolutionType.BOTTLE_WASHERS, SolutionType.FILLERS])
-      ),
-      new Product("Crowner/capper ", new Solution([SolutionType.FILLERS])),
-      new Product(
-        "Complete process automation ",
-        new Solution([SolutionType.BOTTLE_WASHERS, SolutionType.FILLERS])
-      ),
-      new Product(
-        "Universal foam control system ",
-        new Solution([SolutionType.FILLERS])
-      ),
-      new Product(
-        "Lift cylinder stabilization ",
-        new Solution([SolutionType.FILLERS])
+        "AUTOMATIC CHEMICAL DOSING SYSTEM",
+        new Solution(
+          [SolutionType.BOTTLE_WASHERS],
+          ["all brands", "single end and double end"],
+          [
+            SolutionBenefitType.QUALITY_HYGIENE,
+            SolutionBenefitType.COST_SAVING,
+            SolutionBenefitType.SAFETY
+          ]
+        ),
+        "",
+        [""]
       )
     ];
   }

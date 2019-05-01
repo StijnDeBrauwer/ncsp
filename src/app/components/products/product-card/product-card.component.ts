@@ -81,6 +81,21 @@ export class ProductCardComponent implements OnInit {
     }
   }
 
+  get suitableForString() {
+    let suitableForString = "";
+    this.product.solution.suitableFor.forEach(
+      (suitableFor: string, index: number) => {
+        if (index !== 0) {
+          suitableForString += " / " + suitableFor;
+        } else {
+          suitableForString += suitableFor;
+        }
+      }
+    );
+
+    return suitableForString;
+  }
+
   spans() {
     const { name } = this.product;
     const color = this.getColor(this.types[0]);

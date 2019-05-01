@@ -18,7 +18,11 @@
     }
 
     .benefit-container {
-        padding: 15px 0;
+        padding-top: 15px;
+
+        ul {
+            margin: 2px !important;
+        }
     }
 
     .menu {
@@ -70,7 +74,7 @@
                 font-size: 1.5em;
                 z-index: 1000;
                 left: 0;
-                background-color: $main-color;
+                // background-color: $main-color;
                 padding: 5px 8px;
             }
 

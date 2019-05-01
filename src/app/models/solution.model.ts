@@ -1,57 +1,46 @@
-import {Product} from './product.model';
-import {SolutionType} from './suitable-type.model';
-import {SolutionBenefitType} from './solution-benefit-type';
+import { Product } from "./product.model";
+import { SolutionType } from "./suitable-type.model";
+import { SolutionBenefitType } from "./solution-benefit-type";
 
 export class Solution {
-    private _id: Number;
-    private _solutionDescription: string;
-    private _types: Array<SolutionType>;
-    private _benefits: Array<SolutionBenefitType>;
-    private _benefitsDescription: string;
+  private _id: Number;
+  private _types: Array<SolutionType>;
+  private _suitableFor: Array<string>;
+  private _benefits: Array<SolutionBenefitType>;
 
-    constructor(types: Array<SolutionType>, solutionDescription?: string,
-                benefits?: Array<SolutionBenefitType>, benefitDescription?: string, id?: Number) {
-        this._types = types;
-        this._solutionDescription = solutionDescription;
-        this._benefits = benefits;
-        this._benefitsDescription = benefitDescription;
-        this._id = id;
-    }
+  constructor(
+    types: Array<SolutionType>,
+    suitableFor: Array<string>,
+    benefits: Array<SolutionBenefitType>,
+    id?: Number
+  ) {
+    this._types = types;
+    this._suitableFor = suitableFor;
+    this._benefits = benefits;
+    this._id = id;
+  }
 
+  get suitableFor() {
+    return this._suitableFor;
+  }
 
-    get solutionDescription() {
-        return this._solutionDescription;
-    }
+  get types() {
+    return this._types;
+  }
 
-    get types() {
-        return this._types;
-    }
+  get benefits() {
+    return this._benefits;
+  }
 
-    get benefits() {
-        return this._benefits;
-    }
+  set types(types: Array<SolutionType>) {
+    this._types = types;
+  }
 
-    get benefitDescription() {
-        return this._benefitsDescription;
-    }
+  set benefits(benefits: Array<SolutionBenefitType>) {
+    this._benefits = benefits;
+  }
 
-
-    set solutionDescription(description: string) {
-        this._solutionDescription = description;
-    }
-
-    set types(types: Array<SolutionType>) {
-        this._types = types;
-    }
-
-    set benefits(benefits: Array<SolutionBenefitType>) {
-       this._benefits = benefits;
-    }
-
-    set benefitDescription(description: string) {
-         this._benefitsDescription = description;
-    }
-
-
-
+  set suitableFor(suitableFor: Array<string>) {
+    this._suitableFor = suitableFor;
+  }
 }

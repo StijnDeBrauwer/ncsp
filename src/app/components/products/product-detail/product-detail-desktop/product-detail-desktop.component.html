@@ -1,7 +1,9 @@
 <div class="modal">
   <div class="product-modal">
     <div class="title-container">
-      <h1 class="product-title">{{ product.name }}</h1>
+      <h1 [ngStyle]="{ 'background-color': color }" class="product-title">
+        {{ product.name }}
+      </h1>
       <div class="slideshow">
         <img src="../../../assets/images/people.jpg" />
         <i class="material-icons">keyboard_arrow_left</i>
@@ -16,6 +18,11 @@
           <span class="benefit" *ngFor="let type of types">
             {{ type.value }}
           </span>
+          <ul>
+            <li *ngFor="let suitable of product.solution.suitableFor">
+              {{ suitable }}
+            </li>
+          </ul>
         </div>
 
         <i class="material-icons icon-close" (click)="closeModal()">
@@ -34,7 +41,6 @@
             <div class="details benefitContainer">
               <div>
                 <h1>Benefits</h1>
-                {{ product?.solution.benefitDescription }}
               </div>
               <div>
                 <span
