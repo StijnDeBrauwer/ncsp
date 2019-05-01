@@ -12,44 +12,56 @@
   <div class="product-types">
     <div class="article">
       <div class="content">
-        <img src="../../../assets/images/default-placeholder.jpg" />
+        <img src="../../../assets/images/product/prod_pic_2.jpg" />
         <div class="paragraph">
           <h2>Parts</h2>
           <p>
-            The NCSP team is a great mix of seasoned experience and young enthusiasm, of proven solutions and new
-            technologies. We offer global services, in Belgium, in Europe and outside, with a special knack for
-            Africa, where we have a longtime experience, and where we know we can make a difference.
+            The NCSP team is a great mix of seasoned experience and young
+            enthusiasm, of proven solutions and new technologies. We offer
+            global services, in Belgium, in Europe and outside, with a special
+            knack for Africa, where we have a longtime experience, and where we
+            know we can make a difference.
           </p>
         </div>
       </div>
     </div>
 
     <div class="article">
-        <div class="content">
-          <img src="../../../assets/images/default-placeholder.jpg" />
-          <div class="paragraph">
-            <h2>Upgrades, add-ons and conversions</h2>
-            <p>
-              The NCSP team is a great mix of seasoned experience and young enthusiasm, of proven solutions and new
-              technologies. We offer global services, in Belgium, in Europe and outside, with a special knack for
-              Africa, where we have a longtime experience, and where we know we can make a difference.
-            </p>
-          </div>
+      <div class="content">
+        <img src="../../../assets/images/product/prod_pic_3.jpg" />
+        <div class="paragraph">
+          <h2>Upgrades, add-ons and conversions</h2>
+          <p>
+            The NCSP team is a great mix of seasoned experience and young
+            enthusiasm, of proven solutions and new technologies. We offer
+            global services, in Belgium, in Europe and outside, with a special
+            knack for Africa, where we have a longtime experience, and where we
+            know we can make a difference.
+          </p>
         </div>
       </div>
+    </div>
   </div>
 
   <div #productsView class="productsContainer">
-    <app-product-list (onProductSelected)="onProductClick()" [products]="currentProducts"></app-product-list>
+    <app-product-list
+      (onProductSelected)="onProductClick()"
+      [products]="currentProducts"
+    ></app-product-list>
   </div>
 
-
-  <app-slide-side-navigation [isOpen]="filtersOpen" (onOpenStateChange)="filtersOpen = $event">
+  <app-slide-side-navigation
+    [isOpen]="filtersOpen"
+    (onOpenStateChange)="filtersOpen = $event"
+  >
     <div class="slide-nav-content">
       <h1>Suitable for</h1>
       <ul>
         <li *ngFor="let solutionType of solutionTypes; let i = index">
-          <mat-checkbox [checked]="solutionType.checked" (change)="updateSolutionTypes(i)">{{solutionTypes[i].value}}
+          <mat-checkbox
+            [checked]="solutionType.checked"
+            (change)="updateSolutionTypes(i)"
+            >{{ solutionTypes[i].value }}
           </mat-checkbox>
         </li>
       </ul>
@@ -57,8 +69,13 @@
       <h1>Benefit</h1>
       <ul>
         <li *ngFor="let benefitType of benefitTypes; let i = index">
-          <mat-checkbox [checked]="benefitType.checked" (change)="updateBenefitTypes(i)">
-            <app-legend-item [solutionBenefit]="benefitType.value"></app-legend-item>
+          <mat-checkbox
+            [checked]="benefitType.checked"
+            (change)="updateBenefitTypes(i)"
+          >
+            <app-legend-item
+              [solutionBenefit]="benefitType.value"
+            ></app-legend-item>
           </mat-checkbox>
         </li>
       </ul>

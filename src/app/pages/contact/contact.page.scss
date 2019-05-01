@@ -1,160 +1,167 @@
 @import "../../../assets/variables";
 
 section#contact {
-  background-color: $card-background-color;
-  margin-top: $nav-bar-height;
-  @media screen and (max-width: 768px) {
-    margin-top: $nav-bar-height-mobile;
-  }
+    background-color: $card-background-color;
+    margin-top: $nav-bar-height;
 
-  div.banner {
-    background-size: cover !important;
-    background: url("../../../assets/images/people.jpg") center top;
-  }
-
-  .contact-content {
-    display: flex;
-    flex-direction: column;
-
-    mat-card {
-      margin-bottom: 1%;
+    @media screen and (max-width: 768px) {
+        margin-top: $nav-bar-height-mobile;
     }
 
-    .card-header {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
+    div.banner {
+        background-size: cover !important;
+        background: url("../../../assets/images/contact/cont_pic_1.jpg") center top;
     }
-
-    h2 {
-      text-transform: uppercase;
-      font-size: 1.5em;
-      color: $main-color;
-    }
-
-    h3 {
-      text-transform: uppercase;
-      font-size: 1.2em;
-    }
-
-    .contact-form {
-      display: flex;
-      flex: 1;
-      flex-direction: column;
-      justify-content: space-between;
-      margin: 2%;
-
-      mat-form-field {
-        display: block;
-        margin: 20px 0;
-        min-width: 45%;
-        border-radius: 5px;
-        transform: perspective(1px);
-
-        ::ng-deep .mat-input-underline {
-          display: none;
-        }
-
-        mat-label {
-          margin-top: 100px;
-        }
-
-        mat-error {
-          margin: 5px 0 10px 0;
-        }
-
-        input {
-          min-height: 35px;
-          width: 100%;
-          -moz-appearance: textfield !important;
-          -webkit-appearance: textfield !important;
-          font-family: 'Open Sans', sans-serif;
-          font-size: 15px;
-          &.capitalize {
-            text-transform: capitalize;
-          }
-
-          @media screen and (max-width: 768px) {
-            flex-grow: 1;
-            flex-shrink: 0;
-          }
-
-          &:focus {
-            outline: none;
-          }
-        }
-      }
-
-      mat-select {
-        margin: 10px 0;
-      }
-
-      div.text-field {
-
-        textarea {
-          min-width: 45%;
-          min-height: 100px;
-          border-radius: 5px;
-        }
-      }
-      #send-button {
-        background-color: $main-color;
-        color: white;
-        padding: 10px 5px;
-        width: 35%;
-        align-self: center;
-        text-align: center;
-        font-size: 1.2em;
-        font-weight: bolder;
-        text-transform: uppercase;
-        border-radius: 5px;
-        cursor: pointer;
-      }
-    }
-  }
-
-  .info {
-    flex: 1;
-    margin: 2%;
-
-    mat-card {
-      .contact-info-section {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        margin: 40px 0;
-
-        table {
-          text-align: left;
-          tr {
-            padding: 5% 0;
-          }
-          td {
-            min-width: 50px;
-          }
-          th {
-            font-size: 15px;
-            text-transform: uppercase;
-          }
-        }
-
-        mat-icon {
-          font-size: 30px;
-        }
-      }
-    }
-  }
-
-  @media screen and (min-width: 768px) {
 
     .contact-content {
-      flex-direction: row !important;
-      #send-button {
-        &:hover {
-          background-color: darkorange !important;
+        display: flex;
+        flex-direction: column;
+
+        mat-card {
+            margin-bottom: 1%;
         }
-      }
+
+        .card-header {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        h2 {
+            text-transform: uppercase;
+            font-size: 1.5em;
+            color: $main-color;
+        }
+
+        h3 {
+            text-transform: uppercase;
+            font-size: 1.2em;
+        }
+
+        .contact-form {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            justify-content: space-between;
+            margin: 2%;
+
+            mat-form-field {
+                display: block;
+                margin: 20px 0;
+                min-width: 45%;
+                border-radius: 5px;
+                transform: perspective(1px);
+
+                ::ng-deep .mat-input-underline {
+                    display: none;
+                }
+
+                mat-label {
+                    margin-top: 100px;
+                }
+
+                mat-error {
+                    margin: 5px 0 10px 0;
+                }
+
+                input {
+                    min-height: 35px;
+                    width: 100%;
+                    -moz-appearance: textfield !important;
+                    -webkit-appearance: textfield !important;
+                    font-family: 'Open Sans', sans-serif;
+                    font-size: 15px;
+
+                    &.capitalize {
+                        text-transform: capitalize;
+                    }
+
+                    @media screen and (max-width: 768px) {
+                        flex-grow: 1;
+                        flex-shrink: 0;
+                    }
+
+                    &:focus {
+                        outline: none;
+                    }
+                }
+            }
+
+            mat-select {
+                margin: 10px 0;
+            }
+
+            div.text-field {
+
+                textarea {
+                    min-width: 45%;
+                    min-height: 100px;
+                    border-radius: 5px;
+                }
+            }
+
+            #send-button {
+                background-color: $main-color;
+                color: white;
+                padding: 10px 5px;
+                width: 35%;
+                align-self: center;
+                text-align: center;
+                font-size: 1.2em;
+                font-weight: bolder;
+                text-transform: uppercase;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+        }
     }
 
-  }
+    .info {
+        flex: 1;
+        margin: 2%;
+
+        mat-card {
+            .contact-info-section {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                margin: 40px 0;
+
+                table {
+                    text-align: left;
+
+                    tr {
+                        padding: 5% 0;
+                    }
+
+                    td {
+                        min-width: 50px;
+                    }
+
+                    th {
+                        font-size: 15px;
+                        text-transform: uppercase;
+                    }
+                }
+
+                mat-icon {
+                    font-size: 30px;
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+
+        .contact-content {
+            flex-direction: row !important;
+
+            #send-button {
+                &:hover {
+                    background-color: darkorange !important;
+                }
+            }
+        }
+
+    }
 }
