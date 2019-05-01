@@ -36,6 +36,8 @@ import { ImageSliderComponent } from "./components/image-slider/image-slider.com
 import { SanitizeHtmlPipe } from "./pipes/sanitizeHTML.pipe";
 import { PipesModule } from "./pipes/pipes.module";
 
+import { SlideshowModule } from "ng-simple-slideshow";
+
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -77,6 +79,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     FormsModule,
     PipesModule,
     ReactiveFormsModule,
+    SlideshowModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

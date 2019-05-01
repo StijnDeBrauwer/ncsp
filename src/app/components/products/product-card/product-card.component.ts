@@ -65,6 +65,14 @@ export class ProductCardComponent implements OnInit {
     this.isModalVisible = false;
   }
 
+  get image() {
+    if (this.product.media && this.product.media.length) {
+      return "../../../../../assets/images/product/" + this.product.media[0];
+    }
+
+    return "../../../../../assets/images/people.jpg";
+  }
+
   getColor(type) {
     switch (type.value) {
       case SolutionType.BOTTLE_WASHERS: {

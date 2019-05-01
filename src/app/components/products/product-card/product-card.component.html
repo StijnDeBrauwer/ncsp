@@ -1,6 +1,6 @@
 <div class="product-container" (click)="showModal()">
   <div class="product-header">
-    <img src="../../../assets/images/product_1.jpg" />
+    <img [src]="image" />
 
     <div class="label-container">
       <span class="outer-span" [innerHTML]="spans()"></span>
@@ -15,7 +15,7 @@
           {{ type.value }}
         </span>
       </li>
-      <li>{{suitableForString}}</li>
+      <li>{{ suitableForString }}</li>
     </ul>
   </div>
 

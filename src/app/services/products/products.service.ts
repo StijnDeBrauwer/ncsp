@@ -28,7 +28,8 @@ export class ProductsService {
           "Bottle pocket size: from 72 mm to 110 mm.",
           "Max machine width: 7000 mm. ",
           "Drive system: by chain/cardanshaft or with synchronized electric motor. "
-        ]
+        ],
+        ["cit_1.jpg", "cit_2.jpg", "cit_3.jpg"]
       ),
       new Product(
         "Complete discharge table",
@@ -46,7 +47,8 @@ export class ProductsService {
           "Bottle pocket size: from 72 mm to 110 mm.",
           "Max machine width: 7000 mm.",
           " Drive system: by chain/cardanshaft or with synchronized electric motor. "
-        ]
+        ],
+        ["cit_1.jpg", "cit_2.jpg", "cit_3.jpg"]
       ),
       new Product(
         "Automatic movable screen above discharge",
@@ -65,7 +67,8 @@ export class ProductsService {
           " Belt driven lifting system.",
           " Maximum machine width: 7000 mm.",
           " Operation possible from operzator panel. "
-        ]
+        ],
+        ["ams_1.jpg"]
       ),
       new Product(
         "Final rinsing section",
@@ -86,7 +89,8 @@ export class ProductsService {
           " Closed filtration system with stainless steel basket sieves. Manual or automatic valve system for cleaning. ",
           " Complete stainless steel construction. ",
           " Optional with fresh water pressure control for reduced pressure in slow speed run. "
-        ]
+        ],
+        ["frs_1.jpg", "frs_2.jpg", "frs_3.jpg"]
       ),
       new Product(
         "POST CAUSTIC LOCK",
@@ -101,7 +105,8 @@ export class ProductsService {
           "2 additional injection beams and 1 additional showerbeam",
           "1 additional pump and filtration system",
           " Modified cascade system "
-        ]
+        ],
+        ["frs_1.jpg", "frs_2.jpg", "frs_3.jpg"]
       ),
       new Product(
         "Label extraction booster",
@@ -113,7 +118,8 @@ export class ProductsService {
         "This modification of the inner tanks of your soaking baths will strongly help the system to remove the labels from the bottles towards the label extraction system.",
         [
           "1 or 2 grid plates to be welded each tank equipped with label extraction system"
-        ]
+        ],
+        ["leb_1.jpg", "frs_2.jpg", "frs_3.jpg"]
       ),
       new Product(
         "ROTATING INJECTION SYSTEM",
@@ -128,7 +134,7 @@ export class ProductsService {
           ]
         ),
         "",
-        [""]
+        ["leb_1.jpg", "frs_2.jpg", "frs_3.jpg"]
       ),
       new Product(
         "WALL INSULATION",
@@ -138,7 +144,7 @@ export class ProductsService {
           [SolutionBenefitType.ENERGY_SAVING]
         ),
         "",
-        [""]
+        ["cit_1.jpg"]
       ),
       new Product(
         "CAUSTIC FILTRATION IN PRODUCTION",
@@ -153,7 +159,7 @@ export class ProductsService {
           ]
         ),
         "",
-        [""]
+        ["cit_1.jpg"]
       ),
       new Product(
         "AUTOMATIC CHEMICAL DOSING SYSTEM",
@@ -167,7 +173,7 @@ export class ProductsService {
           ]
         ),
         "",
-        [""]
+        ["cit_1.jpg"]
       )
     ];
   }

@@ -1,5 +1,15 @@
 @import "../../../../../assets/variables";
 
+::ng-deep .arrow-container .prev:before {
+    background-image: red !important;
+}
+
+.next {
+    &:before {
+        background-image: red !important;
+    }
+}
+
 .modal {
     position: fixed;
     left: 0;
@@ -108,6 +118,7 @@
                     text-shadow: 4px 4px 30px rgba(0, 0, 0, 1);
                     font-size: 75px;
                     position: absolute;
+                    cursor: pointer;
                     top: 50%;
                     transform: translateY(-50%);
 
@@ -203,4 +214,6 @@
             align-items: center;
         }
     }
+
+
 }

@@ -1,4 +1,11 @@
-import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
+import {
+  Component,
+  OnInit,
+  Input,
+  Output,
+  EventEmitter,
+  ViewChild
+} from "@angular/core";
 import { Product } from "src/app/models/product.model";
 import { SolutionType } from "../../../../models/suitable-type.model";
 import { SolutionBenefitType } from "src/app/models/solution-benefit-type";
@@ -13,6 +20,8 @@ export class ProductDetailDesktopComponent implements OnInit {
   types: Array<{ key: string; value: string }>;
   @Output() close: EventEmitter<boolean> = new EventEmitter();
 
+  @ViewChild("slideshow") slideshow: any;
+
   constructor() {}
 
   ngOnInit() {
@@ -22,11 +31,28 @@ export class ProductDetailDesktopComponent implements OnInit {
         : [];
   }
 
+  swipeLeft() {
+    this.slideshow.onSlide(-1); // previous slide
+  }
+  swipeRight() {
+    this.slideshow.onSlide(1);
+  }
+
   get solutionBenefits() {
     const {
       solution: { benefits }
     } = this.product;
     return benefits;
+  }
+
+  get imageSources() {
+    if (!this.product.media || !this.product.media.length) {
+      return ["../../../../../assets/images/people.jpg"];
+    }
+
+    return this.product.media.map(string => {
+      return "../../../../../assets/images/product/" + string;
+    });
   }
 
   private _convertToDictionary() {
