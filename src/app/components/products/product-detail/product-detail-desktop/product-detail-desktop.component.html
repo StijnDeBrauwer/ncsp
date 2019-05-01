@@ -30,16 +30,38 @@
               {{ product?.description }}
             </div>
           </mat-tab>
+          <mat-tab label="Benefits">
+            <div class="details benefitContainer">
+              <div>
+                <h1>Benefits</h1>
+                {{ product?.solution.benefitDescription }}
+              </div>
+              <div>
+                <span
+                  class="benefitString"
+                  *ngFor="let solution of solutionBenefits"
+                >
+                  <div class="legend-item">
+                    <div
+                      [ngStyle]="{
+                        'background-color': getColorByBenefit(solution),
+                        'margin-right': benefits ? '0' : '10px'
+                      }"
+                      class="colored"
+                    >
+                      {{ getTextByBenefit(solution) }}
+                    </div>
+                  </div>
+
+                  {{ solution }}
+                </span>
+              </div>
+            </div>
+          </mat-tab>
           <mat-tab label="Tech specs">
             <div class="details">
               <h1>Tech specs</h1>
               <div [innerHtml]="product.specString"></div>
-            </div>
-          </mat-tab>
-          <mat-tab label="Benefits">
-            <div class="details">
-              <h1>Benefits</h1>
-              {{ product?.solution.benefitDescription }}
             </div>
           </mat-tab>
         </mat-tab-group>

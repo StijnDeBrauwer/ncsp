@@ -1,22 +1,30 @@
 <div class="product-container" (click)="showModal()">
-    <div class="product-header">
-        <img src="../../../assets/images/product_1.jpg"/>
+  <div class="product-header">
+    <img src="../../../assets/images/product_1.jpg" />
 
-        <div class="label-container">
-            <span class="outer-span" [innerHTML]="spans()"></span>
-        </div>
+    <div class="label-container">
+      <span class="outer-span" [innerHTML]="spans()"></span>
     </div>
+  </div>
 
-    <div class="product-content">
-        <span class="suitable-for">Suitable for</span>
-        <ul>
-          <li>Fillers</li>
-          <li>Any brand/any type</li>
-        </ul>
-    </div>
+  <div class="product-content">
+    <span class="suitable-for">Suitable for</span>
+    <ul>
+      <li>
+        <span *ngFor="let type of types">
+          {{ type.value }}
+        </span>
+      </li>
+      <li>Any brand/any type</li>
+    </ul>
+  </div>
 
-    <div *ngIf="solutionBenefits" class="product-footer">
-        <app-legend [productBenefits]="solutionBenefits"></app-legend>
-    </div>
+  <div *ngIf="solutionBenefits" class="product-footer">
+    <app-legend [productBenefits]="solutionBenefits"></app-legend>
+  </div>
 </div>
-<app-product-detail [product]="product" *ngIf="isModalVisible" (close)="close()"></app-product-detail>
+<app-product-detail
+  [product]="product"
+  *ngIf="isModalVisible"
+  (close)="close()"
+></app-product-detail>

@@ -13,12 +13,21 @@ $candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include angular-material-theme($candy-app-theme);
+
+@font-face {
+    font-family: 'Marco-Müller';
+    src: url('./assets/Fonts/Marco-Müller-Melbourne.ttf');
+}
+
+
+
 body,
 html {
     margin: 0;
     padding: 0;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Marco-Müller', sans-serif;
     font-size: 15px; //on mobile
+
     @media (max-width: 767px) {
         width: 100%;
         height: 100%;
@@ -47,17 +56,21 @@ h3 {
 .article {
     max-width: 100%;
     background-color: white;
+
     h2 {
         color: $main-color;
         font-size: $font-size-large;
         text-transform: uppercase;
     }
+
     &:nth-child(odd) {
         background-color: #F7F8F9;
+
         img {
             order: 1;
         }
     }
+
     .content {
         padding: 10px;
         padding-top: 0;
@@ -67,31 +80,38 @@ h3 {
         align-items: center;
         justify-content: center;
         position: relative;
+
         img {
             @media screen and (max-width: 768px) {
                 order: 2;
             }
+
             display: block;
             margin: 2% 0;
             max-height: 25vh;
         }
     }
+
     .logo-history {
         display: flex;
         justify-content: space-evenly;
         flex-direction: column;
         align-items: center;
+
         .origin-photo {
             padding: 5px;
+
             img {
                 width: 125px;
                 margin-bottom: 5px;
+
                 &:last-of-type {
                     margin-bottom: 20px;
                 }
             }
         }
     }
+
     &.image-banner {
         img {
             width: 100%;
@@ -110,6 +130,7 @@ h3 {
                 }
             }
         }
+
         .content {
             padding: 2% 10%;
             display: flex;
@@ -117,11 +138,13 @@ h3 {
             align-items: center;
             text-align: left;
             position: relative;
+
             .paragraph {
                 flex: 2;
                 text-align: left;
                 min-width: 75%;
             }
+
             img {
                 display: block;
                 max-height: 25vh;
@@ -131,10 +154,12 @@ h3 {
                 margin: 0 2% 0 0;
             }
         }
+
         .logo-history {
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
+
             img {
                 display: block;
                 margin: 0;
@@ -150,9 +175,11 @@ h3 {
     .article {
         display: flex;
         justify-content: center;
+
         .content {
             max-width: 1024px;
         }
+
         &.image-banner {
             img {
                 max-width: 800px;
@@ -187,11 +214,14 @@ h2 {
     align-items: center;
     padding: 10% 0;
     margin-top: $nav-bar-height;
+
     @media screen and (max-width: 768px) {
         margin-top: $nav-bar-height-mobile;
     }
+
     filter: contrast(150%) brightness(100%) grayscale(1px);
     text-align: center;
+
     &:before {
         content: '';
         position: absolute;
@@ -200,26 +230,32 @@ h2 {
         bottom: 0;
         left: 0;
         background-image: linear-gradient(to bottom right, #002f4b, #dc4225);
-        opacity: .75;
+        opacity: .45;
     }
+
     * {
         z-index: 10;
     }
+
     @media (min-width: 768px) {
         text-align: left;
         align-items: flex-start;
     }
+
     .content {
         h1 {
             margin: 0;
             padding: 0;
         }
+
         @media (min-width: 768px) {
             margin-left: 10%;
+
             h1 {
                 margin: 10% 0;
             }
         }
+
         .banner-button {
             z-index: 1;
             cursor: pointer;
@@ -229,11 +265,13 @@ h2 {
             color: white;
             padding: 1em 1.5em 1em 1em;
             position: relative;
+
             &.outlined {
                 background-color: transparent;
                 border: 5px solid $main-color;
                 color: $main-color;
             }
+
             .ion-ios-arrow-forward,
             .ion-ios-arrow-back {
                 display: inline-block;
@@ -242,6 +280,7 @@ h2 {
             }
         }
     }
+
     h1 {
         margin-left: 10%;
     }
@@ -260,6 +299,7 @@ h2 {
     align-items: center;
     box-shadow: 7px 7px 21px -5px rgba(0, 0, 0, 0.75);
     outline: none;
+
     &:hover {
         cursor: pointer;
     }

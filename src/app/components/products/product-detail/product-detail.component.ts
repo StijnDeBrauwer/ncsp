@@ -16,7 +16,6 @@ export class ProductDetailComponent implements OnInit {
     constructor(private responsiveService: ResponsiveService) {
         this.responsiveService.checkWidth();
         this.responsiveService.getMobileStatus().subscribe(isMobile => {
-            console.log('got response', isMobile);
             this.isMobile = isMobile;
         });
     }

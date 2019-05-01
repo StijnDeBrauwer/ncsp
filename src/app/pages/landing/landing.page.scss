@@ -1,151 +1,166 @@
 @import "../../../assets/variables";
 
 section#landing-page {
-  padding: 0;
-  margin: 0;
+    padding: 0;
+    margin: 0;
 
-  h2 {
-    color: $main-color;
-    font-size: $font-size-large;
-    text-transform: uppercase;
-  }
-
-  .animated {
-    visibility: visible !important;
-  }
-  .hide-on-init {
-    visibility: hidden;
-  }
-
-  .index-banner {
-    color: white;
-    height: auto;
-    min-height: 100vh;
-    background-size: cover;
-    background: url("../../../assets/images/background.jpg") no-repeat center center;
-    -webkit-background-size: cover; /* For WebKit*/
-    -moz-background-size: cover; /* Mozilla*/
-    -o-background-size: cover; /* Opera*/
-    background-size: cover; /* Generic*/
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-
-    &:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background-image: linear-gradient(to bottom right, #002f4b, #dc4225);
-      opacity: .75;
-      z-index: 0;
+    h2 {
+        color: $main-color;
+        font-size: $font-size-large;
+        text-transform: uppercase;
     }
 
-    .welcome-text {
-      padding:0;
-      margin:0;
-      //margin: 25px;
-      z-index: 10;
-      color: $main-color;
-      font-size: 50px;
-      font-weight: bolder;
-      text-align: center;
-
-    }
-    .welcome-button {
-      z-index: 1;
-      cursor: pointer;
-      border-radius: 100px;
-      font-size: 1.2em;
-      background-color: $main-color;
-      color: white;
-      margin-top: 25px;
-      padding: 0.8em 1em 0.8em 0.8em;
-      position: relative;
-      .ion-ios-arrow-forward {
-        display: inline-block;
-        transition: left .5s ease-in-out;
-        padding-left: 2px;
-      }
-      &:hover {
-        .ion-ios-arrow-forward {
-          padding-left: 5px;
-        }
-      }
-    }
-  }
-
-
-
-  .quote {
-    min-height: 30vh;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-size: cover;
-    -webkit-background-size: cover; /* For WebKit*/
-    -moz-background-size: cover; /* Mozilla*/
-    -o-background-size: cover; /* Opera*/
-    background-size: cover; /* Generic*/
-
-    h1 {
-      text-align: center;
-      font-size: 2.5em;
+    .animated {
+        visibility: visible !important;
     }
 
-    .goal-container {
-      display: flex;
-      justify-content: space-evenly;
-      align-items: center;
-      flex-direction: column;
-      width: 100%;
-      .goal-item {
-        height: 250px;
-        width: 250px;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-        mat-icon {
-          margin: 0;
-          background-color: $light-grey;
-          border-radius: 50%;
-          height: 100px;
-          width: 100px;
-          font-size: 75px !important;
-          padding: 20px;
-          text-align: center;
-          line-height: 100px;
-        }
-        h2 {
-          text-align: center;
-        }
-      }
+    .hide-on-init {
+        visibility: hidden;
     }
-  }
 
-  @media (min-width: 768px) {
     .index-banner {
-      align-items: flex-start;
+        color: white;
+        height: auto;
+        min-height: 100vh;
+        background-size: cover;
+        background: url("../../../assets/images/background.jpg") no-repeat center center;
+        -webkit-background-size: cover;
+        /* For WebKit*/
+        -moz-background-size: cover;
+        /* Mozilla*/
+        -o-background-size: cover;
+        /* Opera*/
+        background-size: cover;
+        /* Generic*/
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
 
-      .welcome-button {
-        //margin-left: 50px;
-      }
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-image: linear-gradient(to bottom right, #002f4b, #dc4225);
+            opacity: .45;
+            z-index: 0;
+        }
+
+        .welcome-text {
+            padding: 0;
+            margin: 0;
+            //margin: 25px;
+            z-index: 10;
+            color: $main-color;
+            font-size: 50px;
+            font-weight: bolder;
+            text-align: center;
+
+        }
+
+        .welcome-button {
+            z-index: 1;
+            cursor: pointer;
+            border-radius: 100px;
+            font-size: 1.2em;
+            background-color: $main-color;
+            color: white;
+            margin-top: 25px;
+            padding: 0.8em 1em 0.8em 0.8em;
+            position: relative;
+
+            .ion-ios-arrow-forward {
+                display: inline-block;
+                transition: left .5s ease-in-out;
+                padding-left: 2px;
+            }
+
+            &:hover {
+                .ion-ios-arrow-forward {
+                    padding-left: 5px;
+                }
+            }
+        }
     }
+
 
 
     .quote {
-      .goal-container {
-        flex-direction: row;
-      }
+        min-height: 30vh;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-size: cover;
+        -webkit-background-size: cover;
+        /* For WebKit*/
+        -moz-background-size: cover;
+        /* Mozilla*/
+        -o-background-size: cover;
+        /* Opera*/
+        background-size: cover;
+        /* Generic*/
+
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+        }
+
+        .goal-container {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+
+            .goal-item {
+                height: 250px;
+                width: 250px;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+
+                mat-icon {
+                    margin: 0;
+                    background-color: $light-grey;
+                    border-radius: 50%;
+                    height: 100px;
+                    width: 100px;
+                    font-size: 75px !important;
+                    padding: 20px;
+                    text-align: center;
+                    line-height: 100px;
+                }
+
+                h2 {
+                    text-align: center;
+                }
+            }
+        }
     }
 
-  }
+    @media (min-width: 768px) {
+        .index-banner {
+            align-items: flex-start;
+
+            .welcome-button {
+                //margin-left: 50px;
+            }
+        }
+
+
+        .quote {
+            .goal-container {
+                flex-direction: row;
+            }
+        }
+
+    }
 
 }

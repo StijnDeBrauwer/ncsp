@@ -77,7 +77,6 @@ export class DesktopNavbarComponent implements OnInit, AfterViewInit, OnDestroy 
 
     openLanguagePicker() {
         if (this.subMenuOpen) {
-            console.log('close submenu');
             this.subMenuOpen = false;
         }
         this.scrollService.isTransparent = false;

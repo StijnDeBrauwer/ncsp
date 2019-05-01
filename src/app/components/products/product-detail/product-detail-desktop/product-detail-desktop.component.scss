@@ -1,4 +1,5 @@
 @import "../../../../../assets/variables";
+
 .modal {
     position: fixed;
     left: 0;
@@ -9,24 +10,33 @@
     z-index: 3000;
     background-color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, 0.4);
+
     .icon-close {
         cursor: pointer;
         padding: 15px;
         font-size: 30px;
     }
 
-    .benefit-container{
+    .benefit-container {
         padding: 15px 0;
     }
+
+    .menu {
+        min-height: 80%;
+        max-height: 720px;
+    }
+
     .details {
         // padding: 2% 10%;
         padding: 15px 0;
+
         h1 {
             font-size: 1.5em;
             padding: 0;
             margin: 2% 0;
         }
     }
+
     .product-modal {
         max-width: 1280px;
         max-height: 720px;
@@ -41,12 +51,14 @@
         display: flex;
         flex-direction: row;
         overflow: hidden;
+
         .title-container {
             display: flex;
             flex-direction: column;
             align-items: center;
             flex: 2;
             position: relative;
+
             h1 {
                 position: absolute;
                 top: 0;
@@ -61,16 +73,19 @@
                 background-color: $main-color;
                 padding: 5px 8px;
             }
+
             .slideshow {
                 position: relative;
                 width: 100%;
                 height: 100%;
                 overflow: hidden;
+
                 img {
                     height: 100%;
                     width: 100%;
                     border-radius: 2.5px;
                     box-shadow: 7px 7px 21px -5px rgba(0, 0, 0, 0.75);
+
                     :before {
                         content: "";
                         position: absolute;
@@ -78,11 +93,12 @@
                         right: 0;
                         bottom: 0;
                         left: 0;
-                        background-image: linear-gradient( to bottom right, #002f4b, #dc4225);
-                        opacity: 0.75;
+                        background-image: linear-gradient(to bottom right, #002f4b, #dc4225);
+                        opacity: 0.45;
                         z-index: 0;
                     }
                 }
+
                 i {
                     color: $main-color;
                     text-shadow: 4px 4px 30px rgba(0, 0, 0, 1);
@@ -90,47 +106,97 @@
                     position: absolute;
                     top: 50%;
                     transform: translateY(-50%);
+
                     &:first-of-type {
                         left: 0;
                     }
+
                     &:last-of-type {
                         right: 0;
                     }
                 }
             }
         }
+
         .content-container {
             padding: 0 2% 0 5%;
             flex: 2;
+
             .content-title {
                 display: flex;
                 justify-content: space-between;
+
                 .benefit {
                     text-transform: uppercase;
                     font-weight: 600;
                 }
+
                 h1 {
                     padding: 0;
                     text-transform: uppercase;
-                    font-size: 0.8em;
+                    font-size: 1.5em;
                     margin: 5px 0;
                 }
             }
         }
     }
+
     ::ng-deep .mat-tab-labels {
         justify-content: space-between !important;
     }
+
     ::ng-deep .mat-tab-label-active {
         color: $main-color !important;
         opacity: 1 !important;
     }
+
     ::ng-deep .mat-tab-label {
         padding: 0 10px !important;
         min-width: 100px !important;
     }
+
     ::ng-deep .mat-tab-labels {
         justify-content: center;
         /* align items in Main Axis */
+    }
+
+
+    .benefitContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 100%;
+    }
+
+    .benefitString {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 10px 0;
+
+    }
+
+    .legend-item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        .colored {
+            padding: 10px;
+
+            @media screen and (max-width: 768px) {
+                padding: 7px;
+            }
+
+            border-radius: 50%;
+            color: white;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     }
 }
