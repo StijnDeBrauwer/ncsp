@@ -14,9 +14,17 @@ $candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-
 // that you are using.
 @include angular-material-theme($candy-app-theme);
 
+// @font-face {
+//     font-family: 'Marco-Müller';
+//     src: url('./assets/Fonts/Marco-Müller-Melbourne.otf') format('opentype');
+// }
+
 @font-face {
-    font-family: 'Marco-Müller';
-    src: url('./assets/Fonts/Marco-Müller-Melbourne.otf') format('opentype');
+  font-family: 'Marco-Müller';
+  src: url('./assets/Fonts/Melbourne-Regular.woff2') format('woff2'),
+      url('./assets/Fonts/Melbourne-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
 
@@ -78,7 +86,7 @@ h3 {
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
+        //justify-content: center;
         position: relative;
 
         img {
@@ -176,7 +184,7 @@ h3 {
 
 @media (min-width: 1280px) {
     .article {
-        display: flex;
+        display: block;
 
         .content {
             padding: 2% 10%;

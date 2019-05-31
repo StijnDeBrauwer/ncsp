@@ -35,8 +35,6 @@
     }
   }
 
-
-
   ::ng-deep app-slide-side-navigation {
     display: flex;
     justify-content: center;
@@ -58,6 +56,18 @@
       font-size: 1.5em;
       margin: 0;
       color: $main-color;
+    }
+
+    ::ng-deep .mat-checkbox-layout {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+
+      ::ng-deep .mat-checkbox-inner-container {
+        margin: 0;
+        margin-right: 10px;
+      }
     }
   }
 }

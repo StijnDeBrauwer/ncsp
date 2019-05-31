@@ -23,6 +23,10 @@ section#desktop-navigation {
     color: white !important;
     box-shadow: none !important;
 
+    a {
+      color: white !important;
+    }
+
     div#navigation{
       box-shadow: 0 0 0 0;
 
@@ -87,7 +91,7 @@ section#desktop-navigation {
           font-size: 1.2em;
           font-weight: bold;
           text-decoration: none;
-          color: unset;
+          color: black;
 
           &.selected {
             color: $main-color !important;
