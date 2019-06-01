@@ -48,7 +48,7 @@ export class ProductsService {
           "Max machine width: 7000 mm.",
           " Drive system: by chain/cardanshaft or with synchronized electric motor. "
         ],
-        ["cit_1.jpg", "cit_2.jpg", "cit_3.jpg"]
+        ["default-placeholder.jpg"]
       ),
       new Product(
         "Automatic movable screen above discharge",
@@ -106,7 +106,7 @@ export class ProductsService {
           "1 additional pump and filtration system",
           " Modified cascade system "
         ],
-        ["frs_1.jpg", "frs_2.jpg", "frs_3.jpg"]
+        ["default-placeholder.jpg"]
       ),
       new Product(
         "Label extraction booster",
@@ -119,7 +119,7 @@ export class ProductsService {
         [
           "1 or 2 grid plates to be welded each tank equipped with label extraction system"
         ],
-        ["leb_1.jpg", "frs_2.jpg", "frs_3.jpg"]
+        ["leb_1.jpg"]
       ),
       new Product(
         "ROTATING INJECTION SYSTEM",
@@ -134,6 +134,7 @@ export class ProductsService {
           ]
         ),
         "",
+        [""],
         ["leb_1.jpg", "frs_2.jpg", "frs_3.jpg"]
       ),
       new Product(
@@ -144,7 +145,8 @@ export class ProductsService {
           [SolutionBenefitType.ENERGY_SAVING]
         ),
         "",
-        ["cit_1.jpg"]
+        [""],
+        ["default-placeholder.jpg"]
       ),
       new Product(
         "CAUSTIC FILTRATION IN PRODUCTION",
@@ -159,7 +161,8 @@ export class ProductsService {
           ]
         ),
         "",
-        ["cit_1.jpg"]
+        [""],
+        ["default-placeholder.jpg"]
       ),
       new Product(
         "AUTOMATIC CHEMICAL DOSING SYSTEM",
@@ -173,7 +176,8 @@ export class ProductsService {
           ]
         ),
         "",
-        ["cit_1.jpg"]
+        [""],
+        ["default-placeholder.jpg"]
       )
     ];
   }
