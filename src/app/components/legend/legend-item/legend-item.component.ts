@@ -1,17 +1,17 @@
-import { Component, OnInit, Input } from "@angular/core";
-import { SolutionBenefitType } from "../../../models/solution-benefit-type";
+import { Component, OnInit, Input } from '@angular/core';
+import { SolutionBenefitType } from '../../../models/solution-benefit-type';
 
 @Component({
-  selector: "app-legend-item",
-  templateUrl: "./legend-item.component.html",
-  styleUrls: ["./legend-item.component.scss"]
+  selector: 'app-legend-item',
+  templateUrl: './legend-item.component.html',
+  styleUrls: ['./legend-item.component.scss']
 })
 export class LegendItemComponent implements OnInit {
   @Input() solutionBenefit: string;
   @Input() benefits: Array<SolutionBenefitType>;
   color: string;
   text: string;
-  constructor() {}
+  constructor() { }
 
   ngOnInit() {
     this.text = this.getTextByBenefit();
@@ -30,23 +30,23 @@ export class LegendItemComponent implements OnInit {
   }
 
   getDefaultColor() {
-    return "lightgrey";
+    return 'lightgrey';
   }
 
   getColorByBenefit() {
     switch (this.solutionBenefit) {
       case SolutionBenefitType.EFFICIENCY:
-        return "orange";
+        return 'orange';
       case SolutionBenefitType.SAFETY:
-        return "red";
+        return 'red';
       case SolutionBenefitType.COST_SAVING:
-        return "black";
+        return 'black';
       case SolutionBenefitType.ENERGY_SAVING:
-        return "green";
+        return 'green';
       case SolutionBenefitType.WATER_SAVING:
-        return "blue";
+        return 'blue';
       case SolutionBenefitType.QUALITY_HYGIENE:
-        return "brown";
+        return 'brown';
       default:
         return null;
     }
@@ -55,17 +55,17 @@ export class LegendItemComponent implements OnInit {
   getTextByBenefit() {
     switch (this.solutionBenefit) {
       case SolutionBenefitType.EFFICIENCY:
-        return "EF";
+        return 'EF';
       case SolutionBenefitType.SAFETY:
-        return "SA";
+        return 'SA';
       case SolutionBenefitType.COST_SAVING:
-        return "CS";
+        return 'CS';
       case SolutionBenefitType.ENERGY_SAVING:
-        return "ES";
+        return 'ES';
       case SolutionBenefitType.WATER_SAVING:
-        return "WS";
+        return 'WS';
       case SolutionBenefitType.QUALITY_HYGIENE:
-        return "QH";
+        return 'QH';
       default:
         return null;
     }

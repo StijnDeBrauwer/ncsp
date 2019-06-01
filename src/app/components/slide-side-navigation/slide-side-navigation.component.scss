@@ -9,7 +9,7 @@ section#slide-side-navigation{
   background-color: white!important;
   z-index: 100;
   height: 100%;
-
+  -ms-overflow-style: -ms-autohiding-scrollbar;
 
   span.slide-out-button{
     position:absolute;
