@@ -20,11 +20,19 @@ $candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-
 // }
 
 @font-face {
-  font-family: 'Marco-Müller';
-  src: url('./assets/Fonts/Melbourne-Regular.woff2') format('woff2'),
-      url('./assets/Fonts/Melbourne-Regular.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'Marco-Müller';
+    src: url('./assets/Fonts/Melbourne-Regular.woff2') format('woff2'),
+        url('./assets/Fonts/Melbourne-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Marco-Müller-Bold';
+    src: url('./assets/Fonts/Marco-Müller-Melbourne-Bold.otf') format('otf');
+    font-weight: normal;
+    font-style: normal;
 }
 
 
@@ -33,13 +41,17 @@ body,
 html {
     margin: 0;
     padding: 0;
-    font-family: 'Marco-Müller', sans-serif;
+    font-family: 'Marco-Müller';
     font-size: 15px; //on mobile
 
     @media (max-width: 767px) {
         width: 100%;
         height: 100%;
         overflow-x: hidden;
+    }
+
+    strong {
+        font-family: 'Marco-Müller-Bold';
     }
 }
 

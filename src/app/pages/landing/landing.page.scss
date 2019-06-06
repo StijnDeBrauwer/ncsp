@@ -18,6 +18,18 @@ section#landing-page {
         visibility: hidden;
     }
 
+
+    #home_pic_container {}
+
+    #home_pic_2 {
+        max-height: unset;
+        height: 50vh;
+        width: auto;
+        max-width: unset;
+        margin-left: 2%;
+
+    }
+
     .index-banner {
         color: white;
         height: auto;
