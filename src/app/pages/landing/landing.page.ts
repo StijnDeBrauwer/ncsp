@@ -17,7 +17,7 @@ export class LandingPage implements OnInit, AfterViewInit,OnDestroy {
     @ViewChild('ourApproach', {read: ElementRef}) public approach: ElementRef
     @ViewChild('banner', {read: ElementRef}) public banner: ElementRef;
 
-    @HostListener('window:scroll', ['$event'])
+    @HostListener('document:scroll', [])
     checkScroll() {
         const scrollPosition = window.pageYOffset;
         if (this.isMobile) {

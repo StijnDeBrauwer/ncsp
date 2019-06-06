@@ -70,7 +70,7 @@ export class ProductCardComponent implements OnInit {
       return "../../../../../assets/images/product/" + this.product.media[0];
     }
 
-    return "../../../../../assets/images/people.jpg";
+    return "../../../../../assets/images/default-placeholder.jpg";
   }
 
   getColor(type) {
