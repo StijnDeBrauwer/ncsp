@@ -17,14 +17,16 @@ export class LandingPage implements OnInit, AfterViewInit,OnDestroy {
     @ViewChild('ourApproach', {read: ElementRef}) public approach: ElementRef
     @ViewChild('banner', {read: ElementRef}) public banner: ElementRef;
 
-    @HostListener('window:scroll', ['$event'])
+    @HostListener('document:scroll', [])
     checkScroll() {
         const scrollPosition = window.pageYOffset;
-        if (this.isMobile) {
-            return;
-        }
+        // if (this.isMobile) {
+        //     return;
+        // }
 
-        this.scrollDataService.isTransparent = 100 > scrollPosition;
+       
+
+        this.scrollDataService.isTransparent = window.pageYOffset < 100 || document.documentElement.scrollTop< 100 || document.body.scrollTop < 100;
         this.scrollDown = 100 > scrollPosition;
 
     }
