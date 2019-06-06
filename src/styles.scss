@@ -136,6 +136,7 @@ h3 {
         height: 50vh;
         overflow: hidden;
         position: relative;
+
         img {
             // width: 100vw;
             // height: auto;
@@ -144,8 +145,8 @@ h3 {
             width: 100%;
             position: absolute;
             top: 0;
-            left:0;
-            right:0;
+            left: 0;
+            right: 0;
             background-repeat: no-repeat;
             background-position: 50% 50%;
         }
@@ -183,6 +184,14 @@ h3 {
                 width: 100%;
                 // object-fit: contain;
                 margin: 0 2% 0 0;
+
+                &.full-image {
+                    max-height: unset;
+                    max-width: unset;
+                    width: auto;
+                    height: 50vh;
+                    // width: 30vw;
+                }
             }
         }
 
