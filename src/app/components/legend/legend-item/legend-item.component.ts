@@ -8,7 +8,7 @@ import { SolutionBenefitType } from '../../../models/solution-benefit-type';
 })
 export class LegendItemComponent implements OnInit {
   @Input() solutionBenefit: string;
-  @Input() benefits: Array<SolutionBenefitType>;
+  @Input() benefits: Array<{ type: SolutionBenefitType, description: string }>;
   color: string;
   text: string;
   constructor() { }
@@ -19,7 +19,7 @@ export class LegendItemComponent implements OnInit {
       this.color = this.getColorByBenefit();
     } else {
       const foundItem = this.benefits.find(
-        item => item === this.solutionBenefit
+        item => item.type === this.solutionBenefit
       );
       if (!foundItem) {
         this.color = this.getDefaultColor();

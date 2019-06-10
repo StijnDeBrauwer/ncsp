@@ -6,12 +6,12 @@ export class Solution {
   private _id: Number;
   private _types: Array<SolutionType>;
   private _suitableFor: Array<string>;
-  private _benefits: Array<SolutionBenefitType>;
+  private _benefits: Array<{ type: SolutionBenefitType, description: string }>;
 
   constructor(
     types: Array<SolutionType>,
     suitableFor: Array<string>,
-    benefits: Array<SolutionBenefitType>,
+    benefits: Array<{ type: SolutionBenefitType, description: string }>,
     id?: Number
   ) {
     this._types = types;
@@ -36,7 +36,7 @@ export class Solution {
     this._types = types;
   }
 
-  set benefits(benefits: Array<SolutionBenefitType>) {
+  set benefits(benefits: Array<{ type: SolutionBenefitType, description: string }>) {
     this._benefits = benefits;
   }
 
