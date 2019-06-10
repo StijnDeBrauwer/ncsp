@@ -48,7 +48,7 @@ export class ProductsService {
           "Max machine width: 7000 mm.",
           " Drive system: by chain/cardanshaft or with synchronized electric motor. "
         ],
-        ["default-placeholder.jpg"]
+        ["cdt_1.jpg", "cdt_2.jpg", "cdt_3.jpg"]
       ),
       new Product(
         "Automatic movable screen above discharge",
@@ -92,22 +92,22 @@ export class ProductsService {
         ],
         ["frs_1.jpg", "frs_2.jpg", "frs_3.jpg"]
       ),
-      new Product(
-        "POST CAUSTIC LOCK",
-        new Solution(
-          [SolutionType.BOTTLE_WASHERS],
-          ["all brands", "double end"],
-          [SolutionBenefitType.QUALITY_HYGIENE, SolutionBenefitType.COST_SAVING]
-        ),
-        "This upgrade consists in adding injection and shower beams just after the last caustic soaking tank, which will spray off the bottles with water from the final rinsing zone. A clever cascade system will also prevent the water from the last soaking tank before the final rinsing zone to heat up due to heat carry over with the bottle carriers.",
-        [
-          "Additional stainless steel sump",
-          "2 additional injection beams and 1 additional showerbeam",
-          "1 additional pump and filtration system",
-          " Modified cascade system "
-        ],
-        ["default-placeholder.jpg"]
-      ),
+      // new Product(
+      //   "POST CAUSTIC LOCK",
+      //   new Solution(
+      //     [SolutionType.BOTTLE_WASHERS],
+      //     ["all brands", "double end"],
+      //     [SolutionBenefitType.QUALITY_HYGIENE, SolutionBenefitType.COST_SAVING]
+      //   ),
+      //   "This upgrade consists in adding injection and shower beams just after the last caustic soaking tank, which will spray off the bottles with water from the final rinsing zone. A clever cascade system will also prevent the water from the last soaking tank before the final rinsing zone to heat up due to heat carry over with the bottle carriers.",
+      //   [
+      //     "Additional stainless steel sump",
+      //     "2 additional injection beams and 1 additional showerbeam",
+      //     "1 additional pump and filtration system",
+      //     " Modified cascade system "
+      //   ],
+      //   ["default-placeholder.jpg"]
+      // ),
       new Product(
         "Label extraction booster",
         new Solution(
@@ -120,65 +120,65 @@ export class ProductsService {
           "1 or 2 grid plates to be welded each tank equipped with label extraction system"
         ],
         ["leb_1.jpg"]
-      ),
-      new Product(
-        "ROTATING INJECTION SYSTEM",
-        new Solution(
-          [SolutionType.BOTTLE_WASHERS],
-          ["all brands", "double end"],
-          [
-            SolutionBenefitType.WATER_SAVING,
-            SolutionBenefitType.ENERGY_SAVING,
-            SolutionBenefitType.QUALITY_HYGIENE,
-            SolutionBenefitType.COST_SAVING
-          ]
-        ),
-        "",
-        [""],
-        ["leb_1.jpg", "frs_2.jpg", "frs_3.jpg"]
-      ),
-      new Product(
-        "WALL INSULATION",
-        new Solution(
-          [SolutionType.BOTTLE_WASHERS],
-          ["all brands", "single end and double end"],
-          [SolutionBenefitType.ENERGY_SAVING]
-        ),
-        "",
-        [""],
-        ["default-placeholder.jpg"]
-      ),
-      new Product(
-        "CAUSTIC FILTRATION IN PRODUCTION",
-        new Solution(
-          [SolutionType.BOTTLE_WASHERS],
-          ["all brands", "single end and double end"],
-          [
-            SolutionBenefitType.WATER_SAVING,
-            SolutionBenefitType.ENERGY_SAVING,
-            SolutionBenefitType.QUALITY_HYGIENE,
-            SolutionBenefitType.COST_SAVING
-          ]
-        ),
-        "",
-        [""],
-        ["default-placeholder.jpg"]
-      ),
-      new Product(
-        "AUTOMATIC CHEMICAL DOSING SYSTEM",
-        new Solution(
-          [SolutionType.BOTTLE_WASHERS],
-          ["all brands", "single end and double end"],
-          [
-            SolutionBenefitType.QUALITY_HYGIENE,
-            SolutionBenefitType.COST_SAVING,
-            SolutionBenefitType.SAFETY
-          ]
-        ),
-        "",
-        [""],
-        ["default-placeholder.jpg"]
       )
+      // new Product(
+      //   "ROTATING INJECTION SYSTEM",
+      //   new Solution(
+      //     [SolutionType.BOTTLE_WASHERS],
+      //     ["all brands", "double end"],
+      //     [
+      //       SolutionBenefitType.WATER_SAVING,
+      //       SolutionBenefitType.ENERGY_SAVING,
+      //       SolutionBenefitType.QUALITY_HYGIENE,
+      //       SolutionBenefitType.COST_SAVING
+      //     ]
+      //   ),
+      //   "",
+      //   [""],
+      //   ["leb_1.jpg", "frs_2.jpg", "frs_3.jpg"]
+      // ),
+      // new Product(
+      //   "WALL INSULATION",
+      //   new Solution(
+      //     [SolutionType.BOTTLE_WASHERS],
+      //     ["all brands", "single end and double end"],
+      //     [SolutionBenefitType.ENERGY_SAVING]
+      //   ),
+      //   "",
+      //   [""],
+      //   ["default-placeholder.jpg"]
+      // ),
+      // new Product(
+      //   "CAUSTIC FILTRATION IN PRODUCTION",
+      //   new Solution(
+      //     [SolutionType.BOTTLE_WASHERS],
+      //     ["all brands", "single end and double end"],
+      //     [
+      //       SolutionBenefitType.WATER_SAVING,
+      //       SolutionBenefitType.ENERGY_SAVING,
+      //       SolutionBenefitType.QUALITY_HYGIENE,
+      //       SolutionBenefitType.COST_SAVING
+      //     ]
+      //   ),
+      //   "",
+      //   [""],
+      //   ["default-placeholder.jpg"]
+      // ),
+      // new Product(
+      //   "AUTOMATIC CHEMICAL DOSING SYSTEM",
+      //   new Solution(
+      //     [SolutionType.BOTTLE_WASHERS],
+      //     ["all brands", "single end and double end"],
+      //     [
+      //       SolutionBenefitType.QUALITY_HYGIENE,
+      //       SolutionBenefitType.COST_SAVING,
+      //       SolutionBenefitType.SAFETY
+      //     ]
+      //   ),
+      //   "",
+      //   [""],
+      //   ["default-placeholder.jpg"]
+      // )
     ];
   }
 
