@@ -78,8 +78,8 @@ export class ProductsService {
           [
             { type: SolutionBenefitType.WATER_SAVING, description: 'Strongly reduced water and energy consumption because of interrupted water injection and pressure control - no bottle = no water. ' },
             { type: SolutionBenefitType.ENERGY_SAVING, description: 'Water used in the machine extracts heat from the process. When less water is consumed and drained, a lot of energy is therefore saved and remains in the machine.' },
-            { type: SolutionBenefitType.QUALITY_HYGIENE, description: 'D92	Highly improved rinsing and cooling of bottles. Slanted and rounded tanks allow a better cleaning and an improved hygiene. Efficient filtration system avoids the blocking of the nozzles hence a constant injection.' },
-            { type: SolutionBenefitType.SAFETY, description: 'D98	The closed filtration system and renewed windows protect the operator from contact with hot water.' },
+            { type: SolutionBenefitType.QUALITY_HYGIENE, description: 'Highly improved rinsing and cooling of bottles. Slanted and rounded tanks allow a better cleaning and an improved hygiene. Efficient filtration system avoids the blocking of the nozzles hence a constant injection.' },
+            { type: SolutionBenefitType.SAFETY, description: 'The closed filtration system and renewed windows protect the operator from contact with hot water.' },
             { type: SolutionBenefitType.COST_SAVING, description: 'The very simple mechanical system with rotating stars will reduce neded time for overhaul and cost of spare parts.' }
           ]
         ),

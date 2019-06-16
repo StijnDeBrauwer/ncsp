@@ -1,6 +1,8 @@
 <div class="product-container" (click)="showModal()">
   <div class="product-header">
-    <img [src]="image" />
+    <div class="image-container">
+      <img [src]="image" />
+    </div>
 
     <div class="label-container">
       <span class="outer-span" [innerHTML]="spans()"></span>
@@ -23,8 +25,4 @@
     <app-legend [productBenefits]="solutionBenefits"></app-legend>
   </div>
 </div>
-<app-product-detail
-  [product]="product"
-  *ngIf="isModalVisible"
-  (close)="close()"
-></app-product-detail>
+<app-product-detail [product]="product" *ngIf="isModalVisible" (close)="close()"></app-product-detail>

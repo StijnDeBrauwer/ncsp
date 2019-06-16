@@ -1,7 +1,7 @@
 <section id="landing-page">
   <div class="index-banner page" #banner>
     <div class="welcome-text">
-      Global Experts in RGB
+      GLOBAL EXPERTS IN RGB EQUIPMENT
     </div>
     <div class="welcome-button" (click)="scrollToVision()">
       More about us
@@ -9,13 +9,13 @@
     </div>
   </div>
 
-  <scroll-button [scrollDown]="scrollDown" (onScroll)="scroll()"></scroll-button>
+  <scroll-button *ngIf="!isMobile" [scrollDown]="scrollDown" (onScroll)="scroll()"></scroll-button>
 
   <div #ourVision class="article">
     <div class="content image-text">
       <img src="../../../assets/images/home/home_pic_2.jpg" id="home_pic_2" />
       <div class="image-text">
-        <h2>Restore beyond design performance</h2>
+        <h2>RESTORE BEYOND DESIGN PERFORMANCE</h2>
         <p>
           NEW CROWN offers solutions to modernize and upgrade existing
           NEW CROWN offers solutions to modernize and upgrade existing Returnable Glass Bottling equipment, not only to
@@ -93,7 +93,7 @@
       <div class="image-text">
         <h2>STRONG TEAM</h2>
         <p>
-          he NCSP team is a great mix of seasoned experience and young enthusiasm, of proven solutions and new
+          The NCSP team is a great mix of seasoned experience and young enthusiasm, of proven solutions and new
           technologies. We offer global services, in Belgium, Europe, Asia and outside, with a special knack for Africa,
           where we have a longtime experience, and where we know we can make a difference.
         </p>
@@ -101,7 +101,7 @@
     </div>
   </div>
 
-  <div class="image-banner">
+  <div class="article image-banner" id="homepic3">
     <img src="../../../assets/images/home/home_pic_6.jpg" />
   </div>
 
@@ -117,11 +117,9 @@
           LAMBRECHTS GROUP AS A STRONG PARTNER
         </h2>
         <p>
-          NEW CROWN is proud to have a strategic partnership with LAMBRECHTS GROUP, who has a long and successful
-          track
+          NEW CROWN is proud to have a strategic partnership with LAMBRECHTS GROUP, who has a long and successful track
           record as an equipment manufacturer of kegging lines and industrial washing installations in the brewery
-          industry. The many synergies between NEW CROWN and Lambrechts Group strengthens their positions on the
-          market.
+          industry. The many synergies between NEW CROWN and Lambrechts Group strengthens their positions on the market.
         </p>
       </div>
     </div>

@@ -30,7 +30,8 @@ $candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-
 
 @font-face {
     font-family: 'Marco-Müller-Bold';
-    src: url('./assets/Fonts/Marco-Müller-Melbourne-Bold.otf') format('otf');
+    src: url('./assets/Fonts/Marco-Müller-Melbourne-Bold.woff') format('woff'),
+         url('./assets/Fonts/Marco-Müller-Melbourne-Bold.otf') format('otf');
     font-weight: normal;
     font-style: normal;
 }
@@ -52,6 +53,7 @@ html {
 
     strong {
         font-family: 'Marco-Müller-Bold';
+        font-weight: bolder;
     }
 }
 

@@ -16,10 +16,9 @@
         <div class="paragraph">
           <h2>UPGRADES, CONVERSIONS AND SPARE PARTS …</h2>
           <p>
-            NCSP helps you maintaining and improving the efficiency and
-            effectivity of your bottling line. We offer upgrades, conversions
-            and spare parts for wide range of brands and ages of machines for
-            glass bottling lines.
+            NCSP helps you maintaining and improving the efficiency and effectivity of your bottling line. We offer
+            upgrades, conversions and spare parts for a wide range of brands and ages of machines for glass bottling
+            lines
           </p>
 
           Our specialty:
@@ -44,11 +43,10 @@
         <div class="paragraph">
           <h2>FOR ALL MAKES, ALL BRANDS, ALL AGES</h2>
           <p>
-            Why replace your machine if your old machine can be brought to meet
-            current standards in terms of efficiency and consumptions? To
-            original design performance and even beyond. We work on a wide array
-            of old and current brands, such as CROWN-BAELE, GANGLOFF, SIMONAZZI,
-            HOLSTEIN & KAPPERT, ORTMANN & HERBST, ...
+            Why replace your machine if your old machine can be brought to meet current standards in terms of efficiency
+            and consumptions? To original design performance and even beyond.
+            We work on a wide array of old and current brands, such as CROWN-BAELE, GANGLOFF, SIMONAZZI, HOLSTEIN &
+            KAPPERT, ORTMANN & HERBST, ...
           </p>
         </div>
       </div>
@@ -56,25 +54,16 @@
   </div>
 
   <div #productsView class="productsContainer">
-    <app-product-list
-      (onProductSelected)="onProductClick()"
-      [products]="currentProducts"
-    ></app-product-list>
+    <app-product-list (onProductSelected)="onProductClick()" [products]="currentProducts"></app-product-list>
   </div>
 
-  <app-slide-side-navigation
-    [isOpen]="filtersOpen"
-    (onOpenStateChange)="filtersOpen = $event"
-    style="-ms-overflow-style: -ms-autohiding-scrollbar;"
-  >
+  <app-slide-side-navigation [isOpen]="filtersOpen" (onOpenStateChange)="filtersOpen = $event"
+    style="-ms-overflow-style: -ms-autohiding-scrollbar;">
     <div class="slide-nav-content">
       <h1>Suitable for</h1>
       <ul>
         <li *ngFor="let solutionType of solutionTypes; let i = index">
-          <mat-checkbox
-            [checked]="solutionType.checked"
-            (change)="updateSolutionTypes(i)"
-            >{{ solutionTypes[i].value }}
+          <mat-checkbox [checked]="solutionType.checked" (change)="updateSolutionTypes(i)">{{ solutionTypes[i].value }}
           </mat-checkbox>
         </li>
       </ul>
@@ -82,13 +71,8 @@
       <h1>Benefit</h1>
       <ul>
         <li *ngFor="let benefitType of benefitTypes; let i = index">
-          <mat-checkbox
-            [checked]="benefitType.checked"
-            (change)="updateBenefitTypes(i)"
-          >
-            <app-legend-item
-              [solutionBenefit]="benefitType.value"
-            ></app-legend-item>
+          <mat-checkbox [checked]="benefitType.checked" (change)="updateBenefitTypes(i)">
+            <app-legend-item [solutionBenefit]="benefitType.value"></app-legend-item>
           </mat-checkbox>
         </li>
       </ul>
