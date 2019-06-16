@@ -1,4 +1,11 @@
-import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
+import {
+  Component,
+  OnInit,
+  Input,
+  Output,
+  EventEmitter,
+  ViewChild
+} from "@angular/core";
 import { Product } from "src/app/models/product.model";
 import { SolutionType } from "src/app/models/suitable-type.model";
 import { SolutionBenefitType } from "src/app/models/solution-benefit-type";
@@ -12,6 +19,8 @@ export class ProductDetailMobileComponent implements OnInit {
   @Input() product: Product;
   types: Array<{ key: string; value: string }>;
   @Output() close: EventEmitter<boolean> = new EventEmitter();
+  @ViewChild("slideshow") slideshow: any;
+
   constructor() {}
 
   get color() {
@@ -28,6 +37,23 @@ export class ProductDetailMobileComponent implements OnInit {
       default:
         return "#EC6407";
     }
+  }
+
+  get imageSources() {
+    if (!this.product.media || !this.product.media.length) {
+      return ["../../../../../assets/images/people.jpg"];
+    }
+
+    return this.product.media.map(string => {
+      return "../../../../../assets/images/product/" + string;
+    });
+  }
+
+  swipeLeft() {
+    this.slideshow.onSlide(-1); // previous slide
+  }
+  swipeRight() {
+    this.slideshow.onSlide(1);
   }
 
   ngOnInit() {

@@ -15,9 +15,24 @@
           >
         </div>
 
-        <img src="../../../assets/images/people.jpg" />
-        <i class="material-icons left">keyboard_arrow_left</i>
-        <i class="material-icons right">keyboard_arrow_right</i>
+        <!-- <img src="../../../assets/images/people.jpg" /> -->
+        <slideshow
+          #slideshow
+          [showArrows]="false"
+          [imageUrls]="imageSources"
+          [lazyLoad]="imageSources?.length > 1"
+          [autoPlayWaitForLazyLoad]="true"
+          [height]="'200px'"
+          [captionBackground]="'transparent'"
+          [showDots]="true"
+        >
+        </slideshow>
+        <i class="material-icons left" (click)="swipeLeft()"
+          >keyboard_arrow_left</i
+        >
+        <i class="material-icons right" (click)="swipeRight()"
+          >keyboard_arrow_right</i
+        >
         <div class="img-banner">
           {{ product?.name }}
         </div>

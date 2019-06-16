@@ -1,17 +1,20 @@
 @import "../../../../../assets/variables";
 @import "../product-detail-desktop/product-detail-desktop.component.scss";
+
 .modal {
     .product-modal {
         overflow-y: scroll;
         max-height: 90vh;
         padding: 0;
         height: unset;
+
         .modal-header {
             position: absolute;
             right: 0;
             top: 0;
             margin-top: 5px;
             z-index: 1000;
+
             i {
                 color: white;
                 background-color: $main-color;
@@ -21,30 +24,33 @@
             }
 
         }
+
         .modal-content {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            width: 100%;
 
-            .benefit-container{
+            .benefit-container {
                 display: inline-flex;
                 position: absolute;
-                top:0;
-                left:0;
+                top: 0;
+                left: 0;
                 justify-content: center;
                 align-items: center;
                 flex-direction: column;
                 margin: 20px;
                 text-align: left;
 
-                span{
+                span {
                     color: white;
                     font-size: 1.1em;
                     text-transform: uppercase;
                     background-color: $main-color;
                     padding: 5px 8px;
                 }
-                h1{
+
+                h1 {
                     font-size: 1.5em;
                     margin: 2%;
                 }
@@ -63,6 +69,7 @@
             .slideshow {
                 width: 100%;
                 position: relative;
+
                 .img-banner {
                     //position: relative;
                     //position: absolute;
@@ -73,7 +80,8 @@
                     text-align: center;
                     width: 100%;
                 }
-                img {
+
+                #slideshow {
                     width: 100%;
                     border-radius: 0;
                 }
@@ -88,12 +96,12 @@
                     top: 50%;
                     transform: translate(0%, -50%);
 
-                    &.left{
+                    &.left {
                         left: 0;
                         margin-left: 10px;
                     }
 
-                    &.right{
+                    &.right {
                         right: 0;
                         margin-right: 10px;
                     }
@@ -102,12 +110,14 @@
 
             .product-info {
                 max-width: 100%;
+
                 p {
                     padding: 0 10px;
                 }
 
                 .menu {
                     padding: 10px;
+
                     .details {
                         h1 {
                             font-size: 16px;
@@ -133,7 +143,8 @@
         min-width: 25px;
     }
 
-    ::ng-deep .mat-tab-labels{
-        justify-content: center; /* align items in Main Axis */
+    ::ng-deep .mat-tab-labels {
+        justify-content: center;
+        /* align items in Main Axis */
     }
 }

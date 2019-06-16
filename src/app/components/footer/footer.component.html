@@ -2,13 +2,25 @@
   <div class="page">
     <div class="footer-container">
       <div class="logo">
-        <img src="../../../assets/images/sticker_round.png" width="150px" height="150px">
+        <img
+          src="../../../assets/images/sticker_round.png"
+          width="150px"
+          height="150px"
+        />
       </div>
-      <div *ngIf="isMobile" class="mobile-footer-text">&copy; New Crown Service Partners NV/SA</div>
+      <div *ngIf="isMobile" class="mobile-footer-text">
+        &copy; New Crown Service Partners NV/SA
+      </div>
       <div *ngIf="!isMobile">
         <h2>Follow us</h2>
         <div class="icons">
-          <fa-icon [icon]="faLinkedin"></fa-icon>
+          <a
+            class="footer-link"
+            href="https://www.linkedin.com/company/new-crown-service-partners/?originalSubdomain=nl"
+            target="blank"
+          >
+            <fa-icon [icon]="faLinkedin"></fa-icon>
+          </a>
         </div>
       </div>
       <div *ngIf="!isMobile">
