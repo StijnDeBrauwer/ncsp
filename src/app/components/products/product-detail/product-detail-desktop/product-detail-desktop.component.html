@@ -5,29 +5,12 @@
         {{ product.name }}
       </h1>
       <div class="slideshow">
-        <slideshow
-          #slideshow
-          [showArrows]="false"
-          [imageUrls]="imageSources"
-          [lazyLoad]="imageSources?.length > 1"
-          [autoPlayWaitForLazyLoad]="true"
-          [captionBackground]="'transparent'"
-          [showDots]="true"
-        >
+        <slideshow #slideshow [showArrows]="false" [imageUrls]="imageSources" [lazyLoad]="imageSources?.length > 1"
+          [autoPlayWaitForLazyLoad]="true" [captionBackground]="'transparent'" [showDots]="true">
         </slideshow>
         <!-- <img src="../../../assets/images/people.jpg" /> -->
-        <i
-          *ngIf="imageSources?.length > 1"
-          class="material-icons"
-          (click)="swipeLeft()"
-          >keyboard_arrow_left</i
-        >
-        <i
-          *ngIf="imageSources?.length > 1"
-          class="material-icons"
-          (click)="swipeRight()"
-          >keyboard_arrow_right</i
-        >
+        <i *ngIf="imageSources?.length > 1" class="material-icons" (click)="swipeLeft()">keyboard_arrow_left</i>
+        <i *ngIf="imageSources?.length > 1" class="material-icons" (click)="swipeRight()">keyboard_arrow_right</i>
       </div>
     </div>
 
@@ -63,23 +46,17 @@
                 <h1>Benefits</h1>
               </div>
               <div>
-                <span
-                  class="benefitString"
-                  *ngFor="let solution of solutionBenefits"
-                >
+                <span class="benefitString" *ngFor="let solution of solutionBenefits">
                   <div class="legend-item">
-                    <div
-                      [ngStyle]="{
+                    <div [ngStyle]="{
                         'background-color': getColorByBenefit(solution),
                         'margin-right': benefits ? '0' : '10px'
-                      }"
-                      class="colored"
-                    >
+                      }" class="colored">
                       {{ getTextByBenefit(solution) }}
                     </div>
                   </div>
 
-                  {{ solution }}
+                  {{solution.description}}
                 </span>
               </div>
             </div>

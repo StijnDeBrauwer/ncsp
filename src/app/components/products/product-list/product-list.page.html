@@ -1,29 +1,21 @@
 <section id="product-list" class="page">
   <div class="products">
     <div class="header">
-      <h2>PLEASE CLICK ON A PRODUCT CARD FOR MORE INFORMATION</h2>
+      <h2>A SELECTION OF OUR UPGRADES
+        <br /> click on a product card for more information
+      </h2>
       <div class="search">
         <div class="input">
           <i class="material-icons">search</i>
         </div>
-        <input
-          type="text"
-          placeholder="search"
-          (keyup)="filterByName($event)"
-        />
+        <input type="text" placeholder="search" (keyup)="filterByName($event)" />
       </div>
     </div>
     <div class="content">
-      <app-product
-        (click)="clickOnProduct()"
-        *ngFor="let product of filteredProductList || products"
-        [product]="product"
-      ></app-product>
+      <app-product (click)="clickOnProduct()" *ngFor="let product of filteredProductList || products"
+        [product]="product"></app-product>
     </div>
-    <p
-      class="emptyResult"
-      *ngIf="(filteredProductList || products).length === 0"
-    >
+    <p class="emptyResult" *ngIf="(filteredProductList || products).length === 0">
       No products for your search criteria.
     </p>
   </div>

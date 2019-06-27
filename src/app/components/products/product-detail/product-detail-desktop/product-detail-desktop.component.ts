@@ -22,7 +22,7 @@ export class ProductDetailDesktopComponent implements OnInit {
 
   @ViewChild("slideshow") slideshow: any;
 
-  constructor() {}
+  constructor() { }
 
   ngOnInit() {
     this.types =
@@ -85,7 +85,7 @@ export class ProductDetailDesktopComponent implements OnInit {
   }
 
   getTextByBenefit(solutionBenefit) {
-    switch (solutionBenefit) {
+    switch (solutionBenefit.type) {
       case SolutionBenefitType.EFFICIENCY:
         return "EF";
       case SolutionBenefitType.SAFETY:
@@ -104,7 +104,7 @@ export class ProductDetailDesktopComponent implements OnInit {
   }
 
   getColorByBenefit(solutionBenefit) {
-    switch (solutionBenefit) {
+    switch (solutionBenefit.type) {
       case SolutionBenefitType.EFFICIENCY:
         return "orange";
       case SolutionBenefitType.SAFETY:

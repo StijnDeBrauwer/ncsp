@@ -8,11 +8,7 @@
     <div class="modal-content">
       <div class="slideshow">
         <div class="benefit-container">
-          <span
-            [ngStyle]="{ 'background-color': color }"
-            *ngFor="let type of types"
-            >{{ type.value }}</span
-          >
+          <span [ngStyle]="{ 'background-color': color }" *ngFor="let type of types">{{ type.value }}</span>
         </div>
 
         <!-- <img src="../../../assets/images/people.jpg" /> -->
@@ -56,23 +52,17 @@
             <mat-tab label="Benefits">
               <div class="details">
                 <h1>Benefits</h1>
-                <span
-                  class="benefitString"
-                  *ngFor="let solution of solutionBenefits"
-                >
+                <span class="benefitString" *ngFor="let solution of solutionBenefits">
                   <div class="legend-item">
-                    <div
-                      [ngStyle]="{
+                    <div [ngStyle]="{
                         'background-color': getColorByBenefit(solution),
                         'margin-right': benefits ? '0' : '10px'
-                      }"
-                      class="colored"
-                    >
+                      }" class="colored">
                       {{ getTextByBenefit(solution) }}
                     </div>
                   </div>
 
-                  {{ solution }}
+                  {{solution.description}}
                 </span>
               </div>
             </mat-tab>

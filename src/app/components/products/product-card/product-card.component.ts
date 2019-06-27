@@ -16,7 +16,7 @@ export class ProductCardComponent implements OnInit {
   isModalVisible = false;
   types: Array<{ key: string; value: string }>;
 
-  constructor(private sanitizeHtmlPipe: SanitizeHtmlPipe) {}
+  constructor(private sanitizeHtmlPipe: SanitizeHtmlPipe) { }
 
   ngOnInit() {
     this.types =
@@ -51,11 +51,11 @@ export class ProductCardComponent implements OnInit {
     if (this.product.solution && this.product.solution.benefits) {
       this.product.solution.benefits.forEach((benefit, i) => {
         if (i < this.product.solution.benefits.length - 1) {
-          benefitString += "" + benefit + " - ";
+          benefitString += "" + benefit.type + " - ";
           return;
         }
 
-        benefitString += "" + benefit;
+        benefitString += "" + benefit.type;
       });
     }
     return benefitString;
