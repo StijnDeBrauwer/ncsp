@@ -16,7 +16,6 @@
     top: 0;
     width: 100vw;
     height: 100vh;
-    overflow: auto;
     z-index: 3000;
     background-color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, 0.4);
@@ -57,6 +56,7 @@
         border-radius: 15px 15px 15px 15px;
         background-color: white;
         width: 85%;
+
         height: 75%;
         position: fixed;
         left: 50%;
@@ -136,6 +136,7 @@
         .content-container {
             padding: 0 2% 0 5%;
             flex: 2;
+            overflow-y: scroll;
 
             .content-title {
                 display: flex;

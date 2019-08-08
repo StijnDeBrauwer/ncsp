@@ -19,13 +19,9 @@ export class ProductDetailMobileComponent implements OnInit {
   @Input() product: Product;
   types: Array<{ key: string; value: string }>;
   @Output() close: EventEmitter<boolean> = new EventEmitter();
-<<<<<<< HEAD
   @ViewChild("slideshow") slideshow: any;
 
   constructor() {}
-=======
-  constructor() { }
->>>>>>> 43c3b2c10eee04c28ceb49538e410e0096517192
 
   get color() {
     switch (this.types[0].value) {

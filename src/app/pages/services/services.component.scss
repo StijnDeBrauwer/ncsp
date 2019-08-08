@@ -1,9 +1,87 @@
+@import "../../../assets/variables";
+
 .service-page {
     .banner {
         background: url('../../../assets/images/service/serv_pic_1.jpg') center center;
+
+        @media (max-width: 768px) {
+            height: 25vh;
+        }
     }
 
     .service-content {
         display: block;
+    }
+
+    .service-banner-container {
+        display: flex;
+        background-color: $main-color;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+
+        @media (min-width: 768px) {
+            padding: 10px;
+            justify-content: unset;
+            flex-direction: row;
+            align-items: center;
+        }
+
+
+
+
+
+        #service-banner-text {
+            text-transform: uppercase;
+            padding: 2px;
+            color: 'white';
+            margin-left: 2%;
+
+            @media (min-width: 768px) {
+                font-size: $font-size-large;
+                margin-left: 10%;
+                padding: 10px;
+            }
+        }
+
+        #service-banner-telephone {
+            text-transform: uppercase;
+            padding: 2px;
+            margin-left: 2%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            @media (min-width: 768px) {
+                font-size: 1.5em;
+                margin-left: 5%;
+                padding: 10px;
+            }
+
+            color: 'white';
+
+        }
+
+        #service-banner-email {
+            padding: 2px;
+            margin-left: 2%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            @media (min-width: 768px) {
+                font-size: 1.5em;
+                margin-left: 5%;
+                padding: 10px;
+            }
+
+            color: 'white';
+
+        }
+
     }
 }
