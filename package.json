@@ -30,7 +30,7 @@
     "@ngx-translate/http-loader": "^3.0.1",
     "classlist.js": "^1.1.20150312",
     "core-js": "^2.5.4",
-    "i": "^0.3.6",
+    "i": "^0.3.7",
     "ionicons": "^4.4.6",
     "ng-simple-slideshow": "^1.2.9",
     "npm": "^6.8.0",
